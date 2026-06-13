@@ -1,15 +1,15 @@
 import * as React from "react";
 import { Button as PrimeButton } from "primereact/button";
+import { SeverityConfig } from "../../const/severity.const";
+import {
+  ButtonSizeType,
+  ButtonVariantType,
+  mapToPrimeSize,
+} from "../../const/button.const";
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?:
-    | "default"
-    | "destructive"
-    | "outline"
-    | "secondary"
-    | "ghost"
-    | "link";
-  size?: "default" | "sm" | "lg" | "icon";
+  variant?: ButtonVariantType;
+  size?: ButtonSizeType | undefined;
   asChild?: boolean;
 }
 
@@ -18,14 +18,7 @@ const Button = React.forwardRef<
   ButtonProps
 >(
   (
-    {
-      children,
-      variant = "default",
-      size = "default",
-      asChild,
-      className,
-      ...props
-    },
+    { children, variant = "default", size = undefined, className, ...props },
     ref,
   ) => {
     const severity =
@@ -35,13 +28,16 @@ const Button = React.forwardRef<
           ? "secondary"
           : undefined;
 
-    const typedSeverity: "success" | "info" | "warning" | "danger" | undefined =
-      severity as "success" | "info" | "warning" | "danger" | undefined;
+    const typedSeverity =
+      (severity as SeverityConfig[keyof SeverityConfig]) || undefined;
+
+    const primereactSize = mapToPrimeSize(size as ButtonSizeType);
 
     return (
       <PrimeButton
-        ref={ref as any}
+        ref={ref}
         className={className}
+        size={primereactSize}
         severity={typedSeverity}
         {...props}
       >

@@ -3,8 +3,6 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
-// A lightweight, typed dropdown menu primitive to replace Radix usage.
-
 type DropdownMenuProps = React.HTMLAttributes<HTMLDivElement> & {
   children?: React.ReactNode;
 };
@@ -168,7 +166,6 @@ const DropdownMenuShortcut: React.FC<React.HTMLAttributes<HTMLSpanElement>> = ({
   </span>
 );
 
-// Exports for compatibility
 export {
   DropdownMenu,
   DropdownMenuTrigger,

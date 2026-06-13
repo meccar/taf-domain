@@ -1,3 +1,4 @@
+import Link from "next/dist/client/link";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 
@@ -8,11 +9,11 @@ export function EnvVarWarning() {
         Supabase environment variables required
       </Badge>
       <div className="flex gap-2">
-        <Button size="sm" variant={"outline"} disabled>
-          Sign in
+        <Button size="small" variant={"outline"}>
+          <Link href="/auth/login">Sign in</Link>
         </Button>
-        <Button size="sm" variant={"default"} disabled>
-          Sign up
+        <Button size="small" variant={"default"}>
+          <Link href="/auth/sign-up">Sign up</Link>
         </Button>
       </div>
     </div>

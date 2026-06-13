@@ -5,6 +5,7 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import "primereact/resources/themes/lara-light-cyan/theme.css";
 import PrimeProvider from "../components/prime-provider";
+import NextThemeProvider from "../components/theme-provider";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -30,7 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.className} antialiased`}>
-        <PrimeProvider>{children}</PrimeProvider>
+        <NextThemeProvider>
+          <PrimeProvider>{children}</PrimeProvider>
+        </NextThemeProvider>
       </body>
     </html>
   );

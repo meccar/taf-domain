@@ -52,7 +52,7 @@ const ThemeSwitcher = () => {
       <Menu model={items} popup ref={menu} />
       <Button
         variant="ghost"
-        size={"sm"}
+        size={"small"}
         onClick={(e) => menu.current?.toggle(e)}
       >
         {icon}
