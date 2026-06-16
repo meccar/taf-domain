@@ -3,9 +3,9 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
-import "primereact/resources/themes/lara-light-cyan/theme.css";
 import PrimeProvider from "../components/prime-provider";
 import NextThemeProvider from "../components/theme-provider";
+import PrimeThemeSync from "@/components/prime-theme-sync";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -32,6 +32,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.className} antialiased`}>
         <NextThemeProvider>
+          <PrimeThemeSync />
           <PrimeProvider>{children}</PrimeProvider>
         </NextThemeProvider>
       </body>

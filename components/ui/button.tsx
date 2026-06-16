@@ -10,7 +10,6 @@ import {
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariantType;
   size?: ButtonSizeType | undefined;
-  asChild?: boolean;
 }
 
 const Button = React.forwardRef<

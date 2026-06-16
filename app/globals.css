@@ -66,3 +66,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+.p-megamenu-root-list {
+  display: flex;
+  gap: 2rem;
+}
+
+.p-megamenu-button {
+  display: none;
+}
