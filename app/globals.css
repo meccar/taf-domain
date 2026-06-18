@@ -75,3 +75,21 @@
 .p-megamenu-button {
   display: none;
 }
+
+.p-megamenu-submenu {
+  display: grid !important;
+  width: max-content;
+  gap: 0.5rem;
+}
+.p-menu-overlay {
+  padding: 0.5rem;
+}
+
+.p-menuitem-link {
+  gap: 0.2rem;
+}
+
+.p-menu-overlay > ul {
+  display: grid;
+  gap: 0.5rem;
+}

@@ -6,8 +6,8 @@ import { useEffect } from "react";
 const THEME_ID = "primereact-theme-link";
 
 const themeMap: Record<string, string> = {
-  light: "/themes/lara-light-cyan/theme.css",
-  dark: "/themes/lara-dark-cyan/theme.css",
+  light: "/themes/viva-light/theme.css",
+  dark: "/themes/viva-dark/theme.css",
 };
 
 export default function PrimeThemeSync() {

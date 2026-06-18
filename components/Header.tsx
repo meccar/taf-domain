@@ -109,7 +109,8 @@ const menuItems = [
 export default function Header() {
   const start = (
     <Link href="/" className="flex items-center gap-4 mr-6 no-underline">
-      <span className="text-lg font-semibold text-color">Acme Corp</span>
+      <i className="pi pi-prime text-2xl text-color" />
+      <span className="text-lg font-semibold text-color">TAF Viet</span>
     </Link>
   );
 
@@ -123,8 +124,8 @@ export default function Header() {
   );
 
   return (
-    <div className="w-full px-4 py-3">
-      <div className="flex items-center">
+    <div className="w-full px-6 py-6">
+      <div className="max-w-7xl mx-auto flex items-center">
         {start}
 
         <div className="flex-1 flex justify-center">
