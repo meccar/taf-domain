@@ -41,7 +41,7 @@ export default function Header() {
         </Link>
 
         {/* Nav */}
-        <NavigationMenu className="flex-1" viewport={false}>
+          <NavigationMenu className="flex-1" viewport={false}>
           <NavigationMenuList>
             {MenuItems.map((item, idx) => (
               <NavigationMenuItem key={idx}>
