@@ -4,140 +4,110 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { AuthButton } from "@/components/auth-button";
 import { ThemeSwitcher } from "@/components/theme-switcher";
-import { MegaMenu } from "primereact/megamenu";
+import { MenuItems } from "@/const/items/menu-Items.const";
+import { Sparkles } from "lucide-react";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 
-const menuItems = [
-  {
-    label: "Products",
-    icon: "pi pi-th-large",
-    items: [
-      [
-        {
-          label: "UI Kit",
-          items: [
-            {
-              label: "Dashboard",
-              icon: "pi pi-chart-line",
-              command: () => (window.location.href = "/dashboard"),
-            },
-            {
-              label: "Analytics",
-              icon: "pi pi-chart-bar",
-              command: () => (window.location.href = "/analytics"),
-            },
-          ],
-        },
-      ],
-    ],
-  },
-  {
-    label: "Products",
-    icon: "pi pi-th-large",
-    items: [
-      [
-        {
-          label: "UI Kit",
-          items: [
-            {
-              label: "Dashboard",
-              icon: "pi pi-chart-line",
-              command: () => (window.location.href = "/dashboard"),
-            },
-            {
-              label: "Analytics",
-              icon: "pi pi-chart-bar",
-              command: () => (window.location.href = "/analytics"),
-            },
-          ],
-        },
-      ],
-    ],
-  },
-  {
-    label: "Products",
-    icon: "pi pi-th-large",
-    items: [
-      [
-        {
-          label: "UI Kit",
-          items: [
-            {
-              label: "Dashboard",
-              icon: "pi pi-chart-line",
-              command: () => (window.location.href = "/dashboard"),
-            },
-            {
-              label: "Analytics",
-              icon: "pi pi-chart-bar",
-              command: () => (window.location.href = "/analytics"),
-            },
-          ],
-        },
-      ],
-    ],
-  },
-  {
-    label: "Docs",
-    icon: "pi pi-book",
-    items: [
-      [
-        {
-          label: "Resources",
-          items: [
-            {
-              label: "Getting Started",
-              icon: "pi pi-play",
-              command: () => (window.location.href = "/docs"),
-            },
-            {
-              label: "API Reference",
-              icon: "pi pi-code",
-              command: () => (window.location.href = "/api"),
-            },
-            {
-              label: "Changelog",
-              icon: "pi pi-list",
-              command: () => (window.location.href = "/changelog"),
-            },
-          ],
-        },
-      ],
-    ],
-  },
-];
+function getSubItems(items: any): any[] {
+  const res: any[] = [];
+  const stack: any[] = Array.isArray(items) ? [...items] : [items];
+  while (stack.length) {
+    const el = stack.shift();
+    if (!el) continue;
+    if (Array.isArray(el)) stack.push(...el);
+    else if (el.items)
+      stack.push(...(Array.isArray(el.items) ? el.items : [el.items]));
+    else if (el.label) res.push(el);
+  }
+  return res;
+}
 
 export default function Header() {
-  const start = (
-    <Link href="/" className="flex items-center gap-4 mr-6 no-underline">
-      <i className="pi pi-prime text-2xl text-color" />
-      <span className="text-lg font-semibold text-color">TAF Viet</span>
-    </Link>
-  );
-
-  const end = (
-    <div className="flex items-center gap-4">
-      <ThemeSwitcher />
-      <Suspense>
-        <AuthButton />
-      </Suspense>
-    </div>
-  );
-
   return (
-    <div className="w-full px-6 py-6">
-      <div className="max-w-7xl mx-auto flex items-center">
-        {start}
+    <header className="w-full border-b bg-background">
+      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center gap-6">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2 shrink-0">
+          <Sparkles className="h-5 w-5" />
+          <span className="font-semibold">TAF Viet</span>
+        </Link>
 
-        <div className="flex-1 flex justify-center">
-          <MegaMenu
-            model={menuItems}
-            className="p-2 surface-0 shadow-2 inline-block"
-            style={{ borderRadius: "3rem" }}
-          />
+        {/* Nav */}
+        <NavigationMenu className="flex-1" viewport={false}>
+          <NavigationMenuList>
+            {MenuItems.map((item, idx) => (
+              <NavigationMenuItem key={idx}>
+                {item.items ? (
+                  <>
+                    <NavigationMenuTrigger>{item.label}</NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <ul className="w-48 p-1">
+                        {getSubItems(item.items).map((sub, sidx) => (
+                          <li key={sidx}>
+                            {sub.command ? (
+                              <NavigationMenuLink asChild>
+                                <button
+                                  onClick={sub.command}
+                                  className="w-full text-left px-3 py-2 text-sm rounded-md hover:bg-accent"
+                                >
+                                  {sub.label}
+                                </button>
+                              </NavigationMenuLink>
+                            ) : (
+                              <NavigationMenuLink asChild>
+                                <Link
+                                  href={sub.url ?? "/"}
+                                  className="block px-3 py-2 text-sm rounded-md hover:bg-accent"
+                                >
+                                  {sub.label}
+                                </Link>
+                              </NavigationMenuLink>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </NavigationMenuContent>
+                  </>
+                ) : item.command ? (
+                  <NavigationMenuLink asChild>
+                    <button
+                      onClick={item.command}
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      {item.label}
+                    </button>
+                  </NavigationMenuLink>
+                ) : (
+                  <NavigationMenuLink asChild>
+                    <Link
+                      href={item.url ?? "/"}
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      {item.label}
+                    </Link>
+                  </NavigationMenuLink>
+                )}
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
+
+        {/* Right side */}
+        <div className="flex items-center gap-3 ml-auto shrink-0">
+          <ThemeSwitcher />
+          <Suspense>
+            <AuthButton />
+          </Suspense>
         </div>
-
-        {end}
       </div>
-    </div>
+    </header>
   );
 }

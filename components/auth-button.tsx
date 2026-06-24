@@ -42,11 +42,11 @@ export function AuthButton() {
     </div>
   ) : (
     <div className="flex gap-2">
-      <Button size="sm" variant={"outline"}>
-        <Link href="/auth/login">Sign in</Link>
+      <Button size="sm" variant="outline" asChild>
+        <Link href="/auth/login">Đăng nhập</Link>
       </Button>
-      <Button size="sm" variant={"default"}>
-        <Link href="/auth/sign-up">Sign up</Link>
+      <Button size="sm" asChild>
+        <Link href="/auth/sign-up">Đăng ký</Link>
       </Button>
     </div>
   );

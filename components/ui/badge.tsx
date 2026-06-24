@@ -1,9 +1,7 @@
 import * as React from "react";
-import { Tag } from "primereact/tag";
+import { cn } from "../../lib/utils";
 
-type PrimeTagProps = React.ComponentPropsWithoutRef<typeof Tag>;
-
-export interface BadgeProps extends Omit<PrimeTagProps, "value" | "severity"> {
+export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
   variant?: "default" | "secondary" | "destructive" | "outline";
   children?: React.ReactNode;
 }
@@ -14,20 +12,21 @@ function Badge({
   variant = "default",
   ...props
 }: BadgeProps) {
-  const severity: PrimeTagProps["severity"] =
+  const base =
+    "inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-full";
+  const variantCls =
     variant === "destructive"
-      ? "danger"
+      ? "bg-red-100 text-red-800"
       : variant === "secondary"
-        ? "info"
-        : undefined;
+        ? "bg-blue-100 text-blue-800"
+        : variant === "outline"
+          ? "border border-slate-200 text-slate-700 bg-transparent"
+          : "bg-slate-100 text-slate-900";
 
   return (
-    <Tag
-      value={String(children ?? "")}
-      severity={severity}
-      className={className}
-      {...(props as PrimeTagProps)}
-    />
+    <span className={cn(base, variantCls, className)} {...props}>
+      {children}
+    </span>
   );
 }
 

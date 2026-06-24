@@ -1,22 +1,25 @@
 "use client";
 
 import * as React from "react";
-import { Checkbox as PrimeCheckbox } from "primereact/checkbox";
+import { cn } from "../../lib/utils";
 
-type PrimeCheckboxProps = React.ComponentPropsWithoutRef<typeof PrimeCheckbox>;
+export type CheckboxProps = React.InputHTMLAttributes<HTMLInputElement>;
 
-const Checkbox = React.forwardRef<
-  React.ComponentRef<typeof PrimeCheckbox>,
-  Partial<PrimeCheckboxProps>
->(({ className, ...props }, ref) => {
-  return (
-    <PrimeCheckbox
-      ref={ref as any}
-      className={className}
-      {...(props as PrimeCheckboxProps)}
-    />
-  );
-});
+const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
+  ({ className, ...props }, ref) => {
+    return (
+      <input
+        ref={ref}
+        type="checkbox"
+        className={cn(
+          "h-4 w-4 rounded border-slate-300 text-primary focus:ring-primary",
+          className,
+        )}
+        {...props}
+      />
+    );
+  },
+);
 Checkbox.displayName = "Checkbox";
 
 export { Checkbox };

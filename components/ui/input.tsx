@@ -1,21 +1,23 @@
 import * as React from "react";
-import { InputText } from "primereact/inputtext";
+import { cn } from "../../lib/utils";
 
-type PrimeInputProps = React.ComponentPropsWithoutRef<typeof InputText>;
+export type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
 
-const Input = React.forwardRef<
-  React.ComponentRef<typeof InputText>,
-  PrimeInputProps
->(({ className, type = "text", ...props }, ref) => {
-  return (
-    <InputText
-      ref={ref as any}
-      type={type}
-      className={className}
-      {...(props as PrimeInputProps)}
-    />
-  );
-});
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ className, type = "text", ...props }, ref) => {
+    return (
+      <input
+        ref={ref}
+        type={type}
+        className={cn(
+          "bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-3 py-2 rounded-md text-sm w-full",
+          className,
+        )}
+        {...props}
+      />
+    );
+  },
+);
 Input.displayName = "Input";
 
 export { Input };

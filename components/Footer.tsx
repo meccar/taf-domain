@@ -1,86 +1,81 @@
 import Link from "next/link";
+import { Sparkles, Facebook, Linkedin, Youtube } from "lucide-react";
 
 const footerLinks = [
   {
-    heading: "Landings",
+    heading: "Dịch vụ",
     items: [
-      { label: "Travel", href: "/travel" },
-      { label: "SaaS", href: "/saas" },
-      { label: "Startup", href: "/startup" },
-      { label: "Enterprise", href: "/enterprise" },
-      { label: "E-Learning", href: "/e-learning" },
-      { label: "Real Estate", href: "/real-estate" },
-      { label: "Logistics", href: "/logistics" },
-      { label: "Agency", href: "/agency" },
+      { label: "Kế toán", href: "/dich-vu/ke-toan" },
+      { label: "Khai báo thuế", href: "/dich-vu/thue" },
+      { label: "Tư vấn tài chính", href: "/dich-vu/tu-van" },
+      { label: "Kiểm toán nội bộ", href: "/dich-vu/kiem-toan" },
     ],
   },
   {
-    heading: "Secondary Pages",
+    heading: "Công ty",
     items: [
-      { label: "About", href: "/about" },
-      { label: "Pricing", href: "/pricing" },
-      { label: "Blog", href: "/blog" },
-      { label: "Blog Detail", href: "/blog/detail" },
-      { label: "Contact", href: "/contact" },
+      { label: "Về chúng tôi", href: "/ve-chung-toi" },
+      { label: "Đội ngũ", href: "/doi-ngu" },
+      { label: "Bài viết", href: "/bai-viet" },
+      { label: "Liên hệ", href: "/lien-he" },
     ],
   },
   {
-    heading: "Account Pages",
+    heading: "Liên hệ",
     items: [
-      { label: "Sign Up", href: "/sign-up" },
-      { label: "Sign In", href: "/sign-in" },
-      { label: "Error", href: "/error" },
-      { label: "Password Reset", href: "/password-reset" },
-      { label: "Account General", href: "/account" },
+      { label: "info@tafviet.vn", href: "mailto:info@tafviet.vn" },
+      { label: "+84 936 378 955", href: "tel:0936378955" },
+      { label: "Hà Nội, Việt Nam", href: "#" },
     ],
   },
 ];
 
 const socialLinks = [
-  { icon: "pi pi-youtube", href: "https://youtube.com", label: "YouTube" },
-  { icon: "pi pi-twitter", href: "https://x.com", label: "X" },
-  { icon: "pi pi-discord", href: "https://discord.com", label: "Discord" },
+  { Icon: Facebook, href: "https://facebook.com", label: "Facebook" },
+  { Icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+  { Icon: Youtube, href: "https://youtube.com", label: "YouTube" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="w-full surface-section border-top-1 surface-border">
-      <div className="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row gap-12">
-        <div className="flex flex-col justify-between gap-12 min-w-[180px]">
-          <Link href="/" className="flex items-center gap-2 no-underline">
-            <i className="pi pi-prime text-2xl text-color" />
-            <span className="text-xl font-bold text-color">TAF Viet</span>
-          </Link>
-
-          <div className="flex items-center gap-3">
-            {socialLinks.map(({ icon, href, label }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={label}
-                className="flex items-center justify-center w-10 h-10 rounded-full border-1 surface-border surface-card text-color-secondary hover:text-color transition-colors duration-200"
-              >
-                <i className={`${icon} text-sm`} />
-              </a>
-            ))}
+    <footer className="w-full border-t">
+      <div className="max-w-7xl mx-auto px-6 py-14">
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-10 mb-10">
+          <div className="flex flex-col gap-5">
+            <Link href="/" className="flex items-center gap-2">
+              <Sparkles size={18} />
+              <span className="font-semibold">TAF Viet</span>
+            </Link>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Dịch vụ kế toán và tư vấn thuế uy tín tại Việt Nam.
+            </p>
+            <div className="flex gap-3">
+              {socialLinks.map(({ Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={label}
+                  className="w-8 h-8 flex items-center justify-center rounded-full border text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <Icon size={16} />
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
-
-        {/* Right — Link columns */}
-        <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-10">
+          {/* Right — Link columns */}
           {footerLinks.map(({ heading, items }) => (
-            <div key={heading} className="flex flex-col gap-5">
-              <h3 className="text-base font-semibold text-color m-0">
+            <div key={heading}>
+              <p className="text-xs font-medium uppercase tracking-widest text-muted-foreground mb-4">
                 {heading}
-              </h3>
-              <ul className="list-none p-0 m-0 flex flex-col gap-4">
+              </p>
+              <ul className="flex flex-col gap-3">
                 {items.map(({ label, href }) => (
                   <li key={label}>
                     <Link
                       href={href}
-                      className="text-color-secondary hover:text-color no-underline transition-colors duration-200 text-sm"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
                       {label}
                     </Link>

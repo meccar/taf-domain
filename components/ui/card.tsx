@@ -1,64 +1,70 @@
 import * as React from "react";
-import { Card as PrimeCard } from "primereact/card";
+import { cn } from "../../lib/utils";
 
-const Card: React.FC<React.ComponentPropsWithoutRef<typeof PrimeCard>> = ({
+const Card: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   children,
   className,
   ...props
 }) => {
   return (
-    <PrimeCard className={className} {...props}>
+    <div
+      className={cn(
+        "rounded-lg border bg-card text-card-foreground shadow-sm",
+        className,
+      )}
+      {...props}
+    >
       {children}
-    </PrimeCard>
+    </div>
   );
 };
 
-const CardHeader = ({
+const CardHeader: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   children,
   className,
   ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-  <div className={className} {...props}>
+}) => (
+  <div className={cn("px-4 py-3 border-b", className)} {...props}>
     {children}
   </div>
 );
 
-const CardTitle = ({
+const CardTitle: React.FC<React.HTMLAttributes<HTMLHeadingElement>> = ({
   children,
   className,
   ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-  <div className={className} {...props}>
+}) => (
+  <h3 className={cn("text-lg font-semibold", className)} {...props}>
+    {children}
+  </h3>
+);
+
+const CardDescription: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+  children,
+  className,
+  ...props
+}) => (
+  <div className={cn("text-sm text-muted-foreground", className)} {...props}>
     {children}
   </div>
 );
 
-const CardDescription = ({
+const CardContent: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   children,
   className,
   ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-  <div className={className} {...props}>
+}) => (
+  <div className={cn("p-4", className)} {...props}>
     {children}
   </div>
 );
 
-const CardContent = ({
+const CardFooter: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   children,
   className,
   ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-  <div className={className} {...props}>
-    {children}
-  </div>
-);
-
-const CardFooter = ({
-  children,
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) => (
-  <div className={className} {...props}>
+}) => (
+  <div className={cn("px-4 py-3 border-t", className)} {...props}>
     {children}
   </div>
 );
