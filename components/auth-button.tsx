@@ -42,11 +42,8 @@ export function AuthButton() {
     </div>
   ) : (
     <div className="flex gap-2">
-      <Button size="sm" variant="outline" asChild>
-        <Link href="/auth/login">Đăng nhập</Link>
-      </Button>
       <Button size="sm" asChild>
-        <Link href="/auth/sign-up">Đăng ký</Link>
+        <Link href="/auth/login">Đăng nhập</Link>
       </Button>
     </div>
   );

@@ -2,8 +2,8 @@ import { Hero } from "@/components/hero";
 import { ServicesBlock } from "@/components/services-block";
 import { WhyUsBlock } from "@/components/why-us-block";
 import { CtaBlock } from "@/components/cta-block";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (

@@ -50,8 +50,4 @@ export const MenuItems: any[] = [
   { label: "Bài viết", command: () => (window.location.href = "/blog") },
   { label: "Về chúng tôi", command: () => (window.location.href = "/about") },
   { label: "Liên hệ", command: () => (window.location.href = "/contact") },
-  {
-    label: "Cổng khách hàng",
-    command: () => (window.location.href = "/client-portal"),
-  },
 ];

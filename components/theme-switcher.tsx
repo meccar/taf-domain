@@ -1,6 +1,6 @@
 "use client";
 
-import { Laptop, Moon, Sun } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import {
@@ -10,6 +10,7 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
+import { Theme } from "@/const/theme.const";
 
 const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
@@ -19,35 +20,29 @@ const ThemeSwitcher = () => {
 
   if (!mounted) return null;
 
-  const icon =
-    theme === "light" ? (
-      <Sun size={16} />
-    ) : theme === "dark" ? (
-      <Moon size={16} />
-    ) : (
-      <Laptop size={16} />
-    );
+  const icon = theme === Theme.Light ? <Sun size={16} /> : <Moon size={16} />;
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className="text-muted-foreground">
+        <Button variant="ghost" size="icon">
           {icon}
-          <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
+        <DropdownMenuItem
+          className="cursor-pointer"
+          onClick={() => setTheme(Theme.Light)}
+        >
           <Sun size={14} />
-          Light
+          Sáng
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
+        <DropdownMenuItem
+          className="cursor-pointer"
+          onClick={() => setTheme(Theme.Dark)}
+        >
           <Moon size={14} />
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
-          <Laptop size={14} />
-          System
+          Tối
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

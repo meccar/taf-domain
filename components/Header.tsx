@@ -15,6 +15,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { LanguageSwitcher } from "./language-switcher";
 
 function getSubItems(items: any): any[] {
   const res: any[] = [];
@@ -33,7 +34,7 @@ function getSubItems(items: any): any[] {
 export default function Header() {
   return (
     <header className="w-full border-b bg-background">
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center gap-6">
+      <div className="max-w-7xl mx-auto px-6 h-16 grid grid-cols-[auto_1fr_auto] items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 shrink-0">
           <Sparkles className="h-5 w-5" />
@@ -41,7 +42,7 @@ export default function Header() {
         </Link>
 
         {/* Nav */}
-          <NavigationMenu className="flex-1" viewport={false}>
+        <NavigationMenu className="justify-self-center" viewport={false}>
           <NavigationMenuList>
             {MenuItems.map((item, idx) => (
               <NavigationMenuItem key={idx}>
@@ -101,7 +102,8 @@ export default function Header() {
         </NavigationMenu>
 
         {/* Right side */}
-        <div className="flex items-center gap-3 ml-auto shrink-0">
+        <div className="flex items-center gap-3 shrink-0">
+          <LanguageSwitcher />
           <ThemeSwitcher />
           <Suspense>
             <AuthButton />
