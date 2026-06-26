@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
-import NextThemeProvider from "../components/theme-provider";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import ClientLayout from "./client-layout";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -22,14 +22,14 @@ const geistSans = Geist({
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="vi" suppressHydrationWarning>
       <body className={`${geistSans.className} antialiased`}>
+        <ClientLayout>{children}</ClientLayout>
         <SpeedInsights />
-        <NextThemeProvider>{children}</NextThemeProvider>
       </body>
     </html>
   );
