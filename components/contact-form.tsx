@@ -35,7 +35,7 @@ export function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
   });
 
   function onSubmit(values: FormValues) {
-    console.log(values); // replace with your API call
+    console.log(values);
     setSubmitted(true);
     setTimeout(() => onSuccess?.(), 1500);
   }

@@ -20,10 +20,9 @@ export default function ClientLayout({
   const pathname = usePathname();
 
   return (
-    <NextThemeProvider>
-      <main className="min-h-screen flex flex-col">
+    <main className="min-h-screen flex flex-col">
         <Header />
-        <AnimatePresence mode="wait">
+        <AnimatePresence initial={false} mode="wait">
           <motion.div
             key={pathname}
             initial="hidden"
@@ -38,6 +37,5 @@ export default function ClientLayout({
         </AnimatePresence>
         <Footer />
       </main>
-    </NextThemeProvider>
   );
 }

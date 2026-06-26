@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import ClientLayout from "./client-layout";
+import NextThemeProvider from "@/components/theme-provider";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -28,8 +29,10 @@ export default function RootLayout({
   return (
     <html lang="vi" suppressHydrationWarning>
       <body className={`${geistSans.className} antialiased`}>
-        <ClientLayout>{children}</ClientLayout>
-        <SpeedInsights />
+        <NextThemeProvider>
+          <ClientLayout>{children}</ClientLayout>
+          <SpeedInsights />
+        </NextThemeProvider>
       </body>
     </html>
   );
