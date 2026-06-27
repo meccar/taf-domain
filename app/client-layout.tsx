@@ -2,6 +2,7 @@
 
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import { Props } from "@/components/theme-provider";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 
@@ -11,17 +12,13 @@ const variants = {
   exit: { opacity: 0, y: -15 },
 };
 
-export default function ClientLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function ClientLayout({ children }: Props) {
   const pathname = usePathname();
 
   return (
     <main className="min-h-screen flex flex-col">
       <Header />
-      <AnimatePresence initial={false} mode="wait">
+      <AnimatePresence mode="wait">
         <motion.div
           key={pathname}
           initial="hidden"

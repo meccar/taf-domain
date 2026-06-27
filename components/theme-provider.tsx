@@ -3,18 +3,13 @@
 import * as React from "react";
 import { ThemeProvider } from "next-themes";
 
-type Props = {
+export type Props = {
   children: React.ReactNode;
 };
 
 export default function NextThemeProvider({ children }: Props) {
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-    >
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       {children}
     </ThemeProvider>
   );

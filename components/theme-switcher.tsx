@@ -14,13 +14,14 @@ import { Theme } from "@/const/theme.const";
 
 const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
 
   useEffect(() => setMounted(true), []);
 
   if (!mounted) return null;
 
-  const icon = theme === Theme.Light ? <Sun size={16} /> : <Moon size={16} />;
+  const icon =
+    resolvedTheme === Theme.Light ? <Sun size={16} /> : <Moon size={16} />;
 
   return (
     <DropdownMenu>
@@ -32,14 +33,14 @@ const ThemeSwitcher = () => {
       <DropdownMenuContent align="end">
         <DropdownMenuItem
           className="cursor-pointer"
-          onClick={() => setTheme(Theme.Light)}
+          onSelect={() => setTheme(Theme.Light)}
         >
           <Sun size={14} />
           Sáng
         </DropdownMenuItem>
         <DropdownMenuItem
           className="cursor-pointer"
-          onClick={() => setTheme(Theme.Dark)}
+          onSelect={() => setTheme(Theme.Dark)}
         >
           <Moon size={14} />
           Tối

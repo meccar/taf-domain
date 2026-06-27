@@ -8,6 +8,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogDescription,
+  DialogOverlay,
 } from "@/components/ui/dialog";
 import { useState } from "react";
 import { ContactForm } from "./contact-form";
@@ -71,7 +72,8 @@ export function Hero() {
 
       {/* Contact — Sheet slides in from the right */}
       <Dialog open={contactOpen} onOpenChange={setContactOpen}>
-        <DialogContent className="w-full sm:max-w-lg overflow-y-auto">
+        <DialogOverlay className="bg-black/30 backdrop-blur-sm" />
+        <DialogContent className="w-full sm:max-w-lg overflow-y-auto ">
           <DialogHeader className="mb-6">
             <DialogTitle>Nhận tư vấn miễn phí</DialogTitle>
             <DialogDescription>
@@ -84,7 +86,8 @@ export function Hero() {
 
       {/* Services — Dialog pops up centered */}
       <Dialog open={servicesOpen} onOpenChange={setServicesOpen}>
-        <DialogContent className="max-w-lg">
+        <DialogOverlay className="bg-black/30 backdrop-blur-sm" />
+        <DialogContent className="w-full sm:max-w-lg overflow-y-auto">
           <DialogHeader>
             <DialogTitle>Dịch vụ của chúng tôi</DialogTitle>
             <DialogDescription>
