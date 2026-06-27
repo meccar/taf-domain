@@ -1,9 +1,9 @@
 "use client";
 
+import Footer from "@/components/footer";
+import Header from "@/components/header";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
 
 const variants = {
   hidden: { opacity: 0, y: 15 },
