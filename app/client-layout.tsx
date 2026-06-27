@@ -2,7 +2,6 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
-import NextThemeProvider from "../components/theme-provider";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
@@ -21,21 +20,21 @@ export default function ClientLayout({
 
   return (
     <main className="min-h-screen flex flex-col">
-        <Header />
-        <AnimatePresence initial={false} mode="wait">
-          <motion.div
-            key={pathname}
-            initial="hidden"
-            animate="enter"
-            exit="exit"
-            variants={variants}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="w-full flex-1 flex flex-col"
-          >
-            {children}
-          </motion.div>
-        </AnimatePresence>
-        <Footer />
-      </main>
+      <Header />
+      <AnimatePresence initial={false} mode="wait">
+        <motion.div
+          key={pathname}
+          initial="hidden"
+          animate="enter"
+          exit="exit"
+          variants={variants}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="w-full flex-1 flex flex-col"
+        >
+          {children}
+        </motion.div>
+      </AnimatePresence>
+      <Footer />
+    </main>
   );
 }
