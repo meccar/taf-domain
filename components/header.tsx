@@ -5,7 +5,6 @@ import { Suspense } from "react";
 import { AuthButton } from "@/components/auth-button";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { MenuItems } from "@/const/items/menu-Items.const";
-import { Sparkles } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,

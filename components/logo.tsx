@@ -12,8 +12,8 @@ export default function Logo() {
 
   const src =
     !mounted || resolvedTheme === Theme.Light
-      ? "/taf-logo-light.png"
-      : "/taf-logo-dark.png";
+      ? "/taf-logo-dark.svg"
+      : "/taf-logo-light.svg";
 
   return (
     <Link href="/" className="flex items-center shrink-0">
