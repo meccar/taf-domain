@@ -16,6 +16,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { LanguageSwitcher } from "./language-switcher";
+import Logo from "./logo";
 
 function getSubItems(items: any): any[] {
   const res: any[] = [];
@@ -36,10 +37,7 @@ export default function Header() {
     <header className="w-full border-b bg-background">
       <div className="max-w-7xl mx-auto px-6 h-16 grid grid-cols-[auto_1fr_auto] items-center">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 shrink-0">
-          <Sparkles className="h-5 w-5" />
-          <span className="font-semibold">TAF Viet</span>
-        </Link>
+        <Logo />
 
         {/* Nav */}
         <NavigationMenu className="justify-self-center" viewport={false}>
