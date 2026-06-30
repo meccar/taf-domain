@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Sparkles, Facebook, Linkedin, Youtube } from "lucide-react";
+import Logo from "./logo";
 
 const footerLinks = [
   {
@@ -42,10 +43,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-14">
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-10 mb-10">
           <div className="flex flex-col gap-5">
-            <Link href="/" className="flex items-center gap-2">
-              <Sparkles size={18} />
-              <span className="font-semibold">TAF Viet</span>
-            </Link>
+            <Logo />
             <p className="text-sm text-muted-foreground leading-relaxed">
               Dịch vụ kế toán và tư vấn thuế uy tín tại Việt Nam.
             </p>
