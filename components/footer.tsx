@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Sparkles, Facebook, Linkedin, Youtube } from "lucide-react";
+import { Facebook, Linkedin, Youtube } from "lucide-react";
 import Logo from "./logo";
+import { useEffect, useState } from "react";
 
 const footerLinks = [
   {
@@ -38,13 +39,19 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const [year, setYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="w-full border-t">
-      <div className="max-w-7xl mx-auto px-6 py-14">
-        <div className="grid grid-cols-1 sm:grid-cols-4 gap-10 mb-10">
-          <div className="flex flex-col gap-5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-10">
+          <div className="flex flex-col gap-5 sm:col-span-2 md:col-span-1">
             <Logo />
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
               Dịch vụ kế toán và tư vấn thuế uy tín tại Việt Nam.
             </p>
             <div className="flex gap-3">
@@ -55,7 +62,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={label}
-                  className="w-8 h-8 flex items-center justify-center rounded-full border text-muted-foreground hover:text-foreground transition-colors"
+                  className="w-8 h-8 flex items-center justify-center rounded-full border text-muted-foreground hover:text-foreground hover:border-foreground transition-colors"
                 >
                   <Icon size={16} />
                 </a>
@@ -82,6 +89,25 @@ export default function Footer() {
               </ul>
             </div>
           ))}
+        </div>
+
+        {/* Bottom bar */}
+        <div className="pt-6 border-t flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+          <p>© {year} TAF Việt. All rights reserved.</p>
+          <div className="flex items-center gap-5">
+            <Link
+              href="/chinh-sach-bao-mat"
+              className="hover:text-foreground transition-colors"
+            >
+              Chính sách bảo mật
+            </Link>
+            <Link
+              href="/dieu-khoan-su-dung"
+              className="hover:text-foreground transition-colors"
+            >
+              Điều khoản sử dụng
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
