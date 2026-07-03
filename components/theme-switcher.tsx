@@ -12,22 +12,20 @@ import {
 import { Button } from "@/components/ui/button";
 import { Theme } from "@/const/theme.const";
 
-const ThemeSwitcher = () => {
+export function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
-  const { resolvedTheme, setTheme } = useTheme();
+  const { setTheme } = useTheme();
 
-  useEffect(() => setMounted(true), []);
-
-  if (!mounted) return null;
-
-  const icon =
-    resolvedTheme === Theme.Light ? <Sun size={16} /> : <Moon size={16} />;
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon">
-          {icon}
+        <Button variant="ghost" size="icon" className="relative">
+          <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+          <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
@@ -48,6 +46,4 @@ const ThemeSwitcher = () => {
       </DropdownMenuContent>
     </DropdownMenu>
   );
-};
-
-export { ThemeSwitcher };
+}

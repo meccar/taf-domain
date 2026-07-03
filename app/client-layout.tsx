@@ -7,9 +7,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 
 const variants = {
-  hidden: { opacity: 0, y: 15 },
-  enter: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -15 },
+  hidden: { opacity: 0 },
+  enter: { opacity: 1 },
+  exit: { opacity: 0 },
 };
 
 export default function ClientLayout({ children }: Props) {
@@ -18,14 +18,14 @@ export default function ClientLayout({ children }: Props) {
   return (
     <main className="min-h-screen flex flex-col">
       <Header />
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="popLayout" initial={false}>
         <motion.div
           key={pathname}
           initial="hidden"
           animate="enter"
           exit="exit"
           variants={variants}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
+          transition={{ duration: 0.2, ease: "easeInOut" }}
           className="w-full flex-1 flex flex-col"
         >
           {children}

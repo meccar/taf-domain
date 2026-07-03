@@ -6,6 +6,7 @@ import { Menu } from "lucide-react";
 import { AuthButton } from "@/components/auth-button";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { MenuItems } from "@/const/items/menu-Items.const";
+import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -71,12 +72,13 @@ export default function Header() {
                           <li key={sidx}>
                             {sub.command ? (
                               <NavigationMenuLink asChild>
-                                <button
+                                <Button
+                                  variant="ghost"
                                   onClick={sub.command}
-                                  className="w-full text-left px-3 py-2 text-sm rounded-md hover:bg-accent"
+                                  className="w-full justify-start px-3 py-2 h-auto text-sm font-normal"
                                 >
                                   {sub.label}
-                                </button>
+                                </Button>
                               </NavigationMenuLink>
                             ) : (
                               <NavigationMenuLink asChild>
@@ -95,12 +97,13 @@ export default function Header() {
                   </>
                 ) : item.command ? (
                   <NavigationMenuLink asChild>
-                    <button
+                    <Button
+                      variant="ghost"
                       onClick={item.command}
                       className={navigationMenuTriggerStyle()}
                     >
                       {item.label}
-                    </button>
+                    </Button>
                   </NavigationMenuLink>
                 ) : (
                   <NavigationMenuLink asChild>
@@ -121,7 +124,11 @@ export default function Header() {
         <div className="hidden md:flex items-center gap-3 shrink-0">
           <LanguageSwitcher />
           <ThemeSwitcher />
-          <Suspense>
+          <Suspense
+            fallback={
+              <div className="h-9 w-9 rounded-full bg-muted animate-pulse" />
+            }
+          >
             <AuthButton />
           </Suspense>
         </div>
@@ -129,12 +136,14 @@ export default function Header() {
         {/* Mobile: Sheet trigger + drawer */}
         <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
           <SheetTrigger asChild>
-            <button
-              className="md:hidden inline-flex items-center justify-center rounded-md p-2 hover:bg-accent"
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden"
               aria-label="Toggle menu"
             >
               <Menu className="h-5 w-5" />
-            </button>
+            </Button>
           </SheetTrigger>
 
           <SheetContent side="right" className="w-[300px] sm:w-[360px] p-0">
@@ -159,15 +168,16 @@ export default function Header() {
                             {getSubItems(item.items).map((sub, sidx) => (
                               <li key={sidx}>
                                 {sub.command ? (
-                                  <button
+                                  <Button
+                                    variant="ghost"
                                     onClick={() => {
                                       sub.command();
                                       setMobileOpen(false);
                                     }}
-                                    className="w-full text-left px-2 py-2 text-sm rounded-md text-muted-foreground hover:bg-accent hover:text-foreground transition-colors"
+                                    className="w-full justify-start px-2 py-2 h-auto text-sm font-normal text-muted-foreground hover:text-foreground"
                                   >
                                     {sub.label}
-                                  </button>
+                                  </Button>
                                 ) : (
                                   <Link
                                     href={sub.url ?? "/"}
@@ -185,15 +195,16 @@ export default function Header() {
                     ) : (
                       <div key={idx} className="border-b py-3">
                         {item.command ? (
-                          <button
+                          <Button
+                            variant="ghost"
                             onClick={() => {
                               item.command();
                               setMobileOpen(false);
                             }}
-                            className="w-full text-left text-sm font-medium"
+                            className="w-full justify-start p-0 h-auto text-sm font-medium"
                           >
                             {item.label}
-                          </button>
+                          </Button>
                         ) : (
                           <Link
                             href={item.url ?? "/"}
@@ -215,7 +226,11 @@ export default function Header() {
                   <LanguageSwitcher />
                   <ThemeSwitcher />
                 </div>
-                <Suspense>
+                <Suspense
+                  fallback={
+                    <div className="h-9 w-9 rounded-full bg-muted animate-pulse" />
+                  }
+                >
                   <AuthButton />
                 </Suspense>
               </div>
