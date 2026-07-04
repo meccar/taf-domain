@@ -52,7 +52,7 @@ export function CtaBlock() {
               <Label htmlFor="name">Họ và tên</Label>
               <Input
                 id="name"
-                placeholder="Nguyễn Văn A"
+                placeholder="Nguyễn Văn Mười"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />

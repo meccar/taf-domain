@@ -44,7 +44,7 @@ const highlights = [
 ];
 
 const team = [
-  { name: "Nguyễn Văn A", role: "Giám đốc điều hành" },
+  { name: "Nguyễn Văn Mười", role: "Giám đốc điều hành" },
   { name: "Trần Thị B", role: "Trưởng phòng Kế toán" },
   { name: "Lê Văn C", role: "Chuyên viên Thuế" },
   { name: "Phạm Thị D", role: "Tư vấn Tài chính" },

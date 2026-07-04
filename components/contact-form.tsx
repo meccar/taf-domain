@@ -110,7 +110,7 @@ export function ContactForm({
               <FormItem>
                 <FormLabel>Họ và tên</FormLabel>
                 <FormControl>
-                  <Input placeholder="Nguyễn Văn A" {...field} />
+                  <Input placeholder="Nguyễn Văn Mười" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

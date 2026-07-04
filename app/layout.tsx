@@ -4,6 +4,7 @@ import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import ClientLayout from "./client-layout";
 import NextThemeProvider from "@/components/theme-provider";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -34,6 +35,11 @@ export default function RootLayout({
           <SpeedInsights />
         </NextThemeProvider>
       </body>
+
+      {process.env.NODE_ENV === "production" &&
+        process.env.NEXT_PUBLIC_GTM_ID && (
+          <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
+        )}
     </html>
   );
 }
