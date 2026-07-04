@@ -80,7 +80,14 @@ export function Hero() {
               Chúng tôi sẽ liên hệ trong vòng 24 giờ làm việc.
             </DialogDescription>
           </DialogHeader>
-          <ContactForm onSuccess={() => setContactOpen(false)} />
+          <ContactForm
+            variant="card"
+            compact
+            title="Nhận tư vấn miễn phí"
+            description="Để lại số điện thoại, chúng tôi gọi lại trong 15 phút."
+            submitLabel="Gọi lại cho tôi"
+            source="home-cta"
+          />
         </DialogContent>
       </Dialog>
 

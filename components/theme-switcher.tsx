@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button";
 import { Theme } from "@/const/theme.const";
 
 export function ThemeSwitcher() {
-  const [mounted, setMounted] = useState(false);
+  const [, setMounted] = useState(false);
   const { setTheme } = useTheme();
 
   useEffect(() => {

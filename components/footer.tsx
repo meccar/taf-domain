@@ -2,32 +2,25 @@ import Link from "next/link";
 import { Facebook, Linkedin, Youtube } from "lucide-react";
 import Logo from "./logo";
 import { useEffect, useState } from "react";
+import { navigation } from "@/const/items/navigation.const";
 
 const footerLinks = [
   {
     heading: "Dịch vụ",
+    items: navigation.find((x) => x.label === "Dịch vụ")!.children!,
+  },
+  {
+    heading: "Tài nguyên",
     items: [
-      { label: "Kế toán", href: "/dich-vu/ke-toan" },
-      { label: "Khai báo thuế", href: "/dich-vu/thue" },
-      { label: "Tư vấn tài chính", href: "/dich-vu/tu-van" },
-      { label: "Kiểm toán nội bộ", href: "/dich-vu/kiem-toan" },
+      ...navigation.find((x) => x.label === "Tài nguyên")!.children!,
+      navigation.find((x) => x.label === "Bài viết")!,
     ],
   },
   {
     heading: "Công ty",
     items: [
-      { label: "Về chúng tôi", href: "/ve-chung-toi" },
-      { label: "Đội ngũ", href: "/doi-ngu" },
-      { label: "Bài viết", href: "/bai-viet" },
-      { label: "Liên hệ", href: "/lien-he" },
-    ],
-  },
-  {
-    heading: "Liên hệ",
-    items: [
-      { label: "info@tafviet.vn", href: "mailto:info@tafviet.vn" },
-      { label: "+84 936 378 955", href: "tel:0936378955" },
-      { label: "Hà Nội, Việt Nam", href: "#" },
+      navigation.find((x) => x.label === "Về chúng tôi")!,
+      navigation.find((x) => x.label === "Liên hệ")!,
     ],
   },
 ];
@@ -79,7 +72,7 @@ export default function Footer() {
                 {items.map(({ label, href }) => (
                   <li key={label}>
                     <Link
-                      href={href}
+                      href={href!}
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
                       {label}

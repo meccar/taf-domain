@@ -1,18 +1,14 @@
 import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import {
   Card,
-  CardContent,
   CardHeader,
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { ContactForm } from "@/components/contact-form";
 
 const contactInfo = [
   {
@@ -93,62 +89,7 @@ export default function Contact() {
           </div>
 
           {/* Contact form */}
-          <Card>
-            <CardContent className="pt-6">
-              <form className="flex flex-col gap-5">
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div className="flex flex-col gap-2">
-                    <Label htmlFor="name">Họ và tên</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      placeholder="Nguyễn Văn A"
-                      required
-                    />
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <Label htmlFor="phone">Số điện thoại</Label>
-                    <Input id="phone" name="phone" placeholder="0912 345 678" />
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="ban@congty.vn"
-                    required
-                  />
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <Label htmlFor="subject">Chủ đề</Label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    placeholder="Tư vấn dịch vụ kế toán"
-                  />
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <Label htmlFor="message">Nội dung</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    placeholder="Mô tả nhu cầu của bạn..."
-                    required
-                  />
-                </div>
-
-                <Button type="submit" size="lg" className="w-full sm:w-fit">
-                  Gửi yêu cầu
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+          <ContactForm variant="card" source="contact-page" />
         </div>
       </div>
     </main>
