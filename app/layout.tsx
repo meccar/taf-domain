@@ -34,12 +34,12 @@ export default function RootLayout({
           <ClientLayout>{children}</ClientLayout>
           <SpeedInsights />
         </NextThemeProvider>
-      </body>
 
-      {process.env.NODE_ENV === "production" &&
-        process.env.NEXT_PUBLIC_GTM_ID && (
-          <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
-        )}
+        {process.env.NODE_ENV === "production" &&
+          process.env.NEXT_PUBLIC_GTM_ID && (
+            <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
+          )}
+      </body>
     </html>
   );
 }
