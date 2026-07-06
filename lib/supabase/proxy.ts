@@ -7,6 +7,7 @@ const PROTECTED_ROUTES = [
   "/dashboard",
   "/account",
   "/settings",
+  "/admin",
   // add more as needed
 ];
 

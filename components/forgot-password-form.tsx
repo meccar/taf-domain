@@ -14,6 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useState } from "react";
+import { Loader2, MailCheck } from "lucide-react";
 
 export function ForgotPasswordForm({
   className,
@@ -26,19 +27,28 @@ export function ForgotPasswordForm({
 
   const handleForgotPassword = async (e: React.FormEvent) => {
     e.preventDefault();
-    const supabase = createClient();
-    setIsLoading(true);
     setError(null);
 
+    if (!email) {
+      setError("Vui lòng nhập email của bạn");
+      return;
+    }
+
+    const supabase = createClient();
+    setIsLoading(true);
+
     try {
-      // The url which will be included in the email. This URL needs to be configured in your redirect URLs in the Supabase dashboard at https://supabase.com/dashboard/project/_/auth/url-configuration
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
         redirectTo: `${window.location.origin}/auth/update-password`,
       });
       if (error) throw error;
       setSuccess(true);
     } catch (error: unknown) {
-      setError(error instanceof Error ? error.message : "An error occurred");
+      setError(
+        error instanceof Error
+          ? "Không thể gửi email, vui lòng thử lại"
+          : "Đã xảy ra lỗi, vui lòng thử lại",
+      );
     } finally {
       setIsLoading(false);
     }
@@ -49,27 +59,33 @@ export function ForgotPasswordForm({
       {success ? (
         <Card>
           <CardHeader>
-            <CardTitle className="text-2xl">Check Your Email</CardTitle>
-            <CardDescription>Password reset instructions sent</CardDescription>
+            <div className="mb-2 flex items-center gap-2">
+              <MailCheck className="h-6 w-6 text-green-600" />
+              <CardTitle className="text-2xl">Kiểm tra email của bạn</CardTitle>
+            </div>
+            <CardDescription>
+              Hướng dẫn đặt lại mật khẩu đã được gửi
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              If you registered using your email and password, you will receive
-              a password reset email.
+              Nếu bạn đã đăng ký bằng email và mật khẩu này, bạn sẽ nhận được
+              email hướng dẫn đặt lại mật khẩu. Vui lòng kiểm tra cả hộp thư
+              spam nếu không thấy email.
             </p>
           </CardContent>
         </Card>
       ) : (
         <Card>
           <CardHeader>
-            <CardTitle className="text-2xl">Reset Your Password</CardTitle>
+            <CardTitle className="text-2xl">Đặt lại mật khẩu</CardTitle>
             <CardDescription>
-              Type in your email and we&apos;ll send you a link to reset your
-              password
+              Nhập email của bạn, chúng tôi sẽ gửi cho bạn một liên kết để đặt
+              lại mật khẩu
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <form onSubmit={handleForgotPassword}>
+            <form onSubmit={handleForgotPassword} noValidate>
               <div className="flex flex-col gap-6">
                 <div className="grid gap-2">
                   <Label htmlFor="email">Email</Label>
@@ -77,23 +93,36 @@ export function ForgotPasswordForm({
                     id="email"
                     type="email"
                     placeholder="m@example.com"
+                    autoComplete="email"
                     required
+                    disabled={isLoading}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
-                {error && <p className="text-sm text-red-500">{error}</p>}
+                {error && (
+                  <p role="alert" className="text-sm text-red-500">
+                    {error}
+                  </p>
+                )}
                 <Button type="submit" className="w-full" disabled={isLoading}>
-                  {isLoading ? "Sending..." : "Send reset email"}
+                  {isLoading ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Đang gửi...
+                    </>
+                  ) : (
+                    "Gửi email đặt lại mật khẩu"
+                  )}
                 </Button>
               </div>
               <div className="mt-4 text-center text-sm">
-                Already have an account?{" "}
+                Đã có tài khoản?{" "}
                 <Link
                   href="/auth/login"
                   className="underline underline-offset-4"
                 >
-                  Login
+                  Đăng nhập
                 </Link>
               </div>
             </form>
