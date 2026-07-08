@@ -1,49 +1,42 @@
-"use client";
-
-import { useState } from "react";
-import { createAdminAction } from "./actions";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { createClient } from "@/lib/supabase/server";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Loader2 } from "lucide-react";
+import { Users, FileText } from "lucide-react";
 
-export default function AdminPage() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [message, setMessage] = useState<string | null>(null);
+export default async function AdminDashboardPage() {
+  const supabase = await createClient();
 
-  async function handleSubmit(formData: FormData) {
-    setIsLoading(true);
-    setMessage(null);
-    const result = await createAdminAction(formData);
-    setIsLoading(false);
-    setMessage(result.error ?? "Tạo tài khoản admin thành công!");
-  }
+  const [{ count: userCount }, { count: postCount }] = await Promise.all([
+    supabase.from("profiles").select("*", { count: "exact", head: true }),
+    supabase.from("posts").select("*", { count: "exact", head: true }),
+  ]);
 
   return (
-    <div className="flex min-h-svh items-center justify-center p-6">
-      <Card className="w-full max-w-sm">
-        <CardHeader>
-          <CardTitle>Tạo tài khoản admin</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <form action={handleSubmit} className="flex flex-col gap-4">
-            <div className="grid gap-2">
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" name="email" type="email" required />
-            </div>
-            <div className="grid gap-2">
-              <Label htmlFor="password">Mật khẩu tạm thời</Label>
-              <Input id="password" name="password" type="password" required />
-            </div>
-            {message && <p className="text-sm">{message}</p>}
-            <Button type="submit" disabled={isLoading}>
-              {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-              Tạo tài khoản
-            </Button>
-          </form>
-        </CardContent>
-      </Card>
+    <div className="flex flex-col gap-6">
+      <h1 className="text-2xl font-semibold">Tổng quan</h1>
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium text-muted-foreground">
+              Tổng số người dùng
+            </CardTitle>
+            <Users className="h-4 w-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <p className="text-2xl font-bold">{userCount ?? 0}</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium text-muted-foreground">
+              Tổng số bài viết
+            </CardTitle>
+            <FileText className="h-4 w-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <p className="text-2xl font-bold">{postCount ?? 0}</p>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }
