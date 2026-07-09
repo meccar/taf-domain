@@ -25,7 +25,6 @@ import { useRef, useState } from "react";
 import { uploadImageAction } from "@/app/admin/posts/upload-image-action";
 import { cn } from "@/lib/utils";
 
-// Shared style: hover and selected (pressed) states both use primary bg + white text
 const toggleClass =
   "data-[state=on]:bg-primary data-[state=on]:text-white hover:bg-primary hover:text-white";
 

@@ -10,14 +10,14 @@ import {
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Plus } from "lucide-react";
+import { Plus, Star } from "lucide-react";
 import { DeletePostButton } from "./delete-post-button";
 
 export default async function PostsPage() {
   const supabase = await createClient();
   const { data: posts } = await supabase
     .from("posts")
-    .select("id, title, status, created_at")
+    .select("id, title, category, status, featured, created_at")
     .order("created_at", { ascending: false });
 
   return (
@@ -37,6 +37,7 @@ export default async function PostsPage() {
           <TableHeader>
             <TableRow>
               <TableHead>Tiêu đề</TableHead>
+              <TableHead>Danh mục</TableHead>
               <TableHead>Trạng thái</TableHead>
               <TableHead>Ngày tạo</TableHead>
               <TableHead className="text-right">Hành động</TableHead>
@@ -45,7 +46,15 @@ export default async function PostsPage() {
           <TableBody>
             {posts?.map((post) => (
               <TableRow key={post.id}>
-                <TableCell>{post.title}</TableCell>
+                <TableCell className="flex items-center gap-2">
+                  {post.featured && (
+                    <Star className="h-3.5 w-3.5 fill-yellow-400 text-yellow-400" />
+                  )}
+                  {post.title}
+                </TableCell>
+                <TableCell>
+                  <Badge variant="outline">{post.category}</Badge>
+                </TableCell>
                 <TableCell>
                   <Badge
                     variant={
@@ -66,7 +75,7 @@ export default async function PostsPage() {
             {posts?.length === 0 && (
               <TableRow>
                 <TableCell
-                  colSpan={4}
+                  colSpan={5}
                   className="text-center text-muted-foreground"
                 >
                   Chưa có bài viết nào

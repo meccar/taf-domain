@@ -11,8 +11,9 @@ import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { NewsletterForm } from "@/components/newsletter-form";
 import { BlogCard } from "@/components/blog-card";
-import { posts, categories } from "@/lib/blog-data";
+import { getPublishedPosts, categories } from "@/lib/blog";
 import { cn } from "@/lib/utils";
+import { FileQuestion } from "lucide-react";
 
 export const metadata = {
   title: "Blog & Tin tức | TAF Việt",
@@ -47,7 +48,7 @@ export default function Blog({
 
       <Separator />
 
-      {/* Everything depending on searchParams lives here, streamed in */}
+      {/* Everything depending on searchParams + DB data lives here, streamed in */}
       <Suspense fallback={<BlogSkeleton />}>
         <BlogContent searchParamsPromise={searchParams} />
       </Suspense>
@@ -63,6 +64,13 @@ async function BlogContent({
   const params = await searchParamsPromise;
   const activeCategory = params.category ?? "Tất cả";
   const page = Math.max(1, Number(params.page) || 1);
+
+  const posts = await getPublishedPosts();
+
+  // No posts in the database at all — show a dedicated empty state, no filters/sidebar
+  if (posts.length === 0) {
+    return <EmptyBlogState />;
+  }
 
   const filtered =
     activeCategory === "Tất cả"
@@ -213,6 +221,23 @@ async function BlogContent({
         </div>
       </div>
     </>
+  );
+}
+
+function EmptyBlogState() {
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-28">
+      <div className="flex flex-col items-center gap-4 text-center max-w-md mx-auto">
+        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-muted">
+          <FileQuestion className="h-7 w-7 text-muted-foreground" />
+        </div>
+        <h2 className="text-xl font-semibold">Không có bài viết nào</h2>
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          Hiện chưa có bài viết nào được đăng. Vui lòng quay lại sau để xem
+          những cập nhật mới nhất từ TAF Việt.
+        </p>
+      </div>
+    </div>
   );
 }
 
