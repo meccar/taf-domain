@@ -14,6 +14,9 @@ const variants = {
 
 export default function ClientLayout({ children }: Props) {
   const pathname = usePathname();
+  const isAdminRoute = pathname.startsWith("/admin");
+
+  if (isAdminRoute) return <>{children}</>;
 
   return (
     <main className="min-h-screen flex flex-col">

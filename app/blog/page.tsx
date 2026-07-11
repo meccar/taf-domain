@@ -125,11 +125,11 @@ async function BlogContent({
                   <BlogCard key={post.slug} post={post} />
                 ))}
               </div>
-            ) : (
+            ) : !featured ? (
               <p className="text-sm text-muted-foreground py-12 text-center">
                 Chưa có bài viết nào trong chuyên mục này.
               </p>
-            )}
+            ) : null}
 
             {totalPages > 1 && (
               <div className="flex items-center justify-center gap-2 pt-4">
