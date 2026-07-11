@@ -2,6 +2,9 @@
 
 import { createClient } from "@/lib/supabase/server";
 
+const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif"];
+const MAX_SIZE = 5 * 1024 * 1024;
+
 export async function uploadImageAction(formData: FormData) {
   const supabase = await createClient();
   const {
@@ -11,6 +14,10 @@ export async function uploadImageAction(formData: FormData) {
 
   const file = formData.get("file") as File;
   if (!file) return { error: "Không có tệp nào được chọn" };
+
+  if (!ALLOWED_TYPES.includes(file.type))
+    return { error: "Định dạng tệp không được hỗ trợ" };
+  if (file.size > MAX_SIZE) return { error: "Kích thước tệp vượt quá 5MB" };
 
   const fileExt = file.name.split(".").pop();
   const fileName = `${crypto.randomUUID()}.${fileExt}`;
