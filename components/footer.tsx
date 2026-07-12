@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Facebook, Linkedin, Youtube } from "lucide-react";
+import { FaFacebook, FaLinkedin, FaYoutube } from "react-icons/fa";
 import Logo from "./logo";
 import { useEffect, useState } from "react";
 import { navigation } from "@/const/items/navigation.const";
@@ -26,9 +26,9 @@ const footerLinks = [
 ];
 
 const socialLinks = [
-  { Icon: Facebook, href: "https://facebook.com", label: "Facebook" },
-  { Icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { Icon: Youtube, href: "https://youtube.com", label: "YouTube" },
+  { Icon: FaFacebook, href: "https://facebook.com", label: "Facebook" },
+  { Icon: FaLinkedin, href: "https://linkedin.com", label: "LinkedIn" },
+  { Icon: FaYoutube, href: "https://youtube.com", label: "YouTube" },
 ];
 
 export default function Footer() {

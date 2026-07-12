@@ -14,8 +14,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "info@tafviet.vn",
-    href: "mailto:info@tafviet.vn",
+    value: "tung.doan@taf.asia",
+    href: "mailto:tung.doan@taf.asia",
   },
   {
     icon: Phone,

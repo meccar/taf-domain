@@ -31,6 +31,7 @@ import {
 import { LanguageSwitcher } from "./language-switcher";
 import Logo from "./logo";
 import { navigation } from "@/const/items/navigation.const";
+import { Loading } from "./ui/loading";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -89,11 +90,7 @@ export default function Header() {
         <div className="hidden md:flex items-center gap-3 shrink-0">
           <LanguageSwitcher />
           <ThemeSwitcher />
-          <Suspense
-            fallback={
-              <div className="h-9 w-9 rounded-full bg-muted animate-pulse" />
-            }
-          >
+          <Suspense fallback={<Loading />}>
             <AuthButton />
           </Suspense>
         </div>
@@ -166,11 +163,7 @@ export default function Header() {
                   <LanguageSwitcher />
                   <ThemeSwitcher />
                 </div>
-                <Suspense
-                  fallback={
-                    <div className="h-9 w-9 rounded-full bg-muted animate-pulse" />
-                  }
-                >
+                <Suspense fallback={<Loading />}>
                   <AuthButton />
                 </Suspense>
               </div>

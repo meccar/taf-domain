@@ -3,24 +3,32 @@
 import { createClient } from "@/lib/supabase/server";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { z } from "zod";
 
 function slugify(title: string) {
   return title
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "") // strip Vietnamese diacritics
+    .replace(/[\u0300-\u036f]/g, "")
     .replace(/đ/g, "d")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 }
 
-// Rough estimate: ~200 words per minute reading speed
-function estimateReadTime(html: string) {
-  const text = html.replace(/<[^>]*>/g, " ");
-  const wordCount = text.trim().split(/\s+/).filter(Boolean).length;
-  const minutes = Math.max(1, Math.round(wordCount / 200));
-  return `${minutes} phút đọc`;
-}
+const translationSchema = z.object({
+  locale: z.string().min(2).max(5),
+  title: z.string().min(3),
+  excerpt: z.string().min(10),
+  content: z.string().optional(),
+  author: z.string().default("TAF Việt"),
+});
+
+const postSchema = z.object({
+  category: z.enum(["Thuế", "Kế toán", "Doanh nghiệp", "Quy định mới"]),
+  status: z.enum(["draft", "published"]),
+  featured: z.boolean().default(false),
+  translations: z.array(translationSchema).min(1),
+});
 
 async function assertLoggedIn() {
   const supabase = await createClient();
@@ -31,47 +39,105 @@ async function assertLoggedIn() {
   return { ok: true as const, user };
 }
 
-export async function createPostAction(formData: FormData) {
+export async function createPostAction(payload: z.infer<typeof postSchema>) {
   const check = await assertLoggedIn();
   if (!check.ok) return { error: check.error };
 
+  const parsed = postSchema.safeParse(payload);
+  if (!parsed.success) {
+    return { error: "Dữ liệu không hợp lệ: " + parsed.error.issues[0].message };
+  }
+
+  const { category, status, featured, translations } = parsed.data;
   const supabase = await createClient();
 
-  const title = formData.get("title") as string;
-  const excerpt = formData.get("excerpt") as string;
-  const content = formData.get("content") as string;
-  const category = formData.get("category") as string;
-  const author = (formData.get("author") as string) || "TAF Việt";
-  const status = formData.get("status") as string;
-  const featured = formData.get("featured") === "on";
+  const { data: post, error: postError } = await supabase
+    .from("posts")
+    .insert({ category, status, featured, author_id: check.user.id })
+    .select("id")
+    .single();
 
-  if (!title) return { error: "Vui lòng nhập tiêu đề" };
-  if (!excerpt) return { error: "Vui lòng nhập mô tả ngắn" };
-  if (!category) return { error: "Vui lòng chọn danh mục" };
+  if (postError || !post) {
+    return { error: postError?.message ?? "Không thể tạo bài viết" };
+  }
 
-  const slug = slugify(title);
-  const readTime = estimateReadTime(content ?? "");
+  const rows = translations.map((t) => ({
+    post_id: post.id,
+    locale: t.locale,
+    slug: slugify(t.title),
+    title: t.title,
+    excerpt: t.excerpt,
+    content: t.content ?? "",
+    author: t.author,
+  }));
 
-  const { error } = await supabase.from("posts").insert({
-    slug,
-    title,
-    excerpt,
-    content,
-    category,
-    author,
-    featured,
-    status,
-    author_id: check.user.id,
-  });
+  const { error: translationError } = await supabase
+    .from("post_translations")
+    .insert(rows);
 
-  if (error) {
-    if (error.code === "23505") {
-      return { error: "Đã tồn tại bài viết với tiêu đề tương tự (trùng slug)" };
+  if (translationError) {
+    await supabase.from("posts").delete().eq("id", post.id);
+    if (translationError.code === "23505") {
+      return { error: "Trùng slug trong một ngôn ngữ, vui lòng đổi tiêu đề" };
     }
-    return { error: error.message };
+    return { error: translationError.message };
   }
 
   revalidatePath("/admin/posts");
+  redirect("/admin/posts");
+}
+
+export async function updatePostAction(
+  postId: string,
+  payload: z.infer<typeof postSchema>,
+) {
+  const check = await assertLoggedIn();
+  if (!check.ok) return { error: check.error };
+
+  const parsed = postSchema.safeParse(payload);
+  if (!parsed.success) {
+    return { error: "Dữ liệu không hợp lệ: " + parsed.error.issues[0].message };
+  }
+
+  const { category, status, featured, translations } = parsed.data;
+  const supabase = await createClient();
+
+  const { error: postError } = await supabase
+    .from("posts")
+    .update({
+      category,
+      status,
+      featured,
+      updated_at: new Date().toISOString(),
+    })
+    .eq("id", postId);
+
+  if (postError) return { error: postError.message };
+
+  const rows = translations.map((t) => ({
+    post_id: postId,
+    locale: t.locale,
+    slug: slugify(t.title),
+    title: t.title,
+    excerpt: t.excerpt,
+    content: t.content ?? "",
+    author: t.author,
+    updated_at: new Date().toISOString(),
+  }));
+
+  const { error: translationError } = await supabase
+    .from("post_translations")
+    .upsert(rows, { onConflict: "post_id,locale" });
+
+  if (translationError) {
+    if (translationError.code === "23505") {
+      return { error: "Trùng slug trong một ngôn ngữ, vui lòng đổi tiêu đề" };
+    }
+    return { error: translationError.message };
+  }
+
+  revalidatePath("/admin/posts");
+  revalidatePath(`/admin/posts/${postId}/edit`);
   redirect("/admin/posts");
 }
 

@@ -1,5 +1,6 @@
 import { AuthButton } from "@/components/auth-button";
 import { ThemeSwitcher } from "@/components/theme-switcher";
+import { Loading } from "@/components/ui/loading";
 import Link from "next/link";
 import { Suspense } from "react";
 
@@ -16,7 +17,7 @@ export default function ProtectedLayout({
             <div className="flex gap-5 items-center font-semibold">
               <Link href={"/"}>Next.js Supabase Starter</Link>
             </div>
-            <Suspense>
+            <Suspense fallback={<Loading />}>
               <AuthButton />
             </Suspense>
           </div>

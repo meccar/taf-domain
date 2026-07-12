@@ -1,10 +1,12 @@
 import { createClient } from "@/lib/supabase/server";
 
+export type PostCategory = "Thuế" | "Kế toán" | "Doanh nghiệp" | "Quy định mới";
+
 export interface BlogPost {
   slug: string;
   title: string;
   excerpt: string;
-  category: "Thuế" | "Kế toán" | "Doanh nghiệp" | "Quy định mới";
+  category: PostCategory;
   date: string;
   readTime: string;
   author: string;
@@ -19,33 +21,44 @@ export const categories = [
   "Quy định mới",
 ] as const;
 
-function estimateReadTime(html: string | null) {
-  const text = (html ?? "").replace(/<[^>]*>/g, " ");
-  const wordCount = text.trim().split(/\s+/).filter(Boolean).length;
-  const minutes = Math.max(1, Math.round(wordCount / 200));
-  return `${minutes} phút đọc`;
-}
-
-export async function getPublishedPosts(): Promise<BlogPost[]> {
+export async function getPublishedPosts(
+  locale: string = "vi",
+): Promise<BlogPost[]> {
   const supabase = await createClient();
+
   const { data, error } = await supabase
     .from("posts")
     .select(
-      "slug, title, excerpt, category, author, featured, content, created_at",
+      `id, category, featured, created_at,
+       post_translations!inner (slug, title, excerpt, content, author, locale)`,
     )
     .eq("status", "published")
+    .eq("post_translations.locale", locale)
     .order("created_at", { ascending: false });
 
   if (error || !data) return [];
 
-  return data.map((post) => ({
-    slug: post.slug,
-    title: post.title,
-    excerpt: post.excerpt,
-    category: post.category as BlogPost["category"],
-    date: new Date(post.created_at).toLocaleDateString("vi-VN"),
-    readTime: estimateReadTime(post.content),
-    author: post.author,
-    featured: post.featured,
-  }));
+  return data.map((post: any) => {
+    const t = post.post_translations[0];
+    return {
+      id: post.id,
+      slug: t.slug,
+      title: t.title,
+      excerpt: t.excerpt,
+      content: t.content,
+      category: post.category,
+      author: t.author,
+      featured: post.featured,
+      date: new Date(post.created_at).toLocaleDateString(
+        locale === "vi" ? "vi-VN" : locale === "zh" ? "zh-CN" : "en-US",
+      ),
+      readTime: estimateReadTime(t.content),
+    };
+  });
+}
+
+function estimateReadTime(html: string) {
+  const text = (html ?? "").replace(/<[^>]*>/g, " ");
+  const words = text.trim().split(/\s+/).filter(Boolean).length;
+  return `${Math.max(1, Math.round(words / 200))} phút đọc`;
 }

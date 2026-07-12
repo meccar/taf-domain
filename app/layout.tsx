@@ -1,10 +1,13 @@
+// app/layout.tsx
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import ClientLayout from "./client-layout";
 import NextThemeProvider from "@/components/theme-provider";
 import { GoogleTagManager } from "@next/third-parties/google";
+import { Loading } from "@/components/ui/loading";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -31,7 +34,9 @@ export default function RootLayout({
     <html lang="vi" suppressHydrationWarning>
       <body className={`${geistSans.className} antialiased`}>
         <NextThemeProvider>
-          <ClientLayout>{children}</ClientLayout>
+          <Suspense fallback={<Loading />}>
+            <ClientLayout>{children}</ClientLayout>
+          </Suspense>
           <SpeedInsights />
         </NextThemeProvider>
 

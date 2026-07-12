@@ -14,6 +14,7 @@ import { BlogCard } from "@/components/blog-card";
 import { getPublishedPosts, categories } from "@/lib/blog";
 import { cn } from "@/lib/utils";
 import { FileQuestion } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export const metadata = {
   title: "Blog & Tin tức | TAF Việt",
@@ -243,18 +244,18 @@ function EmptyBlogState() {
 
 function BlogSkeleton() {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-12 animate-pulse">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
       <div className="grid lg:grid-cols-3 gap-12">
         <div className="lg:col-span-2 flex flex-col gap-6">
-          <div className="h-64 rounded-lg bg-muted" />
+          <Skeleton className="h-64 w-full" />
           <div className="grid sm:grid-cols-2 gap-6">
-            <div className="h-56 rounded-lg bg-muted" />
-            <div className="h-56 rounded-lg bg-muted" />
+            <Skeleton className="h-56 w-full" />
+            <Skeleton className="h-56 w-full" />
           </div>
         </div>
         <div className="flex flex-col gap-6">
-          <div className="h-40 rounded-lg bg-muted" />
-          <div className="h-40 rounded-lg bg-muted" />
+          <Skeleton className="h-40 w-full" />
+          <Skeleton className="h-40 w-full" />
         </div>
       </div>
     </div>
