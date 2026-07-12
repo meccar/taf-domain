@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(defaultUrl),
   title: "TAF Viet",
   description: "Kế toán thuế TAF Việt",
+  icons: {
+    icon: [{ url: "/favicon.ico" }],
+    shortcut: "/favicon.ico",
+  },
 };
 
 const geistSans = Geist({
