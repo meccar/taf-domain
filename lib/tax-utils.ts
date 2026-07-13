@@ -8,18 +8,16 @@ export function formatVND(value: number) {
 
 // 2026 monthly PIT brackets for employment income (illustrative — verify against current law before publishing)
 const PIT_BRACKETS = [
-  { limit: 5_000_000, rate: 0.05 },
-  { limit: 10_000_000, rate: 0.1 },
-  { limit: 18_000_000, rate: 0.15 },
-  { limit: 32_000_000, rate: 0.2 },
-  { limit: 52_000_000, rate: 0.25 },
-  { limit: 80_000_000, rate: 0.3 },
+  { limit: 10_000_000, rate: 0.05 },
+  { limit: 30_000_000, rate: 0.1 },
+  { limit: 60_000_000, rate: 0.2 },
+  { limit: 10_000_0000, rate: 0.3 },
   { limit: Infinity, rate: 0.35 },
 ];
 
-const SELF_DEDUCTION = 11_000_000;
-const DEPENDENT_DEDUCTION = 4_400_000;
-const INSURANCE_RATE = 0.105; // BHXH 8% + BHYT 1.5% + BHTN 1%, employee side (simplified, no regional cap applied)
+const SELF_DEDUCTION = 15_500_000;
+const DEPENDENT_DEDUCTION = 6_200_000;
+const INSURANCE_RATE = 0.105;
 
 export function progressiveTax(taxableIncome: number) {
   let tax = 0;
@@ -83,7 +81,7 @@ export interface PresumptiveTaxResult {
   netIncome: number;
 }
 
-const ANNUAL_EXEMPTION_THRESHOLD = 200_000_000;
+const ANNUAL_EXEMPTION_THRESHOLD = 1_000_000_000;
 
 export function calculatePresumptiveTax(
   revenue: number,

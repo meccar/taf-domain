@@ -52,7 +52,8 @@ const incomeTypes: IncomeTypeConfig[] = [
     label: "Affiliate Shopee / TikTok Shop",
     vatRate: 5,
     pitRate: 2,
-    description: "Hoa hồng đại lý bán hàng qua nền tảng thương mại điện tử",
+    description:
+      "Hoa hồng từ tiếp thị liên kết (affiliate marketing). Lưu ý: nếu bạn hoạt động như đại lý bán hàng đúng giá hưởng hoa hồng (không phải tiếp thị nội dung), mức thuế có thể là 1% GTGT / 0,5% TNCN thay vì 5%/2% — vui lòng xác nhận với cơ quan thuế nếu không chắc chắn.",
   },
 ];
 
@@ -129,9 +130,10 @@ export function FreelancerTaxCalculator() {
         </div>
 
         <div className="rounded-md bg-muted/50 p-3 text-xs text-muted-foreground leading-relaxed">
-          Cá nhân kinh doanh có doanh thu từ 200 triệu VNĐ/năm trở xuống được
-          miễn thuế GTGT và thuế TNCN. Mức thuế áp dụng theo tỷ lệ % trên doanh
-          thu (không trừ chi phí), theo Thông tư 40/2021/TT-BTC.
+          Cá nhân kinh doanh và freelancer có tổng doanh thu từ 1 tỷ VNĐ/năm trở
+          xuống được miễn toàn bộ thuế GTGT và thuế TNCN. Nếu doanh thu vượt 1
+          tỷ VNĐ/năm, mức thuế áp dụng là cố định theo tỷ lệ % trên doanh thu và
+          phải đăng ký sử dụng hóa đơn điện tử theo Nghị định 141/2026/NĐ-CP.
         </div>
       </div>
 
