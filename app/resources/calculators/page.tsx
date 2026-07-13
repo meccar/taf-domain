@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SalaryCalculator } from "@/components/calculators/salary-calculator";
-import { VatCalculator } from "@/components/calculators/vat-calculator";
+import { TaxCalculatorTabs } from "@/components/tax-calculator-tabs";
 
 export const metadata = {
   title: "Máy tính thuế & lương | TAF Việt",
@@ -55,7 +55,7 @@ export default function CalculatorsPage() {
                 <SalaryCalculator />
               </TabsContent>
               <TabsContent value="vat">
-                <VatCalculator />
+                <TaxCalculatorTabs />
               </TabsContent>
             </Tabs>
           </CardContent>

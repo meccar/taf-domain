@@ -71,3 +71,41 @@ export function calculateVAT(
   const vat = amount * rate;
   return { preTax: amount, vat, total: amount + vat };
 }
+
+export interface PresumptiveTaxResult {
+  annualRevenue: number;
+  isExempt: boolean;
+  vatRate: number;
+  pitRate: number;
+  vatAmount: number;
+  pitAmount: number;
+  totalTax: number;
+  netIncome: number;
+}
+
+const ANNUAL_EXEMPTION_THRESHOLD = 200_000_000;
+
+export function calculatePresumptiveTax(
+  revenue: number,
+  period: "monthly" | "annual",
+  vatRate: number,
+  pitRate: number,
+): PresumptiveTaxResult {
+  const annualRevenue = period === "monthly" ? revenue * 12 : revenue;
+  const isExempt = annualRevenue <= ANNUAL_EXEMPTION_THRESHOLD;
+
+  const vatAmount = isExempt ? 0 : Math.round(revenue * (vatRate / 100));
+  const pitAmount = isExempt ? 0 : Math.round(revenue * (pitRate / 100));
+  const totalTax = vatAmount + pitAmount;
+
+  return {
+    annualRevenue,
+    isExempt,
+    vatRate,
+    pitRate,
+    vatAmount,
+    pitAmount,
+    totalTax,
+    netIncome: revenue - totalTax,
+  };
+}
