@@ -25,6 +25,7 @@ import {
 } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ActionResult } from "@/types/action-result";
 
 const schema = z.object({
   name: z.string().min(2, "Vui lòng nhập họ tên"),
@@ -46,7 +47,7 @@ export interface ContactFormProps {
   onSuccess?: () => void;
   onSubmitAction?: (
     values: FormValues & { source?: string },
-  ) => Promise<{ error?: string; success?: boolean } | void>;
+  ) => Promise<ActionResult | void>;
 }
 
 export function ContactForm({

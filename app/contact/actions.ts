@@ -3,6 +3,7 @@
 import { Resend } from "resend";
 import { z } from "zod";
 import { checkRateLimit } from "@/lib/rate-limit";
+import { ActionResult } from "@/types/action-result";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -14,13 +15,15 @@ const contactSchema = z.object({
   source: z.string().optional(),
 });
 
-export async function sendContactEmail(values: z.infer<typeof contactSchema>) {
+export async function sendContactEmail(
+  values: z.infer<typeof contactSchema>,
+): Promise<ActionResult> {
   const rateLimitError = await checkRateLimit("public");
   if (rateLimitError) return rateLimitError;
 
   const parsed = contactSchema.safeParse(values);
   if (!parsed.success) {
-    return { error: "Dữ liệu không hợp lệ" };
+    return { success: false, error: "Dữ liệu không hợp lệ", data: null };
   }
 
   const { name, phone, email, message, source } = parsed.data;
@@ -43,13 +46,21 @@ export async function sendContactEmail(values: z.infer<typeof contactSchema>) {
 
     if (error) {
       console.error("Resend error:", error);
-      return { error: "Không thể gửi email, vui lòng thử lại sau." };
+      return {
+        success: false,
+        error: "Không thể gửi email, vui lòng thử lại sau.",
+        data: null,
+      };
     }
 
-    return { success: true };
+    return { success: true, error: null, data: null };
   } catch (err) {
     console.error("Failed to send contact email:", err);
-    return { error: "Không thể gửi email, vui lòng thử lại sau." };
+    return {
+      success: false,
+      error: "Không thể gửi email, vui lòng thử lại sau.",
+      data: null,
+    };
   }
 }
 

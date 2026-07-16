@@ -2,6 +2,7 @@
 
 import { checkRateLimit } from "@/lib/rate-limit";
 import { createClient } from "@/lib/supabase/server";
+import { ActionResult } from "@/types/action-result";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
@@ -94,16 +95,20 @@ export async function createPostAction(payload: z.infer<typeof postSchema>) {
 export async function updatePostAction(
   postId: string,
   payload: z.infer<typeof postSchema>,
-) {
+): Promise<ActionResult | void> {
   const rateLimitError = await checkRateLimit("admin");
   if (rateLimitError) return rateLimitError;
 
   const check = await assertLoggedIn();
-  if (!check.ok) return { error: check.error };
+  if (!check.ok) return { success: false, error: check.error, data: null };
 
   const parsed = postSchema.safeParse(payload);
   if (!parsed.success) {
-    return { error: "Dữ liệu không hợp lệ: " + parsed.error.issues[0].message };
+    return {
+      success: false,
+      error: "Dữ liệu không hợp lệ: " + parsed.error.issues[0].message,
+      data: null,
+    };
   }
 
   const { category, status, featured, translations } = parsed.data;
@@ -119,7 +124,8 @@ export async function updatePostAction(
     })
     .eq("id", postId);
 
-  if (postError) return { error: postError.message };
+  if (postError)
+    return { success: false, error: postError.message, data: null };
 
   const rows = translations.map((t) => ({
     post_id: postId,
@@ -138,9 +144,13 @@ export async function updatePostAction(
 
   if (translationError) {
     if (translationError.code === "23505") {
-      return { error: "Trùng slug trong một ngôn ngữ, vui lòng đổi tiêu đề" };
+      return {
+        success: false,
+        error: "Trùng slug trong một ngôn ngữ, vui lòng đổi tiêu đề",
+        data: null,
+      };
     }
-    return { error: translationError.message };
+    return { success: false, error: translationError.message, data: null };
   }
 
   revalidatePath("/admin/posts");
@@ -148,17 +158,17 @@ export async function updatePostAction(
   redirect("/admin/posts");
 }
 
-export async function deletePostAction(postId: string) {
+export async function deletePostAction(postId: string): Promise<ActionResult> {
   const rateLimitError = await checkRateLimit("admin");
   if (rateLimitError) return rateLimitError;
 
   const check = await assertLoggedIn();
-  if (!check.ok) return { error: check.error };
+  if (!check.ok) return { success: false, error: check.error, data: null };
 
   const supabase = await createClient();
   const { error } = await supabase.from("posts").delete().eq("id", postId);
-  if (error) return { error: error.message };
+  if (error) return { success: false, error: error.message, data: null };
 
   revalidatePath("/admin/posts");
-  return { success: true };
+  return { success: true, error: null, data: null };
 }

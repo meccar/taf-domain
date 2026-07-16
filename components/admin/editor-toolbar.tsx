@@ -65,8 +65,8 @@ export function EditorToolbar({ editor }: { editor: Editor | null }) {
       alert(result.error);
       return;
     }
-    if (result.url) {
-      editor.chain().focus().setImage({ src: result.url }).run();
+    if (result.data) {
+      editor.chain().focus().setImage({ src: result.data }).run();
     }
     e.target.value = "";
   }

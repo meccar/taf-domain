@@ -1,5 +1,6 @@
+import { EmptyActionResult } from "@/types/action-result";
 import { Ratelimit } from "@upstash/ratelimit";
-import { Redis } from "@upstash/redis";
+import { Redis, s } from "@upstash/redis";
 import { headers } from "next/headers";
 
 const redis = Redis.fromEnv();
@@ -34,7 +35,7 @@ async function getClientIp() {
 export async function checkRateLimit(
   kind: keyof typeof limiters,
   identifier?: string,
-) {
+): Promise<EmptyActionResult> {
   const ip = await getClientIp();
   const key = identifier ? `${ip}:${identifier}` : ip;
 
@@ -46,9 +47,11 @@ export async function checkRateLimit(
       Math.ceil((reset - Date.now()) / 1000),
     );
     return {
+      success: false,
       error: `Quá nhiều yêu cầu. Vui lòng thử lại sau ${retryAfterSeconds} giây.`,
+      data: null,
     };
   }
 
-  return null;
+  return { success: true, error: null, data: null };
 }

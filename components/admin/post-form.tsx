@@ -10,6 +10,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { RichTextEditor } from "@/components/ui/rich-text-editor";
 import { Loader2 } from "lucide-react";
 import { categories } from "@/lib/types/blog-post";
+import { ActionResult } from "@/types/action-result";
 
 const LOCALES = [
   { code: "vi", label: "Tiếng Việt" },
@@ -57,7 +58,7 @@ export function PostForm({
     status: "draft" | "published";
     featured: boolean;
     translations: (TranslationDraft & { locale: string })[];
-  }) => Promise<{ error?: string } | void>;
+  }) => Promise<ActionResult | void>;
   submitLabel: string;
 }) {
   const [drafts, setDrafts] = useState(

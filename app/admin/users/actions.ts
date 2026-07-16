@@ -3,6 +3,7 @@
 import { checkRateLimit } from "@/lib/rate-limit";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
+import { ActionResult } from "@/types/action-result";
 import { revalidatePath } from "next/cache";
 
 async function assertRootAdmin() {
@@ -27,12 +28,14 @@ async function assertRootAdmin() {
   return { ok: true as const };
 }
 
-export async function createAdminUserAction(formData: FormData) {
+export async function createAdminUserAction(
+  formData: FormData,
+): Promise<ActionResult> {
   const rateLimitError = await checkRateLimit("admin");
   if (rateLimitError) return rateLimitError;
 
   const check = await assertRootAdmin();
-  if (!check.ok) return { error: check.error };
+  if (!check.ok) return { success: false, error: check.error, data: null };
 
   const email = formData.get("email") as string;
   const password = formData.get("password") as string;
@@ -44,10 +47,10 @@ export async function createAdminUserAction(formData: FormData) {
     email_confirm: true,
   });
 
-  if (error) return { error: error.message };
+  if (error) return { success: false, error: error.message, data: null };
 
   revalidatePath("/admin/users");
-  return { success: true };
+  return { success: true, error: null, data: null };
 }
 
 export async function deleteUserAction(userId: string) {
@@ -55,12 +58,12 @@ export async function deleteUserAction(userId: string) {
   if (rateLimitError) return rateLimitError;
 
   const check = await assertRootAdmin();
-  if (!check.ok) return { error: check.error };
+  if (!check.ok) return { success: false, error: check.error };
 
   const adminClient = createAdminClient();
   const { error } = await adminClient.auth.admin.deleteUser(userId);
-  if (error) return { error: error.message };
+  if (error) return { success: false, error: error.message };
 
   revalidatePath("/admin/users");
-  return { success: true };
+  return { success: true, error: null };
 }
