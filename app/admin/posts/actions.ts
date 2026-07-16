@@ -1,5 +1,6 @@
 "use server";
 
+import { checkRateLimit } from "@/lib/rate-limit";
 import { createClient } from "@/lib/supabase/server";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
@@ -40,6 +41,9 @@ async function assertLoggedIn() {
 }
 
 export async function createPostAction(payload: z.infer<typeof postSchema>) {
+  const rateLimitError = await checkRateLimit("admin");
+  if (rateLimitError) return rateLimitError;
+
   const check = await assertLoggedIn();
   if (!check.ok) return { error: check.error };
 
@@ -91,6 +95,9 @@ export async function updatePostAction(
   postId: string,
   payload: z.infer<typeof postSchema>,
 ) {
+  const rateLimitError = await checkRateLimit("admin");
+  if (rateLimitError) return rateLimitError;
+
   const check = await assertLoggedIn();
   if (!check.ok) return { error: check.error };
 
@@ -142,6 +149,9 @@ export async function updatePostAction(
 }
 
 export async function deletePostAction(postId: string) {
+  const rateLimitError = await checkRateLimit("admin");
+  if (rateLimitError) return rateLimitError;
+
   const check = await assertLoggedIn();
   if (!check.ok) return { error: check.error };
 

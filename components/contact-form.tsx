@@ -46,7 +46,7 @@ export interface ContactFormProps {
   onSuccess?: () => void;
   onSubmitAction?: (
     values: FormValues & { source?: string },
-  ) => Promise<void> | void;
+  ) => Promise<{ error?: string; success?: boolean } | void>;
 }
 
 export function ContactForm({
@@ -61,6 +61,7 @@ export function ContactForm({
   onSubmitAction,
 }: ContactFormProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(schema),
@@ -68,8 +69,13 @@ export function ContactForm({
   });
 
   async function onSubmit(values: FormValues) {
+    setSubmitError(null);
     if (onSubmitAction) {
-      await onSubmitAction({ ...values, source });
+      const result = await onSubmitAction({ ...values, source });
+      if (result && "error" in result && result.error) {
+        setSubmitError(result.error);
+        return;
+      }
     } else {
       console.log({ ...values, source });
     }
@@ -175,7 +181,7 @@ export function ContactForm({
             )}
           />
         )}
-
+        {submitError && <p className="text-sm text-red-500">{submitError}</p>}
         <Button
           type="submit"
           size="lg"

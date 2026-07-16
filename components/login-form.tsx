@@ -16,6 +16,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Eye, EyeOff, Loader2 } from "lucide-react";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 export function LoginForm({
   className,
@@ -36,6 +37,9 @@ export function LoginForm({
       setError("Vui lòng nhập đầy đủ email và mật khẩu");
       return;
     }
+
+    const rateLimitError = await checkRateLimit("public", email);
+    if (rateLimitError) return rateLimitError;
 
     const supabase = createClient();
     setIsLoading(true);

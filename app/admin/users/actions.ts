@@ -1,5 +1,6 @@
 "use server";
 
+import { checkRateLimit } from "@/lib/rate-limit";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
 import { revalidatePath } from "next/cache";
@@ -27,6 +28,9 @@ async function assertRootAdmin() {
 }
 
 export async function createAdminUserAction(formData: FormData) {
+  const rateLimitError = await checkRateLimit("admin");
+  if (rateLimitError) return rateLimitError;
+
   const check = await assertRootAdmin();
   if (!check.ok) return { error: check.error };
 
@@ -47,6 +51,9 @@ export async function createAdminUserAction(formData: FormData) {
 }
 
 export async function deleteUserAction(userId: string) {
+  const rateLimitError = await checkRateLimit("admin");
+  if (rateLimitError) return rateLimitError;
+
   const check = await assertRootAdmin();
   if (!check.ok) return { error: check.error };
 

@@ -13,6 +13,7 @@ import {
 import { useState } from "react";
 import { ContactForm } from "./contact-form";
 import { ServicesList } from "./services-list";
+import { sendContactEmail } from "@/app/contact/actions";
 
 export function Hero() {
   const [contactOpen, setContactOpen] = useState(false);
@@ -87,6 +88,7 @@ export function Hero() {
             description="Để lại số điện thoại, chúng tôi gọi lại trong 15 phút."
             submitLabel="Gọi lại cho tôi"
             source="home-cta"
+            onSubmitAction={sendContactEmail}
           />
         </DialogContent>
       </Dialog>

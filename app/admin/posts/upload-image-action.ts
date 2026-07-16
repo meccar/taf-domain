@@ -1,11 +1,15 @@
 "use server";
 
+import { checkRateLimit } from "@/lib/rate-limit";
 import { createClient } from "@/lib/supabase/server";
 
 const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif"];
 const MAX_SIZE = 5 * 1024 * 1024;
 
 export async function uploadImageAction(formData: FormData) {
+  const rateLimitError = await checkRateLimit("upload");
+  if (rateLimitError) return rateLimitError;
+
   const supabase = await createClient();
   const {
     data: { user },
