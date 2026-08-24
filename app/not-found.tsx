@@ -2,8 +2,11 @@ import Link from "next/link";
 import { ArrowLeft, FileQuestion } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
 
 export default function NotFound() {
+  const t = useTranslations("NotFound");
+
   return (
     <section className="relative flex min-h-[calc(100vh-8rem)] items-center justify-center overflow-hidden px-6">
       {/* Background */}
@@ -17,28 +20,25 @@ export default function NotFound() {
         </div>
 
         <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
-          ERROR 404
+          {t("error")}
         </p>
 
         <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
-          Không tìm thấy trang
+          {t("title")}
         </h1>
 
-        <p className="mt-5 text-lg text-muted-foreground">
-          Trang bạn đang tìm kiếm không tồn tại hoặc đã được di chuyển. Vui lòng
-          kiểm tra lại địa chỉ hoặc quay về trang chủ.
-        </p>
+        <p className="mt-5 text-lg text-muted-foreground">{t("description")}</p>
 
         <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
           <Button asChild size="lg">
             <Link href="/">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Quay về trang chủ
+              {t("backHome")}
             </Link>
           </Button>
 
           <Button variant="outline" size="lg" asChild>
-            <Link href="/contact">Liên hệ chúng tôi</Link>
+            <Link href="/contact">{t("contactUs")}</Link>
           </Button>
         </div>
       </div>

@@ -3,27 +3,7 @@ import { FaFacebook, FaLinkedin, FaYoutube } from "react-icons/fa";
 import Logo from "./logo";
 import { useEffect, useState } from "react";
 import { navigation } from "@/const/items/navigation.const";
-
-const footerLinks = [
-  {
-    heading: "Dịch vụ",
-    items: navigation.find((x) => x.label === "Dịch vụ")!.children!,
-  },
-  {
-    heading: "Tài nguyên",
-    items: [
-      ...navigation.find((x) => x.label === "Tài nguyên")!.children!,
-      navigation.find((x) => x.label === "Bài viết")!,
-    ],
-  },
-  {
-    heading: "Công ty",
-    items: [
-      navigation.find((x) => x.label === "Về chúng tôi")!,
-      navigation.find((x) => x.label === "Liên hệ")!,
-    ],
-  },
-];
+import { useTranslations } from "next-intl";
 
 const socialLinks = [
   { Icon: FaFacebook, href: "https://facebook.com", label: "Facebook" },
@@ -33,6 +13,29 @@ const socialLinks = [
 
 export default function Footer() {
   const [year, setYear] = useState<number | null>(null);
+  const nav = useTranslations("Navigation");
+  const t = useTranslations("Footer");
+
+  const footerLinks = [
+    {
+      heading: t("services"),
+      items: navigation.find((x) => x.labelKey === "services")!.children!,
+    },
+    {
+      heading: t("resources"),
+      items: [
+        ...navigation.find((x) => x.labelKey === "resources")!.children!,
+        navigation.find((x) => x.labelKey === "blog")!,
+      ],
+    },
+    {
+      heading: t("company"),
+      items: [
+        navigation.find((x) => x.labelKey === "about")!,
+        navigation.find((x) => x.labelKey === "contact")!,
+      ],
+    },
+  ];
 
   useEffect(() => {
     setYear(new Date().getFullYear());
@@ -69,13 +72,13 @@ export default function Footer() {
                 {heading}
               </p>
               <ul className="flex flex-col gap-3">
-                {items.map(({ label, href }) => (
-                  <li key={label}>
+                {items.map(({ labelKey, href }) => (
+                  <li key={labelKey}>
                     <Link
                       href={href!}
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
-                      {label}
+                      {labelKey}
                     </Link>
                   </li>
                 ))}

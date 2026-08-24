@@ -1,0 +1,37 @@
+{
+  "AdminSidebar": {
+    "title": "Quản trị",
+    "overview": "Tổng quan",
+    "users": "Người dùng",
+    "posts": "Bài viết",
+    "viewSite": "Xem trang người dùng",
+    "logout": "Đăng xuất"
+  },
+  "NotFound": {
+    "error": "LỖI 404",
+    "title": "Không tìm thấy trang",
+    "description": "Trang bạn đang tìm kiếm không tồn tại hoặc đã được di chuyển. Vui lòng kiểm tra lại địa chỉ hoặc quay về trang chủ.",
+    "backHome": "Quay về trang chủ",
+    "contactUs": "Liên hệ chúng tôi"
+  },
+  "Navigation": {
+    "home": "Trang chủ",
+    "services": "Dịch vụ",
+    "servicesTaxPreparation": "Kê khai thuế",
+    "servicesAccounting": "Kế toán & Ghi sổ",
+    "servicesPayroll": "Dịch vụ tiền lương",
+    "servicesAdvisory": "Tư vấn & Cố vấn",
+    "resources": "Tài nguyên",
+    "resourcesGuides": "Hướng dẫn & Biểu mẫu",
+    "resourcesCalculators": "Máy tính thuế",
+    "blog": "Bài viết",
+    "about": "Về chúng tôi",
+    "contact": "Liên hệ",
+    "menu": "Menu"
+  },
+  "Footer": {
+    "services": "Dịch vụ",
+    "resources": "Tài nguyên",
+    "company": "Công ty"
+  }
+}

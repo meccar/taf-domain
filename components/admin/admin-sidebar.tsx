@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 import {
   LayoutDashboard,
   Users,
@@ -11,16 +11,33 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
-
-const navItems = [
-  { href: "/admin", label: "Tổng quan", icon: LayoutDashboard, exact: true },
-  { href: "/admin/users", label: "Người dùng", icon: Users },
-  { href: "/admin/posts", label: "Bài viết", icon: FileText },
-];
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarHeader,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+} from "@/components/ui/sidebar";
 
 export function AdminSidebar({ userEmail }: { userEmail: string }) {
+  const t = useTranslations("AdminSidebar");
   const pathname = usePathname();
   const router = useRouter();
+
+  const navItems = [
+    {
+      href: "/admin",
+      label: t("overview"),
+      icon: LayoutDashboard,
+      exact: true,
+    },
+    { href: "/admin/users", label: t("users"), icon: Users },
+    { href: "/admin/posts", label: t("posts"), icon: FileText },
+  ];
 
   async function handleLogout() {
     const supabase = createClient();
@@ -29,54 +46,62 @@ export function AdminSidebar({ userEmail }: { userEmail: string }) {
   }
 
   return (
-    <aside className="flex w-64 shrink-0 flex-col border-r bg-background">
-      <div className="border-b px-6 py-4">
-        <p className="text-lg font-semibold">Quản trị</p>
-        <p className="truncate text-xs text-muted-foreground">{userEmail}</p>
-      </div>
+    <Sidebar collapsible="icon">
+      <SidebarHeader className="border-b px-4 py-4 group-data-[collapsible=icon]:px-2">
+        <p className="truncate text-lg font-semibold group-data-[collapsible=icon]:hidden">
+          {t("title")}
+        </p>
+        <p className="truncate text-xs text-muted-foreground group-data-[collapsible=icon]:hidden">
+          {userEmail}
+        </p>
+      </SidebarHeader>
 
-      <nav className="flex-1 space-y-1 p-3">
-        {navItems.map((item) => {
-          const isActive = item.exact
-            ? pathname === item.href
-            : pathname.startsWith(item.href);
-          const Icon = item.icon;
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors",
-                isActive
-                  ? "bg-primary text-primary-foreground"
-                  : "text-muted-foreground hover:bg-muted hover:text-foreground",
-              )}
-            >
-              <Icon className="h-4 w-4" />
-              {item.label}
-            </Link>
-          );
-        })}
-      </nav>
+      <SidebarContent>
+        <SidebarGroup>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {navItems.map((item) => {
+                const isActive = item.exact
+                  ? pathname === item.href
+                  : pathname.startsWith(item.href);
+                return (
+                  <SidebarMenuItem key={item.href}>
+                    <SidebarMenuButton
+                      asChild
+                      isActive={isActive}
+                      tooltip={item.label}
+                    >
+                      <Link href={item.href}>
+                        <item.icon />
+                        <span>{item.label}</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                );
+              })}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+      </SidebarContent>
 
-      <div className="border-t p-3 flex flex-col gap-1">
-        <Link
-          href="/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex w-full items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-        >
-          <ExternalLink className="h-4 w-4" />
-          Xem trang người dùng
-        </Link>
-        <button
-          onClick={handleLogout}
-          className="flex w-full items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-        >
-          <LogOut className="h-4 w-4" />
-          Đăng xuất
-        </button>
-      </div>
-    </aside>
+      <SidebarFooter className="border-t">
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton asChild tooltip={t("viewSite")}>
+              <Link href="/" target="_blank" rel="noopener noreferrer">
+                <ExternalLink />
+                <span>{t("viewSite")}</span>
+              </Link>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+          <SidebarMenuItem>
+            <SidebarMenuButton onClick={handleLogout} tooltip={t("logout")}>
+              <LogOut />
+              <span>{t("logout")}</span>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarFooter>
+    </Sidebar>
   );
 }

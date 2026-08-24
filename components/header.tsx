@@ -32,27 +32,31 @@ import { LanguageSwitcher } from "./language-switcher";
 import Logo from "./logo";
 import { navigation } from "@/const/items/navigation.const";
 import { Loading } from "./ui/loading";
+import { useTranslations } from "next-intl";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const t = useTranslations("Navigation");
 
   return (
-    <header className="w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between md:grid md:grid-cols-[auto_1fr_auto]">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 md:grid md:grid-cols-[auto_1fr_auto]">
         {/* Logo */}
         <Logo />
 
         {/* Desktop Nav */}
         <NavigationMenu
-          className="hidden md:flex justify-self-center"
+          className="hidden justify-self-center md:flex"
           viewport={false}
         >
           <NavigationMenuList>
             {navigation.map((item) => (
-              <NavigationMenuItem key={item.label}>
-                {item.children ? (
+              <NavigationMenuItem key={item.labelKey}>
+                {"children" in item ? (
                   <>
-                    <NavigationMenuTrigger>{item.label}</NavigationMenuTrigger>
+                    <NavigationMenuTrigger>
+                      {t(item.labelKey)}
+                    </NavigationMenuTrigger>
 
                     <NavigationMenuContent>
                       <ul className="w-48 p-1">
@@ -63,7 +67,7 @@ export default function Header() {
                                 href={child.href}
                                 className="block rounded-md px-3 py-2 text-sm hover:bg-accent"
                               >
-                                {child.label}
+                                {t(child.labelKey)}
                               </Link>
                             </NavigationMenuLink>
                           </li>
@@ -77,7 +81,7 @@ export default function Header() {
                       href={item.href}
                       className={navigationMenuTriggerStyle()}
                     >
-                      {item.label}
+                      {t(item.labelKey)}
                     </Link>
                   </NavigationMenuLink>
                 )}
@@ -86,44 +90,45 @@ export default function Header() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* Right side (desktop) */}
-        <div className="hidden md:flex items-center gap-3 shrink-0">
+        {/* Right side - Desktop */}
+        <div className="hidden shrink-0 items-center gap-3 md:flex">
           <LanguageSwitcher />
           <ThemeSwitcher />
+
           <Suspense fallback={<Loading />}>
             <AuthButton />
           </Suspense>
         </div>
 
-        {/* Mobile: Sheet trigger + drawer */}
+        {/* Mobile */}
         <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
           <SheetTrigger asChild>
             <Button
               variant="ghost"
               size="icon"
               className="md:hidden"
-              aria-label="Toggle menu"
+              aria-label={t("menu")}
             >
               <Menu className="h-5 w-5" />
             </Button>
           </SheetTrigger>
 
-          <SheetContent side="right" className="w-[300px] sm:w-[360px] p-0">
+          <SheetContent side="right" className="w-[300px] p-0 sm:w-[360px]">
             <SheetHeader className="border-b px-4 py-4">
               <SheetTitle asChild>
                 <Logo />
               </SheetTitle>
             </SheetHeader>
 
-            <div className="flex flex-col h-[calc(100%-73px)]">
-              {/* Scrollable nav */}
+            <div className="flex h-[calc(100%-73px)] flex-col">
+              {/* Scrollable navigation */}
               <nav className="flex-1 overflow-y-auto px-4 py-3">
                 <Accordion type="single" collapsible className="w-full">
                   {navigation.map((item) =>
-                    item.children ? (
-                      <AccordionItem key={item.label} value={item.label}>
-                        <AccordionTrigger className="text-sm font-medium py-3 hover:no-underline">
-                          {item.label}
+                    "children" in item ? (
+                      <AccordionItem key={item.labelKey} value={item.labelKey}>
+                        <AccordionTrigger className="py-3 text-sm font-medium hover:no-underline">
+                          {t(item.labelKey)}
                         </AccordionTrigger>
 
                         <AccordionContent>
@@ -133,9 +138,9 @@ export default function Header() {
                                 <Link
                                   href={child.href}
                                   onClick={() => setMobileOpen(false)}
-                                  className="block px-2 py-2 text-sm rounded-md text-muted-foreground hover:bg-accent hover:text-foreground transition-colors"
+                                  className="block rounded-md px-2 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
                                 >
-                                  {child.label}
+                                  {t(child.labelKey)}
                                 </Link>
                               </li>
                             ))}
@@ -143,13 +148,13 @@ export default function Header() {
                         </AccordionContent>
                       </AccordionItem>
                     ) : (
-                      <div key={item.label} className="border-b py-3">
+                      <div key={item.labelKey} className="border-b py-3">
                         <Link
                           href={item.href}
                           onClick={() => setMobileOpen(false)}
                           className="block text-sm font-medium"
                         >
-                          {item.label}
+                          {t(item.labelKey)}
                         </Link>
                       </div>
                     ),
@@ -157,12 +162,13 @@ export default function Header() {
                 </Accordion>
               </nav>
 
-              {/* Footer controls, pinned to bottom */}
-              <div className="border-t px-4 py-4 flex items-center justify-between gap-3 bg-muted/30">
+              {/* Footer controls */}
+              <div className="flex items-center justify-between gap-3 border-t bg-muted/30 px-4 py-4">
                 <div className="flex items-center gap-2">
                   <LanguageSwitcher />
                   <ThemeSwitcher />
                 </div>
+
                 <Suspense fallback={<Loading />}>
                   <AuthButton />
                 </Suspense>

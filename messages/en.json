@@ -1,0 +1,37 @@
+{
+  "AdminSidebar": {
+    "title": "Admin",
+    "overview": "Overview",
+    "users": "Users",
+    "posts": "Posts",
+    "viewSite": "View public site",
+    "logout": "Log out"
+  },
+  "NotFound": {
+    "error": "ERROR 404",
+    "title": "Page not found",
+    "description": "The page you are looking for doesn't exist or has been moved. Please check the address or return to the homepage.",
+    "backHome": "Back to homepage",
+    "contactUs": "Contact us"
+  },
+  "Navigation": {
+    "home": "Home",
+    "services": "Services",
+    "servicesTaxPreparation": "Tax Preparation",
+    "servicesAccounting": "Accounting & Bookkeeping",
+    "servicesPayroll": "Payroll Services",
+    "servicesAdvisory": "Advisory & Consulting",
+    "resources": "Resources",
+    "resourcesGuides": "Guides & Forms",
+    "resourcesCalculators": "Tax Calculators",
+    "blog": "Blog",
+    "about": "About Us",
+    "contact": "Contact",
+    "menu": "Menu"
+  },
+  "Footer": {
+    "services": "Services",
+    "resources": "Resources",
+    "company": "Company"
+  }
+}

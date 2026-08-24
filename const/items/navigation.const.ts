@@ -1,54 +1,52 @@
-// navigation.ts
-
 export const navigation = [
   {
-    label: "Trang chủ",
+    labelKey: "home",
     href: "/",
   },
   {
-    label: "Dịch vụ",
+    labelKey: "services",
     children: [
       {
-        label: "Kê khai thuế",
+        labelKey: "servicesTaxPreparation",
         href: "/services/tax-preparation",
       },
       {
-        label: "Kế toán & Ghi sổ",
+        labelKey: "servicesAccounting",
         href: "/services/accounting",
       },
       {
-        label: "Dịch vụ tiền lương",
+        labelKey: "servicesPayroll",
         href: "/services/payroll",
       },
       {
-        label: "Tư vấn & Cố vấn",
+        labelKey: "servicesAdvisory",
         href: "/services/advisory",
       },
     ],
   },
   {
-    label: "Tài nguyên",
+    labelKey: "resources",
     children: [
       {
-        label: "Hướng dẫn & Biểu mẫu",
+        labelKey: "resourcesGuides",
         href: "/resources",
       },
       {
-        label: "Máy tính thuế",
+        labelKey: "resourcesCalculators",
         href: "/resources/calculators",
       },
     ],
   },
   {
-    label: "Bài viết",
+    labelKey: "blog",
     href: "/blog",
   },
   {
-    label: "Về chúng tôi",
+    labelKey: "about",
     href: "/about",
   },
   {
-    label: "Liên hệ",
+    labelKey: "contact",
     href: "/contact",
   },
-];
+] as const;

@@ -1,4 +1,3 @@
-// app/layout.tsx
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Geist } from "next/font/google";
@@ -8,6 +7,7 @@ import ClientLayout from "./client-layout";
 import NextThemeProvider from "@/components/theme-provider";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Loading } from "@/components/ui/loading";
+import { IntlProvider } from "./intl-provider";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -29,7 +29,7 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -39,7 +39,9 @@ export default function RootLayout({
       <body className={`${geistSans.className} antialiased`}>
         <NextThemeProvider>
           <Suspense fallback={<Loading />}>
-            <ClientLayout>{children}</ClientLayout>
+            <IntlProvider>
+              <ClientLayout>{children}</ClientLayout>
+            </IntlProvider>
           </Suspense>
           <SpeedInsights />
         </NextThemeProvider>
