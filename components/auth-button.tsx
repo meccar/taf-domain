@@ -5,9 +5,11 @@ import { Button } from "./ui/button";
 import { createClient } from "@/lib/supabase/client";
 import { LogoutButton } from "./logout-button";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 export function AuthButton() {
   const [user, setUser] = useState<any | null>(null);
+  const t = useTranslations("AuthButton");
 
   useEffect(() => {
     const supabase = createClient();
@@ -37,13 +39,13 @@ export function AuthButton() {
 
   return user ? (
     <div className="flex items-center gap-4">
-      Hey, {user.email}!
+      {t("greeting", { email: user.email })}
       <LogoutButton />
     </div>
   ) : (
     <div className="flex gap-2">
       <Button size="sm" asChild>
-        <Link href="/auth/login">Đăng nhập</Link>
+        <Link href="/auth/login">{t("login")}</Link>
       </Button>
     </div>
   );

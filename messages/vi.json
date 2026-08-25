@@ -32,6 +32,78 @@
   "Footer": {
     "services": "Dịch vụ",
     "resources": "Tài nguyên",
-    "company": "Công ty"
+    "company": "Công ty",
+    "description": "Dịch vụ kế toán và tư vấn thuế uy tín tại Việt Nam.",
+    "copyright": "Bảo lưu mọi quyền.",
+    "privacyPolicy": "Chính sách bảo mật",
+    "termsOfService": "Điều khoản sử dụng"
+  },
+  "AuthButton": {
+    "greeting": "Xin chào, {email}!",
+    "login": "Đăng nhập"
+  },
+  "BlogCard": {
+    "readMore": "Đọc tiếp",
+    "categories": {
+      "tax": "Thuế",
+      "accounting": "Kế toán",
+      "business": "Doanh nghiệp",
+      "regulations": "Quy định mới"
+    }
+  },
+  "ContactForm": {
+    "optional": "tùy chọn",
+    "fields": {
+      "name": {
+        "label": "Họ và tên",
+        "placeholder": "Nguyễn Văn Mười"
+      },
+      "phone": {
+        "label": "Số điện thoại",
+        "placeholder": "0901 234 567"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "email@congty.com"
+      },
+      "message": {
+        "label": "Nhu cầu",
+        "placeholder": "Mô tả ngắn về nhu cầu kế toán / thuế..."
+      }
+    },
+    "validation": {
+      "name": "Vui lòng nhập họ tên",
+      "phone": "Số điện thoại không hợp lệ",
+      "email": "Email không hợp lệ"
+    },
+    "submit": "Gửi yêu cầu tư vấn",
+    "submitting": "Đang gửi...",
+    "success": {
+      "title": "Đã gửi thành công!",
+      "description": "Đội ngũ TAF Việt sẽ liên hệ với bạn sớm nhất."
+    }
+  },
+  "CtaBlock": {
+    "title": "Bắt đầu với buổi tư vấn miễn phí",
+    "description": "Để lại thông tin, chúng tôi sẽ liên hệ trong vòng 24 giờ.",
+    "cta": "Đặt lịch tư vấn",
+    "dialog": {
+      "title": "Đặt lịch tư vấn",
+      "description": "Chọn ngày và để lại thông tin, chúng tôi sẽ liên hệ trong vòng 24 giờ."
+    },
+    "fields": {
+      "name": {
+        "label": "Họ và tên",
+        "placeholder": "Nguyễn Văn Mười"
+      },
+      "phone": {
+        "label": "Số điện thoại",
+        "placeholder": "0912 345 678"
+      },
+      "date": {
+        "label": "Ngày tư vấn"
+      }
+    },
+    "confirm": "Xác nhận đặt lịch"
   }
 }

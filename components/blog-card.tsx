@@ -16,6 +16,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { BlogPost } from "@/lib/blog-data";
+import { useTranslations } from "next-intl";
 
 const categoryIcon = {
   Thuế: Receipt,
@@ -31,6 +32,7 @@ export function BlogCard({
   post: BlogPost;
   featured?: boolean;
 }) {
+  const t = useTranslations("BlogCard");
   const Icon = categoryIcon[post.category];
 
   return (
@@ -73,7 +75,7 @@ export function BlogCard({
         <CardContent className="pt-0 mt-auto flex items-center justify-between text-xs text-muted-foreground">
           <span>{post.readTime}</span>
           <span className="inline-flex items-center gap-1 text-foreground group-hover:gap-1.5 transition-all">
-            Đọc tiếp <ArrowUpRight className="h-3.5 w-3.5" />
+            {t("readMore")} <ArrowUpRight className="h-3.5 w-3.5" />
           </span>
         </CardContent>
       </Card>

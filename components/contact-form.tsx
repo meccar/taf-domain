@@ -26,16 +26,22 @@ import {
 import { CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ActionResult } from "@/types/action-result";
+import { useTranslations } from "next-intl";
 
-const schema = z.object({
-  name: z.string().min(2, "Vui lòng nhập họ tên"),
-  phone: z.string().min(9, "Số điện thoại không hợp lệ"),
-  email: z.string().email("Email không hợp lệ").optional().or(z.literal("")),
-  message: z.string().optional(),
-});
+const createSchema = (t: (key: string) => string) =>
+  z.object({
+    name: z.string().min(2, t("validation.name")),
+    phone: z.string().min(9, t("validation.phone")),
+    email: z.string().email(t("validation.email")).optional().or(z.literal("")),
+    message: z.string().optional(),
+  });
 
-type FormValues = z.infer<typeof schema>;
-
+type FormValues = {
+  name: string;
+  phone: string;
+  email?: string;
+  message?: string;
+};
 export interface ContactFormProps {
   variant?: "card" | "plain";
   compact?: boolean;
@@ -55,14 +61,17 @@ export function ContactForm({
   compact = false,
   title,
   description,
-  submitLabel = "Gửi yêu cầu tư vấn",
+  submitLabel,
   source,
   className,
   onSuccess,
   onSubmitAction,
 }: ContactFormProps) {
+  const t = useTranslations("ContactForm");
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+
+  const schema = createSchema(t);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(schema),
@@ -93,9 +102,9 @@ export function ContactForm({
         )}
       >
         <CheckCircle2 className="text-green-500" size={40} />
-        <p className="font-medium text-lg">Đã gửi thành công!</p>
+        <p className="text-lg font-medium">{t("success.title")}</p>
         <p className="text-sm text-muted-foreground">
-          Đội ngũ TAF Việt sẽ liên hệ với bạn sớm nhất.
+          {t("success.description")}
         </p>
       </div>
     );
@@ -115,9 +124,12 @@ export function ContactForm({
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Họ và tên</FormLabel>
+                <FormLabel>{t("fields.name.label")}</FormLabel>
                 <FormControl>
-                  <Input placeholder="Nguyễn Văn Mười" {...field} />
+                  <Input
+                    placeholder={t("fields.name.placeholder")}
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -128,9 +140,13 @@ export function ContactForm({
             name="phone"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Số điện thoại</FormLabel>
+                <FormLabel>{t("fields.phone.label")}</FormLabel>
                 <FormControl>
-                  <Input type="tel" placeholder="0901 234 567" {...field} />
+                  <Input
+                    type="tel"
+                    placeholder={t("fields.phone.placeholder")}
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -144,13 +160,17 @@ export function ContactForm({
           render={({ field }) => (
             <FormItem>
               <FormLabel>
-                Email{" "}
-                <span className="text-muted-foreground font-normal">
-                  (tùy chọn)
+                {t("fields.email.label")}{" "}
+                <span className="font-normal text-muted-foreground">
+                  ({t("optional")})
                 </span>
               </FormLabel>
               <FormControl>
-                <Input type="email" placeholder="email@congty.com" {...field} />
+                <Input
+                  type="email"
+                  placeholder={t("fields.email.placeholder")}
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -164,16 +184,16 @@ export function ContactForm({
             render={({ field }) => (
               <FormItem className="flex-1 flex flex-col">
                 <FormLabel>
-                  Nhu cầu{" "}
-                  <span className="text-muted-foreground font-normal">
-                    (tùy chọn)
+                  {t("fields.message.label")}{" "}
+                  <span className="font-normal text-muted-foreground">
+                    ({t("optional")})
                   </span>
                 </FormLabel>
                 <FormControl>
                   <Textarea
-                    placeholder="Mô tả ngắn về nhu cầu kế toán / thuế..."
+                    placeholder={t("fields.message.placeholder")}
                     rows={4}
-                    className="flex-1 resize-none min-h-[100px]"
+                    className="min-h-[100px] flex-1 resize-none"
                     {...field}
                   />
                 </FormControl>
@@ -189,7 +209,9 @@ export function ContactForm({
           className="w-full mt-auto"
           disabled={form.formState.isSubmitting}
         >
-          {form.formState.isSubmitting ? "Đang gửi..." : submitLabel}
+          {form.formState.isSubmitting
+            ? t("submitting")
+            : (submitLabel ?? t("submit"))}{" "}
         </Button>
       </form>
     </Form>

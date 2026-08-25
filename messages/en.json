@@ -32,6 +32,78 @@
   "Footer": {
     "services": "Services",
     "resources": "Resources",
-    "company": "Company"
+    "company": "Company",
+    "description": "Trusted accounting and tax consulting services in Vietnam.",
+    "copyright": "All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "AuthButton": {
+    "greeting": "Hey, {email}!",
+    "login": "Log in"
+  },
+  "BlogCard": {
+    "readMore": "Read more",
+    "categories": {
+      "tax": "Tax",
+      "accounting": "Accounting",
+      "business": "Business",
+      "regulations": "New regulations"
+    }
+  },
+  "ContactForm": {
+    "optional": "optional",
+    "fields": {
+      "name": {
+        "label": "Full name",
+        "placeholder": "Nguyen Van Muoi"
+      },
+      "phone": {
+        "label": "Phone number",
+        "placeholder": "0901 234 567"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "email@company.com"
+      },
+      "message": {
+        "label": "How can we help?",
+        "placeholder": "Briefly describe your accounting or tax needs..."
+      }
+    },
+    "validation": {
+      "name": "Please enter your full name",
+      "phone": "Invalid phone number",
+      "email": "Invalid email address"
+    },
+    "submit": "Request a consultation",
+    "submitting": "Sending...",
+    "success": {
+      "title": "Successfully submitted!",
+      "description": "The TAF Việt team will contact you as soon as possible."
+    }
+  },
+  "CtaBlock": {
+    "title": "Get started with a free consultation",
+    "description": "Leave your information and we'll contact you within 24 hours.",
+    "cta": "Book a consultation",
+    "dialog": {
+      "title": "Book a consultation",
+      "description": "Choose a date and leave your information. We'll contact you within 24 hours."
+    },
+    "fields": {
+      "name": {
+        "label": "Full name",
+        "placeholder": "Nguyen Van Muoi"
+      },
+      "phone": {
+        "label": "Phone number",
+        "placeholder": "0912 345 678"
+      },
+      "date": {
+        "label": "Consultation date"
+      }
+    },
+    "confirm": "Confirm booking"
   }
 }
