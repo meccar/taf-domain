@@ -5,7 +5,8 @@
     "users": "Users",
     "posts": "Posts",
     "viewSite": "View public site",
-    "logout": "Log out"
+    "logout": "Log out",
+    "contactSubmissions": "Contact Submissions"
   },
   "NotFound": {
     "error": "ERROR 404",

@@ -16,7 +16,6 @@ import { DeletePostButton } from "./delete-post-button";
 export default async function PostsPage() {
   const supabase = await createClient();
 
-  // Log the error so failures like this are visible instead of silently rendering empty
   const { data: posts, error } = await supabase
     .from("posts")
     .select(
@@ -30,7 +29,7 @@ export default async function PostsPage() {
   }
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex min-w-0 flex-col gap-6">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-semibold">Bài viết</h1>
         <Button asChild>
@@ -41,16 +40,16 @@ export default async function PostsPage() {
         </Button>
       </div>
 
-      <div className="rounded-md border bg-background">
-        <Table>
+      <div className="min-w-0 overflow-x-auto rounded-md border bg-background">
+        <Table className="table-fixed">
           <TableHeader>
             <TableRow>
-              <TableHead>Tiêu đề</TableHead>
-              <TableHead>Ngôn ngữ</TableHead>
-              <TableHead>Danh mục</TableHead>
-              <TableHead>Trạng thái</TableHead>
-              <TableHead>Ngày tạo</TableHead>
-              <TableHead className="text-right">Hành động</TableHead>
+              <TableHead className="w-[320px]">Tiêu đề</TableHead>
+              <TableHead className="w-[140px]">Ngôn ngữ</TableHead>
+              <TableHead className="w-[140px]">Danh mục</TableHead>
+              <TableHead className="w-[120px]">Trạng thái</TableHead>
+              <TableHead className="w-[120px]">Ngày tạo</TableHead>
+              <TableHead className="w-[80px] text-right">Hành động</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -62,18 +61,25 @@ export default async function PostsPage() {
 
               return (
                 <TableRow key={post.id}>
-                  <TableCell className="flex items-center gap-2">
-                    {post.featured && (
-                      <Star className="h-3.5 w-3.5 fill-yellow-400 text-yellow-400" />
-                    )}
-                    {primary?.title ?? (
-                      <span className="text-muted-foreground italic">
-                        Chưa có tiêu đề
+                  <TableCell className="max-w-0">
+                    <div className="flex min-w-0 items-center gap-2">
+                      {post.featured && (
+                        <Star className="h-3.5 w-3.5 shrink-0 fill-yellow-400 text-yellow-400" />
+                      )}
+                      <span
+                        className="truncate"
+                        title={primary?.title ?? undefined}
+                      >
+                        {primary?.title ?? (
+                          <span className="text-muted-foreground italic">
+                            Chưa có tiêu đề
+                          </span>
+                        )}
                       </span>
-                    )}
+                    </div>
                   </TableCell>
-                  <TableCell>
-                    <div className="flex gap-1">
+                  <TableCell className="max-w-0">
+                    <div className="flex flex-wrap gap-1">
                       {translations.map((t) => (
                         <Badge
                           key={t.locale}
@@ -85,8 +91,10 @@ export default async function PostsPage() {
                       ))}
                     </div>
                   </TableCell>
-                  <TableCell>
-                    <Badge variant="outline">{post.category}</Badge>
+                  <TableCell className="max-w-0">
+                    <Badge variant="outline" className="max-w-full truncate">
+                      {post.category}
+                    </Badge>
                   </TableCell>
                   <TableCell>
                     <Badge
@@ -97,7 +105,7 @@ export default async function PostsPage() {
                       {post.status === "published" ? "Đã đăng" : "Bản nháp"}
                     </Badge>
                   </TableCell>
-                  <TableCell>
+                  <TableCell className="whitespace-nowrap">
                     {new Date(post.created_at).toLocaleDateString("vi-VN")}
                   </TableCell>
                   <TableCell className="text-right">

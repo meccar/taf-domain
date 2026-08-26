@@ -9,6 +9,7 @@ import {
   FileText,
   LogOut,
   ExternalLink,
+  Mail,
 } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import {
@@ -37,6 +38,11 @@ export function AdminSidebar({ userEmail }: { userEmail: string }) {
     },
     { href: "/admin/users", label: t("users"), icon: Users },
     { href: "/admin/posts", label: t("posts"), icon: FileText },
+    {
+      href: "/admin/contacts",
+      label: t("contactSubmissions"),
+      icon: Mail,
+    },
   ];
 
   async function handleLogout() {

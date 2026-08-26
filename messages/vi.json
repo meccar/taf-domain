@@ -5,7 +5,8 @@
     "users": "Người dùng",
     "posts": "Bài viết",
     "viewSite": "Xem trang người dùng",
-    "logout": "Đăng xuất"
+    "logout": "Đăng xuất",
+    "contactSubmissions": "Đăng ký liên hệ"
   },
   "NotFound": {
     "error": "LỖI 404",
