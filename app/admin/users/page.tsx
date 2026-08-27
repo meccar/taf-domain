@@ -1,23 +1,9 @@
-import { createClient } from "@/lib/supabase/server";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { Badge } from "@/components/ui/badge";
+import { Suspense } from "react";
+import { Table, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { CreateUserDialog } from "./create-user-dialog";
-import { DeleteUserButton } from "./delete-user-button";
+import { UsersTable } from "./users-table";
 
-export default async function UsersPage() {
-  const supabase = await createClient();
-  const { data: profiles } = await supabase
-    .from("profiles")
-    .select("id, email, role, created_at")
-    .order("created_at", { ascending: false });
-
+export default function UsersPage() {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex items-center justify-between">
@@ -35,32 +21,32 @@ export default async function UsersPage() {
               <TableHead className="text-right">Hành động</TableHead>
             </TableRow>
           </TableHeader>
-          <TableBody>
-            {profiles?.map((profile) => (
-              <TableRow key={profile.id}>
-                <TableCell>{profile.email}</TableCell>
-                <TableCell>
-                  <Badge
-                    variant={
-                      profile.role === "root_admin" ? "default" : "secondary"
-                    }
-                  >
-                    {profile.role === "root_admin" ? "Root Admin" : "Admin"}
-                  </Badge>
-                </TableCell>
-                <TableCell>
-                  {new Date(profile.created_at).toLocaleDateString("vi-VN")}
-                </TableCell>
-                <TableCell className="text-right">
-                  {profile.role !== "root_admin" && (
-                    <DeleteUserButton userId={profile.id} />
-                  )}
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
+          <Suspense fallback={<UsersTableSkeleton />}>
+            <UsersTable />
+          </Suspense>
         </Table>
       </div>
     </div>
+  );
+}
+
+function UsersTableSkeleton() {
+  return (
+    <tbody>
+      {Array.from({ length: 5 }).map((_, i) => (
+        <tr key={i} className="border-b">
+          <td className="p-4">
+            <div className="h-4 w-40 animate-pulse rounded bg-muted" />
+          </td>
+          <td className="p-4">
+            <div className="h-5 w-20 animate-pulse rounded-full bg-muted" />
+          </td>
+          <td className="p-4">
+            <div className="h-4 w-24 animate-pulse rounded bg-muted" />
+          </td>
+          <td className="p-4" />
+        </tr>
+      ))}
+    </tbody>
   );
 }
