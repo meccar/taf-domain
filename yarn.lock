@@ -1608,10 +1608,10 @@
     "@supabase/phoenix" "0.4.4"
     tslib "2.8.1"
 
-"@supabase/ssr@latest":
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/@supabase/ssr/-/ssr-0.12.0.tgz#7bea68674d20ac46e7efe47716b43fb8efb024bd"
-  integrity sha512-d9XV5XzJvzzZbeAIM7fWTCUYxQJZ2Ru6ny3dJHmHGp/LIrJ+o9FpD7N9Rf/UhhWEvHXSoDe8SI32Z2ouOdMjBg==
+"@supabase/ssr@^0.12.5":
+  version "0.12.5"
+  resolved "https://registry.yarnpkg.com/@supabase/ssr/-/ssr-0.12.5.tgz#df9a289a7d3974e554da7a4741fb2320fcf06927"
+  integrity sha512-0GllaAtHe7FHs6tlSg1CwkFw0a7aai1Shs9rEqSs/HaVkJzPk35C9r0Z8WUtKJ3eY6G/Y5y47YvCro3LynrAJg==
   dependencies:
     cookie "^1.0.2"
 

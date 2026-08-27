@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+// app/admin/layout.tsx
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { AdminSidebar } from "@/components/admin/admin-sidebar";
@@ -9,19 +9,11 @@ import {
 } from "@/components/ui/sidebar";
 import { Separator } from "@/components/ui/separator";
 
-export default function AdminLayout({
+export default async function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <Suspense fallback={<AdminLoadingFallback />}>
-      <AdminAuthGate>{children}</AdminAuthGate>
-    </Suspense>
-  );
-}
-
-async function AdminAuthGate({ children }: { children: React.ReactNode }) {
   const supabase = await createClient();
   const {
     data: { user },
@@ -48,15 +40,5 @@ async function AdminAuthGate({ children }: { children: React.ReactNode }) {
         <main className="flex-1 bg-muted/30 p-6 md:p-8">{children}</main>
       </SidebarInset>
     </SidebarProvider>
-  );
-}
-
-function AdminLoadingFallback() {
-  return (
-    <div className="flex min-h-svh w-full items-center justify-center">
-      <p className="text-sm text-muted-foreground">
-        Đang kiểm tra quyền truy cập...
-      </p>
-    </div>
   );
 }

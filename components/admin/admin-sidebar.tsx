@@ -23,6 +23,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { NavIcon } from "../nav-icon";
 
 export function AdminSidebar({ userEmail }: { userEmail: string }) {
   const t = useTranslations("AdminSidebar");
@@ -78,7 +79,7 @@ export function AdminSidebar({ userEmail }: { userEmail: string }) {
                       tooltip={item.label}
                     >
                       <Link href={item.href}>
-                        <item.icon />
+                        <NavIcon icon={item.icon} />
                         <span>{item.label}</span>
                       </Link>
                     </SidebarMenuButton>
