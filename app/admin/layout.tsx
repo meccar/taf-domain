@@ -1,6 +1,4 @@
-// app/admin/layout.tsx
-import { redirect } from "next/navigation";
-import { createClient } from "@/lib/supabase/server";
+import { headers } from "next/headers";
 import { AdminSidebar } from "@/components/admin/admin-sidebar";
 import {
   SidebarInset,
@@ -14,24 +12,12 @@ export default async function AdminLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  if (!user) redirect("/auth/login");
-
-  const { data: profile } = await supabase
-    .from("profiles")
-    .select("role")
-    .eq("id", user.id)
-    .single();
-
-  if (profile?.role !== "root_admin") redirect("/protected");
+  const headersList = await headers();
+  const userEmail = headersList.get("x-user-email") ?? "";
 
   return (
     <SidebarProvider>
-      <AdminSidebar userEmail={user.email ?? ""} />
+      <AdminSidebar userEmail={userEmail} />
       <SidebarInset>
         <header className="flex h-14 items-center gap-2 border-b px-4">
           <SidebarTrigger />

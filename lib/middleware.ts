@@ -1,3 +1,4 @@
+// middleware.ts
 import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 
@@ -20,15 +21,20 @@ export async function middleware(request: NextRequest) {
     if (profile?.role !== "root_admin") {
       return NextResponse.redirect(new URL("/protected", request.url));
     }
+
+    response.headers.set("x-user-id", user.id);
+    response.headers.set("x-user-email", user.email ?? "");
   }
 
   return response;
 }
-function createServerClientForMiddleware(request: NextRequest): {
-  supabase: any;
-  response: any;
-} {
-  const response = NextResponse.next();
+
+function createServerClientForMiddleware(request: NextRequest) {
+  const requestHeaders = new Headers(request.headers);
+
+  const response = NextResponse.next({
+    request: { headers: requestHeaders },
+  });
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
