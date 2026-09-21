@@ -48,7 +48,10 @@ export function RichTextEditor({
   return (
     <div className={cn("rounded-md border bg-background", className)}>
       <EditorToolbar editor={editor} />
-      <EditorContent editor={editor} />
+      <EditorContent
+        editor={editor}
+        className="prose prose-sm max-w-none focus:outline-none"
+      />
     </div>
   );
 }
