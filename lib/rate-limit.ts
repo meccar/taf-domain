@@ -3,25 +3,31 @@ import { Ratelimit } from "@upstash/ratelimit";
 import { Redis, s } from "@upstash/redis";
 import { headers } from "next/headers";
 
-const redis = Redis.fromEnv();
+const hasRedisConfig =
+  !!process.env.UPSTASH_REDIS_REST_URL &&
+  !!process.env.UPSTASH_REDIS_REST_TOKEN;
 
-export const limiters = {
-  public: new Ratelimit({
-    redis,
-    limiter: Ratelimit.slidingWindow(5, "60 s"),
-    prefix: "ratelimit:public",
-  }),
-  admin: new Ratelimit({
-    redis,
-    limiter: Ratelimit.slidingWindow(30, "60 s"),
-    prefix: "ratelimit:admin",
-  }),
-  upload: new Ratelimit({
-    redis,
-    limiter: Ratelimit.slidingWindow(10, "60 s"),
-    prefix: "ratelimit:upload",
-  }),
-};
+const redis = hasRedisConfig ? Redis.fromEnv() : null;
+
+export const limiters = redis
+  ? {
+      public: new Ratelimit({
+        redis,
+        limiter: Ratelimit.slidingWindow(5, "60 s"),
+        prefix: "ratelimit:public",
+      }),
+      admin: new Ratelimit({
+        redis,
+        limiter: Ratelimit.slidingWindow(30, "60 s"),
+        prefix: "ratelimit:admin",
+      }),
+      upload: new Ratelimit({
+        redis,
+        limiter: Ratelimit.slidingWindow(10, "60 s"),
+        prefix: "ratelimit:upload",
+      }),
+    }
+  : null;
 
 async function getClientIp() {
   const headersList = await headers();
@@ -33,9 +39,13 @@ async function getClientIp() {
 }
 
 export async function checkRateLimit(
-  kind: keyof typeof limiters,
+  kind: keyof NonNullable<typeof limiters>,
   identifier?: string,
 ): Promise<EmptyActionResult> {
+  if (!limiters) {
+    return { success: true, error: null, data: null };
+  }
+
   const ip = await getClientIp();
   const key = identifier ? `${ip}:${identifier}` : ip;
 

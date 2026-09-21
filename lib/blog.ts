@@ -1,7 +1,7 @@
 import "server-only";
 
 import { unstable_cache } from "next/cache";
-import { createClient } from "@/lib/supabase/server";
+import { createPublicClient } from "./supabase/public";
 
 export type PostCategory = "Thuế" | "Kế toán" | "Doanh nghiệp" | "Quy định mới";
 
@@ -27,7 +27,7 @@ export const categories = [
 ] as const;
 
 async function fetchPublishedPosts(locale: string): Promise<BlogPost[]> {
-  const supabase = await createClient();
+  const supabase = await createPublicClient();
 
   const { data, error } = await supabase
     .from("posts")

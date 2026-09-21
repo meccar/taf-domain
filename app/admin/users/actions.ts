@@ -31,8 +31,8 @@ async function assertRootAdmin() {
 export async function createAdminUserAction(
   formData: FormData,
 ): Promise<ActionResult> {
-  const rateLimitError = await checkRateLimit("admin");
-  if (rateLimitError) return rateLimitError;
+  const rateLimit = await checkRateLimit("admin");
+  if (!rateLimit.success) return rateLimit;
 
   const check = await assertRootAdmin();
   if (!check.ok) return { success: false, error: check.error, data: null };
@@ -54,8 +54,8 @@ export async function createAdminUserAction(
 }
 
 export async function deleteUserAction(userId: string) {
-  const rateLimitError = await checkRateLimit("admin");
-  if (rateLimitError) return rateLimitError;
+  const rateLimit = await checkRateLimit("admin");
+  if (!rateLimit.success) return rateLimit;
 
   const check = await assertRootAdmin();
   if (!check.ok) return { success: false, error: check.error };

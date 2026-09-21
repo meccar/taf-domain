@@ -16,8 +16,8 @@ const contactSchema = z.object({
 export async function sendContactEmail(
   values: z.infer<typeof contactSchema>,
 ): Promise<ActionResult> {
-  const rateLimitError = await checkRateLimit("public");
-  if (rateLimitError) return rateLimitError;
+  const rateLimit = await checkRateLimit("public");
+  if (!rateLimit.success) return rateLimit;
 
   const parsed = contactSchema.safeParse(values);
   if (!parsed.success) {

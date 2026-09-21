@@ -42,8 +42,8 @@ async function assertLoggedIn() {
 }
 
 export async function createPostAction(payload: z.infer<typeof postSchema>) {
-  const rateLimitError = await checkRateLimit("admin");
-  if (rateLimitError) return rateLimitError;
+  const rateLimit = await checkRateLimit("admin");
+  if (!rateLimit.success) return rateLimit;
 
   const check = await assertLoggedIn();
   if (!check.ok) return { error: check.error };
@@ -96,8 +96,8 @@ export async function updatePostAction(
   postId: string,
   payload: z.infer<typeof postSchema>,
 ): Promise<ActionResult | void> {
-  const rateLimitError = await checkRateLimit("admin");
-  if (rateLimitError) return rateLimitError;
+  const rateLimit = await checkRateLimit("admin");
+  if (!rateLimit.success) return rateLimit;
 
   const check = await assertLoggedIn();
   if (!check.ok) return { success: false, error: check.error, data: null };
@@ -159,8 +159,8 @@ export async function updatePostAction(
 }
 
 export async function deletePostAction(postId: string): Promise<ActionResult> {
-  const rateLimitError = await checkRateLimit("admin");
-  if (rateLimitError) return rateLimitError;
+  const rateLimit = await checkRateLimit("admin");
+  if (!rateLimit.success) return rateLimit;
 
   const check = await assertLoggedIn();
   if (!check.ok) return { success: false, error: check.error, data: null };

@@ -10,8 +10,8 @@ const MAX_SIZE = 5 * 1024 * 1024;
 export async function uploadImageAction(
   formData: FormData,
 ): Promise<ActionResult<string>> {
-  const rateLimitError = await checkRateLimit("upload");
-  if (rateLimitError) return rateLimitError;
+  const rateLimit = await checkRateLimit("upload");
+  if (!rateLimit.success) return rateLimit;
 
   const supabase = await createClient();
   const {
