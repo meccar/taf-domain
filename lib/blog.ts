@@ -88,3 +88,8 @@ function estimateReadTime(html: string) {
 
   return `${Math.max(1, Math.round(words / 200))} phút đọc`;
 }
+
+export async function getPostBySlug(slug: string, locale = "vi") {
+  const posts = await getPublishedPosts(locale);
+  return posts.find((p) => p.slug === slug) ?? null;
+}
