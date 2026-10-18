@@ -12,27 +12,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { RichTextEditor } from "@/components/ui/rich-text-editor";
 import { Loader2 } from "lucide-react";
 import { categories } from "@/lib/types/blog-post";
-
-const LOCALES = [
-  { code: "vi", label: "Tiếng Việt" },
-  { code: "en", label: "English" },
-] as const;
-
-type LocaleCode = (typeof LOCALES)[number]["code"];
-
-interface TranslationDraft {
-  title: string;
-  excerpt: string;
-  content: string;
-  author: string;
-}
-
-const emptyDraft: TranslationDraft = {
-  title: "",
-  excerpt: "",
-  content: "",
-  author: "TAF Việt",
-};
+import { emptyDraft, LocaleCode, LOCALES, TranslationDraft } from "../const";
 
 export default function NewPostPage() {
   const [drafts, setDrafts] = useState<Record<LocaleCode, TranslationDraft>>(

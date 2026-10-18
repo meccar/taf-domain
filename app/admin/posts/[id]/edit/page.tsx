@@ -21,9 +21,10 @@ export default async function EditPostPage({
     .eq("id", id)
     .single();
 
-  if (error || !post) {
-    notFound();
-  }
+  console.log("error", error);
+  console.log("post", post);
+
+  if (error || !post) notFound();
 
   return (
     <Card className="max-w-4xl">

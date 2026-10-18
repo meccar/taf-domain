@@ -1,8 +1,17 @@
 import { createClient } from "@/lib/supabase/server";
 import { TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { Star } from "lucide-react";
-import { DeletePostButton } from "./delete-post-button";
+import { Eye, MoreHorizontal, Pencil, Star, Trash2 } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { DeletePostItem } from "./delete-post-button";
 
 export async function PostsTable() {
   const supabase = await createClient();
@@ -29,18 +38,26 @@ export async function PostsTable() {
         return (
           <TableRow key={post.id}>
             <TableCell className="max-w-0">
-              <div className="flex min-w-0 items-center gap-2">
-                {post.featured && (
-                  <Star className="h-3.5 w-3.5 shrink-0 fill-yellow-400 text-yellow-400" />
-                )}
-                <span className="truncate" title={primary?.title ?? undefined}>
-                  {primary?.title ?? (
-                    <span className="text-muted-foreground italic">
-                      Chưa có tiêu đề
-                    </span>
+              <Link
+                href={`/admin/posts/${post.id}`}
+                className="hover:underline"
+              >
+                <div className="flex min-w-0 items-center gap-2">
+                  {post.featured && (
+                    <Star className="h-3.5 w-3.5 shrink-0 fill-yellow-400 text-yellow-400" />
                   )}
-                </span>
-              </div>
+                  <span
+                    className="truncate"
+                    title={primary?.title ?? undefined}
+                  >
+                    {primary?.title ?? (
+                      <span className="text-muted-foreground italic">
+                        Chưa có tiêu đề
+                      </span>
+                    )}
+                  </span>
+                </div>
+              </Link>
             </TableCell>
             <TableCell className="max-w-0">
               <div className="flex flex-wrap gap-1">
@@ -66,8 +83,38 @@ export async function PostsTable() {
             <TableCell className="whitespace-nowrap">
               {new Date(post.created_at).toLocaleDateString("vi-VN")}
             </TableCell>
+
             <TableCell className="text-right">
-              <DeletePostButton postId={post.id} />
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    aria-label="Mở tùy chọn bài viết"
+                  >
+                    <MoreHorizontal className="h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem asChild>
+                    <Link href={`/admin/posts/${post.id}`}>
+                      <Eye className="mr-2 h-4 w-4" />
+                      Xem chi tiết
+                    </Link>
+                  </DropdownMenuItem>
+
+                  <DropdownMenuItem asChild>
+                    <Link href={`/admin/posts/${post.id}/edit`}>
+                      <Pencil className="mr-2 h-4 w-4" />
+                      Chỉnh sửa
+                    </Link>
+                  </DropdownMenuItem>
+
+                  <DropdownMenuSeparator />
+                  <DeletePostItem postId={post.id} />
+                </DropdownMenuContent>
+              </DropdownMenu>
             </TableCell>
           </TableRow>
         );

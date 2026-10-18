@@ -1,32 +1,31 @@
 "use client";
 
-import { useState } from "react";
+import { useTransition } from "react";
+import { Loader2, Trash2 } from "lucide-react";
+import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
 import { deletePostAction } from "./actions";
-import { Button } from "@/components/ui/button";
-import { Trash2, Loader2 } from "lucide-react";
 
-export function DeletePostButton({ postId }: { postId: string }) {
-  const [isLoading, setIsLoading] = useState(false);
-
-  async function handleDelete() {
-    if (!confirm("Xoá bài viết này?")) return;
-    setIsLoading(true);
-    await deletePostAction(postId);
-    setIsLoading(false);
-  }
+export function DeletePostItem({ postId }: { postId: string }) {
+  const [isPending, startTransition] = useTransition();
 
   return (
-    <Button
-      variant="ghost"
-      size="icon"
-      onClick={handleDelete}
-      disabled={isLoading}
+    <DropdownMenuItem
+      className="text-red-600 focus:text-red-600"
+      disabled={isPending}
+      onSelect={(e) => {
+        e.preventDefault();
+        if (!confirm("Xoá bài viết này?")) return;
+        startTransition(async () => {
+          await deletePostAction(postId);
+        });
+      }}
     >
-      {isLoading ? (
-        <Loader2 className="h-4 w-4 animate-spin" />
+      {isPending ? (
+        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
       ) : (
-        <Trash2 className="h-4 w-4 text-red-500" />
+        <Trash2 className="mr-2 h-4 w-4 text-red-600" />
       )}
-    </Button>
+      Xoá
+    </DropdownMenuItem>
   );
 }
