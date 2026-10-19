@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { emptyDraft, LocaleCode, LOCALES, TranslationDraft } from "../const";
 import { updatePostAction } from "../actions";
