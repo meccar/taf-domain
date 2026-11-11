@@ -458,10 +458,12 @@ export function DeliverablesSection({
           {items.map((item) => (
             <Card
               key={item}
-              className="h-full rounded-xl border border-border/70 bg-muted/30"
+              className="h-full justify-center rounded-xl border border-border/70 bg-background"
             >
-              <CardHeader>
-                <CardTitle className="text-base">{item}</CardTitle>
+              <CardHeader className="border-b-0">
+                <CardTitle className="text-base leading-relaxed">
+                  {item}
+                </CardTitle>
               </CardHeader>
             </Card>
           ))}
@@ -490,16 +492,20 @@ export function FAQSection({
   items,
 }: FAQSectionProps) {
   return (
-    <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-20">
+    <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
       <SectionHeader
         eyebrow={eyebrow}
         title={title}
         description={description}
         align="left"
       />
-      <Accordion type="single" collapsible className="w-full">
+      <Accordion type="single" collapsible className="w-full max-w-4xl">
         {items.map((item, index) => (
-          <AccordionItem key={item.question} value={`faq-${index}`}>
+          <AccordionItem
+            key={item.question}
+            value={`faq-${index}`}
+            className="w-full"
+          >
             <AccordionTrigger className="text-left">
               {item.question}
             </AccordionTrigger>
