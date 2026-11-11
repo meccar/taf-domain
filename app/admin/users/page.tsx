@@ -1,13 +1,16 @@
 import { Suspense } from "react";
+import { getTranslations } from "next-intl/server";
 import { Table, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { CreateUserDialog } from "./create-user-dialog";
 import { UsersTable } from "./users-table";
 
-export default function UsersPage() {
+export default async function UsersPage() {
+  const t = await getTranslations("AdminUsers");
+
   return (
     <div className="flex flex-col gap-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold">Người dùng</h1>
+        <h1 className="text-2xl font-semibold">{t("title")}</h1>
         <CreateUserDialog />
       </div>
 
@@ -15,10 +18,10 @@ export default function UsersPage() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Email</TableHead>
-              <TableHead>Vai trò</TableHead>
-              <TableHead>Ngày tạo</TableHead>
-              <TableHead className="text-right">Hành động</TableHead>
+              <TableHead>{t("table.email")}</TableHead>
+              <TableHead>{t("table.role")}</TableHead>
+              <TableHead>{t("table.createdAt")}</TableHead>
+              <TableHead className="text-right">{t("table.actions")}</TableHead>
             </TableRow>
           </TableHeader>
           <Suspense fallback={<UsersTableSkeleton />}>

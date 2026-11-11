@@ -1,5 +1,6 @@
 "use server";
 
+import { getTranslations } from "next-intl/server";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
@@ -7,11 +8,12 @@ import { ActionResult } from "@/types/action-result";
 import { revalidatePath } from "next/cache";
 
 async function assertRootAdmin() {
+  const t = await getTranslations("AdminPosts");
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user) return { ok: false as const, error: "Chưa đăng nhập" };
+  if (!user) return { ok: false as const, error: t("loginRequired") };
 
   const { data: profile } = await supabase
     .from("profiles")

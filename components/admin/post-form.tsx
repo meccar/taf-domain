@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -61,6 +62,7 @@ export function PostForm({
   }) => Promise<ActionResult | void>;
   submitLabel: string;
 }) {
+  const t = useTranslations("AdminPosts");
   const [drafts, setDrafts] = useState(
     initialValues?.translations ?? defaultTranslations(),
   );
@@ -92,12 +94,12 @@ export function PostForm({
     ).map((l) => ({ locale: l.code, ...drafts[l.code] }));
 
     if (translations.length === 0) {
-      setError("Vui lòng nhập nội dung cho ít nhất một ngôn ngữ");
+      setError(t("emptyContentError"));
       setIsLoading(false);
       return;
     }
     if (!category) {
-      setError("Vui lòng chọn danh mục");
+      setError(t("emptyCategoryError"));
       setIsLoading(false);
       return;
     }
@@ -111,14 +113,14 @@ export function PostForm({
     <div className="flex flex-col gap-6">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div className="grid gap-2">
-          <Label>Danh mục</Label>
+          <Label>{t("columns.category")}</Label>
           <select
             className="h-9 rounded-md border px-3 text-sm"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           >
             <option value="" disabled>
-              Chọn danh mục
+              {t("categoryPlaceholder")}
             </option>
             {categories.map((cat) => (
               <option key={cat} value={cat}>
@@ -128,14 +130,14 @@ export function PostForm({
           </select>
         </div>
         <div className="grid gap-2">
-          <Label>Trạng thái</Label>
+          <Label>{t("columns.status")}</Label>
           <select
             className="h-9 rounded-md border px-3 text-sm"
             value={status}
             onChange={(e) => setStatus(e.target.value as "draft" | "published")}
           >
-            <option value="draft">Bản nháp</option>
-            <option value="published">Đăng ngay</option>
+            <option value="draft">{t("status.draft")}</option>
+            <option value="published">{t("status.published")}</option>
           </select>
         </div>
       </div>
@@ -147,7 +149,7 @@ export function PostForm({
           onCheckedChange={(v) => setFeatured(v === true)}
         />
         <Label htmlFor="featured" className="font-normal">
-          Đánh dấu là bài viết nổi bật
+          {t("featured")}
         </Label>
       </div>
 
@@ -170,15 +172,15 @@ export function PostForm({
             className="flex flex-col gap-4 pt-4"
           >
             <div className="grid gap-2">
-              <Label>Tiêu đề ({l.label})</Label>
+              <Label>{t("titleField", { locale: l.label })}</Label>
               <Input
                 value={drafts[l.code].title}
                 onChange={(e) => updateDraft(l.code, "title", e.target.value)}
-                placeholder="Nhập tiêu đề bài viết"
+                placeholder={t("titleInputPlaceholder")}
               />
             </div>
             <div className="grid gap-2">
-              <Label>Mô tả ngắn ({l.label})</Label>
+              <Label>{t("excerptField", { locale: l.label })}</Label>
               <Textarea
                 rows={2}
                 value={drafts[l.code].excerpt}
@@ -186,14 +188,14 @@ export function PostForm({
               />
             </div>
             <div className="grid gap-2">
-              <Label>Nội dung ({l.label})</Label>
+              <Label>{t("contentField", { locale: l.label })}</Label>
               <RichTextEditor
                 content={drafts[l.code].content}
                 onChange={(html) => updateDraft(l.code, "content", html)}
               />
             </div>
             <div className="grid gap-2 max-w-xs">
-              <Label>Tác giả</Label>
+              <Label>{t("author")}</Label>
               <Input
                 value={drafts[l.code].author}
                 onChange={(e) => updateDraft(l.code, "author", e.target.value)}

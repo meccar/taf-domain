@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import {
   Card,
   CardHeader,
@@ -10,42 +11,55 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ContactForm } from "@/components/contact-form";
 
-const contactInfo = [
-  {
-    icon: Mail,
-    label: "Email",
-    value: "tung.doan@taf.asia",
-    href: "mailto:tung.doan@taf.asia",
-  },
-  {
-    icon: Phone,
-    label: "Điện thoại",
-    value: "+84 936 378 955",
-    href: "tel:0936378955",
-  },
-  {
-    icon: MapPin,
-    label: "Địa chỉ",
-    value: "Hà Nội, Việt Nam",
-    href: "#",
-  },
-];
+export async function generateMetadata() {
+  const t = await getTranslations("ContactPage");
+  return {
+    title: `${t("badge")} | TAF Việt`,
+  };
+}
 
-export default function Contact() {
+export default async function Contact() {
+  const t = await getTranslations("ContactPage");
+
+  const contactInfo = [
+    {
+      icon: Mail,
+      label: t("contactInfo.email"),
+      value: "admin@taf.asia",
+      href: "mailto:admin@taf.asia",
+    },
+    {
+      icon: Phone,
+      label: t("contactInfo.phone"),
+      value: "+84 936 378 955",
+      href: "tel:0936378955",
+    },
+    {
+      icon: MapPin,
+      label: t("contactInfo.address"),
+      value: t("addressValue"),
+      href: "#",
+    },
+    {
+      icon: MapPin,
+      label: t("contactInfo.taxId"),
+      value: t("taxIdValue"),
+      href: "#",
+    },
+  ];
+
   return (
     <main className="w-full">
-      {/* Hero */}
       <div className="bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center flex flex-col items-center gap-4">
           <Badge variant="outline" className="uppercase tracking-widest">
-            Liên hệ
+            {t("badge")}
           </Badge>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
-            Chúng tôi luôn sẵn sàng hỗ trợ bạn
+            {t("heroTitle")}
           </h1>
           <CardDescription className="max-w-2xl text-base leading-relaxed">
-            Để lại thông tin hoặc liên hệ trực tiếp — đội ngũ TAF Việt sẽ phản
-            hồi trong thời gian sớm nhất.
+            {t("heroDescription")}
           </CardDescription>
         </div>
       </div>
@@ -54,7 +68,6 @@ export default function Contact() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
         <div className="grid md:grid-cols-[1fr_1.2fr] gap-12">
-          {/* Contact info */}
           <div className="flex flex-col gap-6">
             {contactInfo.map(({ icon: Icon, label, value, href }) => (
               <Card
@@ -79,8 +92,8 @@ export default function Contact() {
 
             <Card className="overflow-hidden p-0 h-56">
               <iframe
-                title="Bản đồ văn phòng TAF Việt"
-                src="https://www.google.com/maps?q=Hanoi,Vietnam&output=embed"
+                title={t("mapTitle")}
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.473517454371!2d105.9015746!3d21.0722143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x63016f31bdb57aa1%3A0x8bdbca09555253bf!2zVEFGIFZJ4buEMiAtIEPhg5pOIFRZIFROSFIGxkqhuqJJIEzDqSBUSFAgVEFGIFZJ4buEMg!5e0!3m2!1svn!2svn!4v1700000000000!5m2!1svn!2svn"
                 className="w-full h-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -88,7 +101,6 @@ export default function Contact() {
             </Card>
           </div>
 
-          {/* Contact form */}
           <ContactForm variant="card" source="contact-page" />
         </div>
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { createAdminUserAction } from "./actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -15,6 +16,7 @@ import {
 import { Loader2, Plus } from "lucide-react";
 
 export function CreateUserDialog() {
+  const t = useTranslations("AdminUsers");
   const [open, setOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -36,20 +38,20 @@ export function CreateUserDialog() {
       <DialogTrigger asChild>
         <Button>
           <Plus className="mr-2 h-4 w-4" />
-          Thêm người dùng
+          {t("createUserButton")}
         </Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Tạo tài khoản admin</DialogTitle>
+          <DialogTitle>{t("dialog.title")}</DialogTitle>
         </DialogHeader>
         <form action={handleSubmit} className="flex flex-col gap-4">
           <div className="grid gap-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email">{t("dialog.email")}</Label>
             <Input id="email" name="email" type="email" required />
           </div>
           <div className="grid gap-2">
-            <Label htmlFor="password">Mật khẩu tạm thời</Label>
+            <Label htmlFor="password">{t("dialog.temporaryPassword")}</Label>
             <Input
               id="password"
               name="password"
@@ -61,7 +63,7 @@ export function CreateUserDialog() {
           {error && <p className="text-sm text-red-500">{error}</p>}
           <Button type="submit" disabled={isLoading}>
             {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-            Tạo tài khoản
+            {t("dialog.submit")}
           </Button>
         </form>
       </DialogContent>

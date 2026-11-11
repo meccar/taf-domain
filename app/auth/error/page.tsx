@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AlertTriangle } from "lucide-react";
@@ -10,27 +11,29 @@ async function ErrorContent({
   searchParams: Promise<{ error?: string }>;
 }) {
   const params = await searchParams;
+  const t = await getTranslations("AuthError");
 
   return (
     <p className="text-sm text-muted-foreground">
       {params?.error
-        ? `Mã lỗi: ${params.error}`
-        : "Đã xảy ra lỗi không xác định."}
+        ? t("errorCode", { code: params.error })
+        : t("unknownError")}
     </p>
   );
 }
 
-function ErrorContentFallback() {
-  return (
-    <p className="text-sm text-muted-foreground">Đang tải thông tin lỗi...</p>
-  );
+async function ErrorContentFallback() {
+  const t = await getTranslations("AuthError");
+  return <p className="text-sm text-muted-foreground">{t("loadingError")}</p>;
 }
 
-export default function Page({
+export default async function Page({
   searchParams,
 }: {
   searchParams: Promise<{ error?: string }>;
 }) {
+  const t = await getTranslations("AuthError");
+
   return (
     <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
       <div className="w-full max-w-sm">
@@ -39,9 +42,7 @@ export default function Page({
             <CardHeader>
               <div className="mb-2 flex items-center gap-2">
                 <AlertTriangle className="h-6 w-6 text-red-500" />
-                <CardTitle className="text-2xl">
-                  Rất tiếc, đã có lỗi xảy ra
-                </CardTitle>
+                <CardTitle className="text-2xl">{t("title")}</CardTitle>
               </div>
             </CardHeader>
             <CardContent className="flex flex-col gap-4">
@@ -49,7 +50,7 @@ export default function Page({
                 <ErrorContent searchParams={searchParams} />
               </Suspense>
               <Button asChild variant="outline" className="w-full">
-                <Link href="/auth/login">Quay lại trang đăng nhập</Link>
+                <Link href="/auth/login">{t("backToLogin")}</Link>
               </Button>
             </CardContent>
           </Card>

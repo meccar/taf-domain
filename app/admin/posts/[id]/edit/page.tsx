@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 import { createClient } from "@/lib/supabase/server";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Suspense } from "react";
@@ -9,6 +10,7 @@ export default async function EditPostPage({
 }: {
   params: Promise<{ id: string }>;
 }) {
+  const t = await getTranslations("AdminPosts");
   const { id } = await params;
   const supabase = await createClient();
 
@@ -29,7 +31,7 @@ export default async function EditPostPage({
   return (
     <Card className="max-w-4xl">
       <CardHeader>
-        <CardTitle>Chỉnh sửa bài viết</CardTitle>
+        <CardTitle>{t("editPost")}</CardTitle>
       </CardHeader>
       <CardContent>
         <Suspense fallback={<EditPostSkeleton />}>

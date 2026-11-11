@@ -1,5 +1,6 @@
 "use server";
 
+import { getTranslations } from "next-intl/server";
 import { z } from "zod";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { createClient } from "@/lib/supabase/server";
@@ -16,12 +17,13 @@ const contactSchema = z.object({
 export async function sendContactEmail(
   values: z.infer<typeof contactSchema>,
 ): Promise<ActionResult> {
+  const t = await getTranslations("ContactPage");
   const rateLimit = await checkRateLimit("public");
   if (!rateLimit.success) return rateLimit;
 
   const parsed = contactSchema.safeParse(values);
   if (!parsed.success) {
-    return { success: false, error: "Dữ liệu không hợp lệ", data: null };
+    return { success: false, error: t("invalidData"), data: null };
   }
 
   const { name, phone, email, message, source } = parsed.data;
@@ -41,7 +43,7 @@ export async function sendContactEmail(
       console.error("Supabase insert error:", error);
       return {
         success: false,
-        error: "Không thể gửi yêu cầu, vui lòng thử lại sau.",
+        error: t("submitError"),
         data: null,
       };
     }
@@ -51,7 +53,7 @@ export async function sendContactEmail(
     console.error("Failed to save contact submission:", err);
     return {
       success: false,
-      error: "Không thể gửi yêu cầu, vui lòng thử lại sau.",
+      error: t("submitError"),
       data: null,
     };
   }

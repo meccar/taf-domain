@@ -11,11 +11,13 @@ import {
   DialogOverlay,
 } from "@/components/ui/dialog";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { ContactForm } from "./contact-form";
 import { ServicesList } from "./services-list";
 import { sendContactEmail } from "@/app/contact/actions";
 
 export function Hero() {
+  const t = useTranslations("Hero");
   const [contactOpen, setContactOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
 
@@ -25,48 +27,54 @@ export function Hero() {
         {/* Badge */}
         <div className="flex items-center gap-2 text-sm text-muted-foreground border rounded-full px-4 py-1.5 mb-8">
           <ShieldCheck size={14} />
-          <span>Được tin tưởng bởi hơn 500 doanh nghiệp</span>
+          <span>{t("badge")}</span>
         </div>
 
         <h1 className="text-4xl lg:text-5xl font-medium leading-tight mb-5">
-          Giải pháp kế toán &<br />
-          thuế toàn diện
+          {t("titleLineOne")}
+          <br />
+          {t("titleLineTwo")}
         </h1>
 
         <p className="text-lg text-muted-foreground max-w-lg leading-relaxed mb-10">
-          TAF Viet đồng hành cùng doanh nghiệp trong việc quản lý tài chính,
-          khai báo thuế và tuân thủ pháp luật — chính xác, đúng hạn, an tâm.
+          {t("description")}
         </p>
 
         <div className="flex gap-3 flex-wrap justify-center">
           <Button size="lg" onClick={() => setContactOpen(true)}>
-            Nhận tư vấn miễn phí
+            {t("primaryButton")}
           </Button>
           <Button
             size="lg"
             variant="outline"
             onClick={() => setServicesOpen(true)}
           >
-            Xem dịch vụ
+            {t("secondaryButton")}
           </Button>
         </div>
 
         <div className="grid grid-cols-3 divide-x border rounded-xl mt-16 w-full">
           <div className="py-6 px-4">
-            <p className="text-2xl font-medium">10+</p>
+            <p className="text-2xl font-medium">
+              {t("stats.experience.value")}
+            </p>
             <p className="text-sm text-muted-foreground mt-1">
-              Năm kinh nghiệm
+              {t("stats.experience.label")}
             </p>
           </div>
           <div className="py-6 px-4">
-            <p className="text-2xl font-medium">500+</p>
+            <p className="text-2xl font-medium">{t("stats.clients.value")}</p>
             <p className="text-sm text-muted-foreground mt-1">
-              Khách hàng doanh nghiệp
+              {t("stats.clients.label")}
             </p>
           </div>
           <div className="py-6 px-4">
-            <p className="text-2xl font-medium">99%</p>
-            <p className="text-sm text-muted-foreground mt-1">Hồ sơ đúng hạn</p>
+            <p className="text-2xl font-medium">
+              {t("stats.compliance.value")}
+            </p>
+            <p className="text-sm text-muted-foreground mt-1">
+              {t("stats.compliance.label")}
+            </p>
           </div>
         </div>
       </div>
@@ -76,17 +84,17 @@ export function Hero() {
         <DialogOverlay className="bg-black/30 backdrop-blur-sm" />
         <DialogContent className="w-full sm:max-w-lg overflow-y-auto ">
           <DialogHeader className="mb-6">
-            <DialogTitle>Nhận tư vấn miễn phí</DialogTitle>
+            <DialogTitle>{t("dialog.contactTitle")}</DialogTitle>
             <DialogDescription>
-              Chúng tôi sẽ liên hệ trong vòng 24 giờ làm việc.
+              {t("dialog.contactDescription")}
             </DialogDescription>
           </DialogHeader>
           <ContactForm
             variant="card"
             compact
-            title="Nhận tư vấn miễn phí"
-            description="Để lại số điện thoại, chúng tôi gọi lại trong 15 phút."
-            submitLabel="Gọi lại cho tôi"
+            title={t("contactForm.title")}
+            description={t("contactForm.description")}
+            submitLabel={t("contactForm.submitLabel")}
             source="home-cta"
             onSubmitAction={sendContactEmail}
           />
@@ -98,9 +106,9 @@ export function Hero() {
         <DialogOverlay className="bg-black/30 backdrop-blur-sm" />
         <DialogContent className="w-full sm:max-w-lg overflow-y-auto">
           <DialogHeader>
-            <DialogTitle>Dịch vụ của chúng tôi</DialogTitle>
+            <DialogTitle>{t("dialog.servicesTitle")}</DialogTitle>
             <DialogDescription>
-              Giải pháp toàn diện cho mọi nhu cầu tài chính doanh nghiệp.
+              {t("dialog.servicesDescription")}
             </DialogDescription>
           </DialogHeader>
           <ServicesList />

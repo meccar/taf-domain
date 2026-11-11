@@ -1,5 +1,6 @@
 "use server";
 
+import { getTranslations } from "next-intl/server";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { createClient } from "@/lib/supabase/server";
 import { ActionResult } from "@/types/action-result";
@@ -33,15 +34,17 @@ const postSchema = z.object({
 });
 
 async function assertLoggedIn() {
+  const t = await getTranslations("AdminPosts");
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user) return { ok: false as const, error: "Chưa đăng nhập" };
+  if (!user) return { ok: false as const, error: t("loginRequired") };
   return { ok: true as const, user };
 }
 
 export async function createPostAction(payload: z.infer<typeof postSchema>) {
+  const t = await getTranslations("AdminPosts");
   const rateLimit = await checkRateLimit("admin");
   if (!rateLimit.success) return rateLimit;
 
@@ -50,7 +53,9 @@ export async function createPostAction(payload: z.infer<typeof postSchema>) {
 
   const parsed = postSchema.safeParse(payload);
   if (!parsed.success) {
-    return { error: "Dữ liệu không hợp lệ: " + parsed.error.issues[0].message };
+    return {
+      error: t("invalidData", { message: parsed.error.issues[0].message }),
+    };
   }
 
   const { category, status, featured, translations } = parsed.data;
@@ -63,7 +68,7 @@ export async function createPostAction(payload: z.infer<typeof postSchema>) {
     .single();
 
   if (postError || !post) {
-    return { error: postError?.message ?? "Không thể tạo bài viết" };
+    return { error: postError?.message ?? t("createFailed") };
   }
 
   const rows = translations.map((t) => ({
@@ -83,7 +88,7 @@ export async function createPostAction(payload: z.infer<typeof postSchema>) {
   if (translationError) {
     await supabase.from("posts").delete().eq("id", post.id);
     if (translationError.code === "23505") {
-      return { error: "Trùng slug trong một ngôn ngữ, vui lòng đổi tiêu đề" };
+      return { error: t("slugConflict") };
     }
     return { error: translationError.message };
   }
@@ -96,6 +101,7 @@ export async function updatePostAction(
   postId: string,
   payload: z.infer<typeof postSchema>,
 ): Promise<ActionResult | void> {
+  const t = await getTranslations("AdminPosts");
   const rateLimit = await checkRateLimit("admin");
   if (!rateLimit.success) return rateLimit;
 
@@ -106,7 +112,7 @@ export async function updatePostAction(
   if (!parsed.success) {
     return {
       success: false,
-      error: "Dữ liệu không hợp lệ: " + parsed.error.issues[0].message,
+      error: t("invalidData", { message: parsed.error.issues[0].message }),
       data: null,
     };
   }
@@ -146,7 +152,7 @@ export async function updatePostAction(
     if (translationError.code === "23505") {
       return {
         success: false,
-        error: "Trùng slug trong một ngôn ngữ, vui lòng đổi tiêu đề",
+        error: t("slugConflict"),
         data: null,
       };
     }

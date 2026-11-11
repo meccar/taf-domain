@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/accordion";
 import { ContactForm } from "@/components/contact-form";
 import { cn } from "@/lib/utils";
+import { getTranslations } from "next-intl/server";
 
 export interface ServiceFeature {
   icon: LucideIcon;
@@ -58,7 +59,7 @@ export interface ServicePageLayoutProps {
   source: string;
 }
 
-export function ServicePageLayout({
+export async function ServicePageLayout({
   eyebrow,
   title,
   description,
@@ -71,6 +72,7 @@ export function ServicePageLayout({
   contactFormTitle,
   source,
 }: ServicePageLayoutProps) {
+  const t = await getTranslations("ServicePageLayout");
   return (
     <main className="w-full">
       {/* Hero */}
@@ -87,10 +89,10 @@ export function ServicePageLayout({
           </p>
           <div className="flex flex-wrap justify-center gap-3 pt-2">
             <Button size="lg" asChild>
-              <Link href="/contact">Nhận tư vấn miễn phí</Link>
+              <Link href="/contact">{t("freeConsultation")}</Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link href="#pricing">Xem bảng giá</Link>
+              <Link href="#pricing">{t("viewPricing")}</Link>
             </Button>
           </div>
         </div>
@@ -102,10 +104,10 @@ export function ServicePageLayout({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
         <div className="max-w-2xl mb-12">
           <Badge variant="outline" className="uppercase tracking-widest mb-4">
-            Phạm vi dịch vụ
+            {t("serviceScope")}
           </Badge>
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-            Những gì TAF Việt xử lý cho bạn
+            {t("serviceScopeTitle")}
           </h2>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -129,10 +131,10 @@ export function ServicePageLayout({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
         <div className="max-w-2xl mb-12">
           <Badge variant="outline" className="uppercase tracking-widest mb-4">
-            Quy trình
+            {t("process")}
           </Badge>
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-            {steps.length} bước xử lý mỗi kỳ
+            {t("processTitle", { count: steps.length })}
           </h2>
         </div>
         <div className="flex flex-col">
@@ -166,10 +168,10 @@ export function ServicePageLayout({
       >
         <div className="max-w-2xl mb-12 mx-auto text-center">
           <Badge variant="outline" className="uppercase tracking-widest mb-4">
-            Bảng giá
+            {t("pricing")}
           </Badge>
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-            Chọn gói phù hợp với doanh nghiệp
+            {t("pricingTitle")}
           </h2>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
@@ -183,7 +185,7 @@ export function ServicePageLayout({
             >
               {plan.highlighted && (
                 <Badge className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  Phổ biến nhất
+                  {t("mostPopular")}
                 </Badge>
               )}
               <CardHeader className="gap-2">
@@ -212,7 +214,7 @@ export function ServicePageLayout({
                   className="w-full"
                   asChild
                 >
-                  <Link href="/contact">Liên hệ tư vấn</Link>
+                  <Link href="/contact">{t("contactButton")}</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -226,10 +228,10 @@ export function ServicePageLayout({
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
         <div className="mb-10">
           <Badge variant="outline" className="uppercase tracking-widest mb-4">
-            Câu hỏi thường gặp
+            {t("faq")}
           </Badge>
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-            Giải đáp trước khi bắt đầu
+            {t("faqTitle")}
           </h2>
         </div>
         <Accordion type="single" collapsible className="w-full">
@@ -261,7 +263,7 @@ export function ServicePageLayout({
             variant="card"
             compact
             title={contactFormTitle}
-            submitLabel="Gửi yêu cầu tư vấn"
+            submitLabel={t("contactButton")}
             source={source}
           />
         </div>

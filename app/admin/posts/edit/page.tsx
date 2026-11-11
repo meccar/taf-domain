@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { emptyDraft, LocaleCode, LOCALES, TranslationDraft } from "../const";
 import { updatePostAction } from "../actions";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -28,6 +29,7 @@ export default function EditPostPage({
   postId,
   initialData,
 }: EditPostPageProps) {
+  const t = useTranslations("AdminPosts");
   const [drafts, setDrafts] = useState<Record<LocaleCode, TranslationDraft>>(
     () => {
       const base = Object.fromEntries(
@@ -71,12 +73,12 @@ export default function EditPostPage({
     ).map((l) => ({ locale: l.code, ...drafts[l.code] }));
 
     if (translations.length === 0) {
-      setError("Vui lòng nhập nội dung cho ít nhất một ngôn ngữ");
+      setError(t("emptyContentError"));
       setIsLoading(false);
       return;
     }
     if (!category) {
-      setError("Vui lòng chọn danh mục");
+      setError(t("emptyCategoryError"));
       setIsLoading(false);
       return;
     }
@@ -95,20 +97,20 @@ export default function EditPostPage({
   return (
     <Card className="max-w-4xl">
       <CardHeader>
-        <CardTitle>Bài viết mới</CardTitle>
+        <CardTitle>{t("newPost")}</CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col gap-6">
         {/* Language-agnostic fields */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="grid gap-2">
-            <Label>Danh mục</Label>
+            <Label>{t("columns.category")}</Label>
             <select
               className="h-9 rounded-md border px-3 text-sm"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
             >
               <option value="" disabled>
-                Chọn danh mục
+                {t("categoryPlaceholder")}
               </option>
               {categories.map((cat) => (
                 <option key={cat} value={cat}>
@@ -118,14 +120,14 @@ export default function EditPostPage({
             </select>
           </div>
           <div className="grid gap-2">
-            <Label>Trạng thái</Label>
+            <Label>{t("columns.status")}</Label>
             <select
               className="h-9 rounded-md border px-3 text-sm"
               value={status}
               onChange={(e) => setStatus(e.target.value)}
             >
-              <option value="draft">Bản nháp</option>
-              <option value="published">Đăng ngay</option>
+              <option value="draft">{t("status.draft")}</option>
+              <option value="published">{t("status.published")}</option>
             </select>
           </div>
         </div>
@@ -137,7 +139,7 @@ export default function EditPostPage({
             onCheckedChange={(v) => setFeatured(v === true)}
           />
           <Label htmlFor="featured" className="font-normal">
-            Đánh dấu là bài viết nổi bật
+            {t("featured")}
           </Label>
         </div>
 
@@ -161,15 +163,15 @@ export default function EditPostPage({
               className="flex flex-col gap-4 pt-4"
             >
               <div className="grid gap-2">
-                <Label>Tiêu đề ({l.label})</Label>
+                <Label>{t("titleField", { locale: l.label })}</Label>
                 <Input
                   value={drafts[l.code].title}
                   onChange={(e) => updateDraft(l.code, "title", e.target.value)}
-                  placeholder="Nhập tiêu đề bài viết"
+                  placeholder={t("titleInputPlaceholder")}
                 />
               </div>
               <div className="grid gap-2">
-                <Label>Mô tả ngắn ({l.label})</Label>
+                <Label>{t("excerptField", { locale: l.label })}</Label>
                 <Textarea
                   rows={2}
                   value={drafts[l.code].excerpt}
@@ -179,14 +181,14 @@ export default function EditPostPage({
                 />
               </div>
               <div className="grid gap-2">
-                <Label>Nội dung ({l.label})</Label>
+                <Label>{t("contentField", { locale: l.label })}</Label>
                 <RichTextEditor
                   content={drafts[l.code].content}
                   onChange={(html) => updateDraft(l.code, "content", html)}
                 />
               </div>
               <div className="grid gap-2 max-w-xs">
-                <Label>Tác giả</Label>
+                <Label>{t("author")}</Label>
                 <Input
                   value={drafts[l.code].author}
                   onChange={(e) =>
@@ -206,7 +208,7 @@ export default function EditPostPage({
           className="w-fit"
         >
           {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-          Lưu bài viết
+          {t("save")}
         </Button>
       </CardContent>
     </Card>

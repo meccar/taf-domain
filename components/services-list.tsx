@@ -1,35 +1,37 @@
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
+import { useTranslations } from "next-intl";
 import { FileText, Calculator, ShieldCheck, BarChart3 } from "lucide-react";
 
-const services = [
-  {
-    icon: FileText,
-    title: "Khai báo thuế",
-    desc: "Thuế GTGT, TNDN, TNCN — đúng hạn, đúng luật.",
-    badge: "Phổ biến",
-  },
-  {
-    icon: Calculator,
-    title: "Kế toán doanh nghiệp",
-    desc: "Ghi sổ, lập báo cáo tài chính theo chuẩn VAS.",
-    badge: null,
-  },
-  {
-    icon: ShieldCheck,
-    title: "Tuân thủ pháp luật",
-    desc: "Cập nhật thay đổi pháp lý, tư vấn rủi ro thuế.",
-    badge: null,
-  },
-  {
-    icon: BarChart3,
-    title: "Phân tích tài chính",
-    desc: "Báo cáo quản trị, dòng tiền, hoạch định ngân sách.",
-    badge: null,
-  },
-];
-
 export function ServicesList() {
+  const t = useTranslations("ServicesList");
+  const services = [
+    {
+      icon: FileText,
+      title: t("services.0.title"),
+      desc: t("services.0.description"),
+      badge: t("services.0.badge"),
+    },
+    {
+      icon: Calculator,
+      title: t("services.1.title"),
+      desc: t("services.1.description"),
+      badge: null,
+    },
+    {
+      icon: ShieldCheck,
+      title: t("services.2.title"),
+      desc: t("services.2.description"),
+      badge: null,
+    },
+    {
+      icon: BarChart3,
+      title: t("services.3.title"),
+      desc: t("services.3.description"),
+      badge: null,
+    },
+  ];
+
   return (
     <div className="flex flex-col">
       {services.map(({ icon: Icon, title, desc, badge }, i) => (

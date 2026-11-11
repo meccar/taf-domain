@@ -1,5 +1,6 @@
 "use server";
 
+import { getTranslations } from "next-intl/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
 import { ActionResult } from "@/types/action-result";
@@ -7,11 +8,12 @@ import { ActionResult } from "@/types/action-result";
 export async function createAdminAction(
   formData: FormData,
 ): Promise<ActionResult> {
+  const t = await getTranslations("AdminPosts");
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user) return { success: false, error: "Chưa đăng nhập", data: null };
+  if (!user) return { success: false, error: t("loginRequired"), data: null };
 
   const { data: callerProfile } = await supabase
     .from("profiles")

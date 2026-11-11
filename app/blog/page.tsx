@@ -15,34 +15,38 @@ import { getPublishedPosts, categories } from "@/lib/blog";
 import { cn } from "@/lib/utils";
 import { FileQuestion } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
+import { getTranslations } from "next-intl/server";
 
-export const metadata = {
-  title: "Blog & Tin tức | TAF Việt",
-  description:
-    "Cập nhật quy định thuế, kế toán và kiến thức vận hành doanh nghiệp từ TAF Việt.",
-};
+export async function generateMetadata() {
+  const t = await getTranslations("BlogPage");
+  return {
+    title: t("metadataTitle"),
+    description: t("metadataDescription"),
+  };
+}
 
 const PAGE_SIZE = 6;
 
-export default function Blog({
+export default async function Blog({
   searchParams,
 }: {
   searchParams: Promise<{ category?: string; page?: string }>;
 }) {
+  const t = await getTranslations("BlogPage");
+
   return (
     <main className="w-full">
       {/* Hero — fully static, renders instantly */}
       <div className="bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center flex flex-col items-center gap-4">
           <Badge variant="outline" className="uppercase tracking-widest">
-            Blog & Tin tức
+            {t("badge")}
           </Badge>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
-            Kiến thức thuế & kế toán cập nhật mỗi tuần
+            {t("title")}
           </h1>
           <p className="max-w-2xl text-base text-muted-foreground leading-relaxed">
-            Quy định mới, hướng dẫn thực hành và góc nhìn chuyên môn từ đội ngũ
-            TAF Việt.
+            {t("description")}
           </p>
         </div>
       </div>
@@ -63,22 +67,23 @@ async function BlogContent({
   searchParamsPromise: Promise<{ category?: string; page?: string }>;
 }) {
   const params = await searchParamsPromise;
-  const activeCategory = params.category ?? "Tất cả";
+  const t = await getTranslations("BlogPage");
+  const activeCategory = params.category ?? t("allCategories");
   const page = Math.max(1, Number(params.page) || 1);
 
   const posts = await getPublishedPosts();
 
   // No posts in the database at all — show a dedicated empty state, no filters/sidebar
   if (posts.length === 0) {
-    return <EmptyBlogState />;
+    return <EmptyBlogState t={t} />;
   }
 
   const filtered =
-    activeCategory === "Tất cả"
+    activeCategory === t("allCategories")
       ? posts
       : posts.filter((p) => p.category === activeCategory);
 
-  const showFeatured = page === 1 && activeCategory === "Tất cả";
+  const showFeatured = page === 1 && activeCategory === t("allCategories");
   const featured = showFeatured ? filtered.find((p) => p.featured) : undefined;
   const rest = filtered.filter((p) => p.slug !== featured?.slug);
 
@@ -97,7 +102,7 @@ async function BlogContent({
             <Link
               key={cat}
               href={
-                cat === "Tất cả"
+                cat === t("allCategories")
                   ? "/blog"
                   : `/blog?category=${encodeURIComponent(cat)}`
               }
@@ -128,7 +133,7 @@ async function BlogContent({
               </div>
             ) : !featured ? (
               <p className="text-sm text-muted-foreground py-12 text-center">
-                Chưa có bài viết nào trong chuyên mục này.
+                {t("noPostsInCategory")}
               </p>
             ) : null}
 
@@ -159,11 +164,10 @@ async function BlogContent({
           <div className="flex flex-col gap-6">
             <Card>
               <CardHeader className="gap-2">
-                <CardTitle className="text-base">Đăng ký bản tin</CardTitle>
-                <CardDescription>
-                  Nhận cập nhật quy định thuế & kế toán mới nhất mỗi tháng, miễn
-                  phí.
-                </CardDescription>
+                <CardTitle className="text-base">
+                  {t("newsletterTitle")}
+                </CardTitle>
+                <CardDescription>{t("newsletterDescription")}</CardDescription>
               </CardHeader>
               <div className="px-6 pb-6">
                 <NewsletterForm source="blog-sidebar" />
@@ -172,7 +176,7 @@ async function BlogContent({
 
             <Card>
               <CardHeader className="gap-3">
-                <CardTitle className="text-base">Bài viết gần đây</CardTitle>
+                <CardTitle className="text-base">{t("recentPosts")}</CardTitle>
                 <div className="flex flex-col gap-4 pt-1">
                   {recent.map((post) => (
                     <Link
@@ -194,7 +198,7 @@ async function BlogContent({
 
             <Card>
               <CardHeader className="gap-3">
-                <CardTitle className="text-base">Chuyên mục</CardTitle>
+                <CardTitle className="text-base">{t("categories")}</CardTitle>
                 <div className="flex flex-wrap gap-2 pt-1">
                   {allTags.map((tag) => (
                     <Link
@@ -225,17 +229,16 @@ async function BlogContent({
   );
 }
 
-function EmptyBlogState() {
+function EmptyBlogState({ t }: { t: (key: string) => string }) {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-28">
       <div className="flex flex-col items-center gap-4 text-center max-w-md mx-auto">
         <div className="flex h-14 w-14 items-center justify-center rounded-full bg-muted">
           <FileQuestion className="h-7 w-7 text-muted-foreground" />
         </div>
-        <h2 className="text-xl font-semibold">Không có bài viết nào</h2>
+        <h2 className="text-xl font-semibold">{t("emptyStateTitle")}</h2>
         <p className="text-sm text-muted-foreground leading-relaxed">
-          Hiện chưa có bài viết nào được đăng. Vui lòng quay lại sau để xem
-          những cập nhật mới nhất từ TAF Việt.
+          {t("emptyStateDescription")}
         </p>
       </div>
     </div>

@@ -37,7 +37,88 @@
     "description": "Dịch vụ kế toán và tư vấn thuế uy tín tại Việt Nam.",
     "copyright": "Bảo lưu mọi quyền.",
     "privacyPolicy": "Chính sách bảo mật",
-    "termsOfService": "Điều khoản sử dụng"
+    "termsOfService": "Điều khoản sử dụng",
+    "officeAddressLabel": "Văn phòng chính",
+    "officeAddressValue": "937 Ngô Gia Tự, Việt Hưng, Hà Nội, Việt Nam",
+    "taxIdLabel": "Mã số doanh nghiệp",
+    "taxIdValue": "0105367171",
+    "emailLabel": "Email",
+    "social": {
+      "facebook": "Facebook",
+      "linkedin": "LinkedIn",
+      "youtube": "YouTube"
+    }
+  },
+  "Metadata": {
+    "siteName": "TAF Việt",
+    "companyName": "CÔNG TY TNHH ĐẠI LÝ THUẾ TAF VIỆT",
+    "defaultTitle": "TAF Việt | Dịch vụ kế toán, thuế và tư vấn tài chính",
+    "titleTemplate": "%s | TAF Việt",
+    "defaultDescription": "TAF Việt cung cấp dịch vụ kế toán, kê khai thuế, tính lương và tư vấn tài chính cho doanh nghiệp tại Việt Nam.",
+    "companyDescription": "Dịch vụ kế toán, kê khai thuế và tư vấn tài chính tại Việt Nam.",
+    "keywords": [
+      "TAF Việt",
+      "CÔNG TY TNHH ĐẠI LÝ THUẾ TAF VIỆT",
+      "dịch vụ kế toán",
+      "kê khai thuế",
+      "tính lương",
+      "tư vấn tài chính",
+      "doanh nghiệp Việt Nam"
+    ],
+    "knowsAbout": [
+      "Dịch vụ kế toán doanh nghiệp",
+      "Kê khai thuế",
+      "Tính lương",
+      "Tư vấn tài chính"
+    ],
+    "address": {
+      "streetAddress": "937 Ngô Gia Tự, Việt Hưng, Hà Nội, Việt Nam",
+      "locality": "Hà Nội",
+      "postalCode": "11321"
+    }
+  },
+  "ThemeSwitcher": {
+    "light": "Sáng",
+    "dark": "Tối"
+  },
+  "WhyUsBlock": {
+    "badge": "Vì sao chọn TAF Việt",
+    "title": "Minh bạch, chuyên nghiệp, tận tâm",
+    "description": "Đội ngũ kế toán viên có chứng chỉ hành nghề, am hiểu sâu về pháp luật thuế Việt Nam, luôn cập nhật kịp thời các thay đổi chính sách để bảo vệ quyền lợi cho doanh nghiệp bạn.",
+    "points": [
+      "Chứng chỉ kế toán viên hành nghề",
+      "Báo cáo đúng hạn 99%",
+      "Hỗ trợ 7 ngày/tuần",
+      "Bảo mật thông tin tuyệt đối"
+    ]
+  },
+  "TaxCalculatorTabs": {
+    "vat": "Thuế GTGT thông thường",
+    "freelancer": "Freelancer / KOL / KOC / Affiliate"
+  },
+  "BlogPage": {
+    "metadataTitle": "Blog & Tin tức | TAF Việt",
+    "metadataDescription": "Cập nhật quy định thuế, kế toán và kiến thức vận hành doanh nghiệp từ TAF Việt.",
+    "badge": "Blog & Tin tức",
+    "title": "Kiến thức thuế & kế toán cập nhật mỗi tuần",
+    "description": "Quy định mới, hướng dẫn thực hành và góc nhìn chuyên môn từ đội ngũ TAF Việt.",
+    "allCategories": "Tất cả",
+    "newsletterTitle": "Đăng ký bản tin",
+    "newsletterDescription": "Nhận cập nhật quy định thuế & kế toán mới nhất mỗi tháng, miễn phí.",
+    "recentPosts": "Bài viết gần đây",
+    "categories": "Chuyên mục",
+    "emptyStateTitle": "Không có bài viết nào",
+    "emptyStateDescription": "Hiện chưa có bài viết nào được đăng. Vui lòng quay lại sau để xem những cập nhật mới nhất từ TAF Việt.",
+    "noPostsInCategory": "Chưa có bài viết nào trong chuyên mục này.",
+    "allPosts": "Tất cả bài viết"
+  },
+  "BlogPostPage": {
+    "metadataNotFound": "Không tìm thấy bài viết | TAF Việt",
+    "allPosts": "Tất cả bài viết",
+    "newsletterTitle": "Đăng ký bản tin",
+    "newsletterDescription": "Nhận cập nhật quy định thuế & kế toán mới nhất mỗi tháng, miễn phí.",
+    "relatedPosts": "Bài viết liên quan",
+    "backToBlog": "Quay lại Blog"
   },
   "AuthButton": {
     "greeting": "Xin chào, {email}!",
@@ -75,7 +156,16 @@
     "validation": {
       "name": "Vui lòng nhập họ tên",
       "phone": "Số điện thoại không hợp lệ",
-      "email": "Email không hợp lệ"
+      "email": "Email không hợp lệ",
+      "consent": "Bạn cần đồng ý với chính sách bảo mật và điều khoản sử dụng để tiếp tục."
+    },
+    "consent": {
+      "label": "Đồng ý",
+      "prefix": "Tôi đồng ý với",
+      "privacy": "Chính sách bảo mật",
+      "terms": "Điều khoản sử dụng",
+      "and": "và",
+      "suffix": "của TAF Việt"
     },
     "submit": "Gửi yêu cầu tư vấn",
     "submitting": "Đang gửi...",
@@ -105,6 +195,1038 @@
         "label": "Ngày tư vấn"
       }
     },
+    "validation": {
+      "required": "Vui lòng điền đầy đủ thông tin bắt buộc."
+    },
+    "submitting": "Đang gửi...",
     "confirm": "Xác nhận đặt lịch"
+  },
+  "AuthForms": {
+    "signupPrompt": "Chưa có tài khoản?",
+    "signup": "Đăng ký",
+    "signupSuccess": {
+      "title": "Đăng ký thành công",
+      "description": "Vui lòng kiểm tra hộp thư email để xác nhận tài khoản của bạn.",
+      "body": "Sau khi xác nhận email, bạn có thể đăng nhập và bắt đầu sử dụng tài khoản.",
+      "login": "Đăng nhập"
+    },
+    "accessDenied": {
+      "title": "Không có quyền truy cập",
+      "description": "Tài khoản của bạn chưa được cấp quyền quản trị hệ thống.",
+      "body": "Vui lòng đăng nhập bằng tài khoản quản trị được phép hoặc quay lại trang chủ.",
+      "login": "Đăng nhập",
+      "home": "Về trang chủ"
+    },
+    "login": {
+      "title": "Đăng nhập",
+      "description": "Nhập email của bạn bên dưới để đăng nhập vào tài khoản",
+      "email": "Email",
+      "password": "Mật khẩu",
+      "forgotPassword": "Quên mật khẩu?",
+      "showPassword": "Hiện mật khẩu",
+      "hidePassword": "Ẩn mật khẩu",
+      "submit": "Đăng nhập",
+      "submitting": "Đang đăng nhập...",
+      "errors": {
+        "missingCredentials": "Vui lòng nhập đầy đủ email và mật khẩu",
+        "invalidCredentials": "Email hoặc mật khẩu không chính xác",
+        "generic": "Đã xảy ra lỗi, vui lòng thử lại"
+      }
+    },
+    "signup": {
+      "title": "Đăng ký",
+      "description": "Tạo tài khoản mới",
+      "email": "Email",
+      "password": "Mật khẩu",
+      "repeatPassword": "Nhập lại mật khẩu",
+      "submit": "Đăng ký",
+      "submitting": "Đang tạo tài khoản...",
+      "alreadyHaveAccount": "Đã có tài khoản?",
+      "login": "Đăng nhập",
+      "errors": {
+        "passwordMismatch": "Mật khẩu xác nhận không khớp",
+        "generic": "Đã xảy ra lỗi"
+      }
+    },
+    "forgotPassword": {
+      "title": "Đặt lại mật khẩu",
+      "description": "Nhập email của bạn, chúng tôi sẽ gửi cho bạn một liên kết để đặt lại mật khẩu",
+      "successTitle": "Kiểm tra email của bạn",
+      "successDescription": "Hướng dẫn đặt lại mật khẩu đã được gửi.",
+      "email": "Email",
+      "submit": "Gửi email đặt lại mật khẩu",
+      "submitting": "Đang gửi...",
+      "alreadyHaveAccount": "Đã có tài khoản?",
+      "login": "Đăng nhập",
+      "helpText": "Nếu bạn đã đăng ký bằng email và mật khẩu này, bạn sẽ nhận được email hướng dẫn đặt lại mật khẩu. Vui lòng kiểm tra cả hộp thư spam nếu không thấy email.",
+      "errors": {
+        "missingEmail": "Vui lòng nhập email của bạn",
+        "emailNotSent": "Không thể gửi email, vui lòng thử lại",
+        "generic": "Đã xảy ra lỗi, vui lòng thử lại"
+      }
+    },
+    "updatePassword": {
+      "title": "Đặt lại mật khẩu",
+      "description": "Vui lòng nhập mật khẩu mới của bạn bên dưới.",
+      "newPassword": "Mật khẩu mới",
+      "confirmPassword": "Xác nhận mật khẩu",
+      "showPassword": "Hiện mật khẩu",
+      "hidePassword": "Ẩn mật khẩu",
+      "submit": "Lưu mật khẩu mới",
+      "submitting": "Đang lưu...",
+      "errors": {
+        "minLength": "Mật khẩu phải có ít nhất {length} ký tự",
+        "passwordMismatch": "Mật khẩu xác nhận không khớp",
+        "generic": "Không thể cập nhật mật khẩu, vui lòng thử lại"
+      }
+    },
+    "logout": "Đăng xuất"
+  },
+  "LegalPages": {
+    "privacyPolicy": {
+      "eyebrow": "Chính sách bảo mật",
+      "title": "Bảo vệ dữ liệu cá nhân theo tiêu chuẩn an toàn và minh bạch",
+      "description": "TAF Việt cam kết xử lý dữ liệu cá nhân của khách hàng một cách minh bạch, hợp pháp và an toàn, phù hợp với quy định của pháp luật Việt Nam, đặc biệt là Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân.",
+      "sections": [
+        {
+          "title": "1. Mục đích thu thập thông tin",
+          "body": "TAF Việt thu thập thông tin cá nhân của khách hàng, người truy cập website và người sử dụng dịch vụ nhằm phục vụ các mục đích như tiếp nhận yêu cầu tư vấn, quản lý tài khoản, xử lý hồ sơ, giao tiếp và hỗ trợ dịch vụ kế toán, thuế, nhân sự và tư vấn doanh nghiệp."
+        },
+        {
+          "title": "2. Dữ liệu cá nhân được xử lý",
+          "body": "Các thông tin có thể được thu thập bao gồm họ và tên, số điện thoại, email, doanh nghiệp, chức năng công việc, nội dung yêu cầu tư vấn, hồ sơ liên quan và các dữ liệu kỹ thuật khi người dùng tương tác với website như IP, thiết bị, trình duyệt và thời gian truy cập."
+        },
+        {
+          "title": "3. Cơ sở pháp lý và mục đích xử lý",
+          "body": "Chúng tôi xử lý dữ liệu cá nhân dựa trên sự đồng ý của người cung cấp, thực hiện nghĩa vụ hợp đồng, đáp ứng yêu cầu pháp lý, bảo vệ quyền và lợi ích hợp pháp của khách hàng và TAF Việt, cũng như các mục đích quản lý, tư vấn và hỗ trợ dịch vụ theo quy định của pháp luật Việt Nam và Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân."
+        },
+        {
+          "title": "4. Bảo mật và lưu trữ dữ liệu",
+          "body": "Dữ liệu cá nhân được lưu trữ trên hệ thống an toàn, có kiểm soát truy cập, mã hóa theo mức cần thiết và được giám sát bởi các biện pháp kỹ thuật và tổ chức phù hợp. TAF Việt không chia sẻ dữ liệu cá nhân cho bên thứ ba trừ khi có sự đồng ý rõ ràng hoặc bắt buộc theo quy định pháp luật."
+        }
+      ],
+      "rightsTitle": "5. Quyền của khách hàng",
+      "rightsBody": "Khách hàng có quyền yêu cầu truy cập, chỉnh sửa, xóa hoặc hạn chế xử lý dữ liệu cá nhân, cũng như phản đối việc xử lý khi có căn cứ hợp pháp. Nếu cần hỗ trợ hoặc muốn gửi khiếu nại về dữ liệu cá nhân, vui lòng liên hệ qua email hoặc số điện thoại được công bố trên website của TAF Việt.",
+      "contactTitle": "6. Liên hệ và cập nhật",
+      "contactBody": "TAF Việt có thể cập nhật nội dung chính sách này theo thời gian để phù hợp với thay đổi pháp luật hoặc quy trình vận hành. Mọi thay đổi quan trọng sẽ được công bố trên website của công ty. Nếu bạn có bất kỳ thắc mắc nào liên quan đến bảo mật dữ liệu, vui lòng liên hệ với TAF Việt qua thông tin tư vấn hoặc channel hỗ trợ được công khai trên website.",
+      "cta": "Liên hệ TAF Việt"
+    },
+    "termsOfUse": {
+      "eyebrow": "Điều khoản sử dụng",
+      "title": "Các quy định về sử dụng website và dịch vụ tư vấn của TAF Việt",
+      "description": "Những điều khoản dưới đây điều chỉnh việc truy cập, sử dụng và tương tác với website cũng như các dịch vụ của TAF Việt. Chúng tôi khuyến nghị khách hàng đọc kỹ để hiểu quyền, nghĩa vụ và trách nhiệm khi sử dụng website.",
+      "sections": [
+        {
+          "title": "1. Chấp nhận và điều kiện sử dụng",
+          "body": "Bằng việc truy cập hoặc sử dụng website của TAF Việt, khách hàng xác nhận đã đọc, hiểu và đồng ý với các điều khoản sử dụng dưới đây. Nếu không đồng ý, vui lòng dừng sử dụng website và không gửi thông tin cá nhân cho TAF Việt."
+        },
+        {
+          "title": "2. Mục đích cung cấp thông tin",
+          "body": "Website được sử dụng để cung cấp thông tin về dịch vụ kế toán, thuế, tư vấn doanh nghiệp, tài liệu hỗ trợ, bài viết chuyên môn và liên hệ với đội ngũ TAF Việt. Nội dung trên website chỉ mang tính tham khảo ban đầu và không thay thế cho tư vấn pháp lý hoặc kế toán chuyên biệt theo từng trường hợp cụ thể."
+        },
+        {
+          "title": "3. Trách nhiệm của người sử dụng",
+          "body": "Người dùng cam kết không sử dụng website vào mục đích vi phạm pháp luật, gây hại cho hệ thống, gian lận, giả mạo thông tin hoặc can thiệp vào hoạt động của website. TAF Việt có quyền chặn, hạn chế hoặc từ chối truy cập nếu phát hiện hành vi không phù hợp."
+        },
+        {
+          "title": "4. Bản quyền và dữ liệu trên website",
+          "body": "Tất cả nội dung trên website, kể cả văn bản, hình ảnh, cấu trúc giao diện, biểu mẫu, logo và tài liệu được công bố thuộc quyền sở hữu của TAF Việt hoặc được cấp phép hợp pháp để sử dụng. Nghiêm cấm sao chép, tái sử dụng, phát tán hoặc thay đổi nội dung nếu không có sự đồng ý bằng văn bản của TAF Việt."
+        }
+      ],
+      "supportTitle": "5. Liên hệ và hỗ trợ",
+      "supportBody": "TAF Việt có quyền cập nhật, bổ sung hoặc thay đổi điều khoản sử dụng bất cứ lúc nào phù hợp với hoạt động kinh doanh hoặc yêu cầu pháp lý. Mọi thắc mắc, đề nghị hoặc khiếu nại về nội dung website, dịch vụ tư vấn hoặc thông tin liên hệ cần được gửi đến TAF Việt qua kênh hỗ trợ được công khai trên website để được giải đáp kịp thời.",
+      "cta": "Liên hệ hỗ trợ"
+    }
+  },
+  "SalaryCalculator": {
+    "direction": {
+      "grossToNet": "Gross → Net",
+      "netToGross": "Net → Gross"
+    },
+    "grossSalary": "Lương Gross (VNĐ / tháng)",
+    "netDesired": "Lương Net mong muốn (VNĐ / tháng)",
+    "dependents": "Số người phụ thuộc",
+    "note": "Kết quả chỉ mang tính tham khảo, tính theo mức giảm trừ gia cảnh và biểu thuế lũy tiến hiện hành, chưa áp trần đóng bảo hiểm theo vùng. Liên hệ TAF Việt để được tính chính xác theo trường hợp cụ thể.",
+    "rows": {
+      "gross": "Lương Gross",
+      "insurance": "Bảo hiểm (10.5%)",
+      "taxableIncome": "Thu nhập chịu thuế",
+      "tax": "Thuế TNCN",
+      "net": "Lương Net"
+    }
+  },
+  "VatCalculator": {
+    "amount": "Số tiền (VNĐ)",
+    "vatRate": "Thuế suất GTGT",
+    "amountType": "Số tiền nhập ở trên",
+    "excluded": "Chưa gồm VAT",
+    "included": "Đã gồm VAT",
+    "rows": {
+      "preTax": "Giá trước thuế",
+      "vat": "Thuế GTGT ({rate}%)",
+      "total": "Tổng thanh toán"
+    }
+  },
+  "AboutPage": {
+    "badge": "Về chúng tôi",
+    "heroTitle": "Đồng hành cùng doanh nghiệp",
+    "heroTitleLineBreak": "trên hành trình phát triển",
+    "heroDescription": "TAF Việt là đơn vị cung cấp dịch vụ kế toán, thuế và tư vấn tài chính uy tín, giúp doanh nghiệp vận hành minh bạch và tối ưu chi phí.",
+    "missionBadge": "Sứ mệnh",
+    "missionTitle": "Đơn giản hóa bài toán kế toán - thuế cho doanh nghiệp Việt",
+    "missionDescription": "Chúng tôi tin rằng mỗi doanh nghiệp, dù lớn hay nhỏ, đều xứng đáng có một đối tác tài chính đáng tin cậy. Đó là lý do TAF Việt ra đời — để giải quyết các vấn đề kế toán, thuế phức tạp bằng giải pháp rõ ràng, hiệu quả.",
+    "valuesBadge": "Giá trị cốt lõi",
+    "valuesTitle": "Điều làm nên sự khác biệt",
+    "teamBadge": "Đội ngũ",
+    "teamTitle": "Gặp gỡ những người đồng hành cùng bạn",
+    "ctaTitle": "Sẵn sàng hợp tác cùng chúng tôi?",
+    "ctaDescription": "Liên hệ ngay để được tư vấn miễn phí giải pháp kế toán - thuế phù hợp với doanh nghiệp của bạn.",
+    "ctaButton": "Liên hệ tư vấn",
+    "stats": {
+      "experience": {
+        "label": "Năm kinh nghiệm",
+        "value": "10+"
+      },
+      "clients": {
+        "label": "Doanh nghiệp tin dùng",
+        "value": "50+"
+      },
+      "compliance": {
+        "label": "Tỷ lệ hồ sơ đúng hạn",
+        "value": "99%"
+      },
+      "response": {
+        "label": "Phản hồi trong",
+        "value": "24h"
+      }
+    },
+    "highlights": [
+      "Tuân thủ 100% quy định pháp luật thuế hiện hành",
+      "Báo cáo minh bạch, cập nhật theo thời gian thực",
+      "Đội ngũ chuyên gia giàu kinh nghiệm thực chiến",
+      "Hỗ trợ tư vấn nhanh chóng, sát sao"
+    ],
+    "values": {
+      "accuracy": {
+        "title": "Chính xác",
+        "description": "Mọi báo cáo, hồ sơ thuế đều được kiểm tra kỹ lưỡng, tuân thủ đúng quy định pháp luật hiện hành."
+      },
+      "care": {
+        "title": "Tận tâm",
+        "description": "Đội ngũ luôn đồng hành, tư vấn sát sao theo từng giai đoạn phát triển của doanh nghiệp khách hàng."
+      },
+      "professionalism": {
+        "title": "Chuyên nghiệp",
+        "description": "Quy trình làm việc rõ ràng, minh bạch, được xây dựng theo chuẩn mực kế toán quốc tế."
+      }
+    },
+    "team": {
+      "members": [
+        {
+          "name": "Kế toán trưởng",
+          "title": "Giám đốc điều hành",
+          "summary": "Định hướng chiến lược tài chính, kiểm soát chất lượng dịch vụ và đảm bảo doanh nghiệp luôn tuân thủ quy định mới nhất.",
+          "specialties": ["Tài chính", "Kiểm soát", "Nghiệp vụ"],
+          "credentials": [
+            "10+ năm kinh nghiệm",
+            "Quản lý chuỗi báo cáo tài chính",
+            "Hỗ trợ doanh nghiệp theo từng giai đoạn phát triển"
+          ]
+        },
+        {
+          "name": "Phòng kế toán",
+          "title": "Trưởng phòng Kế toán",
+          "summary": "Phụ trách quy trình ghi sổ, báo cáo tài chính, theo dõi dòng tiền và tối ưu hóa hệ thống kế toán doanh nghiệp.",
+          "specialties": ["Kế toán", "Báo cáo", "Dòng tiền"],
+          "credentials": [
+            "Chứng chỉ kế toán hành nghề",
+            "Kinh nghiệm xử lý báo cáo quý/năm",
+            "Kiểm soát dữ liệu kế toán chặt chẽ"
+          ]
+        },
+        {
+          "name": "Chuyên gia thuế",
+          "title": "Chuyên viên Thuế",
+          "summary": "Tư vấn kê khai, rà soát quy định thuế, tối ưu nghĩa vụ và giảm rủi ro sai sót khi thực hiện nghĩa vụ thuế.",
+          "specialties": ["Thuế", "Tuân thủ", "Tối ưu"],
+          "credentials": [
+            "Chứng chỉ hành nghề thuế",
+            "Nắm vững quy định mới",
+            "Kiểm tra hồ sơ khai báo đúng hạn"
+          ]
+        },
+        {
+          "name": "Tư vấn tài chính",
+          "title": "Chuyên gia Tài chính",
+          "summary": "Hỗ trợ doanh nghiệp xây dựng mô hình tài chính, phân tích lợi nhuận, định hướng ngân sách và kế hoạch tăng trưởng bền vững.",
+          "specialties": ["Tài chính", "Phân tích", "Chiến lược"],
+          "credentials": [
+            "Phân tích báo cáo tài chính",
+            "Tư vấn chính sách chi phí",
+            "Tối ưu hiệu quả tài chính doanh nghiệp"
+          ]
+        }
+      ]
+    }
+  },
+  "ContactPage": {
+    "badge": "Liên hệ",
+    "heroTitle": "Chúng tôi luôn sẵn sàng hỗ trợ bạn",
+    "heroDescription": "Để lại thông tin hoặc liên hệ trực tiếp — đội ngũ TAF Việt sẽ phản hồi trong thời gian sớm nhất.",
+    "contactInfo": {
+      "email": "Email",
+      "phone": "Điện thoại",
+      "address": "Địa chỉ văn phòng",
+      "taxId": "Mã số doanh nghiệp"
+    },
+    "mapTitle": "Bản đồ văn phòng TAF Việt",
+    "addressValue": "937 Ngô Gia Tự, Việt Hưng, Hà Nội, Việt Nam",
+    "taxIdValue": "0105367171",
+    "invalidData": "Dữ liệu không hợp lệ",
+    "submitError": "Không thể gửi yêu cầu, vui lòng thử lại sau."
+  },
+  "Hero": {
+    "badge": "Được tin tưởng bởi hơn 500 doanh nghiệp",
+    "titleLineOne": "Giải pháp kế toán &",
+    "titleLineTwo": "thuế toàn diện",
+    "description": "TAF Việt đồng hành cùng doanh nghiệp trong việc quản lý tài chính, khai báo thuế và tuân thủ pháp luật — chính xác, đúng hạn, an tâm.",
+    "primaryButton": "Nhận tư vấn miễn phí",
+    "secondaryButton": "Xem dịch vụ",
+    "stats": {
+      "experience": {
+        "label": "Năm kinh nghiệm",
+        "value": "10+"
+      },
+      "clients": {
+        "label": "Khách hàng doanh nghiệp",
+        "value": "50+"
+      },
+      "compliance": {
+        "label": "Hồ sơ đúng hạn",
+        "value": "99%"
+      }
+    },
+    "dialog": {
+      "contactTitle": "Nhận tư vấn miễn phí",
+      "contactDescription": "Chúng tôi sẽ liên hệ trong vòng 24 giờ làm việc.",
+      "servicesTitle": "Dịch vụ của chúng tôi",
+      "servicesDescription": "Giải pháp toàn diện cho mọi nhu cầu tài chính doanh nghiệp."
+    },
+    "contactForm": {
+      "title": "Nhận tư vấn miễn phí",
+      "description": "Để lại số điện thoại, chúng tôi gọi lại trong 15 phút.",
+      "submitLabel": "Gọi lại cho tôi"
+    }
+  },
+  "ServicesList": {
+    "services": [
+      {
+        "title": "Khai báo thuế",
+        "description": "Thuế GTGT, TNDN, TNCN — đúng hạn, đúng luật.",
+        "badge": "Phổ biến"
+      },
+      {
+        "title": "Kế toán doanh nghiệp",
+        "description": "Ghi sổ, lập báo cáo tài chính theo chuẩn VAS.",
+        "badge": ""
+      },
+      {
+        "title": "Tuân thủ pháp luật",
+        "description": "Cập nhật thay đổi pháp lý, tư vấn rủi ro thuế.",
+        "badge": ""
+      },
+      {
+        "title": "Phân tích tài chính",
+        "description": "Báo cáo quản trị, dòng tiền, hoạch định ngân sách.",
+        "badge": ""
+      }
+    ]
+  },
+  "ServicesBlock": {
+    "services": [
+      {
+        "title": "Kế toán doanh nghiệp",
+        "description": "Sổ sách, báo cáo tài chính, quản lý dòng tiền hàng tháng."
+      },
+      {
+        "title": "Khai báo thuế",
+        "description": "VAT, thuế TNDN, thuế TNCN — đúng hạn, đúng luật."
+      },
+      {
+        "title": "Tư vấn tài chính",
+        "description": "Cơ cấu vốn, hoạch định ngân sách, tối ưu chi phí thuế."
+      }
+    ]
+  },
+  "NewsletterForm": {
+    "invalidEmail": "Email không hợp lệ",
+    "success": "Đã đăng ký! Hẹn gặp bạn trong bản tin tiếp theo.",
+    "placeholder": "email@congty.com",
+    "submitting": "Đang gửi...",
+    "button": "Đăng ký",
+    "buttonSubmitting": "Đang gửi..."
+  },
+  "ServicePageLayout": {
+    "freeConsultation": "Nhận tư vấn miễn phí",
+    "viewPricing": "Xem bảng giá",
+    "serviceScope": "Phạm vi dịch vụ",
+    "serviceScopeTitle": "Những gì TAF Việt xử lý cho bạn",
+    "process": "Quy trình",
+    "processTitle": "{count} bước xử lý mỗi kỳ",
+    "pricing": "Bảng giá",
+    "pricingTitle": "Chọn gói phù hợp với doanh nghiệp",
+    "mostPopular": "Phổ biến nhất",
+    "faq": "Câu hỏi thường gặp",
+    "faqTitle": "Giải đáp trước khi bắt đầu",
+    "contactConsultation": "Liên hệ tư vấn",
+    "contactButton": "Liên hệ tư vấn"
+  },
+  "ResourcesPage": {
+    "metadataTitle": "Tài nguyên | TAF Việt",
+    "metadataDescription": "Máy tính thuế, biểu mẫu, văn bản pháp luật và câu hỏi thường gặp từ TAF Việt.",
+    "badge": "Tài nguyên",
+    "heroTitle": "Công cụ & tài liệu cho doanh nghiệp",
+    "heroDescription": "Máy tính thuế, biểu mẫu tải về và văn bản pháp luật cập nhật — tất cả ở một nơi.",
+    "categories": {
+      "taxCalculator": {
+        "title": "Máy tính lương & thuế",
+        "description": "Ước tính lương Gross-Net, thuế GTGT chỉ trong vài giây."
+      },
+      "blog": {
+        "title": "Blog & tin tức",
+        "description": "Cập nhật quy định thuế, kế toán mới nhất mỗi tuần."
+      }
+    },
+    "downloadsBadge": "Biểu mẫu tải về",
+    "downloadsTitle": "Mẫu tài liệu thường dùng",
+    "legalBadge": "Văn bản pháp luật",
+    "legalTitle": "Văn bản liên quan doanh nghiệp cần biết",
+    "faqBadge": "Câu hỏi thường gặp",
+    "faqTitle": "Giải đáp nhanh",
+    "newsletterTitle": "Đăng ký bản tin",
+    "newsletterDescription": "Nhận cập nhật quy định thuế & kế toán mới nhất mỗi tháng, miễn phí.",
+    "downloads": [
+      "Mẫu đề nghị hoàn thuế GTGT",
+      "Bảng kê chi phí hợp lý cho doanh nghiệp",
+      "Checklist hồ sơ quyết toán thuế TNDN",
+      "Mẫu hợp đồng lao động chuẩn 2026"
+    ],
+    "legalDocs": [
+      "Luật Thuế giá trị gia tăng (sửa đổi, bổ sung)",
+      "Nghị định về hóa đơn điện tử",
+      "Thông tư hướng dẫn quyết toán thuế TNCN",
+      "Luật Doanh nghiệp hiện hành"
+    ],
+    "faqs": [
+      {
+        "question": "TAF Việt có hỗ trợ doanh nghiệp mới thành lập không?",
+        "answer": "Có. TAF Việt hỗ trợ từ giai đoạn đăng ký thành lập đến vận hành kế toán, thuế hàng tháng."
+      },
+      {
+        "question": "Tôi có thể tải biểu mẫu về dùng miễn phí không?",
+        "answer": "Có, toàn bộ biểu mẫu trong mục Tài nguyên đều miễn phí tải về và sử dụng."
+      },
+      {
+        "question": "Các văn bản pháp luật có được cập nhật thường xuyên không?",
+        "answer": "TAF Việt cập nhật danh mục văn bản khi có thay đổi quy định mới liên quan đến thuế và kế toán."
+      }
+    ]
+  },
+  "AdminContactSubmissions": {
+    "searchPlaceholder": "Tìm theo tên, số điện thoại hoặc email",
+    "filters": {
+      "status": "Trạng thái",
+      "allStatuses": "Tất cả trạng thái",
+      "allSources": "Tất cả nguồn",
+      "source": "Nguồn",
+      "statuses": {
+        "new": "Mới",
+        "read": "Đã đọc",
+        "archived": "Đã lưu trữ"
+      }
+    },
+    "columns": {
+      "name": "Tên",
+      "contact": "Liên hệ",
+      "source": "Nguồn",
+      "status": "Trạng thái",
+      "received": "Nhận"
+    },
+    "empty": "Không có đơn nào phù hợp với bộ lọc.",
+    "actions": {
+      "markAsRead": "Đánh dấu đã đọc",
+      "archive": "Lưu trữ",
+      "delete": "Xóa"
+    },
+    "dialog": {
+      "submitted": "Gửi lúc {date}",
+      "via": " qua {source}"
+    },
+    "pageTitle": "Đăng ký liên hệ"
+  },
+  "AdminDashboard": {
+    "stats": {
+      "totalUsers": "Tổng số người dùng",
+      "totalPosts": "Tổng số bài viết",
+      "newContacts": "Liên hệ mới",
+      "totalContacts": "Tổng số liên hệ"
+    }
+  },
+  "AdminPosts": {
+    "title": "Bài viết",
+    "newPost": "Bài viết mới",
+    "editPost": "Chỉnh sửa bài viết",
+    "detailsTitle": "Chi tiết bài viết",
+    "back": "Quay lại",
+    "edit": "Chỉnh sửa",
+    "viewDetails": "Xem chi tiết",
+    "deleteAction": "Xoá",
+    "deleteConfirm": "Xoá bài viết này?",
+    "noTitle": "Chưa có tiêu đề",
+    "emptyState": "Chưa có bài viết nào",
+    "missingTranslation": "Chưa có bản dịch {locale}",
+    "featuredBadge": "Nổi bật",
+    "createdAtLabel": "Tạo ngày {date}",
+    "loginRequired": "Vui lòng đăng nhập",
+    "invalidData": "Dữ liệu không hợp lệ: {message}",
+    "createFailed": "Không thể tạo bài viết",
+    "slugConflict": "Trùng slug trong một ngôn ngữ, vui lòng đổi tiêu đề",
+    "uploadNoFile": "Không có tệp nào được chọn",
+    "uploadFormatUnsupported": "Định dạng tệp không được hỗ trợ",
+    "uploadTooLarge": "Kích thước tệp vượt quá 5MB",
+    "columns": {
+      "title": "Tiêu đề",
+      "language": "Ngôn ngữ",
+      "category": "Danh mục",
+      "status": "Trạng thái",
+      "createdAt": "Ngày tạo",
+      "actions": "Hành động"
+    },
+    "status": {
+      "draft": "Bản nháp",
+      "published": "Đăng ngay"
+    },
+    "categoryPlaceholder": "Chọn danh mục",
+    "featured": "Đánh dấu là bài viết nổi bật",
+    "titleField": "Tiêu đề ({locale})",
+    "excerptField": "Mô tả ngắn ({locale})",
+    "contentField": "Nội dung ({locale})",
+    "author": "Tác giả",
+    "titleInputPlaceholder": "Nhập tiêu đề bài viết",
+    "emptyContentError": "Vui lòng nhập nội dung cho ít nhất một ngôn ngữ",
+    "emptyCategoryError": "Vui lòng chọn danh mục",
+    "save": "Lưu bài viết",
+    "richTextPlaceholder": "Bắt đầu viết nội dung bài viết...",
+    "updatePost": "Cập nhật bài viết"
+  },
+  "AdminUsers": {
+    "title": "Người dùng",
+    "table": {
+      "email": "Email",
+      "role": "Vai trò",
+      "createdAt": "Ngày tạo",
+      "actions": "Hành động"
+    },
+    "createUserButton": "Thêm người dùng",
+    "dialog": {
+      "title": "Tạo tài khoản admin",
+      "email": "Email",
+      "temporaryPassword": "Mật khẩu tạm thời",
+      "submit": "Tạo tài khoản"
+    },
+    "confirmDelete": "Bạn có chắc muốn xoá người dùng này?"
+  },
+  "FreelancerTaxCalculator": {
+    "incomeTypeLabel": "Loại thu nhập",
+    "revenueLabel": "Doanh thu",
+    "periodLabel": "Chu kỳ doanh thu",
+    "period": {
+      "monthly": "Theo tháng",
+      "annual": "Theo năm"
+    },
+    "info": "Cá nhân kinh doanh và freelancer có tổng doanh thu từ 1 tỷ VNĐ/năm trở xuống được miễn toàn bộ thuế GTGT và thuế TNCN. Nếu doanh thu vượt 1 tỷ VNĐ/năm, mức thuế áp dụng là cố định theo tỷ lệ % trên doanh thu và phải đăng ký sử dụng hóa đơn điện tử theo Nghị định 141/2026/NĐ-CP.",
+    "status": {
+      "label": "Trạng thái",
+      "exempt": "Miễn thuế",
+      "taxable": "Phải nộp thuế"
+    },
+    "rows": {
+      "annualRevenue": "Doanh thu quy đổi theo năm",
+      "vat": "Thuế GTGT ({rate}%)",
+      "pit": "Thuế TNCN ({rate}%)",
+      "totalTax": "Tổng thuế phải nộp",
+      "netIncome": "Thu nhập thực nhận"
+    },
+    "incomeTypes": {
+      "freelancer": {
+        "label": "Freelancer (dịch vụ tự do)",
+        "description": "Thiết kế, viết lách, lập trình, tư vấn độc lập..."
+      },
+      "kol": {
+        "label": "KOL (Người ảnh hưởng)",
+        "description": "Thu nhập từ quảng cáo, hợp tác thương hiệu có hợp đồng"
+      },
+      "koc": {
+        "label": "KOC (Người tiêu dùng chủ chốt)",
+        "description": "Thu nhập từ review, giới thiệu sản phẩm"
+      },
+      "affiliate": {
+        "label": "Affiliate Shopee / TikTok Shop",
+        "description": "Hoa hồng từ tiếp thị liên kết (affiliate marketing). Lưu ý: nếu bạn hoạt động như đại lý bán hàng đúng giá hưởng hoa hồng (không phải tiếp thị nội dung), mức thuế có thể là 1% GTGT / 0,5% TNCN thay vì 5%/2% — vui lòng xác nhận với cơ quan thuế nếu không chắc chắn."
+      }
+    }
+  },
+  "ServicePages": {
+    "accounting": {
+      "eyebrow": "Dịch vụ kế toán",
+      "title": "Kế toán trọn gói, chính xác và minh bạch",
+      "description": "Từ ghi sổ hàng tháng đến báo cáo tài chính cuối năm, TAF Việt giúp doanh nghiệp vận hành sổ sách gọn gàng, đúng chuẩn mực kế toán Việt Nam.",
+      "included": [
+        {
+          "title": "Ghi sổ kế toán hàng tháng",
+          "description": "Hạch toán chứng từ, cập nhật sổ sách theo đúng chế độ kế toán doanh nghiệp hiện hành."
+        },
+        {
+          "title": "Lập báo cáo tài chính",
+          "description": "Bảng cân đối kế toán, báo cáo kết quả kinh doanh, lưu chuyển tiền tệ cuối năm tài chính."
+        },
+        {
+          "title": "Quản lý bảng lương",
+          "description": "Tính lương, bảo hiểm xã hội, thuế TNCN và các khoản trích nộp theo quy định."
+        },
+        {
+          "title": "Đối chiếu công nợ & ngân hàng",
+          "description": "Rà soát công nợ phải thu, phải trả và đối chiếu sao kê ngân hàng định kỳ."
+        },
+        {
+          "title": "Kiểm tra & chuẩn hóa sổ sách",
+          "description": "Rà soát sổ sách cũ, phát hiện sai lệch và chuẩn hóa lại theo đúng chuẩn mực kế toán."
+        },
+        {
+          "title": "Chuyển đổi phần mềm kế toán",
+          "description": "Hỗ trợ di chuyển dữ liệu và thiết lập phần mềm kế toán phù hợp với quy mô doanh nghiệp."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Tiếp nhận chứng từ",
+          "description": "Thu thập hóa đơn, phiếu thu chi, sao kê ngân hàng và các chứng từ phát sinh trong kỳ."
+        },
+        {
+          "title": "Hạch toán & ghi sổ",
+          "description": "Phân loại, hạch toán nghiệp vụ vào sổ sách theo đúng tài khoản kế toán."
+        },
+        {
+          "title": "Đối chiếu số liệu",
+          "description": "Kiểm tra khớp đúng giữa sổ sách, công nợ và số dư ngân hàng thực tế."
+        },
+        {
+          "title": "Lập báo cáo",
+          "description": "Tổng hợp báo cáo tài chính, báo cáo quản trị theo tháng/quý/năm."
+        },
+        {
+          "title": "Bàn giao & tư vấn",
+          "description": "Gửi báo cáo kèm giải thích số liệu và khuyến nghị vận hành cho kỳ tiếp theo."
+        }
+      ],
+      "plans": [
+        {
+          "name": "Cơ bản",
+          "price": "2.000.000đ",
+          "period": "/ tháng",
+          "description": "Phù hợp doanh nghiệp mới, phát sinh ít giao dịch.",
+          "features": [
+            "Ghi sổ kế toán hàng tháng",
+            "Đối chiếu công nợ cơ bản",
+            "Hỗ trợ qua email"
+          ]
+        },
+        {
+          "name": "Tiêu chuẩn",
+          "price": "4.500.000đ",
+          "period": "/ tháng",
+          "description": "Phù hợp doanh nghiệp vừa và nhỏ có bảng lương và nhiều giao dịch.",
+          "features": [
+            "Toàn bộ gói Cơ bản",
+            "Quản lý bảng lương & bảo hiểm",
+            "Báo cáo tài chính hàng quý",
+            "Hỗ trợ ưu tiên qua điện thoại"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "Chuyên sâu",
+          "price": "Liên hệ",
+          "period": "",
+          "description": "Phù hợp doanh nghiệp có quy mô lớn hoặc nhiều chi nhánh.",
+          "features": [
+            "Toàn bộ gói Tiêu chuẩn",
+            "Báo cáo quản trị theo yêu cầu",
+            "Kế toán trưởng phụ trách riêng",
+            "Tư vấn chuyển đổi hệ thống kế toán"
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Doanh nghiệp đang dùng phần mềm kế toán khác có chuyển đổi được không?",
+          "answer": "Có. TAF Việt hỗ trợ rà soát dữ liệu cũ và chuyển đổi sang hệ thống phù hợp mà không làm gián đoạn vận hành."
+        },
+        {
+          "question": "Báo cáo tài chính được lập theo chuẩn nào?",
+          "answer": "Theo chuẩn mực kế toán Việt Nam (VAS) hiện hành, phù hợp với quy mô và loại hình doanh nghiệp."
+        },
+        {
+          "question": "Có thể chỉ thuê dịch vụ tính lương, không dùng trọn gói không?",
+          "answer": "Có. Doanh nghiệp có thể chọn riêng hạng mục bảng lương hoặc kết hợp cùng các dịch vụ khác theo nhu cầu."
+        },
+        {
+          "question": "Dữ liệu kế toán của doanh nghiệp có được bảo mật không?",
+          "answer": "TAF Việt cam kết bảo mật thông tin theo thỏa thuận hợp đồng và chỉ chia sẻ dữ liệu khi có sự đồng ý của doanh nghiệp."
+        }
+      ],
+      "ctaTitle": "Sẵn sàng để TAF Việt lo phần sổ sách?",
+      "ctaDescription": "Để lại thông tin, đội ngũ TAF Việt sẽ liên hệ tư vấn trong vòng 24 giờ.",
+      "contactFormTitle": "Yêu cầu tư vấn dịch vụ kế toán",
+      "source": "service-accounting"
+    },
+    "taxPreparation": {
+      "eyebrow": "Dịch vụ thuế",
+      "title": "Khai & quyết toán thuế đúng hạn, đúng quy định",
+      "description": "TAF Việt đồng hành cùng doanh nghiệp trong toàn bộ quy trình kê khai và quyết toán thuế GTGT, TNCN, TNDN — giảm rủi ro, tiết kiệm thời gian nội bộ.",
+      "included": [
+        {
+          "title": "Kê khai thuế GTGT",
+          "description": "Lập và nộp tờ khai thuế giá trị gia tăng theo kỳ, đối chiếu số liệu đầu vào – đầu ra."
+        },
+        {
+          "title": "Quyết toán thuế TNDN",
+          "description": "Tính toán, lập hồ sơ quyết toán thuế thu nhập doanh nghiệp cuối năm tài chính."
+        },
+        {
+          "title": "Quyết toán thuế TNCN",
+          "description": "Tổng hợp thu nhập, giảm trừ gia cảnh và quyết toán thuế thu nhập cá nhân cho người lao động."
+        },
+        {
+          "title": "Rà soát rủi ro thuế",
+          "description": "Kiểm tra hồ sơ, chứng từ để phát hiện sớm sai lệch trước khi cơ quan thuế thanh kiểm tra."
+        },
+        {
+          "title": "Đại diện làm việc với cơ quan thuế",
+          "description": "TAF Việt thay mặt doanh nghiệp giải trình, bổ sung hồ sơ khi có yêu cầu từ cơ quan thuế."
+        },
+        {
+          "title": "Nhắc hạn & theo dõi nghĩa vụ",
+          "description": "Theo dõi thời hạn kê khai, nộp thuế theo tháng/quý/năm, tránh phát sinh phạt chậm nộp."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Tiếp nhận & khảo sát hồ sơ",
+          "description": "TAF Việt thu thập sổ sách, hóa đơn, chứng từ và đánh giá tình trạng thuế hiện tại của doanh nghiệp."
+        },
+        {
+          "title": "Rà soát & đối chiếu số liệu",
+          "description": "Kiểm tra tính khớp đúng giữa sổ sách kế toán và các tờ khai đã nộp trước đó."
+        },
+        {
+          "title": "Lập tờ khai & tính thuế",
+          "description": "Chuẩn bị tờ khai theo đúng biểu mẫu, tính toán số thuế phải nộp hoặc được hoàn."
+        },
+        {
+          "title": "Nộp hồ sơ & theo dõi",
+          "description": "Nộp tờ khai qua hệ thống thuế điện tử, theo dõi trạng thái xử lý và phản hồi kịp thời."
+        },
+        {
+          "title": "Báo cáo kết quả",
+          "description": "Gửi báo cáo tổng hợp cho doanh nghiệp kèm khuyến nghị cho kỳ kê khai tiếp theo."
+        }
+      ],
+      "plans": [
+        {
+          "name": "Cơ bản",
+          "price": "1.500.000đ",
+          "period": "/ tháng",
+          "description": "Phù hợp hộ kinh doanh, doanh nghiệp mới thành lập.",
+          "features": [
+            "Kê khai thuế GTGT hàng tháng/quý",
+            "Nhắc hạn nộp thuế",
+            "Hỗ trợ qua email"
+          ]
+        },
+        {
+          "name": "Tiêu chuẩn",
+          "price": "3.500.000đ",
+          "period": "/ tháng",
+          "description": "Phù hợp doanh nghiệp vừa và nhỏ có phát sinh thường xuyên.",
+          "features": [
+            "Toàn bộ gói Cơ bản",
+            "Quyết toán thuế TNCN, TNDN cuối năm",
+            "Rà soát rủi ro thuế định kỳ",
+            "Hỗ trợ ưu tiên qua điện thoại"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "Chuyên sâu",
+          "price": "Liên hệ",
+          "period": "",
+          "description": "Phù hợp doanh nghiệp có quy mô lớn hoặc cấu trúc thuế phức tạp.",
+          "features": [
+            "Toàn bộ gói Tiêu chuẩn",
+            "Đại diện làm việc với cơ quan thuế",
+            "Tư vấn hoạch định thuế theo năm",
+            "Chuyên viên phụ trách riêng"
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Doanh nghiệp cần chuẩn bị gì khi sử dụng dịch vụ?",
+          "answer": "Chỉ cần cung cấp hóa đơn, chứng từ và sổ sách hiện có. TAF Việt sẽ rà soát và hướng dẫn bổ sung nếu còn thiếu."
+        },
+        {
+          "question": "Thời gian xử lý một kỳ kê khai là bao lâu?",
+          "answer": "Thông thường 3–5 ngày làm việc kể từ khi nhận đủ hồ sơ, tùy vào khối lượng phát sinh trong kỳ."
+        },
+        {
+          "question": "Nếu cơ quan thuế yêu cầu giải trình thì sao?",
+          "answer": "TAF Việt hỗ trợ soạn văn bản giải trình và có thể đại diện làm việc trực tiếp với cơ quan thuế trong gói Chuyên sâu."
+        },
+        {
+          "question": "Có thể đổi gói dịch vụ giữa chừng không?",
+          "answer": "Có. Doanh nghiệp có thể nâng hoặc hạ gói vào đầu mỗi kỳ thanh toán, không phát sinh phí chuyển đổi."
+        }
+      ],
+      "ctaTitle": "Sẵn sàng để TAF Việt lo phần thuế?",
+      "ctaDescription": "Để lại thông tin, đội ngũ TAF Việt sẽ liên hệ tư vấn trong vòng 24 giờ.",
+      "contactFormTitle": "Yêu cầu tư vấn dịch vụ thuế",
+      "source": "service-tax-preparation"
+    },
+    "payroll": {
+      "eyebrow": "Dịch vụ tính lương",
+      "title": "Bảng lương & bảo hiểm chính xác, đúng hạn mỗi tháng",
+      "description": "TAF Việt xử lý toàn bộ quy trình tính lương, bảo hiểm xã hội và thuế TNCN cho nhân viên — giúp doanh nghiệp giảm tải công việc hành chính và tránh sai sót.",
+      "included": [
+        {
+          "title": "Tính lương hàng tháng",
+          "description": "Tính lương, thưởng, phụ cấp và các khoản khấu trừ theo bảng chấm công thực tế."
+        },
+        {
+          "title": "Bảo hiểm xã hội, y tế, thất nghiệp",
+          "description": "Lập hồ sơ tăng/giảm lao động, tính và theo dõi các khoản trích nộp bảo hiểm bắt buộc."
+        },
+        {
+          "title": "Thuế TNCN từ tiền lương",
+          "description": "Tính thuế thu nhập cá nhân khấu trừ hàng tháng theo biểu lũy tiến và giảm trừ gia cảnh."
+        },
+        {
+          "title": "Phiếu lương & báo cáo",
+          "description": "Xuất phiếu lương chi tiết cho từng nhân viên và báo cáo tổng hợp quỹ lương cho doanh nghiệp."
+        },
+        {
+          "title": "Chi trả qua ngân hàng",
+          "description": "Lập danh sách ủy nhiệm chi để doanh nghiệp thực hiện thanh toán lương qua ngân hàng."
+        },
+        {
+          "title": "Nhắc hạn & cập nhật quy định",
+          "description": "Theo dõi thời hạn nộp bảo hiểm, quyết toán TNCN và cập nhật khi có thay đổi mức lương tối thiểu."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Nhận bảng chấm công",
+          "description": "Doanh nghiệp gửi bảng chấm công, thông tin tăng giảm nhân sự trong tháng."
+        },
+        {
+          "title": "Tính lương & khấu trừ",
+          "description": "Tính lương gộp, các khoản bảo hiểm, thuế TNCN và lương thực nhận cho từng nhân viên."
+        },
+        {
+          "title": "Đối soát với doanh nghiệp",
+          "description": "Gửi bảng lương nháp để doanh nghiệp xác nhận trước khi chốt số liệu."
+        },
+        {
+          "title": "Xuất phiếu lương & hồ sơ bảo hiểm",
+          "description": "Hoàn thiện phiếu lương từng nhân viên và hồ sơ bảo hiểm xã hội cần nộp trong kỳ."
+        },
+        {
+          "title": "Bàn giao & lưu trữ",
+          "description": "Gửi báo cáo quỹ lương hàng tháng và lưu trữ hồ sơ phục vụ quyết toán cuối năm."
+        }
+      ],
+      "plans": [
+        {
+          "name": "Cơ bản",
+          "price": "1.200.000đ",
+          "period": "/ tháng",
+          "description": "Phù hợp doanh nghiệp dưới 10 nhân sự.",
+          "features": [
+            "Tính lương hàng tháng",
+            "Phiếu lương từng nhân viên",
+            "Hỗ trợ qua email"
+          ]
+        },
+        {
+          "name": "Tiêu chuẩn",
+          "price": "2.800.000đ",
+          "period": "/ tháng",
+          "description": "Phù hợp doanh nghiệp 10–50 nhân sự.",
+          "features": [
+            "Toàn bộ gói Cơ bản",
+            "Quản lý bảo hiểm xã hội, y tế, thất nghiệp",
+            "Tính thuế TNCN khấu trừ hàng tháng",
+            "Hỗ trợ ưu tiên qua điện thoại"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "Chuyên sâu",
+          "price": "Liên hệ",
+          "period": "",
+          "description": "Phù hợp doanh nghiệp trên 50 nhân sự hoặc nhiều chi nhánh.",
+          "features": [
+            "Toàn bộ gói Tiêu chuẩn",
+            "Quyết toán thuế TNCN cuối năm",
+            "Báo cáo quỹ lương theo phòng ban",
+            "Chuyên viên phụ trách riêng"
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "TAF Việt có xử lý được nhiều mức lương và phụ cấp khác nhau không?",
+          "answer": "Có. Hệ thống tính lương của TAF Việt hỗ trợ cấu hình linh hoạt theo từng vị trí, phụ cấp và chính sách thưởng riêng của doanh nghiệp."
+        },
+        {
+          "question": "Nếu có nhân viên vào/nghỉ giữa tháng thì tính lương thế nào?",
+          "answer": "TAF Việt tính lương theo số ngày công thực tế và cập nhật hồ sơ bảo hiểm tăng/giảm tương ứng trong kỳ đó."
+        },
+        {
+          "question": "Dữ liệu lương của nhân viên có được bảo mật không?",
+          "answer": "Có. Thông tin lương được xử lý bảo mật và chỉ những người được ủy quyền từ phía doanh nghiệp mới có quyền truy cập."
+        },
+        {
+          "question": "Có hỗ trợ quyết toán thuế TNCN cuối năm cho nhân viên không?",
+          "answer": "Có, trong gói Chuyên sâu. Với các gói khác, TAF Việt có thể bổ sung dịch vụ này theo yêu cầu riêng."
+        }
+      ],
+      "ctaTitle": "Sẵn sàng để TAF Việt lo phần bảng lương?",
+      "ctaDescription": "Để lại thông tin, đội ngũ TAF Việt sẽ liên hệ tư vấn trong vòng 24 giờ.",
+      "contactFormTitle": "Yêu cầu tư vấn dịch vụ tính lương",
+      "source": "service-payroll"
+    },
+    "advisory": {
+      "eyebrow": "Dịch vụ tư vấn",
+      "title": "Tư vấn tài chính & thuế cho quyết định chiến lược",
+      "description": "TAF Việt đồng hành cùng ban lãnh đạo trong các quyết định quan trọng — từ hoạch định thuế, cơ cấu doanh nghiệp đến chuẩn bị cho các giao dịch lớn.",
+      "included": [
+        {
+          "title": "Hoạch định thuế chiến lược",
+          "description": "Xây dựng phương án tối ưu nghĩa vụ thuế hợp pháp, phù hợp với kế hoạch kinh doanh dài hạn."
+        },
+        {
+          "title": "Tư vấn cơ cấu doanh nghiệp",
+          "description": "Đánh giá và đề xuất mô hình công ty, chi nhánh hoặc tập đoàn phù hợp với giai đoạn phát triển."
+        },
+        {
+          "title": "Phân tích tài chính & dòng tiền",
+          "description": "Rà soát sức khỏe tài chính, dự báo dòng tiền và đề xuất phương án cải thiện hiệu quả vận hành."
+        },
+        {
+          "title": "Tư vấn tuân thủ pháp lý – thuế",
+          "description": "Đối chiếu hoạt động thực tế với quy định hiện hành, giảm thiểu rủi ro pháp lý và thuế."
+        },
+        {
+          "title": "Rà soát trước M&A / gọi vốn",
+          "description": "Kiểm tra hồ sơ tài chính, thuế trước các giao dịch mua bán – sáp nhập hoặc gọi vốn đầu tư."
+        },
+        {
+          "title": "Tư vấn theo mục tiêu doanh nghiệp",
+          "description": "Đồng hành theo từng cột mốc: mở rộng thị trường, tái cấu trúc, hoặc chuẩn bị niêm yết."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Trao đổi mục tiêu ban đầu",
+          "description": "Tìm hiểu tình hình hiện tại, mục tiêu kinh doanh và các vấn đề doanh nghiệp đang cần giải quyết."
+        },
+        {
+          "title": "Rà soát dữ liệu tài chính & thuế",
+          "description": "Phân tích báo cáo tài chính, hồ sơ thuế và cơ cấu vận hành hiện có."
+        },
+        {
+          "title": "Xây dựng phương án tư vấn",
+          "description": "Đề xuất các phương án cụ thể kèm phân tích ưu, nhược điểm và rủi ro của từng lựa chọn."
+        },
+        {
+          "title": "Trình bày & thống nhất giải pháp",
+          "description": "Trao đổi trực tiếp với ban lãnh đạo để thống nhất phương án triển khai phù hợp nhất."
+        },
+        {
+          "title": "Đồng hành triển khai",
+          "description": "Hỗ trợ doanh nghiệp thực thi phương án đã thống nhất và điều chỉnh khi cần thiết."
+        }
+      ],
+      "plans": [
+        {
+          "name": "Tư vấn theo phiên",
+          "price": "1.800.000đ",
+          "period": "/ buổi",
+          "description": "Phù hợp nhu cầu tư vấn một vấn đề cụ thể, không cần cam kết dài hạn.",
+          "features": [
+            "Buổi tư vấn 90 phút",
+            "Báo cáo khuyến nghị sau buổi tư vấn",
+            "Hỗ trợ qua email trong 7 ngày"
+          ]
+        },
+        {
+          "name": "Đồng hành theo quý",
+          "price": "9.000.000đ",
+          "period": "/ quý",
+          "description": "Phù hợp doanh nghiệp cần tư vấn thường xuyên trong giai đoạn tăng trưởng.",
+          "features": [
+            "Tư vấn không giới hạn số buổi trong quý",
+            "Rà soát tài chính & thuế định kỳ",
+            "Ưu tiên phản hồi trong 24 giờ"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "Cố vấn chiến lược",
+          "price": "Liên hệ",
+          "period": "",
+          "description": "Phù hợp doanh nghiệp cần cố vấn cấp cao đồng hành dài hạn.",
+          "features": [
+            "Toàn bộ gói Đồng hành theo quý",
+            "Tham gia các cuộc họp chiến lược của ban lãnh đạo",
+            "Tư vấn chuyên biệt cho M&A / gọi vốn",
+            "Chuyên gia cố vấn phụ trách riêng"
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Dịch vụ tư vấn này khác gì so với dịch vụ kế toán và thuế thông thường?",
+          "answer": "Tư vấn tập trung vào các quyết định chiến lược — cơ cấu doanh nghiệp, hoạch định thuế dài hạn, chuẩn bị giao dịch lớn — thay vì xử lý nghiệp vụ hàng ngày."
+        },
+        {
+          "question": "Doanh nghiệp nhỏ có phù hợp sử dụng dịch vụ tư vấn không?",
+          "answer": "Có. Gói Tư vấn theo phiên phù hợp cho doanh nghiệp nhỏ cần giải quyết một vấn đề cụ thể mà không cần cam kết dài hạn."
+        },
+        {
+          "question": "Có thể kết hợp dịch vụ tư vấn với dịch vụ kế toán/thuế hiện tại không?",
+          "answer": "Có. TAF Việt có thể tư vấn dựa trên dữ liệu từ dịch vụ kế toán/thuế hiện có, giúp phương án đề xuất sát với thực tế vận hành."
+        },
+        {
+          "question": "Thông tin doanh nghiệp chia sẻ trong quá trình tư vấn có được bảo mật không?",
+          "answer": "Có. TAF Việt ký thỏa thuận bảo mật (NDA) khi cần thiết và chỉ sử dụng thông tin phục vụ mục đích tư vấn đã thống nhất."
+        }
+      ],
+      "ctaTitle": "Sẵn sàng thảo luận về chiến lược tài chính?",
+      "ctaDescription": "Để lại thông tin, chuyên gia tư vấn của TAF Việt sẽ liên hệ trong vòng 24 giờ.",
+      "contactFormTitle": "Đặt lịch tư vấn chiến lược",
+      "source": "service-advisory"
+    }
   }
 }

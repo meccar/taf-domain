@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
+import { getTranslations } from "next-intl/server";
 import { TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Eye, MoreHorizontal, Pencil, Star, Trash2 } from "lucide-react";
@@ -14,6 +15,7 @@ import {
 import { DeletePostItem } from "./delete-post-button";
 
 export async function PostsTable() {
+  const t = await getTranslations("AdminPosts");
   const supabase = await createClient();
 
   const { data: posts, error } = await supabase
@@ -52,7 +54,7 @@ export async function PostsTable() {
                   >
                     {primary?.title ?? (
                       <span className="text-muted-foreground italic">
-                        Chưa có tiêu đề
+                        {t("noTitle")}
                       </span>
                     )}
                   </span>
@@ -77,7 +79,9 @@ export async function PostsTable() {
               <Badge
                 variant={post.status === "published" ? "default" : "secondary"}
               >
-                {post.status === "published" ? "Đã đăng" : "Bản nháp"}
+                {post.status === "published"
+                  ? t("status.published")
+                  : t("status.draft")}
               </Badge>
             </TableCell>
             <TableCell className="whitespace-nowrap">
@@ -90,7 +94,7 @@ export async function PostsTable() {
                   <Button
                     variant="ghost"
                     size="icon"
-                    aria-label="Mở tùy chọn bài viết"
+                    aria-label={t("viewDetails")}
                   >
                     <MoreHorizontal className="h-4 w-4" />
                   </Button>
@@ -100,14 +104,14 @@ export async function PostsTable() {
                   <DropdownMenuItem asChild>
                     <Link href={`/admin/posts/${post.id}`}>
                       <Eye className="mr-2 h-4 w-4" />
-                      Xem chi tiết
+                      {t("viewDetails")}
                     </Link>
                   </DropdownMenuItem>
 
                   <DropdownMenuItem asChild>
                     <Link href={`/admin/posts/${post.id}/edit`}>
                       <Pencil className="mr-2 h-4 w-4" />
-                      Chỉnh sửa
+                      {t("edit")}
                     </Link>
                   </DropdownMenuItem>
 
@@ -122,7 +126,7 @@ export async function PostsTable() {
       {posts?.length === 0 && (
         <TableRow>
           <TableCell colSpan={6} className="text-center text-muted-foreground">
-            Chưa có bài viết nào
+            {t("emptyState")}
           </TableCell>
         </TableRow>
       )}

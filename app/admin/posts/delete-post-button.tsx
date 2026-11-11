@@ -1,11 +1,13 @@
 "use client";
 
 import { useTransition } from "react";
+import { useTranslations } from "next-intl";
 import { Loader2, Trash2 } from "lucide-react";
 import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
 import { deletePostAction } from "./actions";
 
 export function DeletePostItem({ postId }: { postId: string }) {
+  const t = useTranslations("AdminPosts");
   const [isPending, startTransition] = useTransition();
 
   return (
@@ -14,7 +16,7 @@ export function DeletePostItem({ postId }: { postId: string }) {
       disabled={isPending}
       onSelect={(e) => {
         e.preventDefault();
-        if (!confirm("Xoá bài viết này?")) return;
+        if (!confirm(t("deleteConfirm"))) return;
         startTransition(async () => {
           await deletePostAction(postId);
         });
@@ -25,7 +27,7 @@ export function DeletePostItem({ postId }: { postId: string }) {
       ) : (
         <Trash2 className="mr-2 h-4 w-4 text-red-600" />
       )}
-      Xoá
+      {t("deleteAction")}
     </DropdownMenuItem>
   );
 }

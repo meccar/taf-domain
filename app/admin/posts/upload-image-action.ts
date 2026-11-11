@@ -1,5 +1,6 @@
 "use server";
 
+import { getTranslations } from "next-intl/server";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { createClient } from "@/lib/supabase/server";
 import { ActionResult } from "@/types/action-result";
@@ -10,6 +11,7 @@ const MAX_SIZE = 5 * 1024 * 1024;
 export async function uploadImageAction(
   formData: FormData,
 ): Promise<ActionResult<string>> {
+  const t = await getTranslations("AdminPosts");
   const rateLimit = await checkRateLimit("upload");
   if (!rateLimit.success) return rateLimit;
 
@@ -17,20 +19,19 @@ export async function uploadImageAction(
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user) return { success: false, error: "Chưa đăng nhập", data: null };
+  if (!user) return { success: false, error: t("loginRequired"), data: null };
 
   const file = formData.get("file") as File;
-  if (!file)
-    return { success: false, error: "Không có tệp nào được chọn", data: null };
+  if (!file) return { success: false, error: t("uploadNoFile"), data: null };
 
   if (!ALLOWED_TYPES.includes(file.type))
     return {
       success: false,
-      error: "Định dạng tệp không được hỗ trợ",
+      error: t("uploadFormatUnsupported"),
       data: null,
     };
   if (file.size > MAX_SIZE)
-    return { success: false, error: "Kích thước tệp vượt quá 5MB", data: null };
+    return { success: false, error: t("uploadTooLarge"), data: null };
 
   const fileExt = file.name.split(".").pop();
   const fileName = `${crypto.randomUUID()}.${fileExt}`;

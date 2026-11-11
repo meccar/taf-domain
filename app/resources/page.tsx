@@ -7,6 +7,7 @@ import {
   Download,
   ArrowUpRight,
 } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -24,90 +25,65 @@ import {
 } from "@/components/ui/accordion";
 import { NewsletterForm } from "@/components/newsletter-form";
 
-export const metadata = {
-  title: "Tài nguyên | TAF Việt",
-  description:
-    "Máy tính thuế, biểu mẫu, văn bản pháp luật và câu hỏi thường gặp từ TAF Việt.",
-};
+export async function generateMetadata() {
+  const t = await getTranslations("ResourcesPage");
+  return {
+    title: t("metadataTitle"),
+    description: t("metadataDescription"),
+  };
+}
 
-const categories = [
-  {
-    icon: Calculator,
-    title: "Máy tính lương & thuế",
-    description: "Ước tính lương Gross-Net, thuế GTGT chỉ trong vài giây.",
-    href: "/resources/calculators",
-  },
-  {
-    icon: BookOpen,
-    title: "Blog & tin tức",
-    description: "Cập nhật quy định thuế, kế toán mới nhất mỗi tuần.",
-    href: "/blog",
-  },
-];
+export default async function ResourcesPage() {
+  const t = await getTranslations("ResourcesPage");
 
-const downloads = [
-  {
-    title: "Mẫu đề nghị hoàn thuế GTGT",
-    file: "/downloads/mau-de-nghi-hoan-thue-gtgt.docx",
-  },
-  {
-    title: "Bảng kê chi phí hợp lý cho doanh nghiệp",
-    file: "/downloads/bang-ke-chi-phi.xlsx",
-  },
-  {
-    title: "Checklist hồ sơ quyết toán thuế TNDN",
-    file: "/downloads/checklist-quyet-toan-tndn.pdf",
-  },
-  {
-    title: "Mẫu hợp đồng lao động chuẩn 2026",
-    file: "/downloads/mau-hop-dong-lao-dong.docx",
-  },
-];
+  const categories = [
+    {
+      icon: Calculator,
+      title: t("categories.taxCalculator.title"),
+      description: t("categories.taxCalculator.description"),
+      href: "/resources/calculators",
+    },
+    {
+      icon: BookOpen,
+      title: t("categories.blog.title"),
+      description: t("categories.blog.description"),
+      href: "/blog",
+    },
+  ];
 
-const legalDocs = [
-  "Luật Thuế giá trị gia tăng (sửa đổi, bổ sung)",
-  "Nghị định về hóa đơn điện tử",
-  "Thông tư hướng dẫn quyết toán thuế TNCN",
-  "Luật Doanh nghiệp hiện hành",
-];
+  const downloads = (t.raw("downloads") as string[]).map((title, index) => ({
+    title,
+    file: [
+      "/downloads/mau-de-nghi-hoan-thue-gtgt.docx",
+      "/downloads/bang-ke-chi-phi.xlsx",
+      "/downloads/checklist-quyet-toan-tndn.pdf",
+      "/downloads/mau-hop-dong-lao-dong.docx",
+    ][index],
+  }));
 
-const faqs = [
-  {
-    q: "TAF Việt có hỗ trợ doanh nghiệp mới thành lập không?",
-    a: "Có. TAF Việt hỗ trợ từ giai đoạn đăng ký thành lập đến vận hành kế toán, thuế hàng tháng.",
-  },
-  {
-    q: "Tôi có thể tải biểu mẫu về dùng miễn phí không?",
-    a: "Có, toàn bộ biểu mẫu trong mục Tài nguyên đều miễn phí tải về và sử dụng.",
-  },
-  {
-    q: "Các văn bản pháp luật có được cập nhật thường xuyên không?",
-    a: "TAF Việt cập nhật danh mục văn bản khi có thay đổi quy định mới liên quan đến thuế và kế toán.",
-  },
-];
+  const legalDocs = t.raw("legalDocs") as string[];
+  const faqs = (
+    t.raw("faqs") as Array<{ question: string; answer: string }>
+  ).map((item) => ({ q: item.question, a: item.answer }));
 
-export default function ResourcesPage() {
   return (
     <main className="w-full">
-      {/* Hero */}
       <div className="bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center flex flex-col items-center gap-4">
           <Badge variant="outline" className="uppercase tracking-widest">
-            Tài nguyên
+            {t("badge")}
           </Badge>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
-            Công cụ & tài liệu cho doanh nghiệp
+            {t("heroTitle")}
           </h1>
           <p className="max-w-2xl text-base text-muted-foreground leading-relaxed">
-            Máy tính thuế, biểu mẫu tải về và văn bản pháp luật cập nhật — tất
-            cả ở một nơi.
+            {t("heroDescription")}
           </p>
         </div>
       </div>
 
       <Separator />
 
-      {/* Category cards */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
         <div className="grid sm:grid-cols-2 gap-6">
           {categories.map(({ icon: Icon, title, description, href }) => (
@@ -131,14 +107,13 @@ export default function ResourcesPage() {
 
       <Separator />
 
-      {/* Downloads */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
         <div className="max-w-2xl mb-10">
           <Badge variant="outline" className="uppercase tracking-widest mb-4">
-            Biểu mẫu tải về
+            {t("downloadsBadge")}
           </Badge>
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-            Mẫu tài liệu thường dùng
+            {t("downloadsTitle")}
           </h2>
         </div>
         <div className="grid sm:grid-cols-2 gap-4">
@@ -158,7 +133,6 @@ export default function ResourcesPage() {
 
       <Separator />
 
-      {/* Legal documents + FAQ + newsletter */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
         <div className="grid lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2 flex flex-col gap-16">
@@ -167,10 +141,10 @@ export default function ResourcesPage() {
                 variant="outline"
                 className="uppercase tracking-widest mb-4"
               >
-                Văn bản pháp luật
+                {t("legalBadge")}
               </Badge>
               <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight mb-6">
-                Văn bản liên quan doanh nghiệp cần biết
+                {t("legalTitle")}
               </h2>
               <div className="flex flex-col divide-y border rounded-lg">
                 <Card>
@@ -194,10 +168,10 @@ export default function ResourcesPage() {
                 variant="outline"
                 className="uppercase tracking-widest mb-4"
               >
-                Câu hỏi thường gặp
+                {t("faqBadge")}
               </Badge>
               <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight mb-6">
-                Giải đáp nhanh
+                {t("faqTitle")}
               </h2>
               <Accordion type="single" collapsible className="w-full">
                 {faqs.map((item, i) => (
@@ -217,11 +191,10 @@ export default function ResourcesPage() {
           <div>
             <Card>
               <CardHeader className="gap-2">
-                <CardTitle className="text-base">Đăng ký bản tin</CardTitle>
-                <CardDescription>
-                  Nhận cập nhật quy định thuế & kế toán mới nhất mỗi tháng, miễn
-                  phí.
-                </CardDescription>
+                <CardTitle className="text-base">
+                  {t("newsletterTitle")}
+                </CardTitle>
+                <CardDescription>{t("newsletterDescription")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <NewsletterForm source="resources-page" />

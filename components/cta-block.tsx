@@ -14,6 +14,7 @@ import {
 import { Calendar } from "@/components/ui/calendar";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { sendContactEmail } from "@/app/contact/actions";
 
 export function CtaBlock() {
   const t = useTranslations("CtaBlock");
@@ -22,8 +23,36 @@ export function CtaBlock() {
   const [date, setDate] = useState<Date | undefined>();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
+    if (!name.trim() || !phone.trim() || !date) {
+      setError(t("validation.required"));
+      return;
+    }
+
+    setIsSubmitting(true);
+    setError(null);
+
+    const response = await sendContactEmail({
+      name: name.trim(),
+      phone: phone.trim(),
+      email: "",
+      message: `Requested consultation date: ${date.toLocaleDateString("vi-VN")}`,
+      source: "home-cta-block",
+    });
+
+    setIsSubmitting(false);
+
+    if (!response.success) {
+      setError(response.error ?? "Unable to submit your request.");
+      return;
+    }
+
+    setName("");
+    setPhone("");
+    setDate(undefined);
     setOpen(false);
   };
 
@@ -82,8 +111,10 @@ export function CtaBlock() {
               />
             </div>
 
-            <Button onClick={handleSubmit} disabled={!name || !phone || !date}>
-              {t("confirm")}
+            {error && <p className="text-sm text-red-500">{error}</p>}
+
+            <Button onClick={handleSubmit} disabled={!name || !phone || !date || isSubmitting}>
+              {isSubmitting ? t("submitting") : t("confirm")}
             </Button>
           </div>
         </DialogContent>

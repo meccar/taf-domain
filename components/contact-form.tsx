@@ -1,6 +1,7 @@
 // components/contact-form.tsx
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -8,6 +9,7 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Form,
   FormControl,
@@ -34,6 +36,9 @@ const createSchema = (t: (key: string) => string) =>
     phone: z.string().min(9, t("validation.phone")),
     email: z.string().email(t("validation.email")).optional().or(z.literal("")),
     message: z.string().optional(),
+    consent: z.boolean().refine((value) => value === true, {
+      message: t("validation.consent"),
+    }),
   });
 
 type FormValues = {
@@ -41,6 +46,7 @@ type FormValues = {
   phone: string;
   email?: string;
   message?: string;
+  consent: boolean;
 };
 export interface ContactFormProps {
   variant?: "card" | "plain";
@@ -75,7 +81,13 @@ export function ContactForm({
 
   const form = useForm<FormValues>({
     resolver: zodResolver(schema),
-    defaultValues: { name: "", phone: "", email: "", message: "" },
+    defaultValues: {
+      name: "",
+      phone: "",
+      email: "",
+      message: "",
+      consent: false,
+    },
   });
 
   async function onSubmit(values: FormValues) {
@@ -202,6 +214,47 @@ export function ContactForm({
             )}
           />
         )}
+
+        <FormField
+          control={form.control}
+          name="consent"
+          render={({ field }) => (
+            <FormItem className="flex flex-row items-start gap-3 rounded-md border p-3 text-left sm:p-3.5">
+              <FormControl>
+                <Checkbox
+                  checked={field.value}
+                  onCheckedChange={field.onChange}
+                  aria-label={t("consent.label")}
+                  className="mt-0.5 shrink-0"
+                />
+              </FormControl>
+
+              <div className="min-w-0 flex-1">
+                <FormLabel className="block text-xs leading-relaxed text-foreground sm:text-sm">
+                  <span className="inline-flex flex-wrap items-center gap-1 text-left">
+                    <span>{t("consent.prefix")}</span>
+                    <Link
+                      href="/chinh-sach-bao-mat"
+                      className="font-medium underline underline-offset-4 decoration-2"
+                    >
+                      {t("consent.privacy")}
+                    </Link>
+                    <span>{t("consent.and")}</span>
+                    <Link
+                      href="/dieu-khoan-su-dung"
+                      className="font-medium underline underline-offset-4 decoration-2"
+                    >
+                      {t("consent.terms")}
+                    </Link>
+                    <span>{t("consent.suffix")}</span>
+                  </span>
+                </FormLabel>
+                <FormMessage />
+              </div>
+            </FormItem>
+          )}
+        />
+
         {submitError && <p className="text-sm text-red-500">{submitError}</p>}
         <Button
           type="submit"

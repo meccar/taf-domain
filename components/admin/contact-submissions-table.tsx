@@ -43,12 +43,7 @@ import {
   deleteSubmissionAction,
   setSubmissionStatusAction,
 } from "@/app/admin/contacts/actions";
-
-const STATUS_LABEL: Record<ContactSubmissionStatus, string> = {
-  new: "New",
-  read: "Read",
-  archived: "Archived",
-};
+import { useTranslations } from "next-intl";
 
 const STATUS_VARIANT: Record<
   ContactSubmissionStatus,
@@ -71,6 +66,7 @@ export function ContactSubmissionsTable({
 }: {
   submissions: ContactSubmission[];
 }) {
+  const t = useTranslations("AdminContactSubmissions");
   const [query, setQuery] = useState("");
   const [statusFilter, setStatusFilter] = useState<
     ContactSubmissionStatus | "all"
@@ -78,6 +74,12 @@ export function ContactSubmissionsTable({
   const [sourceFilter, setSourceFilter] = useState<string>("all");
   const [selected, setSelected] = useState<ContactSubmission | null>(null);
   const [isPending, startTransition] = useTransition();
+
+  const statusLabels = {
+    new: t("filters.statuses.new"),
+    read: t("filters.statuses.read"),
+    archived: t("filters.statuses.archived"),
+  } satisfies Record<ContactSubmissionStatus, string>;
 
   const sources = useMemo(() => {
     const set = new Set(
@@ -119,7 +121,7 @@ export function ContactSubmissionsTable({
         <div className="relative w-full sm:max-w-xs">
           <Search className="pointer-events-none absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
           <Input
-            placeholder="Search by name, phone, or email"
+            placeholder={t("searchPlaceholder")}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="pl-8"
@@ -134,23 +136,25 @@ export function ContactSubmissionsTable({
             }
           >
             <SelectTrigger className="w-[140px]">
-              <SelectValue placeholder="Status" />
+              <SelectValue placeholder={t("filters.status")} />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All statuses</SelectItem>
-              <SelectItem value="new">New</SelectItem>
-              <SelectItem value="read">Read</SelectItem>
-              <SelectItem value="archived">Archived</SelectItem>
+              <SelectItem value="all">{t("filters.allStatuses")}</SelectItem>
+              <SelectItem value="new">{t("filters.statuses.new")}</SelectItem>
+              <SelectItem value="read">{t("filters.statuses.read")}</SelectItem>
+              <SelectItem value="archived">
+                {t("filters.statuses.archived")}
+              </SelectItem>
             </SelectContent>
           </Select>
 
           {sources.length > 0 && (
             <Select value={sourceFilter} onValueChange={setSourceFilter}>
               <SelectTrigger className="w-[160px]">
-                <SelectValue placeholder="Source" />
+                <SelectValue placeholder={t("filters.source")} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">All sources</SelectItem>
+                <SelectItem value="all">{t("filters.allSources")}</SelectItem>
                 {sources.map((source) => (
                   <SelectItem key={source} value={source}>
                     {source}
@@ -167,11 +171,11 @@ export function ContactSubmissionsTable({
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Name</TableHead>
-                <TableHead>Contact</TableHead>
-                <TableHead>Source</TableHead>
-                <TableHead>Status</TableHead>
-                <TableHead>Received</TableHead>
+                <TableHead>{t("columns.name")}</TableHead>
+                <TableHead>{t("columns.contact")}</TableHead>
+                <TableHead>{t("columns.source")}</TableHead>
+                <TableHead>{t("columns.status")}</TableHead>
+                <TableHead>{t("columns.received")}</TableHead>
                 <TableHead className="w-10" />
               </TableRow>
             </TableHeader>
@@ -182,7 +186,7 @@ export function ContactSubmissionsTable({
                     colSpan={6}
                     className="h-24 text-center text-muted-foreground"
                   >
-                    No submissions match your filters.
+                    {t("empty")}
                   </TableCell>
                 </TableRow>
               ) : (
@@ -218,7 +222,7 @@ export function ContactSubmissionsTable({
                     </TableCell>
                     <TableCell>
                       <Badge variant={STATUS_VARIANT[submission.status]}>
-                        {STATUS_LABEL[submission.status]}
+                        {statusLabels[submission.status]}
                       </Badge>
                     </TableCell>
                     <TableCell className="text-muted-foreground">
@@ -238,7 +242,7 @@ export function ContactSubmissionsTable({
                               handleStatusChange(submission.id, "read")
                             }
                           >
-                            Mark as read
+                            {t("actions.markAsRead")}
                           </DropdownMenuItem>
                           <DropdownMenuItem
                             disabled={isPending}
@@ -246,7 +250,7 @@ export function ContactSubmissionsTable({
                               handleStatusChange(submission.id, "archived")
                             }
                           >
-                            Archive
+                            {t("actions.archive")}
                           </DropdownMenuItem>
                           <DropdownMenuSeparator />
                           <DropdownMenuItem
@@ -254,7 +258,7 @@ export function ContactSubmissionsTable({
                             className="text-red-600 focus:text-red-600"
                             onClick={() => handleDelete(submission.id)}
                           >
-                            Delete
+                            {t("actions.delete")}
                           </DropdownMenuItem>
                         </DropdownMenuContent>
                       </DropdownMenu>
@@ -277,8 +281,12 @@ export function ContactSubmissionsTable({
               <DialogHeader>
                 <DialogTitle>{selected.name}</DialogTitle>
                 <DialogDescription>
-                  Submitted {formatDate(selected.createdAt)}
-                  {selected.source ? ` via ${selected.source}` : ""}
+                  {t("dialog.submitted", {
+                    date: formatDate(selected.createdAt),
+                  })}
+                  {selected.source
+                    ? t("dialog.via", { source: selected.source })
+                    : ""}
                 </DialogDescription>
               </DialogHeader>
 
@@ -307,7 +315,7 @@ export function ContactSubmissionsTable({
                   disabled={isPending}
                   onClick={() => handleStatusChange(selected.id, "archived")}
                 >
-                  Archive
+                  {t("actions.archive")}
                 </Button>
                 <Button
                   variant="destructive"
@@ -315,7 +323,7 @@ export function ContactSubmissionsTable({
                   disabled={isPending}
                   onClick={() => handleDelete(selected.id)}
                 >
-                  Delete
+                  {t("actions.delete")}
                 </Button>
               </div>
             </>

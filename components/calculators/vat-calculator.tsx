@@ -1,5 +1,5 @@
-
 import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 const rates = [0, 5, 8, 10];
 
 export function VatCalculator() {
+  const t = useTranslations("VatCalculator");
   const [amount, setAmount] = useState("10000000");
   const [rate, setRate] = useState(10);
   const [includesVAT, setIncludesVAT] = useState(false);
@@ -23,7 +24,7 @@ export function VatCalculator() {
     <div className="grid md:grid-cols-2 gap-8">
       <div className="flex flex-col gap-5">
         <div className="flex flex-col gap-2">
-          <Label htmlFor="vat-amount">Số tiền (VNĐ)</Label>
+          <Label htmlFor="vat-amount">{t("amount")}</Label>
           <Input
             id="vat-amount"
             inputMode="numeric"
@@ -33,7 +34,7 @@ export function VatCalculator() {
         </div>
 
         <div className="flex flex-col gap-2">
-          <Label>Thuế suất GTGT</Label>
+          <Label>{t("vatRate")}</Label>
           <div className="flex gap-2 flex-wrap">
             {rates.map((r) => (
               <Button
@@ -50,7 +51,7 @@ export function VatCalculator() {
         </div>
 
         <div className="flex flex-col gap-2">
-          <Label>Số tiền nhập ở trên</Label>
+          <Label>{t("amountType")}</Label>
           <div className="flex gap-2">
             <Button
               type="button"
@@ -58,7 +59,7 @@ export function VatCalculator() {
               variant={!includesVAT ? "default" : "outline"}
               onClick={() => setIncludesVAT(false)}
             >
-              Chưa gồm VAT
+              {t("excluded")}
             </Button>
             <Button
               type="button"
@@ -66,18 +67,18 @@ export function VatCalculator() {
               variant={includesVAT ? "default" : "outline"}
               onClick={() => setIncludesVAT(true)}
             >
-              Đã gồm VAT
+              {t("included")}
             </Button>
           </div>
         </div>
       </div>
 
       <div className="rounded-lg border bg-muted/30 p-6 flex flex-col gap-3">
-        <Row label="Giá trước thuế" value={formatVND(result.preTax)} />
-        <Row label={`Thuế GTGT (${rate}%)`} value={formatVND(result.vat)} />
+        <Row label={t("rows.preTax")} value={formatVND(result.preTax)} />
+        <Row label={t("rows.vat", { rate })} value={formatVND(result.vat)} />
         <Separator className="my-1" />
         <Row
-          label="Tổng thanh toán"
+          label={t("rows.total")}
           value={formatVND(result.total)}
           highlight
         />

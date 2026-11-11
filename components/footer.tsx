@@ -6,15 +6,15 @@ import Logo from "./logo";
 import { navigation } from "@/const/items/navigation.const";
 import { useTranslations } from "next-intl";
 
-const socialLinks = [
-  { Icon: FaFacebook, href: "https://facebook.com", label: "Facebook" },
-  { Icon: FaLinkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { Icon: FaYoutube, href: "https://youtube.com", label: "YouTube" },
-];
-
 export default function Footer() {
   const nav = useTranslations("Navigation");
   const t = useTranslations("Footer");
+
+  const socialLinks = [
+    { Icon: FaFacebook, href: "https://facebook.com", labelKey: "facebook" },
+    { Icon: FaLinkedin, href: "https://linkedin.com", labelKey: "linkedin" },
+    { Icon: FaYoutube, href: "https://youtube.com", labelKey: "youtube" },
+  ];
 
   const year = new Date().getFullYear();
 
@@ -51,14 +51,40 @@ export default function Footer() {
               {t("description")}
             </p>
 
-            <div className="flex gap-3">
-              {socialLinks.map(({ Icon, href, label }) => (
+            <div className="space-y-2 text-sm text-muted-foreground">
+              <p>
+                <span className="font-medium text-foreground">
+                  {t("officeAddressLabel")}:
+                </span>{" "}
+                {t("officeAddressValue")}
+              </p>
+              <p>
+                <span className="font-medium text-foreground">
+                  {t("taxIdLabel")}:
+                </span>{" "}
+                {t("taxIdValue")}
+              </p>
+              <p>
+                <span className="font-medium text-foreground">
+                  {t("emailLabel")}:
+                </span>{" "}
                 <a
-                  key={label}
+                  href="mailto:admin@taf.asia"
+                  className="transition-colors hover:text-foreground"
+                >
+                  admin@taf.asia
+                </a>
+              </p>
+            </div>
+
+            <div className="flex gap-3">
+              {socialLinks.map(({ Icon, href, labelKey }) => (
+                <a
+                  key={labelKey}
                   href={href}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label={label}
+                  aria-label={t(`social.${labelKey}`)}
                   className="flex h-8 w-8 items-center justify-center rounded-full border text-muted-foreground transition-colors hover:border-foreground hover:text-foreground"
                 >
                   <Icon size={16} />

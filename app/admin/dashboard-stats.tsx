@@ -1,9 +1,11 @@
 import { createClient } from "@/lib/supabase/server";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, FileText, Mail, MailWarning } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
 export async function DashboardStats() {
   const supabase = await createClient();
+  const t = await getTranslations("AdminDashboard");
 
   const [
     { count: userCount },
@@ -23,15 +25,15 @@ export async function DashboardStats() {
   ]);
 
   const stats = [
-    { label: "Tổng số người dùng", value: userCount ?? 0, icon: Users },
-    { label: "Tổng số bài viết", value: postCount ?? 0, icon: FileText },
+    { label: t("stats.totalUsers"), value: userCount ?? 0, icon: Users },
+    { label: t("stats.totalPosts"), value: postCount ?? 0, icon: FileText },
     {
-      label: "Liên hệ mới",
+      label: t("stats.newContacts"),
       value: newContactCount ?? 0,
       icon: MailWarning,
       highlight: (newContactCount ?? 0) > 0,
     },
-    { label: "Tổng số liên hệ", value: contactCount ?? 0, icon: Mail },
+    { label: t("stats.totalContacts"), value: contactCount ?? 0, icon: Mail },
   ];
 
   return (

@@ -15,11 +15,16 @@ import {
 } from "@/components/ui/form";
 import { Mail, CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
-const schema = z.object({
-  email: z.string().email("Email không hợp lệ"),
-});
-type FormValues = z.infer<typeof schema>;
+const createSchema = (t: (key: string) => string) =>
+  z.object({
+    email: z.string().email(t("invalidEmail")),
+  });
+
+type FormValues = {
+  email: string;
+};
 
 export function NewsletterForm({
   variant = "stacked",
@@ -35,8 +40,9 @@ export function NewsletterForm({
   ) => Promise<void> | void;
 }) {
   const [submitted, setSubmitted] = useState(false);
+  const t = useTranslations("NewsletterForm");
   const form = useForm<FormValues>({
-    resolver: zodResolver(schema),
+    resolver: zodResolver(createSchema(t)),
     defaultValues: { email: "" },
   });
 
@@ -51,7 +57,7 @@ export function NewsletterForm({
     return (
       <div className={cn("flex items-center gap-2 text-sm", className)}>
         <CheckCircle2 className="h-4 w-4 text-green-500 shrink-0" />
-        <span>Đã đăng ký! Hẹn gặp bạn trong bản tin tiếp theo.</span>
+        <span>{t("success")}</span>
       </div>
     );
   }
@@ -74,7 +80,7 @@ export function NewsletterForm({
                 <div className="relative">
                   <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                   <Input
-                    placeholder="email@congty.com"
+                    placeholder={t("placeholder")}
                     className="pl-9"
                     {...field}
                   />
@@ -89,7 +95,7 @@ export function NewsletterForm({
           disabled={form.formState.isSubmitting}
           className={variant === "stacked" ? "w-full" : ""}
         >
-          {form.formState.isSubmitting ? "Đang gửi..." : "Đăng ký"}
+          {form.formState.isSubmitting ? t("buttonSubmitting") : t("button")}
         </Button>
       </form>
     </Form>

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Pencil } from "lucide-react";
-import { createClient } from "@/lib/supabase/server"; // use your real import
+import { getTranslations } from "next-intl/server";
+import { createClient } from "@/lib/supabase/server";
 import { LOCALES } from "../const";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -13,6 +14,7 @@ export default async function PostDetailPage({
 }: {
   params: Promise<{ id: string }>;
 }) {
+  const t = await getTranslations("AdminPosts");
   const { id } = await params;
   const supabase = await createClient();
 
@@ -36,30 +38,34 @@ export default async function PostDetailPage({
         <Button asChild variant="ghost" size="sm">
           <Link href="/admin/posts">
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Quay lại
+            {t("back")}
           </Link>
         </Button>
         <Button asChild>
           <Link href={`/admin/posts/${id}/edit`}>
             <Pencil className="mr-2 h-4 w-4" />
-            Chỉnh sửa
+            {t("edit")}
           </Link>
         </Button>
       </div>
 
       <Card>
         <CardHeader>
-          <CardTitle>Chi tiết bài viết</CardTitle>
+          <CardTitle>{t("detailsTitle")}</CardTitle>
           <div className="flex flex-wrap items-center gap-2 pt-2 text-sm text-muted-foreground">
             <Badge variant="outline">{post.category}</Badge>
             <Badge
               variant={post.status === "published" ? "default" : "secondary"}
             >
-              {post.status === "published" ? "Đã đăng" : "Bản nháp"}
+              {post.status === "published"
+                ? t("status.published")
+                : t("status.draft")}
             </Badge>
-            {post.featured && <Badge>Nổi bật</Badge>}
+            {post.featured && <Badge>{t("featuredBadge")}</Badge>}
             <span>
-              Tạo ngày {new Date(post.created_at).toLocaleDateString("vi-VN")}
+              {t("createdAtLabel", {
+                date: new Date(post.created_at).toLocaleDateString("vi-VN"),
+              })}
             </span>
           </div>
         </CardHeader>
@@ -94,7 +100,7 @@ export default async function PostDetailPage({
                   </>
                 ) : (
                   <p className="text-sm text-muted-foreground">
-                    Chưa có bản dịch {label}.
+                    {t("missingTranslation", { locale: label })}
                   </p>
                 )}
               </TabsContent>

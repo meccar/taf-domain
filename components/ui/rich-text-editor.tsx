@@ -6,6 +6,7 @@ import Image from "@tiptap/extension-image";
 import Link from "@tiptap/extension-link";
 import TextAlign from "@tiptap/extension-text-align";
 import Placeholder from "@tiptap/extension-placeholder";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { EditorToolbar } from "../admin/editor-toolbar";
 
@@ -18,6 +19,7 @@ export function RichTextEditor({
   onChange: (html: string) => void;
   className?: string;
 }) {
+  const t = useTranslations("AdminPosts");
   const editor = useEditor({
     immediatelyRender: false,
     extensions: [
@@ -31,7 +33,7 @@ export function RichTextEditor({
       }),
       TextAlign.configure({ types: ["heading", "paragraph"] }),
       Placeholder.configure({
-        placeholder: "Bắt đầu viết nội dung bài viết...",
+        placeholder: t("richTextPlaceholder"),
       }),
     ],
     content,

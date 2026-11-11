@@ -11,10 +11,12 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { Theme } from "@/const/theme.const";
+import { useTranslations } from "next-intl";
 
 export function ThemeSwitcher() {
   const [, setMounted] = useState(false);
   const { setTheme } = useTheme();
+  const t = useTranslations("ThemeSwitcher");
 
   useEffect(() => {
     setMounted(true);
@@ -34,14 +36,14 @@ export function ThemeSwitcher() {
           onSelect={() => setTheme(Theme.Light)}
         >
           <Sun size={14} />
-          Sáng
+          {t("light")}
         </DropdownMenuItem>
         <DropdownMenuItem
           className="cursor-pointer"
           onSelect={() => setTheme(Theme.Dark)}
         >
           <Moon size={14} />
-          Tối
+          {t("dark")}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

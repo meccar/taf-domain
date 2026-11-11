@@ -37,7 +37,88 @@
     "description": "Trusted accounting and tax consulting services in Vietnam.",
     "copyright": "All rights reserved.",
     "privacyPolicy": "Privacy Policy",
-    "termsOfService": "Terms of Service"
+    "termsOfService": "Terms of Service",
+    "officeAddressLabel": "Head office",
+    "officeAddressValue": "937 Ngo Gia Tu St., Viet Hung, Hanoi, Vietnam",
+    "taxIdLabel": "Business registration number",
+    "taxIdValue": "0105367171",
+    "emailLabel": "Email",
+    "social": {
+      "facebook": "Facebook",
+      "linkedin": "LinkedIn",
+      "youtube": "YouTube"
+    }
+  },
+  "Metadata": {
+    "siteName": "TAF Việt",
+    "companyName": "CÔNG TY TNHH ĐẠI LÝ THUẾ TAF VIỆT",
+    "defaultTitle": "TAF Việt | Accounting, tax and financial advisory services",
+    "titleTemplate": "%s | TAF Việt",
+    "defaultDescription": "TAF Việt provides accounting, tax filing, payroll and financial consulting services for businesses in Vietnam.",
+    "companyDescription": "Accounting, tax filing and financial consulting services in Vietnam.",
+    "keywords": [
+      "TAF Việt",
+      "CÔNG TY TNHH ĐẠI LÝ THUẾ TAF VIỆT",
+      "accounting services",
+      "tax filing",
+      "payroll services",
+      "financial advisory",
+      "Vietnam business services"
+    ],
+    "knowsAbout": [
+      "Business accounting",
+      "Tax filing",
+      "Payroll",
+      "Financial advisory"
+    ],
+    "address": {
+      "streetAddress": "937 Ngo Gia Tu St., Viet Hung, Hanoi, Vietnam",
+      "locality": "Hà Nội",
+      "postalCode": "11321"
+    }
+  },
+  "ThemeSwitcher": {
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "WhyUsBlock": {
+    "badge": "Why choose TAF Viet",
+    "title": "Transparent, professional, and dedicated",
+    "description": "Our accounting professionals hold professional certifications, deeply understand Vietnamese tax law, and stay current on policy changes to protect your business interests.",
+    "points": [
+      "Certified accounting professionals",
+      "99% on-time reporting",
+      "Support 7 days a week",
+      "Absolute information confidentiality"
+    ]
+  },
+  "TaxCalculatorTabs": {
+    "vat": "Ordinary VAT",
+    "freelancer": "Freelancer / KOL / KOC / Affiliate"
+  },
+  "BlogPage": {
+    "metadataTitle": "Blog & News | TAF Việt",
+    "metadataDescription": "Tax, accounting, and business operations updates from TAF Việt.",
+    "badge": "Blog & News",
+    "title": "Tax and accounting insights updated every week",
+    "description": "New regulations, practical guides, and expert perspectives from the TAF Việt team.",
+    "allCategories": "All",
+    "newsletterTitle": "Newsletter",
+    "newsletterDescription": "Receive the latest tax and accounting updates each month, free of charge.",
+    "recentPosts": "Recent posts",
+    "categories": "Categories",
+    "emptyStateTitle": "No posts yet",
+    "emptyStateDescription": "There are no posts published yet. Please check back later for new updates from TAF Việt.",
+    "noPostsInCategory": "No posts are available in this category yet.",
+    "allPosts": "All posts"
+  },
+  "BlogPostPage": {
+    "metadataNotFound": "Post not found | TAF Việt",
+    "allPosts": "All posts",
+    "newsletterTitle": "Newsletter",
+    "newsletterDescription": "Receive the latest tax and accounting updates each month, free of charge.",
+    "relatedPosts": "Related posts",
+    "backToBlog": "Back to Blog"
   },
   "AuthButton": {
     "greeting": "Hey, {email}!",
@@ -75,7 +156,16 @@
     "validation": {
       "name": "Please enter your full name",
       "phone": "Invalid phone number",
-      "email": "Invalid email address"
+      "email": "Invalid email address",
+      "consent": "You must agree to the privacy policy and terms of use to continue."
+    },
+    "consent": {
+      "label": "Consent",
+      "prefix": "I agree to the",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Use",
+      "and": "and",
+      "suffix": "of TAF Việt"
     },
     "submit": "Request a consultation",
     "submitting": "Sending...",
@@ -105,6 +195,1041 @@
         "label": "Consultation date"
       }
     },
+    "validation": {
+      "required": "Please complete all required fields."
+    },
+    "submitting": "Submitting...",
     "confirm": "Confirm booking"
+  },
+  "AuthForms": {
+    "signupPrompt": "Don’t have an account?",
+    "signup": "Sign up",
+    "signupSuccess": {
+      "title": "Sign up successful",
+      "description": "Please check your email to confirm your account.",
+      "body": "Once you confirm your email, you can sign in and start using your account.",
+      "login": "Log in"
+    },
+    "accessDenied": {
+      "title": "Access denied",
+      "description": "This account does not have admin permissions.",
+      "body": "Please sign in with an authorized admin account or return to the homepage.",
+      "login": "Log in",
+      "home": "Back to home"
+    },
+    "login": {
+      "title": "Log in",
+      "description": "Enter your email below to sign in to your account",
+      "email": "Email",
+      "password": "Password",
+      "forgotPassword": "Forgot password?",
+      "showPassword": "Show password",
+      "hidePassword": "Hide password",
+      "submit": "Log in",
+      "submitting": "Signing in...",
+      "errors": {
+        "missingCredentials": "Please enter both email and password",
+        "invalidCredentials": "Incorrect email or password",
+        "generic": "Something went wrong, please try again"
+      }
+    },
+    "signup": {
+      "title": "Sign up",
+      "description": "Create a new account",
+      "email": "Email",
+      "password": "Password",
+      "repeatPassword": "Repeat password",
+      "submit": "Sign up",
+      "submitting": "Creating an account...",
+      "alreadyHaveAccount": "Already have an account?",
+      "login": "Log in",
+      "errors": {
+        "passwordMismatch": "Passwords do not match",
+        "generic": "An error occurred"
+      }
+    },
+    "forgotPassword": {
+      "title": "Reset password",
+      "description": "Enter your email and we'll send you a link to reset your password",
+      "successTitle": "Check your email",
+      "successDescription": "Password reset instructions have been sent.",
+      "email": "Email",
+      "submit": "Send password reset email",
+      "submitting": "Sending...",
+      "alreadyHaveAccount": "Already have an account?",
+      "login": "Log in",
+      "helpText": "If you have an account with this email, you will receive instructions to reset your password. Please check your spam folder if you don't see it.",
+      "errors": {
+        "missingEmail": "Please enter your email",
+        "emailNotSent": "We couldn't send the email, please try again",
+        "generic": "Something went wrong, please try again"
+      }
+    },
+    "updatePassword": {
+      "title": "Reset password",
+      "description": "Please enter your new password below.",
+      "newPassword": "New password",
+      "confirmPassword": "Confirm password",
+      "showPassword": "Show password",
+      "hidePassword": "Hide password",
+      "submit": "Save new password",
+      "submitting": "Saving...",
+      "errors": {
+        "minLength": "Password must be at least {length} characters",
+        "passwordMismatch": "Passwords do not match",
+        "generic": "Unable to update password, please try again"
+      }
+    },
+    "logout": "Log out"
+  },
+  "LegalPages": {
+    "privacyPolicy": {
+      "eyebrow": "Privacy policy",
+      "title": "Protect personal data with secure, transparent handling",
+      "description": "TAF Việt is committed to processing personal data lawfully, transparently, and securely in accordance with Vietnam’s personal data protection regulations, including Decree 13/2023/NĐ-CP.",
+      "sections": [
+        {
+          "title": "1. Purpose of collecting information",
+          "body": "TAF Việt collects personal information from customers, website visitors, and service users to receive consultation requests, manage accounts, process records, communicate, and support accounting, tax, HR, and business advisory services."
+        },
+        {
+          "title": "2. Personal data processed",
+          "body": "The information collected may include full name, phone number, email, company details, job title, consultation request content, related files, and technical data such as IP address, device information, browser, and access times."
+        },
+        {
+          "title": "3. Legal basis and processing purpose",
+          "body": "We process personal data based on consent, contractual obligations, legal requirements, and the protection of legitimate interests of customers and TAF Việt, as well as for management, advisory, and support activities in accordance with Vietnamese law and Decree 13/2023/NĐ-CP on personal data protection."
+        },
+        {
+          "title": "4. Security and storage",
+          "body": "Personal data is stored on secure systems with limited access, appropriate encryption, and technical and organizational safeguards. TAF Việt does not share personal data with third parties unless required by law or authorized by the data subject."
+        }
+      ],
+      "rightsTitle": "5. Customer rights",
+      "rightsBody": "Customers have the right to request access, correction, deletion, or restriction of personal data processing, and to object to processing when there is a legal basis. If you need assistance or want to file a complaint about personal data, please contact the contact information publicly provided by TAF Việt.",
+      "contactTitle": "6. Contact and updates",
+      "contactBody": "TAF Việt may update this policy over time to reflect changes in law or internal procedures. Any material change will be announced on the company website. If you have any questions about data security, please contact TAF Việt through the publicly listed support channels.",
+      "cta": "Contact TAF Việt"
+    },
+    "termsOfUse": {
+      "eyebrow": "Terms of use",
+      "title": "Rules for using the website and advisory services of TAF Việt",
+      "description": "The terms below govern access to and use of the TAF Việt website and its advisory services. We recommend reading them carefully to understand your rights, obligations, and responsibilities.",
+      "sections": [
+        {
+          "title": "1. Acceptance and conditions",
+          "body": "By accessing or using the TAF Việt website, you confirm that you have read, understood, and agreed to the terms of use below. If you do not agree, please stop using the website and do not submit personal data to TAF Việt."
+        },
+        {
+          "title": "2. Purpose of the website",
+          "body": "The website is used to provide information about accounting, tax, business advisory services, support materials, professional articles, and contact channels with the TAF Việt team. The content is for preliminary reference only and does not replace legal or specialized accounting advice for each specific case."
+        },
+        {
+          "title": "3. User responsibilities",
+          "body": "Users agree not to use the website for unlawful purposes, harming the system, fraud, impersonation, or interfering with website operations. TAF Việt may block, restrict, or refuse access if behavior is deemed inappropriate."
+        },
+        {
+          "title": "4. Copyright and website content",
+          "body": "All content on the website, including text, images, layout, forms, logos, and documents, is owned by TAF Việt or lawfully licensed for use. Reproduction, reuse, distribution, or modification is prohibited without written consent from TAF Việt."
+        }
+      ],
+      "supportTitle": "5. Contact and support",
+      "supportBody": "TAF Việt may update or revise these terms at any time to reflect business operations or legal requirements. Any questions, requests, or complaints regarding website content, advisory services, or contact information should be sent through the support channels publicly available on the website.",
+      "cta": "Contact support"
+    }
+  },
+  "SalaryCalculator": {
+    "direction": {
+      "grossToNet": "Gross → Net",
+      "netToGross": "Net → Gross"
+    },
+    "grossSalary": "Gross salary (VND / month)",
+    "netDesired": "Desired net salary (VND / month)",
+    "dependents": "Number of dependents",
+    "note": "Results are for reference only, calculated using the current personal income tax brackets and deductions. Insurance ceilings by region are not included. Contact TAF Việt for an accurate calculation based on your specific situation.",
+    "rows": {
+      "gross": "Gross salary",
+      "insurance": "Insurance (10.5%)",
+      "taxableIncome": "Taxable income",
+      "tax": "Personal income tax",
+      "net": "Net salary"
+    }
+  },
+  "VatCalculator": {
+    "amount": "Amount (VND)",
+    "vatRate": "VAT rate",
+    "amountType": "Amount entered above",
+    "excluded": "Excluding VAT",
+    "included": "Including VAT",
+    "rows": {
+      "preTax": "Pre-tax amount",
+      "vat": "VAT ({rate}%)",
+      "total": "Total payment"
+    }
+  },
+  "AboutPage": {
+    "badge": "About us",
+    "heroTitle": "Growing with businesses",
+    "heroTitleLineBreak": "on the journey to sustainable growth",
+    "heroDescription": "TAF Việt is a trusted provider of accounting, tax, and financial advisory services that help businesses operate transparently and optimize costs.",
+    "missionBadge": "Our mission",
+    "missionTitle": "Simplifying accounting and tax for businesses in Vietnam",
+    "missionDescription": "We believe every business, large or small, deserves a reliable financial partner. That is why TAF Việt exists — to solve complex accounting and tax challenges with clear, efficient solutions.",
+    "valuesBadge": "Core values",
+    "valuesTitle": "What makes us different",
+    "teamBadge": "Our team",
+    "teamTitle": "Meet the people who support your growth",
+    "ctaTitle": "Ready to work with us?",
+    "ctaDescription": "Contact us today for a free consultation on the right accounting and tax solution for your business.",
+    "ctaButton": "Contact us",
+    "stats": {
+      "experience": {
+        "label": "Years of experience",
+        "value": "10+"
+      },
+      "clients": {
+        "label": "Business clients",
+        "value": "50+"
+      },
+      "compliance": {
+        "label": "On-time filings",
+        "value": "99%"
+      },
+      "response": {
+        "label": "Response time",
+        "value": "24h"
+      }
+    },
+    "highlights": [
+      "100% compliance with current tax regulations",
+      "Transparent reports, updated in real time",
+      "A team of experienced specialists in practice",
+      "Fast, hands-on advisory support"
+    ],
+    "values": {
+      "accuracy": {
+        "title": "Accurate",
+        "description": "Every report and tax filing is reviewed carefully to comply with current laws and regulations."
+      },
+      "care": {
+        "title": "Dedicated",
+        "description": "Our team stays close to each client and provides advice tailored to each stage of business growth."
+      },
+      "professionalism": {
+        "title": "Professional",
+        "description": "Our clear and transparent process is built around international accounting standards."
+      }
+    },
+    "team": {
+      "members": [
+        {
+          "name": "Accounting lead",
+          "title": "Managing Director",
+          "summary": "Sets service strategy, maintains quality standards, and ensures every client engagement is delivered with clarity and accountability.",
+          "specialties": ["Finance", "Oversight", "Operations"],
+          "credentials": [
+            "10+ years of advisory experience",
+            "Financial reporting leadership",
+            "Client-focused growth strategy"
+          ]
+        },
+        {
+          "name": "Accounting team",
+          "title": "Accounting Manager",
+          "summary": "Manages bookkeeping, monthly close processes, financial statements, and internal controls for client accounts.",
+          "specialties": ["Accounting", "Reporting", "Cash flow"],
+          "credentials": [
+            "Professional accounting credentials",
+            "Quarterly and annual close experience",
+            "Robust record control framework"
+          ]
+        },
+        {
+          "name": "Tax specialist",
+          "title": "Tax Specialist",
+          "summary": "Advises on tax declarations, legal updates, deductions, and risk mitigation to keep filings compliant and timely.",
+          "specialties": ["Tax", "Compliance", "Optimization"],
+          "credentials": [
+            "Tax practice credentials",
+            "Current regulatory knowledge",
+            "On-time filing review process"
+          ]
+        },
+        {
+          "name": "Financial advisor",
+          "title": "Financial Consultant",
+          "summary": "Supports budgeting, profitability analysis, cost planning, and strategic decision-making for business growth.",
+          "specialties": ["Finance", "Analysis", "Strategy"],
+          "credentials": [
+            "Financial reporting analysis",
+            "Cost optimization guidance",
+            "Growth planning support"
+          ]
+        }
+      ]
+    }
+  },
+  "ContactPage": {
+    "badge": "Contact",
+    "heroTitle": "We are always ready to support you",
+    "heroDescription": "Leave your details or contact us directly — the TAF Việt team will respond as soon as possible.",
+    "contactInfo": {
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Office address",
+      "taxId": "Business registration number"
+    },
+    "mapTitle": "TAF Việt office map",
+    "addressValue": "937 Ngo Gia Tu St., Viet Hung, Hanoi, Vietnam",
+    "taxIdValue": "0105367171"
+  },
+  "Hero": {
+    "badge": "Trusted by more than 500 businesses",
+    "titleLineOne": "Comprehensive accounting and",
+    "titleLineTwo": "tax solutions",
+    "description": "TAF Việt supports businesses in financial management, tax filing, and compliance with precision, timeliness, and peace of mind.",
+    "primaryButton": "Get a free consultation",
+    "secondaryButton": "View services",
+    "stats": {
+      "experience": {
+        "label": "Years of experience",
+        "value": "10+"
+      },
+      "clients": {
+        "label": "Business clients",
+        "value": "50+"
+      },
+      "compliance": {
+        "label": "On-time filings",
+        "value": "99%"
+      }
+    },
+    "dialog": {
+      "contactTitle": "Get a free consultation",
+      "contactDescription": "We will contact you within 24 business hours.",
+      "servicesTitle": "Our services",
+      "servicesDescription": "Comprehensive solutions for all your business finance needs."
+    },
+    "contactForm": {
+      "title": "Get a free consultation",
+      "description": "Leave your phone number and we will call you back within 15 minutes.",
+      "submitLabel": "Call me back"
+    }
+  },
+  "ServicesList": {
+    "services": [
+      {
+        "title": "Tax filing",
+        "description": "VAT, corporate income tax, personal income tax — timely and compliant.",
+        "badge": "Popular"
+      },
+      {
+        "title": "Business accounting",
+        "description": "Bookkeeping, financial reports, cash flow management every month.",
+        "badge": ""
+      },
+      {
+        "title": "Compliance and legal support",
+        "description": "Track legal updates, advise on tax risks, and reduce regulatory exposure.",
+        "badge": ""
+      },
+      {
+        "title": "Financial analysis",
+        "description": "Management reports, cash-flow planning, and budget forecasting.",
+        "badge": ""
+      }
+    ]
+  },
+  "ServicesBlock": {
+    "services": [
+      {
+        "title": "Business accounting",
+        "description": "Books, financial statements, and monthly cash flow management."
+      },
+      {
+        "title": "Tax filing",
+        "description": "VAT, corporate income tax, and personal income tax — on time and by the book."
+      },
+      {
+        "title": "Financial advisory",
+        "description": "Capital structure, budgeting, and tax optimization strategies."
+      }
+    ]
+  },
+  "NewsletterForm": {
+    "invalidEmail": "Invalid email address",
+    "success": "You are subscribed! We will see you in the next newsletter.",
+    "placeholder": "email@company.com",
+    "submitting": "Sending...",
+    "button": "Subscribe",
+    "buttonSubmitting": "Sending..."
+  },
+  "ServicePageLayout": {
+    "freeConsultation": "Get free consultation",
+    "viewPricing": "View pricing",
+    "serviceScope": "Service scope",
+    "serviceScopeTitle": "What TAF Việt handles for you",
+    "process": "Process",
+    "processTitle": "{count} steps in each cycle",
+    "pricing": "Pricing",
+    "pricingTitle": "Choose a plan that fits your business",
+    "mostPopular": "Most popular",
+    "faq": "Frequently asked questions",
+    "faqTitle": "Clarify before you begin",
+    "contactConsultation": "Contact for consultation",
+    "contactButton": "Contact us"
+  },
+  "ResourcesPage": {
+    "metadataTitle": "Resources | TAF Việt",
+    "metadataDescription": "Tax calculators, forms, legal documents, and common questions from TAF Việt.",
+    "badge": "Resources",
+    "heroTitle": "Tools and documents for businesses",
+    "heroDescription": "Tax calculators, downloadable templates, and updated legal references — all in one place.",
+    "categories": {
+      "taxCalculator": {
+        "title": "Payroll & tax calculator",
+        "description": "Estimate Gross-Net salary and VAT taxes in a few seconds."
+      },
+      "blog": {
+        "title": "Blog & news",
+        "description": "Get updates on latest tax and accounting regulations every week."
+      }
+    },
+    "downloadsBadge": "Download templates",
+    "downloadsTitle": "Common documents",
+    "legalBadge": "Legal documents",
+    "legalTitle": "Documents every business should know",
+    "faqBadge": "Frequently asked questions",
+    "faqTitle": "Quick answers",
+    "newsletterTitle": "Newsletter",
+    "newsletterDescription": "Receive the latest tax and accounting updates every month, free of charge.",
+    "downloads": [
+      "VAT refund request template",
+      "Reasonable expense schedule for businesses",
+      "Personal income tax filing checklist",
+      "Standard employment contract template 2026"
+    ],
+    "legalDocs": [
+      "Law on Value Added Tax (amended)",
+      "Decree on e-invoices",
+      "Circular on personal income tax filing guidance",
+      "Current Enterprise Law"
+    ],
+    "faqs": [
+      {
+        "question": "Does TAF Việt support newly established businesses?",
+        "answer": "Yes. TAF Việt supports businesses from company registration through monthly accounting and tax operations."
+      },
+      {
+        "question": "Can I download templates for free?",
+        "answer": "Yes, all templates in the Resources section are free to download and use."
+      },
+      {
+        "question": "Are legal documents updated regularly?",
+        "answer": "TAF Việt updates the document list whenever new regulations related to tax and accounting are introduced."
+      }
+    ]
+  },
+  "AdminContactSubmissions": {
+    "searchPlaceholder": "Search by name, phone, or email",
+    "filters": {
+      "status": "Status",
+      "allStatuses": "All statuses",
+      "allSources": "All sources",
+      "source": "Source",
+      "statuses": {
+        "new": "New",
+        "read": "Read",
+        "archived": "Archived"
+      }
+    },
+    "columns": {
+      "name": "Name",
+      "contact": "Contact",
+      "source": "Source",
+      "status": "Status",
+      "received": "Received"
+    },
+    "empty": "No submissions match your filters.",
+    "actions": {
+      "markAsRead": "Mark as read",
+      "archive": "Archive",
+      "delete": "Delete"
+    },
+    "dialog": {
+      "submitted": "Submitted {date}",
+      "via": " via {source}"
+    },
+    "pageTitle": "Contact submissions"
+  },
+  "AdminDashboard": {
+    "stats": {
+      "totalUsers": "Total users",
+      "totalPosts": "Total posts",
+      "newContacts": "New contacts",
+      "totalContacts": "Total contacts"
+    }
+  },
+  "AdminPosts": {
+    "title": "Posts",
+    "newPost": "New post",
+    "editPost": "Edit post",
+    "detailsTitle": "Post details",
+    "back": "Back",
+    "edit": "Edit",
+    "viewDetails": "View details",
+    "deleteAction": "Delete",
+    "deleteConfirm": "Delete this post?",
+    "noTitle": "Untitled",
+    "emptyState": "No posts yet",
+    "missingTranslation": "No translation available for {locale}",
+    "featuredBadge": "Featured",
+    "createdAtLabel": "Created on {date}",
+    "loginRequired": "Please log in first",
+    "invalidData": "Invalid data: {message}",
+    "createFailed": "Unable to create post",
+    "slugConflict": "Duplicate slug in one language. Please change the title.",
+    "uploadNoFile": "No file selected",
+    "uploadFormatUnsupported": "File format is not supported",
+    "uploadTooLarge": "File size exceeds 5MB",
+    "columns": {
+      "title": "Title",
+      "language": "Language",
+      "category": "Category",
+      "status": "Status",
+      "createdAt": "Created at",
+      "actions": "Actions"
+    },
+    "status": {
+      "draft": "Draft",
+      "published": "Published"
+    },
+    "categoryPlaceholder": "Select category",
+    "featured": "Mark as featured",
+    "titleField": "Title ({locale})",
+    "excerptField": "Short description ({locale})",
+    "contentField": "Content ({locale})",
+    "author": "Author",
+    "authorPlaceholder": "Enter article title",
+    "excerptsPlaceholder": "Enter article title",
+    "contentPlaceholder": "Enter post title",
+    "emptyContentError": "Please enter content in at least one language",
+    "emptyCategoryError": "Please select a category",
+    "save": "Save post",
+    "draft": "Draft",
+    "published": "Publish now",
+    "titleInputPlaceholder": "Enter post title",
+    "richTextPlaceholder": "Start writing post content...",
+    "updatePost": "Update post"
+  },
+  "AdminUsers": {
+    "title": "Users",
+    "table": {
+      "email": "Email",
+      "role": "Role",
+      "createdAt": "Created at",
+      "actions": "Actions"
+    },
+    "createUserButton": "Add user",
+    "dialog": {
+      "title": "Create admin account",
+      "email": "Email",
+      "temporaryPassword": "Temporary password",
+      "submit": "Create account"
+    },
+    "confirmDelete": "Are you sure you want to delete this user?"
+  },
+  "FreelancerTaxCalculator": {
+    "incomeTypeLabel": "Income type",
+    "revenueLabel": "Revenue",
+    "periodLabel": "Revenue cycle",
+    "period": {
+      "monthly": "Monthly",
+      "annual": "Annual"
+    },
+    "info": "Freelancers and self-employed individuals with total annual revenue up to VND 1 billion are exempt from VAT and personal income tax. If revenue exceeds VND 1 billion per year, the tax rate is fixed as a percentage of turnover and e-invoices must be used according to Decree 141/2026/NĐ-CP.",
+    "status": {
+      "label": "Status",
+      "exempt": "Tax exempt",
+      "taxable": "Tax payable"
+    },
+    "rows": {
+      "annualRevenue": "Annualized revenue",
+      "vat": "VAT ({rate}%)",
+      "pit": "Personal income tax ({rate}%)",
+      "totalTax": "Total tax payable",
+      "netIncome": "Net income"
+    },
+    "incomeTypes": {
+      "freelancer": {
+        "label": "Freelancer (service work)",
+        "description": "Design, writing, programming, and independent consulting."
+      },
+      "kol": {
+        "label": "KOL (Influencer)",
+        "description": "Income from advertising and branded partnerships under contract."
+      },
+      "koc": {
+        "label": "KOC (Key Opinion Consumer)",
+        "description": "Income from product reviews and recommendations."
+      },
+      "affiliate": {
+        "label": "Affiliate Shopee / TikTok Shop",
+        "description": "Affiliate commission income. Note: if acting as an authorized reseller, the tax rate may differ."
+      }
+    }
+  },
+  "ServicePages": {
+    "accounting": {
+      "eyebrow": "Accounting services",
+      "title": "Comprehensive accounting, precise and transparent",
+      "description": "From monthly bookkeeping to annual financial reporting, TAF Việt helps businesses maintain clean books and comply with Vietnamese accounting standards.",
+      "included": [
+        {
+          "title": "Monthly bookkeeping",
+          "description": "Record and update accounting entries in line with current accounting regulations."
+        },
+        {
+          "title": "Financial reporting",
+          "description": "Prepare balance sheets, income statements, and cash flow reports each year."
+        },
+        {
+          "title": "Payroll management",
+          "description": "Calculate salaries, social insurance, personal income tax, and deductions per regulations."
+        },
+        {
+          "title": "Receivables and bank reconciliation",
+          "description": "Review receivables, payables, and reconcile bank statements periodically."
+        },
+        {
+          "title": "Books review and normalization",
+          "description": "Review historical records, identify discrepancies, and normalize accounts to standards."
+        },
+        {
+          "title": "Accounting software conversion",
+          "description": "Transfer data and set up systems suited to the company’s size and operations."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Receive documents",
+          "description": "Collect invoices, payment vouchers, bank statements, and daily transactions."
+        },
+        {
+          "title": "Post entries and record books",
+          "description": "Classify and post accounting entries in accordance with the chart of accounts."
+        },
+        {
+          "title": "Reconcile figures",
+          "description": "Check consistency between books, receivables, payables, and actual bank balances."
+        },
+        {
+          "title": "Prepare reports",
+          "description": "Summarize financial and management reports by month, quarter, or year."
+        },
+        {
+          "title": "Hand-off and advisory",
+          "description": "Deliver reports with explanation and recommendations for the next cycle."
+        }
+      ],
+      "plans": [
+        {
+          "name": "Essential",
+          "price": "2,000,000đ",
+          "period": "/ month",
+          "description": "Suitable for start-ups with limited transactions.",
+          "features": [
+            "Monthly bookkeeping",
+            "Basic receivables reconciliation",
+            "Email support"
+          ]
+        },
+        {
+          "name": "Standard",
+          "price": "4,500,000đ",
+          "period": "/ month",
+          "description": "Suitable for SMEs with payroll and multiple transactions.",
+          "features": [
+            "All Essential features",
+            "Payroll and insurance management",
+            "Quarterly financial reports",
+            "Priority phone support"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "Advanced",
+          "price": "Contact",
+          "period": "",
+          "description": "Suitable for larger businesses with multiple branches.",
+          "features": [
+            "All Standard features",
+            "Management reporting by request",
+            "Dedicated accounting lead",
+            "Accounting system conversion support"
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Can a business migrate from another accounting system?",
+          "answer": "Yes. TAF Việt can review legacy records and migrate them to a suitable system without disrupting operations."
+        },
+        {
+          "question": "What accounting standard is used?",
+          "answer": "We follow the current Vietnamese Accounting Standards (VAS) based on the company’s size and business type."
+        },
+        {
+          "question": "Can we only outsource payroll without full accounting?",
+          "answer": "Yes. Businesses can select payroll-only services or combine them with other services as needed."
+        },
+        {
+          "question": "Are business records kept secure?",
+          "answer": "TAF Việt ensures data confidentiality and shares records only with the company’s consent."
+        }
+      ],
+      "ctaTitle": "Ready for TAF Việt to handle your books?",
+      "ctaDescription": "Leave your details and our team will contact you within 24 hours.",
+      "contactFormTitle": "Request accounting service consultation",
+      "source": "service-accounting"
+    },
+    "taxPreparation": {
+      "eyebrow": "Tax services",
+      "title": "File and finalize tax returns on time and correctly",
+      "description": "TAF Việt supports businesses throughout the VAT, PIT, and CIT filing process — reducing risk and saving time.",
+      "included": [
+        {
+          "title": "VAT filing",
+          "description": "Prepare and submit VAT returns by period and reconcile input/output figures."
+        },
+        {
+          "title": "Corporate income tax finalization",
+          "description": "Calculate and prepare year-end corporate tax finalization documents."
+        },
+        {
+          "title": "Personal income tax finalization",
+          "description": "Compile income, deductions, and finalize personal income tax for employees."
+        },
+        {
+          "title": "Tax risk review",
+          "description": "Review files and documents to detect errors before authorities conduct checks."
+        },
+        {
+          "title": "Representation before tax authorities",
+          "description": "TAF Việt can communicate and supplement documents on your behalf when needed."
+        },
+        {
+          "title": "Deadline reminders and tracking",
+          "description": "Monitor filing deadlines and ensure compliance for monthly, quarterly, and annual obligations."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Document intake and review",
+          "description": "Collect records, invoices, and books and assess the current tax position."
+        },
+        {
+          "title": "Review and reconcile data",
+          "description": "Check consistency between accounting records and previously filed declarations."
+        },
+        {
+          "title": "Prepare returns and calculate taxes",
+          "description": "Prepare forms in the correct format and calculate tax due or refundable amounts."
+        },
+        {
+          "title": "Submit filings and follow up",
+          "description": "Submit returns electronically and monitor tax authority responses."
+        },
+        {
+          "title": "Report results",
+          "description": "Deliver a summary and recommendations for the next filing cycle."
+        }
+      ],
+      "plans": [
+        {
+          "name": "Essential",
+          "price": "1,500,000đ",
+          "period": "/ month",
+          "description": "Suitable for small businesses and new companies.",
+          "features": [
+            "Monthly VAT filing",
+            "Tax deadline reminders",
+            "Email support"
+          ]
+        },
+        {
+          "name": "Standard",
+          "price": "3,500,000đ",
+          "period": "/ month",
+          "description": "Suitable for growing SMEs with regular transactions.",
+          "features": [
+            "All Essential features",
+            "Annual PIT and CIT finalization",
+            "Periodic tax risk review",
+            "Priority phone support"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "Advanced",
+          "price": "Contact",
+          "period": "",
+          "description": "Suitable for larger businesses or complex tax structures.",
+          "features": [
+            "All Standard features",
+            "Representation before tax authorities",
+            "Strategic tax planning",
+            "Dedicated specialist"
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "What should businesses prepare before using the service?",
+          "answer": "Provide existing invoices, records, and books. TAF Việt will review them and advise on any missing documents."
+        },
+        {
+          "question": "How long does one filing cycle take?",
+          "answer": "Typically 3–5 business days after receiving all required documents, depending on submission volume."
+        },
+        {
+          "question": "What if the tax authority requests clarification?",
+          "answer": "TAF Việt can prepare explanatory documents and may represent your business before tax authorities in advanced packages."
+        },
+        {
+          "question": "Can we change service plans later?",
+          "answer": "Yes. Businesses can move up or down between plans at the start of each billing cycle without extra switching fees."
+        }
+      ],
+      "ctaTitle": "Ready for TAF Việt to handle your tax obligations?",
+      "ctaDescription": "Leave your information and our team will contact you within 24 hours.",
+      "contactFormTitle": "Request tax service consultation",
+      "source": "service-tax-preparation"
+    },
+    "payroll": {
+      "eyebrow": "Payroll services",
+      "title": "Accurate payroll and insurance, on time every month",
+      "description": "TAF Việt handles the entire payroll process, social insurance, and PIT calculations for employees — reducing admin work and preventing errors.",
+      "included": [
+        {
+          "title": "Monthly payroll calculation",
+          "description": "Calculate wages, bonuses, allowances, and deductions based on actual attendance."
+        },
+        {
+          "title": "Social insurance, health insurance, and unemployment",
+          "description": "Prepare employee changes, calculate, and monitor compulsory insurance contributions."
+        },
+        {
+          "title": "PIT from payroll income",
+          "description": "Calculate monthly PIT with progressive tax rates and deductions."
+        },
+        {
+          "title": "Payslips and reports",
+          "description": "Generate pay slips and summary payroll reports for management."
+        },
+        {
+          "title": "Bank payment processing",
+          "description": "Prepare payroll transfer lists for payment through the bank."
+        },
+        {
+          "title": "Deadlines and regulatory updates",
+          "description": "Track social insurance deadlines, PIT settlements, and minimum wage updates."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Receive attendance records",
+          "description": "Businesses send attendance sheets and employee updates for the month."
+        },
+        {
+          "title": "Calculate payroll and deductions",
+          "description": "Compute gross salary, insurance contributions, PIT, and net salary per employee."
+        },
+        {
+          "title": "Review with the business",
+          "description": "Send a draft payroll for confirmation before finalizing the figures."
+        },
+        {
+          "title": "Issue payslips and insurance files",
+          "description": "Finalize employee payslips and insurance paperwork for each payroll cycle."
+        },
+        {
+          "title": "Hand-off and archive",
+          "description": "Deliver payroll reports and retain documentation for annual finalization."
+        }
+      ],
+      "plans": [
+        {
+          "name": "Essential",
+          "price": "1,200,000đ",
+          "period": "/ month",
+          "description": "Suitable for businesses with fewer than 10 employees.",
+          "features": [
+            "Monthly payroll processing",
+            "Individual payslips",
+            "Email support"
+          ]
+        },
+        {
+          "name": "Standard",
+          "price": "2,800,000đ",
+          "period": "/ month",
+          "description": "Suitable for businesses with 10–50 employees.",
+          "features": [
+            "All Essential features",
+            "Social insurance, health insurance, and unemployment management",
+            "Monthly PIT deduction",
+            "Priority phone support"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "Advanced",
+          "price": "Contact",
+          "period": "",
+          "description": "Suitable for businesses with 50+ employees or multiple branches.",
+          "features": [
+            "All Standard features",
+            "Annual PIT finalization",
+            "Department-based payroll reports",
+            "Dedicated specialist"
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Can TAF Việt handle multiple salary bands and allowances?",
+          "answer": "Yes. Our payroll system supports flexible configurations according to position, allowance, and bonus policy."
+        },
+        {
+          "question": "How is payroll calculated for employees joining or leaving mid-month?",
+          "answer": "TAF Việt calculates actual working days and updates insurance contributions appropriately."
+        },
+        {
+          "question": "Is employee payroll information kept confidential?",
+          "answer": "Yes. Salary data is processed securely and only authorized personnel can access it."
+        },
+        {
+          "question": "Does the service include annual PIT finalization support?",
+          "answer": "Yes, in the Advanced package. Other packages can be extended based on request."
+        }
+      ],
+      "ctaTitle": "Ready for TAF Việt to handle your payroll?",
+      "ctaDescription": "Leave your details and our team will contact you within 24 hours.",
+      "contactFormTitle": "Request payroll service consultation",
+      "source": "service-payroll"
+    },
+    "advisory": {
+      "eyebrow": "Advisory services",
+      "title": "Financial and tax advice for strategic decisions",
+      "description": "TAF Việt works alongside leadership on critical decisions — from tax planning to company restructuring and major transactions.",
+      "included": [
+        {
+          "title": "Strategic tax planning",
+          "description": "Build legal tax optimization plans aligned with your long-term ambitions."
+        },
+        {
+          "title": "Business structure advisory",
+          "description": "Assess and propose company or branch structures appropriate for each growth stage."
+        },
+        {
+          "title": "Financial and cash flow analysis",
+          "description": "Review business health, forecast cash flow, and improve operational efficiency."
+        },
+        {
+          "title": "Tax and compliance advisory",
+          "description": "Compare current activities against regulations to reduce legal and tax risk."
+        },
+        {
+          "title": "Pre-M&A and fundraising review",
+          "description": "Review financial and tax records before major transactions or investment rounds."
+        },
+        {
+          "title": "Goal-based advising",
+          "description": "Support each milestone: expansion, restructuring, or preparation for listing."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Initial objective discussion",
+          "description": "Understand the current situation, business goals, and challenges to solve."
+        },
+        {
+          "title": "Review financial and tax data",
+          "description": "Analyze financial statements, tax records, and current operating structure."
+        },
+        {
+          "title": "Develop the advisory plan",
+          "description": "Propose specific scenarios with pros, cons, and risks for each option."
+        },
+        {
+          "title": "Present and align the solution",
+          "description": "Discuss options with leadership and identify the best path forward."
+        },
+        {
+          "title": "Support implementation",
+          "description": "Assist with execution and refine the plan when needed."
+        }
+      ],
+      "plans": [
+        {
+          "name": "Consultation by session",
+          "price": "1,800,000đ",
+          "period": "/ session",
+          "description": "Suitable for a specific issue without a long-term commitment.",
+          "features": [
+            "90-minute advisory session",
+            "Recommendation report after the session",
+            "Email support for 7 days"
+          ]
+        },
+        {
+          "name": "Quarterly engagement",
+          "price": "9,000,000đ",
+          "period": "/ quarter",
+          "description": "Suitable for businesses needing regular advice during growth periods.",
+          "features": [
+            "Unlimited consultations during the quarter",
+            "Periodic financial and tax reviews",
+            "Priority response within 24 hours"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "Strategic advisor",
+          "price": "Contact",
+          "period": "",
+          "description": "Suitable for businesses needing senior-level strategic support.",
+          "features": [
+            "All Quarterly features",
+            "Participation in leadership meetings",
+            "Tailored advisory for M&A or fundraising",
+            "Dedicated strategic advisor"
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How is this different from regular accounting and tax services?",
+          "answer": "Advisory focuses on strategic decisions — company structure, long-term tax planning, and large transactions — rather than daily operations."
+        },
+        {
+          "question": "Is this suitable for small businesses?",
+          "answer": "Yes. The session-based package works well for small businesses with a specific issue to solve."
+        },
+        {
+          "question": "Can we combine advisory with existing accounting and tax services?",
+          "answer": "Yes. TAF Việt can work from your current accounting and tax data to propose realistic solutions."
+        },
+        {
+          "question": "Is business information kept confidential?",
+          "answer": "Yes. TAF Việt may sign a confidentiality agreement when necessary and use data only for agreed advisory purposes."
+        }
+      ],
+      "ctaTitle": "Ready to discuss your financial strategy?",
+      "ctaDescription": "Leave your information and a TAF Việt advisor will contact you within 24 hours.",
+      "contactFormTitle": "Book a strategic advisory session",
+      "source": "service-advisory"
+    }
   }
 }

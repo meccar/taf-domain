@@ -14,6 +14,7 @@ import { Separator } from "@/components/ui/separator";
 import { NewsletterForm } from "@/components/newsletter-form";
 import { BlogCard } from "@/components/blog-card";
 import { getPublishedPosts, getPostBySlug } from "@/lib/blog";
+import { getTranslations } from "next-intl/server";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -31,11 +32,12 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
+  const t = await getTranslations("BlogPostPage");
   const { slug } = await params;
   const post = await getPostBySlug(decodeURIComponent(slug));
 
   if (!post) {
-    return { title: "Không tìm thấy bài viết | TAF Việt" };
+    return { title: t("metadataNotFound") };
   }
 
   return {
@@ -51,6 +53,7 @@ export async function generateMetadata({
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
+  const t = await getTranslations("BlogPostPage");
   const { slug } = await params;
   const post = await getPostBySlug(decodeURIComponent(slug));
 
@@ -71,7 +74,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             className="inline-flex w-fit items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground"
           >
             <ArrowLeft className="h-4 w-4" />
-            Tất cả bài viết
+            {t("allPosts")}
           </Link>
 
           <div className="flex flex-col gap-4">
@@ -127,11 +130,8 @@ export default async function BlogPostPage({ params }: PageProps) {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-14 flex flex-col gap-12">
         <Card>
           <CardHeader className="gap-2">
-            <CardTitle className="text-base">Đăng ký bản tin</CardTitle>
-            <CardDescription>
-              Nhận cập nhật quy định thuế & kế toán mới nhất mỗi tháng, miễn
-              phí.
-            </CardDescription>
+            <CardTitle className="text-base">{t("newsletterTitle")}</CardTitle>
+            <CardDescription>{t("newsletterDescription")}</CardDescription>
           </CardHeader>
           <div className="px-6 pb-6">
             <NewsletterForm source="blog-post" />
@@ -141,7 +141,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         {related.length > 0 && (
           <section className="flex flex-col gap-6">
             <h2 className="text-xl font-semibold tracking-tight">
-              Bài viết liên quan
+              {t("relatedPosts")}
             </h2>
             <div className="grid sm:grid-cols-2 gap-6">
               {related.map((p) => (
@@ -154,7 +154,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         <Button asChild variant="outline" className="w-fit">
           <Link href="/blog">
             <ArrowLeft className="h-4 w-4" />
-            Quay lại Blog
+            {t("backToBlog")}
           </Link>
         </Button>
       </div>

@@ -16,6 +16,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Eye, EyeOff, Loader2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function LoginForm({
   className,
@@ -27,13 +28,14 @@ export function LoginForm({
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+  const t = useTranslations("AuthForms");
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
     if (!email || !password) {
-      setError("Vui lòng nhập đầy đủ email và mật khẩu");
+      setError(t("login.errors.missingCredentials"));
       return;
     }
 
@@ -50,8 +52,8 @@ export function LoginForm({
     } catch (error: unknown) {
       setError(
         error instanceof Error
-          ? "Email hoặc mật khẩu không chính xác"
-          : "Đã xảy ra lỗi, vui lòng thử lại",
+          ? t("login.errors.invalidCredentials")
+          : t("login.errors.generic"),
       );
     } finally {
       setIsLoading(false);
@@ -62,16 +64,14 @@ export function LoginForm({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader>
-          <CardTitle className="text-2xl">Đăng nhập</CardTitle>
-          <CardDescription>
-            Nhập email của bạn bên dưới để đăng nhập vào tài khoản
-          </CardDescription>
+          <CardTitle className="text-2xl">{t("login.title")}</CardTitle>
+          <CardDescription>{t("login.description")}</CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleLogin} noValidate>
             <div className="flex flex-col gap-6">
               <div className="grid gap-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">{t("login.email")}</Label>
                 <Input
                   id="email"
                   type="email"
@@ -85,12 +85,12 @@ export function LoginForm({
               </div>
               <div className="grid gap-2">
                 <div className="flex items-center">
-                  <Label htmlFor="password">Mật khẩu</Label>
+                  <Label htmlFor="password">{t("login.password")}</Label>
                   <Link
                     href="/auth/forgot-password"
                     className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
                   >
-                    Quên mật khẩu?
+                    {t("login.forgotPassword")}
                   </Link>
                 </div>
                 <div className="relative">
@@ -108,7 +108,11 @@ export function LoginForm({
                     type="button"
                     onClick={() => setShowPassword((prev) => !prev)}
                     className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
-                    aria-label={showPassword ? "Ẩn mật khẩu" : "Hiện mật khẩu"}
+                    aria-label={
+                      showPassword
+                        ? t("login.hidePassword")
+                        : t("login.showPassword")
+                    }
                     tabIndex={-1}
                   >
                     {showPassword ? (
@@ -128,20 +132,20 @@ export function LoginForm({
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Đang đăng nhập...
+                    {t("login.submitting")}
                   </>
                 ) : (
-                  "Đăng nhập"
+                  t("login.submit")
                 )}
               </Button>
             </div>
             {/* <div className="mt-4 text-center text-sm">
-              Chưa có tài khoản?{" "}
+              {t("signupPrompt")}{" "}
               <Link
                 href="/auth/sign-up"
                 className="underline underline-offset-4"
               >
-                Đăng ký
+                {t("signup")}
               </Link>
             </div> */}
           </form>

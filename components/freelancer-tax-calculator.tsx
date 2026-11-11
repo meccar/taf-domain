@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
@@ -25,44 +26,44 @@ interface IncomeTypeConfig {
   description: string;
 }
 
-const incomeTypes: IncomeTypeConfig[] = [
-  {
-    value: "freelancer",
-    label: "Freelancer (dịch vụ tự do)",
-    vatRate: 5,
-    pitRate: 2,
-    description: "Thiết kế, viết lách, lập trình, tư vấn độc lập...",
-  },
-  {
-    value: "kol",
-    label: "KOL (Người ảnh hưởng)",
-    vatRate: 5,
-    pitRate: 2,
-    description: "Thu nhập từ quảng cáo, hợp tác thương hiệu có hợp đồng",
-  },
-  {
-    value: "koc",
-    label: "KOC (Người tiêu dùng chủ chốt)",
-    vatRate: 5,
-    pitRate: 2,
-    description: "Thu nhập từ review, giới thiệu sản phẩm",
-  },
-  {
-    value: "affiliate",
-    label: "Affiliate Shopee / TikTok Shop",
-    vatRate: 5,
-    pitRate: 2,
-    description:
-      "Hoa hồng từ tiếp thị liên kết (affiliate marketing). Lưu ý: nếu bạn hoạt động như đại lý bán hàng đúng giá hưởng hoa hồng (không phải tiếp thị nội dung), mức thuế có thể là 1% GTGT / 0,5% TNCN thay vì 5%/2% — vui lòng xác nhận với cơ quan thuế nếu không chắc chắn.",
-  },
-];
-
 export function FreelancerTaxCalculator() {
+  const t = useTranslations("FreelancerTaxCalculator");
+  const incomeTypes: IncomeTypeConfig[] = [
+    {
+      value: "freelancer",
+      label: t("incomeTypes.freelancer.label"),
+      vatRate: 5,
+      pitRate: 2,
+      description: t("incomeTypes.freelancer.description"),
+    },
+    {
+      value: "kol",
+      label: t("incomeTypes.kol.label"),
+      vatRate: 5,
+      pitRate: 2,
+      description: t("incomeTypes.kol.description"),
+    },
+    {
+      value: "koc",
+      label: t("incomeTypes.koc.label"),
+      vatRate: 5,
+      pitRate: 2,
+      description: t("incomeTypes.koc.description"),
+    },
+    {
+      value: "affiliate",
+      label: t("incomeTypes.affiliate.label"),
+      vatRate: 5,
+      pitRate: 2,
+      description: t("incomeTypes.affiliate.description"),
+    },
+  ];
+
   const [incomeType, setIncomeType] = useState<string>("freelancer");
   const [amount, setAmount] = useState("15000000");
   const [period, setPeriod] = useState<"monthly" | "annual">("monthly");
 
-  const selectedType = incomeTypes.find((t) => t.value === incomeType)!;
+  const selectedType = incomeTypes.find((item) => item.value === incomeType)!;
 
   const result = useMemo(() => {
     const value = Number(amount.replace(/[^\d]/g, "")) || 0;
@@ -78,15 +79,15 @@ export function FreelancerTaxCalculator() {
     <div className="grid md:grid-cols-2 gap-8">
       <div className="flex flex-col gap-5">
         <div className="flex flex-col gap-2">
-          <Label>Loại thu nhập</Label>
+          <Label>{t("incomeTypeLabel")}</Label>
           <Select value={incomeType} onValueChange={setIncomeType}>
             <SelectTrigger className="w-full">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              {incomeTypes.map((t) => (
-                <SelectItem key={t.value} value={t.value}>
-                  {t.label}
+              {incomeTypes.map((item) => (
+                <SelectItem key={item.value} value={item.value}>
+                  {item.label}
                 </SelectItem>
               ))}
             </SelectContent>
@@ -98,7 +99,7 @@ export function FreelancerTaxCalculator() {
         </div>
 
         <div className="flex flex-col gap-2">
-          <Label htmlFor="freelancer-amount">Doanh thu</Label>
+          <Label htmlFor="freelancer-amount">{t("revenueLabel")}</Label>
           <Input
             id="freelancer-amount"
             inputMode="numeric"
@@ -108,7 +109,7 @@ export function FreelancerTaxCalculator() {
         </div>
 
         <div className="flex flex-col gap-2">
-          <Label>Chu kỳ doanh thu</Label>
+          <Label>{t("periodLabel")}</Label>
           <div className="flex gap-2">
             <Button
               type="button"
@@ -116,7 +117,7 @@ export function FreelancerTaxCalculator() {
               variant={period === "monthly" ? "default" : "outline"}
               onClick={() => setPeriod("monthly")}
             >
-              Theo tháng
+              {t("period.monthly")}
             </Button>
             <Button
               type="button"
@@ -124,45 +125,44 @@ export function FreelancerTaxCalculator() {
               variant={period === "annual" ? "default" : "outline"}
               onClick={() => setPeriod("annual")}
             >
-              Theo năm
+              {t("period.annual")}
             </Button>
           </div>
         </div>
 
         <div className="rounded-md bg-muted/50 p-3 text-xs text-muted-foreground leading-relaxed">
-          Cá nhân kinh doanh và freelancer có tổng doanh thu từ 1 tỷ VNĐ/năm trở
-          xuống được miễn toàn bộ thuế GTGT và thuế TNCN. Nếu doanh thu vượt 1
-          tỷ VNĐ/năm, mức thuế áp dụng là cố định theo tỷ lệ % trên doanh thu và
-          phải đăng ký sử dụng hóa đơn điện tử theo Nghị định 141/2026/NĐ-CP.
+          {t("info")}
         </div>
       </div>
 
       <div className="rounded-lg border bg-muted/30 p-6 flex flex-col gap-3">
         <div className="flex items-center justify-between pb-1">
-          <span className="text-sm text-muted-foreground">Trạng thái</span>
+          <span className="text-sm text-muted-foreground">
+            {t("status.label")}
+          </span>
           <Badge variant={result.isExempt ? "secondary" : "default"}>
-            {result.isExempt ? "Miễn thuế" : "Phải nộp thuế"}
+            {result.isExempt ? t("status.exempt") : t("status.taxable")}
           </Badge>
         </div>
 
         <Separator />
 
         <Row
-          label="Doanh thu quy đổi theo năm"
+          label={t("rows.annualRevenue")}
           value={formatVND(result.annualRevenue)}
         />
         <Row
-          label={`Thuế GTGT (${result.vatRate}%)`}
+          label={t("rows.vat", { rate: result.vatRate })}
           value={result.isExempt ? "—" : formatVND(result.vatAmount)}
         />
         <Row
-          label={`Thuế TNCN (${result.pitRate}%)`}
+          label={t("rows.pit", { rate: result.pitRate })}
           value={result.isExempt ? "—" : formatVND(result.pitAmount)}
         />
         <Separator className="my-1" />
-        <Row label="Tổng thuế phải nộp" value={formatVND(result.totalTax)} />
+        <Row label={t("rows.totalTax")} value={formatVND(result.totalTax)} />
         <Row
-          label="Thu nhập thực nhận"
+          label={t("rows.netIncome")}
           value={formatVND(result.netIncome)}
           highlight
         />

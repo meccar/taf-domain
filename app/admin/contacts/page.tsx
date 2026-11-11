@@ -1,16 +1,22 @@
 import { ContactSubmissionsTableWrapper } from "@/components/admin/contact-submissions-table-wrapper";
+import { getTranslations } from "next-intl/server";
 import { Suspense } from "react";
 
-export const metadata = {
-  title: "Contact Submissions | Admin",
-};
+export async function generateMetadata() {
+  const t = await getTranslations("AdminContactSubmissions");
+  return {
+    title: `${t("pageTitle")} | Admin`,
+  };
+}
 
-export default function ContactSubmissionsPage() {
+export default async function ContactSubmissionsPage() {
+  const t = await getTranslations("AdminContactSubmissions");
+
   return (
     <div className="space-y-6 p-6">
       <div>
         <h1 className="text-2xl font-semibold tracking-tight">
-          Contact Submissions
+          {t("pageTitle")}
         </h1>
       </div>
 

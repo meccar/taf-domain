@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { updatePostAction } from "../../actions";
 import { PostForm, type TranslationDraft } from "@/components/admin/post-form";
 
@@ -18,6 +19,7 @@ interface PostWithTranslations {
 }
 
 export function EditPostForm({ post }: { post: PostWithTranslations }) {
+  const t = useTranslations("AdminPosts");
   const emptyDraft: TranslationDraft = {
     title: "",
     excerpt: "",
@@ -56,7 +58,7 @@ export function EditPostForm({ post }: { post: PostWithTranslations }) {
           translations: values.translations,
         })
       }
-      submitLabel="Cập nhật bài viết"
+      submitLabel={t("updatePost")}
     />
   );
 }

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CheckCircle2, Target, Users, Award } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -11,69 +12,62 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 
-const stats = [
-  { label: "Năm kinh nghiệm", value: "10+" },
-  { label: "Khách hàng tin dùng", value: "500+" },
-  { label: "Chuyên gia", value: "30+" },
-  { label: "Hồ sơ xử lý mỗi năm", value: "1,200+" },
-];
+export default async function About() {
+  const t = await getTranslations("AboutPage");
+  const stats = [
+    { label: t("stats.experience.label"), value: t("stats.experience.value") },
+    { label: t("stats.clients.label"), value: t("stats.clients.value") },
+    { label: t("stats.compliance.label"), value: t("stats.compliance.value") },
+    { label: t("stats.response.label"), value: t("stats.response.value") },
+  ];
 
-const values = [
-  {
-    icon: Target,
-    title: "Chính xác",
-    desc: "Mọi báo cáo, hồ sơ thuế đều được kiểm tra kỹ lưỡng, tuân thủ đúng quy định pháp luật hiện hành.",
-  },
-  {
-    icon: Users,
-    title: "Tận tâm",
-    desc: "Đội ngũ luôn đồng hành, tư vấn sát sao theo từng giai đoạn phát triển của doanh nghiệp khách hàng.",
-  },
-  {
-    icon: Award,
-    title: "Chuyên nghiệp",
-    desc: "Quy trình làm việc rõ ràng, minh bạch, được xây dựng theo chuẩn mực kế toán quốc tế.",
-  },
-];
+  const values = [
+    {
+      icon: Target,
+      title: t("values.accuracy.title"),
+      desc: t("values.accuracy.description"),
+    },
+    {
+      icon: Users,
+      title: t("values.care.title"),
+      desc: t("values.care.description"),
+    },
+    {
+      icon: Award,
+      title: t("values.professionalism.title"),
+      desc: t("values.professionalism.description"),
+    },
+  ];
 
-const highlights = [
-  "Tuân thủ 100% quy định pháp luật thuế hiện hành",
-  "Báo cáo minh bạch, cập nhật theo thời gian thực",
-  "Đội ngũ chuyên gia giàu kinh nghiệm thực chiến",
-  "Hỗ trợ tư vấn nhanh chóng, sát sao",
-];
+  const highlights = t.raw("highlights") as string[];
 
-const team = [
-  { name: "Nguyễn Văn Mười", role: "Giám đốc điều hành" },
-  { name: "Trần Thị B", role: "Trưởng phòng Kế toán" },
-  { name: "Lê Văn C", role: "Chuyên viên Thuế" },
-  { name: "Phạm Thị D", role: "Tư vấn Tài chính" },
-];
+  const team = t.raw("team.members") as Array<{
+    name: string;
+    title: string;
+    summary: string;
+    specialties: string[];
+    credentials: string[];
+  }>;
 
-export default function About() {
   return (
     <main className="w-full">
-      {/* Hero */}
       <div className="bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center flex flex-col items-center gap-4">
           <Badge variant="outline" className="uppercase tracking-widest">
-            Về chúng tôi
+            {t("badge")}
           </Badge>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
-            Đồng hành cùng doanh nghiệp
-            <br className="hidden sm:block" /> trên hành trình phát triển
+            {t("heroTitle")}
+            <br className="hidden sm:block" /> {t("heroTitleLineBreak")}
           </h1>
           <CardDescription className="max-w-2xl text-base leading-relaxed">
-            TAF Việt là đơn vị cung cấp dịch vụ kế toán, thuế và tư vấn tài
-            chính uy tín, giúp doanh nghiệp vận hành minh bạch và tối ưu chi
-            phí.
+            {t("heroDescription")}
           </CardDescription>
         </div>
       </div>
 
       <Separator />
 
-      {/* Stats */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
           {stats.map(({ label, value }) => (
@@ -93,7 +87,6 @@ export default function About() {
 
       <Separator />
 
-      {/* Mission */}
       <div className="bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
           <div className="flex flex-col gap-4">
@@ -101,16 +94,13 @@ export default function About() {
               variant="outline"
               className="uppercase tracking-widest w-fit"
             >
-              Sứ mệnh
+              {t("missionBadge")}
             </Badge>
             <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-              Đơn giản hóa bài toán kế toán - thuế cho doanh nghiệp Việt
+              {t("missionTitle")}
             </h2>
             <CardDescription className="text-base leading-relaxed">
-              Chúng tôi tin rằng mỗi doanh nghiệp, dù lớn hay nhỏ, đều xứng đáng
-              có một đối tác tài chính đáng tin cậy. Đó là lý do TAF Việt ra đời
-              — để giải quyết các vấn đề kế toán, thuế phức tạp bằng giải pháp
-              rõ ràng, hiệu quả.
+              {t("missionDescription")}
             </CardDescription>
           </div>
           <ul className="flex flex-col gap-4">
@@ -126,14 +116,13 @@ export default function About() {
 
       <Separator />
 
-      {/* Values */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
         <div className="text-center flex flex-col items-center gap-3 mb-12">
           <Badge variant="outline" className="uppercase tracking-widest">
-            Giá trị cốt lõi
+            {t("valuesBadge")}
           </Badge>
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-            Điều làm nên sự khác biệt
+            {t("valuesTitle")}
           </h2>
         </div>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -157,29 +146,67 @@ export default function About() {
 
       <Separator />
 
-      {/* Team */}
       <div className="bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
           <div className="text-center flex flex-col items-center gap-3 mb-12">
             <Badge variant="outline" className="uppercase tracking-widest">
-              Đội ngũ
+              {t("teamBadge")}
             </Badge>
             <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-              Gặp gỡ những người đồng hành cùng bạn
+              {t("teamTitle")}
             </h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {team.map(({ name, role }) => (
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+            {team.map(({ name, title, summary, specialties, credentials }) => (
               <Card
                 key={name}
-                className="border-none shadow-none text-center bg-transparent"
+                className="border border-border/60 bg-background shadow-sm hover:shadow-md transition-shadow"
               >
-                <CardHeader className="items-center pb-2">
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-muted" />
+                <CardHeader className="items-start pb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-semibold text-sm">
+                      {name
+                        .split(" ")
+                        .map((word) => word[0])
+                        .join("")
+                        .slice(0, 2)
+                        .toUpperCase()}
+                    </div>
+                    <div>
+                      <CardTitle className="text-base font-medium text-left">
+                        {name}
+                      </CardTitle>
+                      <CardDescription className="text-xs text-left">
+                        {title}
+                      </CardDescription>
+                    </div>
+                  </div>
                 </CardHeader>
-                <CardContent className="flex flex-col gap-1">
-                  <CardTitle className="text-sm font-medium">{name}</CardTitle>
-                  <CardDescription className="text-xs">{role}</CardDescription>
+                <CardContent className="space-y-4">
+                  <p className="text-sm leading-relaxed text-muted-foreground text-left">
+                    {summary}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {specialties.map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-border bg-muted/50 px-2.5 py-1 text-[10px] uppercase tracking-wide text-muted-foreground"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="space-y-1 border-t border-border pt-3">
+                    {credentials.map((item) => (
+                      <div
+                        key={item}
+                        className="flex items-start gap-2 text-xs text-muted-foreground"
+                      >
+                        <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -187,17 +214,15 @@ export default function About() {
         </div>
       </div>
 
-      {/* CTA */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 text-center flex flex-col items-center gap-4">
         <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-          Sẵn sàng hợp tác cùng chúng tôi?
+          {t("ctaTitle")}
         </h2>
         <CardDescription className="max-w-xl text-base">
-          Liên hệ ngay để được tư vấn miễn phí giải pháp kế toán - thuế phù hợp
-          với doanh nghiệp của bạn.
+          {t("ctaDescription")}
         </CardDescription>
         <Button asChild size="lg">
-          <Link href="/lien-he">Liên hệ tư vấn</Link>
+          <Link href="/contact">{t("ctaButton")}</Link>
         </Button>
       </div>
     </main>

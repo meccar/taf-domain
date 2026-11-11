@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -9,6 +10,7 @@ import { grossToNet, netToGross, formatVND } from "@/lib/tax-utils";
 import { cn } from "@/lib/utils";
 
 export function SalaryCalculator() {
+  const t = useTranslations("SalaryCalculator");
   const [direction, setDirection] = useState<"gross-to-net" | "net-to-gross">(
     "gross-to-net",
   );
@@ -36,7 +38,7 @@ export function SalaryCalculator() {
             size="sm"
             onClick={() => setDirection("gross-to-net")}
           >
-            Gross → Net
+            {t("direction.grossToNet")}
           </Button>
           <Button
             type="button"
@@ -44,15 +46,13 @@ export function SalaryCalculator() {
             size="sm"
             onClick={() => setDirection("net-to-gross")}
           >
-            Net → Gross
+            {t("direction.netToGross")}
           </Button>
         </div>
 
         <div className="flex flex-col gap-2">
           <Label htmlFor="amount">
-            {direction === "gross-to-net"
-              ? "Lương Gross (VNĐ / tháng)"
-              : "Lương Net mong muốn (VNĐ / tháng)"}
+            {direction === "gross-to-net" ? t("grossSalary") : t("netDesired")}
           </Label>
           <Input
             id="amount"
@@ -64,7 +64,7 @@ export function SalaryCalculator() {
         </div>
 
         <div className="flex flex-col gap-2">
-          <Label htmlFor="dependents">Số người phụ thuộc</Label>
+          <Label htmlFor="dependents">{t("dependents")}</Label>
           <Input
             id="dependents"
             type="number"
@@ -75,25 +75,23 @@ export function SalaryCalculator() {
         </div>
 
         <p className="text-xs text-muted-foreground leading-relaxed">
-          Kết quả chỉ mang tính tham khảo, tính theo mức giảm trừ gia cảnh và
-          biểu thuế lũy tiến hiện hành, chưa áp trần đóng bảo hiểm theo vùng.
-          Liên hệ TAF Việt để được tính chính xác theo trường hợp cụ thể.
+          {t("note")}
         </p>
       </div>
 
       <div className="rounded-lg border bg-muted/30 p-6 flex flex-col gap-3">
-        <Row label="Lương Gross" value={formatVND(result.gross)} />
+        <Row label={t("rows.gross")} value={formatVND(result.gross)} />
         <Row
-          label="Bảo hiểm (10.5%)"
+          label={t("rows.insurance")}
           value={`- ${formatVND(result.insurance)}`}
         />
         <Row
-          label="Thu nhập chịu thuế"
+          label={t("rows.taxableIncome")}
           value={formatVND(result.taxableIncome)}
         />
-        <Row label="Thuế TNCN" value={`- ${formatVND(result.tax)}`} />
+        <Row label={t("rows.tax")} value={`- ${formatVND(result.tax)}`} />
         <Separator className="my-1" />
-        <Row label="Lương Net" value={formatVND(result.net)} highlight />
+        <Row label={t("rows.net")} value={formatVND(result.net)} highlight />
       </div>
     </div>
   );

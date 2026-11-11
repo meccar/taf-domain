@@ -1,15 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { deleteUserAction } from "./actions";
 import { Button } from "@/components/ui/button";
 import { Trash2, Loader2 } from "lucide-react";
 
 export function DeleteUserButton({ userId }: { userId: string }) {
+  const t = useTranslations("AdminUsers");
   const [isLoading, setIsLoading] = useState(false);
 
   async function handleDelete() {
-    if (!confirm("Bạn có chắc muốn xoá người dùng này?")) return;
+    if (!confirm(t("confirmDelete"))) return;
     setIsLoading(true);
     await deleteUserAction(userId);
     setIsLoading(false);

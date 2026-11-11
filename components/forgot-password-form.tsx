@@ -15,6 +15,7 @@ import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useState } from "react";
 import { Loader2, MailCheck } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function ForgotPasswordForm({
   className,
@@ -24,13 +25,14 @@ export function ForgotPasswordForm({
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const t = useTranslations("AuthForms");
 
   const handleForgotPassword = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
     if (!email) {
-      setError("Vui lòng nhập email của bạn");
+      setError(t("forgotPassword.errors.missingEmail"));
       return;
     }
 
@@ -46,8 +48,8 @@ export function ForgotPasswordForm({
     } catch (error: unknown) {
       setError(
         error instanceof Error
-          ? "Không thể gửi email, vui lòng thử lại"
-          : "Đã xảy ra lỗi, vui lòng thử lại",
+          ? t("forgotPassword.errors.emailNotSent")
+          : t("forgotPassword.errors.generic"),
       );
     } finally {
       setIsLoading(false);
@@ -61,34 +63,33 @@ export function ForgotPasswordForm({
           <CardHeader>
             <div className="mb-2 flex items-center gap-2">
               <MailCheck className="h-6 w-6 text-green-600" />
-              <CardTitle className="text-2xl">Kiểm tra email của bạn</CardTitle>
+              <CardTitle className="text-2xl">
+                {t("forgotPassword.successTitle")}
+              </CardTitle>
             </div>
             <CardDescription>
-              Hướng dẫn đặt lại mật khẩu đã được gửi
+              {t("forgotPassword.successDescription")}
             </CardDescription>
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              Nếu bạn đã đăng ký bằng email và mật khẩu này, bạn sẽ nhận được
-              email hướng dẫn đặt lại mật khẩu. Vui lòng kiểm tra cả hộp thư
-              spam nếu không thấy email.
+              {t("forgotPassword.helpText")}
             </p>
           </CardContent>
         </Card>
       ) : (
         <Card>
           <CardHeader>
-            <CardTitle className="text-2xl">Đặt lại mật khẩu</CardTitle>
-            <CardDescription>
-              Nhập email của bạn, chúng tôi sẽ gửi cho bạn một liên kết để đặt
-              lại mật khẩu
-            </CardDescription>
+            <CardTitle className="text-2xl">
+              {t("forgotPassword.title")}
+            </CardTitle>
+            <CardDescription>{t("forgotPassword.description")}</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleForgotPassword} noValidate>
               <div className="flex flex-col gap-6">
                 <div className="grid gap-2">
-                  <Label htmlFor="email">Email</Label>
+                  <Label htmlFor="email">{t("forgotPassword.email")}</Label>
                   <Input
                     id="email"
                     type="email"
@@ -109,20 +110,20 @@ export function ForgotPasswordForm({
                   {isLoading ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Đang gửi...
+                      {t("forgotPassword.submitting")}
                     </>
                   ) : (
-                    "Gửi email đặt lại mật khẩu"
+                    t("forgotPassword.submit")
                   )}
                 </Button>
               </div>
               <div className="mt-4 text-center text-sm">
-                Đã có tài khoản?{" "}
+                {t("forgotPassword.alreadyHaveAccount")}{" "}
                 <Link
                   href="/auth/login"
                   className="underline underline-offset-4"
                 >
-                  Đăng nhập
+                  {t("forgotPassword.login")}
                 </Link>
               </div>
             </form>
