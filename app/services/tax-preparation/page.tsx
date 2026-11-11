@@ -7,9 +7,10 @@ import {
   Clock,
 } from "lucide-react";
 import { ServicePageLayout } from "@/components/service-page-layout";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 
 export async function generateMetadata() {
+  const locale = await getLocale();
   const t = await getTranslations("ServicePages.taxPreparation");
   const title = `${t("title")} | TAF Việt`;
   const description = `${t("description")} TAF Việt hỗ trợ kê khai thuế GTGT, TNDN, TNCN và đại diện làm việc với cơ quan thuế đúng hạn.`;
@@ -25,7 +26,7 @@ export async function generateMetadata() {
       description,
       url: "https://taf.asia/services/tax-preparation",
       siteName: "TAF Việt",
-      locale: "vi_VN",
+      locale: locale === "en" ? "en_US" : "vi_VN",
       type: "website",
     },
     twitter: {

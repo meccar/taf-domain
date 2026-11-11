@@ -19,11 +19,13 @@
     "home": "Home",
     "services": "Services",
     "servicesTaxPreparation": "Tax Preparation",
-    "servicesAccounting": "Accounting & Bookkeeping",
+    "servicesAccounting": "Accounting & bookkeeping services",
     "servicesPayroll": "Payroll Services",
     "servicesAdvisory": "Advisory & Consulting",
-    "servicesPersonal": "Personal & Small Business",
+    "servicesPersonal": "Personal & freelancer services",
+    "servicesHousehold": "Household business & online sellers services",
     "servicesLegal": "Legal & Financial Advisory",
+    "servicesBusiness": "Enterprise business services",
     "resources": "Resources",
     "resourcesGuides": "Guides & Forms",
     "resourcesCalculators": "Tax Calculators",
@@ -498,7 +500,7 @@
     "taxIdValue": "0105367171"
   },
   "Hero": {
-    "badge": "Trusted by more than 500 businesses",
+    "badge": "Trusted by leading businesses in Vietnam",
     "titleLineOne": "Comprehensive accounting and",
     "titleLineTwo": "tax solutions",
     "description": "TAF Việt supports businesses in financial management, tax filing, and compliance with precision, timeliness, and peace of mind.",
@@ -1298,6 +1300,59 @@
       "contactFormTitle": "Request personal or small-business support",
       "source": "service-personal"
     },
+    "householdBusiness": {
+      "eyebrow": "Household business & online sellers",
+      "title": "Bookkeeping, revenue, and tax support for household businesses and online sellers",
+      "description": "TAF Việt helps household businesses and online sellers manage revenue, documentation, and compliance with practical support tailored to real operating conditions.",
+      "valuePoints": [
+        {
+          "title": "Revenue tracking",
+          "description": "Monitor income by sales channel and keep your revenue records organized and easy to review."
+        },
+        {
+          "title": "Simple bookkeeping",
+          "description": "Organize invoices, expenses, and supporting documents so your records stay clear and usable."
+        },
+        {
+          "title": "Tax compliance support",
+          "description": "Review VAT, PIT, and reporting obligations regularly to avoid errors and missed deadlines."
+        },
+        {
+          "title": "Invoice and document support",
+          "description": "Prepare and check invoice records and supporting files required for daily operations."
+        },
+        {
+          "title": "Business model optimization",
+          "description": "Assess revenue structure and operating workflows so the model remains practical and sustainable."
+        },
+        {
+          "title": "Ongoing advisory",
+          "description": "Get guidance when sales grow, your model changes, or your reporting needs become more complex."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Initial consultation",
+          "description": "Review your business model, revenue sources, and current records to identify urgent support needs."
+        },
+        {
+          "title": "Data review",
+          "description": "Check revenue, invoices, and supporting documents to identify gaps or areas needing updates."
+        },
+        {
+          "title": "Set up the right solution",
+          "description": "Create a practical bookkeeping, tax, and recordkeeping plan that fits how your business actually operates."
+        },
+        {
+          "title": "Ongoing support",
+          "description": "Receive reminders, follow-up guidance, and recommendations as your business grows or changes."
+        }
+      ],
+      "ctaTitle": "Need bookkeeping and tax support for your household business or online sales model?",
+      "ctaDescription": "Share a few details and TAF Việt will recommend the most suitable support path for your business.",
+      "contactFormTitle": "Request household business & online seller consultation",
+      "source": "service-household-business"
+    },
     "legal": {
       "eyebrow": "Legal & financial advisory",
       "title": "Compliance review and strategic guidance for important business decisions",
@@ -1350,6 +1405,182 @@
       "ctaDescription": "Tell us a bit about your situation, and TAF Việt will recommend the best next step for your business.",
       "contactFormTitle": "Request a legal and financial review",
       "source": "service-legal"
+    },
+    "business": {
+      "eyebrow": "Legal & financial advisory",
+      "title": "Compliance review and strategic guidance for important business decisions",
+      "description": "TAF Việt helps founders and leadership teams review legal exposure, financial risks, and compliance gaps before key decisions are made.",
+      "valuePoints": [
+        {
+          "title": "Regulatory review",
+          "description": "Check whether current activities align with the latest tax and legal requirements."
+        },
+        {
+          "title": "Tax risk screening",
+          "description": "Spot exposure areas early and reduce the chance of penalties or avoidable issues."
+        },
+        {
+          "title": "Financial health check",
+          "description": "Assess the numbers behind the business and understand what decisions are sustainable."
+        },
+        {
+          "title": "M&A and funding readiness",
+          "description": "Prepare records, structure, and documents before investment or transaction discussions."
+        },
+        {
+          "title": "Operational structure advice",
+          "description": "Evaluate alternatives for how the business is organized as it scales or diversifies."
+        },
+        {
+          "title": "Decision support",
+          "description": "Work with leadership on practical options and the risks of each path forward."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Problem framing",
+          "description": "Identify the decision, pressure point, or regulatory area that needs attention."
+        },
+        {
+          "title": "Data and risk review",
+          "description": "Analyze tax, operational, and financial records to identify what matters most."
+        },
+        {
+          "title": "Recommendation design",
+          "description": "Build a clear action plan with the trade-offs and options spelled out."
+        },
+        {
+          "title": "Execution support",
+          "description": "Stay involved during implementation, updates, or follow-up reviews as conditions change."
+        }
+      ],
+      "ctaTitle": "Need a second opinion on financial or compliance risk?",
+      "ctaDescription": "Tell us a bit about your situation, and TAF Việt will recommend the best next step for your business.",
+      "contactFormTitle": "Request a legal and financial review",
+      "source": "service-legal"
     }
+  },
+  "ServicesOverview": {
+    "metadataTitle": "Services | TAF Việt",
+    "metadataDescription": "Explore TAF Việt's accounting, tax, payroll, advisory and personal support services for businesses and individuals.",
+    "badge": "TAF Việt services",
+    "title": "Accounting, tax, and advisory solutions for businesses, individuals, and household businesses",
+    "description": "TAF Việt helps businesses, individuals, and household businesses with transparent processes, clear documentation, and practical support tailored to real operating conditions.",
+    "explore": "View details",
+    "serviceGroups": {
+      "business": {
+        "title": "Business Services",
+        "description": "Accounting, tax, payroll and advisory support for growing businesses.",
+        "items": {
+          "accounting": { "title": "Accounting & Bookkeeping" },
+          "corporate-tax": { "title": "Corporate Tax Compliance" },
+          "financial-statements": {
+            "title": "Financial Statements & Year-end Finalization"
+          },
+          "payroll": { "title": "Payroll, PIT & Social Insurance" },
+          "accounting-review": {
+            "title": "Accounting Review & Tax Health Check"
+          },
+          "management-accounting": {
+            "title": "Management Accounting & Financial Advisory"
+          },
+          "business-formation": {
+            "title": "Business Formation & Corporate Compliance"
+          }
+        }
+      },
+      "personal": {
+        "title": "Personal & Freelancer Services",
+        "description": "Tax review and filing support for employees, freelancers and individuals with changing income patterns.",
+        "items": {
+          "pit-finalization": { "title": "Personal Income Tax Finalization" },
+          "multiple-income": { "title": "Multiple Income Sources Tax Support" },
+          "tax-refund": { "title": "Personal Tax Refund Assistance" },
+          "tax-registration": {
+            "title": "Tax Registration & Tax Profile Support"
+          },
+          "freelancer-tax": {
+            "title": "Freelancer & Independent Contractor Tax"
+          },
+          "expat-tax": { "title": "Expat & Foreign Individual Tax Services" },
+          "tax-notice": {
+            "title": "Tax Notice, Amendment & Historical Tax Review"
+          }
+        }
+      },
+      "household": {
+        "title": "Household Business & Online Seller Services",
+        "description": "Practical accounting, revenue reconciliation and tax support for sellers and household businesses.",
+        "items": {
+          "household-accounting": { "title": "Household Business Accounting" },
+          "household-tax": { "title": "Household Business Tax Compliance" },
+          "revenue-expense": { "title": "Revenue & Expense Record Management" },
+          "einvoice": { "title": "E-invoice & Documentation Support" },
+          "marketplace-reconciliation": {
+            "title": "Marketplace Sales Reconciliation"
+          },
+          "multichannel-accounting": {
+            "title": "Multichannel Seller Accounting"
+          },
+          "inventory-cost": { "title": "Inventory & Cost Management" },
+          "household-review": {
+            "title": "Accounting Review & Tax Health Check"
+          },
+          "conversion-advisory": {
+            "title": "Household Business to Company Conversion Advisory"
+          }
+        }
+      }
+    },
+    "categories": [
+      {
+        "name": "Accounting & bookkeeping services",
+        "description": "Accounting, tax, payroll, financial reporting, and compliance support for growing businesses.",
+        "href": "/services/accounting",
+        "services": [
+          "Full accounting",
+          "Tax filing and finalization",
+          "Payroll and insurance",
+          "Financial advisory"
+        ]
+      },
+      {
+        "name": "Personal & freelancer services",
+        "description": "Support for personal tax, freelancer income, and simple bookkeeping for independent professionals and side businesses.",
+        "href": "/services/personal",
+        "services": [
+          "Personal tax",
+          "Freelancer and multi-income support",
+          "Household business bookkeeping",
+          "Personal tax advisory"
+        ]
+      },
+      {
+        "name": "Household business & online sellers services",
+        "description": "Recordkeeping, revenue tracking, and compliance guidance for household businesses and online sales models.",
+        "href": "/services/household-business",
+        "services": [
+          "Revenue tracking",
+          "Invoice and document support",
+          "Business model review",
+          "Transition advisory"
+        ]
+      },
+      {
+        "name": "Enterprise business services",
+        "description": "Review business structure, financial risk, and compliance gaps before important strategic decisions.",
+        "href": "/services/business",
+        "services": [
+          "Business setup",
+          "Registration changes",
+          "Suspension and dissolution",
+          "Strategic advisory"
+        ]
+      }
+    ],
+    "ctaTitle": "Need the right support for your business situation?",
+    "ctaDescription": "Share a few details and TAF Việt will recommend the service path that matches your model, size, and goals.",
+    "contactFormTitle": "Request a services consultation",
+    "source": "services-overview"
   }
 }

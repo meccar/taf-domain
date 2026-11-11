@@ -7,9 +7,10 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { ServiceLanePage } from "@/components/service-lane-page";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 
 export async function generateMetadata() {
+  const locale = await getLocale();
   const t = await getTranslations("ServicePages.personal");
   const title = `${t("title")} | TAF Việt`;
   const description = `${t("description")} TAF Việt hỗ trợ cá nhân, hộ kinh doanh và freelancer kiểm soát thuế, hồ sơ và kế toán với quy trình rõ ràng và đáng tin cậy.`;
@@ -25,7 +26,7 @@ export async function generateMetadata() {
       description,
       url: "https://taf.asia/services/personal",
       siteName: "TAF Việt",
-      locale: "vi_VN",
+      locale: locale === "en" ? "en_US" : "vi_VN",
       type: "website",
     },
     twitter: {

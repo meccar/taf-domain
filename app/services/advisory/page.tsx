@@ -7,9 +7,10 @@ import {
   Target,
 } from "lucide-react";
 import { ServicePageLayout } from "@/components/service-page-layout";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 
 export async function generateMetadata() {
+  const locale = await getLocale();
   const t = await getTranslations("ServicePages.advisory");
   const title = `${t("title")} | TAF Việt`;
   const description = `${t("description")} TAF Việt tư vấn chiến lược tài chính, thuế và doanh nghiệp để hỗ trợ quyết định dài hạn của ban lãnh đạo.`;
@@ -25,7 +26,7 @@ export async function generateMetadata() {
       description,
       url: "https://taf.asia/services/advisory",
       siteName: "TAF Việt",
-      locale: "vi_VN",
+      locale: locale === "en" ? "en_US" : "vi_VN",
       type: "website",
     },
     twitter: {

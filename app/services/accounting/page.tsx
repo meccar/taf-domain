@@ -7,9 +7,10 @@ import {
   RefreshCw,
 } from "lucide-react";
 import { ServicePageLayout } from "@/components/service-page-layout";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 
 export async function generateMetadata() {
+  const locale = await getLocale();
   const t = await getTranslations("ServicePages.accounting");
   const title = `${t("title")} | TAF Việt`;
   const description = `${t("description")} TAF Việt cung cấp dịch vụ kế toán doanh nghiệp, báo cáo tài chính và hỗ trợ thuế cho doanh nghiệp tại Việt Nam.`;
@@ -25,7 +26,7 @@ export async function generateMetadata() {
       description,
       url: "https://taf.asia/services/accounting",
       siteName: "TAF Việt",
-      locale: "vi_VN",
+      locale: locale === "en" ? "en_US" : "vi_VN",
       type: "website",
     },
     twitter: {

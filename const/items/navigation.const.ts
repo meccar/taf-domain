@@ -6,29 +6,33 @@ export const navigation = [
   {
     labelKey: "services",
     children: [
-      {
-        labelKey: "servicesTaxPreparation",
-        href: "/services/tax-preparation",
-      },
+      // {
+      //   labelKey: "servicesTaxPreparation",
+      //   href: "/services/tax-preparation",
+      // },
+      // {
+      //   labelKey: "servicesPayroll",
+      //   href: "/services/payroll",
+      // },
+      // {
+      //   labelKey: "servicesAdvisory",
+      //   href: "/services/advisory",
+      // },
       {
         labelKey: "servicesAccounting",
         href: "/services/accounting",
-      },
-      {
-        labelKey: "servicesPayroll",
-        href: "/services/payroll",
-      },
-      {
-        labelKey: "servicesAdvisory",
-        href: "/services/advisory",
       },
       {
         labelKey: "servicesPersonal",
         href: "/services/personal",
       },
       {
-        labelKey: "servicesLegal",
-        href: "/services/legal",
+        labelKey: "servicesHousehold",
+        href: "/services/household-business",
+      },
+      {
+        labelKey: "servicesBusiness",
+        href: "/services/business",
       },
     ],
   },
