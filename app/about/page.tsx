@@ -194,11 +194,11 @@ export default async function About() {
                       <p className="min-h-[88px] text-sm leading-relaxed text-muted-foreground text-left">
                         {summary}
                       </p>
-                      <div className="flex min-h-[36px] flex-wrap gap-2">
+                      <div className="flex min-h-[42px] flex-wrap gap-2">
                         {specialties.map((item) => (
                           <span
                             key={item}
-                            className="rounded-full border border-border bg-muted/50 px-2.5 py-1 text-[10px] uppercase tracking-wide text-muted-foreground"
+                            className="inline-flex items-center rounded-full border border-border/70 bg-muted/60 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.12em] text-muted-foreground"
                           >
                             {item}
                           </span>
