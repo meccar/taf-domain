@@ -22,6 +22,8 @@
     "servicesAccounting": "Accounting & Bookkeeping",
     "servicesPayroll": "Payroll Services",
     "servicesAdvisory": "Advisory & Consulting",
+    "servicesPersonal": "Personal & Small Business",
+    "servicesLegal": "Legal & Financial Advisory",
     "resources": "Resources",
     "resourcesGuides": "Guides & Forms",
     "resourcesCalculators": "Tax Calculators",
@@ -44,9 +46,9 @@
     "taxIdValue": "0105367171",
     "emailLabel": "Email",
     "social": {
-      "facebook": "Facebook",
+      "facebook": "Facebook Fanpage",
       "linkedin": "LinkedIn",
-      "youtube": "YouTube"
+      "zalo": "Zalo OA"
     }
   },
   "Metadata": {
@@ -379,6 +381,10 @@
     "valuesTitle": "What makes us different",
     "teamBadge": "Our team",
     "teamTitle": "Meet the people who support your growth",
+    "partnersBadge": "Trusted by growing businesses",
+    "partnersTitle": "Representative business partners",
+    "caseStudiesBadge": "Case studies",
+    "caseStudiesTitle": "What our clients say",
     "ctaTitle": "Ready to work with us?",
     "ctaDescription": "Contact us today for a free consultation on the right accounting and tax solution for your business.",
     "ctaButton": "Contact us",
@@ -423,51 +429,61 @@
     "team": {
       "members": [
         {
-          "name": "Accounting lead",
+          "name": "Đoàn Mạnh Tiệp",
           "title": "Managing Director",
-          "summary": "Sets service strategy, maintains quality standards, and ensures every client engagement is delivered with clarity and accountability.",
+          "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80",
+          "summary": "Leads client strategy, quality assurance, and delivery across accounting, tax, and advisory engagements.",
           "specialties": ["Finance", "Oversight", "Operations"],
           "credentials": [
-            "10+ years of advisory experience",
-            "Financial reporting leadership",
-            "Client-focused growth strategy"
+            "Certified accounting professional",
+            "Tax agency credential holder",
+            "10+ years of advisory experience"
           ]
         },
         {
-          "name": "Accounting team",
+          "name": "Vũ Thị Ngà",
           "title": "Accounting Manager",
-          "summary": "Manages bookkeeping, monthly close processes, financial statements, and internal controls for client accounts.",
+          "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80",
+          "summary": "Oversees monthly close, reporting workflows, cash flow checks, and internal controls for client accounts.",
           "specialties": ["Accounting", "Reporting", "Cash flow"],
           "credentials": [
-            "Professional accounting credentials",
-            "Quarterly and annual close experience",
-            "Robust record control framework"
-          ]
-        },
-        {
-          "name": "Tax specialist",
-          "title": "Tax Specialist",
-          "summary": "Advises on tax declarations, legal updates, deductions, and risk mitigation to keep filings compliant and timely.",
-          "specialties": ["Tax", "Compliance", "Optimization"],
-          "credentials": [
-            "Tax practice credentials",
-            "Current regulatory knowledge",
-            "On-time filing review process"
-          ]
-        },
-        {
-          "name": "Financial advisor",
-          "title": "Financial Consultant",
-          "summary": "Supports budgeting, profitability analysis, cost planning, and strategic decision-making for business growth.",
-          "specialties": ["Finance", "Analysis", "Strategy"],
-          "credentials": [
-            "Financial reporting analysis",
-            "Cost optimization guidance",
-            "Growth planning support"
+            "Certified accounting professional",
+            "Tax practice credential",
+            "Quarterly and annual close expertise",
+            "Document control framework",
+            "10+ years of advisory experience"
           ]
         }
       ]
-    }
+    },
+    "partners": [
+      "VietStar",
+      "GreenLeaf",
+      "SunTrade",
+      "BacPhu",
+      "HelioCo",
+      "NorthPeak"
+    ],
+    "caseStudies": [
+      {
+        "company": "VietStar Logistics",
+        "industry": "Logistics",
+        "result": "Reduced monthly admin workload by 40%",
+        "quote": "TAF Việt helped us clean up our books and file deadlines on time, which gave our management team much more confidence in the numbers."
+      },
+      {
+        "company": "GreenLeaf Trading",
+        "industry": "Wholesale",
+        "result": "Cut tax-risk issues in the first quarterly review",
+        "quote": "Their guidance was practical, fast and clear. We finally had a process we could trust for compliance and planning."
+      },
+      {
+        "company": "NorthPeak Media",
+        "industry": "Marketing",
+        "result": "Improved cash flow visibility across 3 business units",
+        "quote": "The team understood our growth stage and gave us the structures and reporting we needed to scale without chaos."
+      }
+    ]
   },
   "ContactPage": {
     "badge": "Contact",
@@ -1230,6 +1246,112 @@
       "ctaDescription": "Leave your information and a TAF Việt advisor will contact you within 24 hours.",
       "contactFormTitle": "Book a strategic advisory session",
       "source": "service-advisory"
+    },
+    "personal": {
+      "eyebrow": "Personal & small business",
+      "title": "Tax, bookkeeping, and compliance support for individuals and growing side businesses",
+      "description": "TAF Việt helps freelancers, sole proprietors, and small business owners manage taxes, records, and day-to-day compliance with practical support.",
+      "valuePoints": [
+        {
+          "title": "Personal tax review",
+          "description": "Check income, deductions, and filing obligations to make the process simpler and more accurate."
+        },
+        {
+          "title": "Freelancer support",
+          "description": "Set up records, invoice flows, and tax declarations that match your real business model."
+        },
+        {
+          "title": "Simple bookkeeping",
+          "description": "Track income and expenses clearly and keep your numbers ready for filing periods."
+        },
+        {
+          "title": "Compliance checklist",
+          "description": "Stay on top of VAT, PIT, and reporting requirements without the overwhelm."
+        },
+        {
+          "title": "Cash flow clarity",
+          "description": "Understand what you owe, what you can keep, and how to plan ahead."
+        },
+        {
+          "title": "Practical advisory",
+          "description": "Get expert guidance when your business grows or your situation becomes more complex."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Initial consultation",
+          "description": "Review your income sources, tax profile, and current paperwork to identify your immediate support needs."
+        },
+        {
+          "title": "Document and data review",
+          "description": "Collect the relevant records and verify what is already in place before preparing filings or recommendations."
+        },
+        {
+          "title": "Prepare the right solution",
+          "description": "Set up a tax or bookkeeping plan that matches your workflow and compliance obligations."
+        },
+        {
+          "title": "Ongoing support",
+          "description": "Receive reminders, follow-up guidance, and help when your revenue or business structure changes."
+        }
+      ],
+      "ctaTitle": "Need reliable support for personal or side-business tax matters?",
+      "ctaDescription": "Share a few details and TAF Việt will suggest the most appropriate support path for your situation.",
+      "contactFormTitle": "Request personal or small-business support",
+      "source": "service-personal"
+    },
+    "legal": {
+      "eyebrow": "Legal & financial advisory",
+      "title": "Compliance review and strategic guidance for important business decisions",
+      "description": "TAF Việt helps founders and leadership teams review legal exposure, financial risks, and compliance gaps before key decisions are made.",
+      "valuePoints": [
+        {
+          "title": "Regulatory review",
+          "description": "Check whether current activities align with the latest tax and legal requirements."
+        },
+        {
+          "title": "Tax risk screening",
+          "description": "Spot exposure areas early and reduce the chance of penalties or avoidable issues."
+        },
+        {
+          "title": "Financial health check",
+          "description": "Assess the numbers behind the business and understand what decisions are sustainable."
+        },
+        {
+          "title": "M&A and funding readiness",
+          "description": "Prepare records, structure, and documents before investment or transaction discussions."
+        },
+        {
+          "title": "Operational structure advice",
+          "description": "Evaluate alternatives for how the business is organized as it scales or diversifies."
+        },
+        {
+          "title": "Decision support",
+          "description": "Work with leadership on practical options and the risks of each path forward."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Problem framing",
+          "description": "Identify the decision, pressure point, or regulatory area that needs attention."
+        },
+        {
+          "title": "Data and risk review",
+          "description": "Analyze tax, operational, and financial records to identify what matters most."
+        },
+        {
+          "title": "Recommendation design",
+          "description": "Build a clear action plan with the trade-offs and options spelled out."
+        },
+        {
+          "title": "Execution support",
+          "description": "Stay involved during implementation, updates, or follow-up reviews as conditions change."
+        }
+      ],
+      "ctaTitle": "Need a second opinion on financial or compliance risk?",
+      "ctaDescription": "Tell us a bit about your situation, and TAF Việt will recommend the best next step for your business.",
+      "contactFormTitle": "Request a legal and financial review",
+      "source": "service-legal"
     }
   }
 }

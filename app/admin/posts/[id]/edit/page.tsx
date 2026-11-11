@@ -23,9 +23,6 @@ export default async function EditPostPage({
     .eq("id", id)
     .single();
 
-  console.log("error", error);
-  console.log("post", post);
-
   if (error || !post) notFound();
 
   return (

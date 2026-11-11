@@ -22,6 +22,8 @@
     "servicesAccounting": "Kế toán & Ghi sổ",
     "servicesPayroll": "Dịch vụ tiền lương",
     "servicesAdvisory": "Tư vấn & Cố vấn",
+    "servicesPersonal": "Cá nhân & Hộ kinh doanh",
+    "servicesLegal": "Pháp lý & Tài chính",
     "resources": "Tài nguyên",
     "resourcesGuides": "Hướng dẫn & Biểu mẫu",
     "resourcesCalculators": "Máy tính thuế",
@@ -44,9 +46,9 @@
     "taxIdValue": "0105367171",
     "emailLabel": "Email",
     "social": {
-      "facebook": "Facebook",
+      "facebook": "Facebook Fanpage",
       "linkedin": "LinkedIn",
-      "youtube": "YouTube"
+      "zalo": "Zalo OA"
     }
   },
   "Metadata": {
@@ -379,6 +381,10 @@
     "valuesTitle": "Điều làm nên sự khác biệt",
     "teamBadge": "Đội ngũ",
     "teamTitle": "Gặp gỡ những người đồng hành cùng bạn",
+    "partnersBadge": "Được tin dùng bởi doanh nghiệp đang phát triển",
+    "partnersTitle": "Đối tác doanh nghiệp tiêu biểu",
+    "caseStudiesBadge": "Case study",
+    "caseStudiesTitle": "Khách hàng nói gì về TAF Việt",
     "ctaTitle": "Sẵn sàng hợp tác cùng chúng tôi?",
     "ctaDescription": "Liên hệ ngay để được tư vấn miễn phí giải pháp kế toán - thuế phù hợp với doanh nghiệp của bạn.",
     "ctaButton": "Liên hệ tư vấn",
@@ -423,51 +429,61 @@
     "team": {
       "members": [
         {
-          "name": "Kế toán trưởng",
+          "name": "Đoàn Mạnh Tiệp",
           "title": "Giám đốc điều hành",
-          "summary": "Định hướng chiến lược tài chính, kiểm soát chất lượng dịch vụ và đảm bảo doanh nghiệp luôn tuân thủ quy định mới nhất.",
+          "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80",
+          "summary": "Định hướng chiến lược dịch vụ, kiểm soát chất lượng và đảm bảo mọi dự án đều được triển khai rõ ràng, đúng tiến độ và đúng chuẩn.",
           "specialties": ["Tài chính", "Kiểm soát", "Nghiệp vụ"],
           "credentials": [
-            "10+ năm kinh nghiệm",
-            "Quản lý chuỗi báo cáo tài chính",
-            "Hỗ trợ doanh nghiệp theo từng giai đoạn phát triển"
+            "Chứng chỉ Kế toán viên hành nghề",
+            "Chứng chỉ Đại lý thuế",
+            "10+ năm kinh nghiệm tư vấn"
           ]
         },
         {
-          "name": "Phòng kế toán",
+          "name": "Vũ Thị Ngà",
           "title": "Trưởng phòng Kế toán",
-          "summary": "Phụ trách quy trình ghi sổ, báo cáo tài chính, theo dõi dòng tiền và tối ưu hóa hệ thống kế toán doanh nghiệp.",
+          "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80",
+          "summary": "Phụ trách quy trình ghi sổ, báo cáo tài chính, đối chiếu dòng tiền và kiểm soát hệ thống kế toán cho khách hàng.",
           "specialties": ["Kế toán", "Báo cáo", "Dòng tiền"],
           "credentials": [
-            "Chứng chỉ kế toán hành nghề",
-            "Kinh nghiệm xử lý báo cáo quý/năm",
-            "Kiểm soát dữ liệu kế toán chặt chẽ"
-          ]
-        },
-        {
-          "name": "Chuyên gia thuế",
-          "title": "Chuyên viên Thuế",
-          "summary": "Tư vấn kê khai, rà soát quy định thuế, tối ưu nghĩa vụ và giảm rủi ro sai sót khi thực hiện nghĩa vụ thuế.",
-          "specialties": ["Thuế", "Tuân thủ", "Tối ưu"],
-          "credentials": [
-            "Chứng chỉ hành nghề thuế",
-            "Nắm vững quy định mới",
-            "Kiểm tra hồ sơ khai báo đúng hạn"
-          ]
-        },
-        {
-          "name": "Tư vấn tài chính",
-          "title": "Chuyên gia Tài chính",
-          "summary": "Hỗ trợ doanh nghiệp xây dựng mô hình tài chính, phân tích lợi nhuận, định hướng ngân sách và kế hoạch tăng trưởng bền vững.",
-          "specialties": ["Tài chính", "Phân tích", "Chiến lược"],
-          "credentials": [
-            "Phân tích báo cáo tài chính",
-            "Tư vấn chính sách chi phí",
-            "Tối ưu hiệu quả tài chính doanh nghiệp"
+            "Chứng chỉ Kế toán viên hành nghề",
+            "Chứng chỉ Đại lý thuế",
+            "Kinh nghiệm báo cáo quý/năm",
+            "Kiểm soát dữ liệu kế toán chặt chẽ",
+            "10+ năm kinh nghiệm tư vấn"
           ]
         }
       ]
-    }
+    },
+    "partners": [
+      "VietStar",
+      "GreenLeaf",
+      "SunTrade",
+      "BacPhu",
+      "HelioCo",
+      "NorthPeak"
+    ],
+    "caseStudies": [
+      {
+        "company": "VietStar Logistics",
+        "industry": "Logistics",
+        "result": "Giảm 40% khối lượng công việc hành chính mỗi tháng",
+        "quote": "TAF Việt giúp chúng tôi làm sạch sổ sách và nộp hồ sơ đúng hạn, giúp ban lãnh đạo tin tưởng hơn vào số liệu tài chính."
+      },
+      {
+        "company": "GreenLeaf Trading",
+        "industry": "Thương mại",
+        "result": "Giảm rủi ro thuế trong đợt rà soát quý đầu tiên",
+        "quote": "Lời khuyên của đội ngũ rất thực tế, nhanh và rõ ràng. Cuối cùng chúng tôi có quy trình tuân thủ và kế hoạch tài chính đáng tin cậy."
+      },
+      {
+        "company": "NorthPeak Media",
+        "industry": "Marketing",
+        "result": "Tăng khả năng nhìn thấy dòng tiền trên 3 đơn vị kinh doanh",
+        "quote": "Đội ngũ hiểu giai đoạn tăng trưởng của doanh nghiệp và đưa ra giải pháp báo cáo, cấu trúc tài chính phù hợp để mở rộng mà không hỗn loạn."
+      }
+    ]
   },
   "ContactPage": {
     "badge": "Liên hệ",
@@ -1227,6 +1243,112 @@
       "ctaDescription": "Để lại thông tin, chuyên gia tư vấn của TAF Việt sẽ liên hệ trong vòng 24 giờ.",
       "contactFormTitle": "Đặt lịch tư vấn chiến lược",
       "source": "service-advisory"
+    },
+    "personal": {
+      "eyebrow": "Cá nhân & hộ kinh doanh",
+      "title": "Hỗ trợ thuế, kế toán và tuân thủ cho cá nhân và doanh nghiệp nhỏ",
+      "description": "TAF Việt đồng hành cùng freelancer, cá nhân kinh doanh và doanh nghiệp nhỏ trong việc quản lý thuế, hồ sơ và sổ sách một cách đơn giản, rõ ràng và chắc chắn.",
+      "valuePoints": [
+        {
+          "title": "Rà soát thuế cá nhân",
+          "description": "Kiểm tra thu nhập, khoản giảm trừ và nghĩa vụ kê khai để quá trình nộp thuế dễ dàng hơn."
+        },
+        {
+          "title": "Hỗ trợ freelancer",
+          "description": "Thiết lập quy trình hóa đơn, hồ sơ và khai thuế phù hợp với mô hình hoạt động thực tế."
+        },
+        {
+          "title": "Kế toán đơn giản",
+          "description": "Theo dõi doanh thu, chi phí và số liệu tài chính để luôn sẵn sàng cho kỳ kê khai."
+        },
+        {
+          "title": "Checklist tuân thủ",
+          "description": "Theo dõi nghĩa vụ VAT, PIT và các báo cáo bắt buộc mà không bị chồng chéo thao tác."
+        },
+        {
+          "title": "Tăng rõ dòng tiền",
+          "description": "Hiểu rõ khoản phải nộp, phần còn lại và cách lập kế hoạch tài chính hợp lý."
+        },
+        {
+          "title": "Tư vấn thực tế",
+          "description": "Nhận lời khuyên khi hoạt động của bạn phát triển hoặc có thay đổi về quy mô và cấu trúc."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Tư vấn ban đầu",
+          "description": "Rà soát thu nhập, hồ sơ thuế và tình hình hiện tại để xác định nhu cầu hỗ trợ quan trọng nhất."
+        },
+        {
+          "title": "Kiểm tra dữ liệu",
+          "description": "Thu thập chứng từ và đối chiếu số liệu hiện có trước khi lập hồ sơ hoặc đề xuất giải pháp."
+        },
+        {
+          "title": "Xây dựng phương án phù hợp",
+          "description": "Thiết lập kế hoạch thuế hoặc kế toán theo đúng mô hình hoạt động và nghĩa vụ pháp lý."
+        },
+        {
+          "title": "Hỗ trợ định kỳ",
+          "description": "Nhận nhắc hạn, phản hồi kịp thời và hỗ trợ khi doanh thu hoặc cấu trúc hoạt động thay đổi."
+        }
+      ],
+      "ctaTitle": "Cần hỗ trợ đáng tin cậy cho thuế cá nhân hoặc kinh doanh nhỏ?",
+      "ctaDescription": "Chia sẻ một vài thông tin, TAF Việt sẽ gợi ý lộ trình phù hợp nhất với tình huống của bạn.",
+      "contactFormTitle": "Yêu cầu hỗ trợ cá nhân & hộ kinh doanh",
+      "source": "service-personal"
+    },
+    "legal": {
+      "eyebrow": "Tư vấn pháp lý & tài chính",
+      "title": "Rà soát tuân thủ và hỗ trợ quyết định quan trọng cho doanh nghiệp",
+      "description": "TAF Việt đồng hành cùng chủ doanh nghiệp và ban lãnh đạo để rà soát rủi ro pháp lý, đánh giá tài chính và xác định hướng đi phù hợp trước các quyết định lớn.",
+      "valuePoints": [
+        {
+          "title": "Rà soát quy định",
+          "description": "Kiểm tra hoạt động hiện tại có đang phù hợp với quy định thuế và pháp lý mới nhất hay không."
+        },
+        {
+          "title": "Đánh giá rủi ro thuế",
+          "description": "Phát hiện điểm mẫn cảm sớm để giảm nguy cơ bị phạt hoặc phát sinh chi phí không đáng có."
+        },
+        {
+          "title": "Kiểm tra sức khỏe tài chính",
+          "description": "Đánh giá số liệu và tình hình vận hành để hiểu quyết định nào thực sự khả thi."
+        },
+        {
+          "title": "Sẵn sàng M&A / gọi vốn",
+          "description": "Chuẩn bị hồ sơ, cấu trúc và dữ liệu trước khi đối thoại với nhà đầu tư hoặc đối tác."
+        },
+        {
+          "title": "Tư vấn cơ cấu vận hành",
+          "description": "Đánh giá các phương án mở rộng, chia nhánh, tái cấu trúc hoặc sáp nhập theo giai đoạn phát triển."
+        },
+        {
+          "title": "Hỗ trợ quyết định",
+          "description": "Đồng hành cùng lãnh đạo trong việc so sánh phương án, rủi ro và khả năng triển khai thực tế."
+        }
+      ],
+      "steps": [
+        {
+          "title": "Xác định vấn đề",
+          "description": "Nắm rõ quyết định, điểm rủi ro hoặc mối lo ngại pháp lý cần được giải quyết."
+        },
+        {
+          "title": "Rà soát dữ liệu & rủi ro",
+          "description": "Phân tích hồ sơ thuế, báo cáo tài chính và hoạt động vận hành để xác định điểm cần tập trung."
+        },
+        {
+          "title": "Thiết kế phương án",
+          "description": "Đề xuất giải pháp rõ ràng kèm ưu, nhược điểm và mức độ rủi ro của từng hướng đi."
+        },
+        {
+          "title": "Hỗ trợ triển khai",
+          "description": "Theo dõi quá trình thực hiện, cập nhật khi điều kiện thay đổi và điều chỉnh phương án khi cần thiết."
+        }
+      ],
+      "ctaTitle": "Cần tham vấn thêm về rủi ro tài chính hoặc pháp lý?",
+      "ctaDescription": "Chia sẻ bối cảnh của bạn, TAF Việt sẽ đề xuất bước đi phù hợp nhất cho doanh nghiệp. ",
+      "contactFormTitle": "Yêu cầu rà soát pháp lý & tài chính",
+      "source": "service-legal"
     }
   }
 }

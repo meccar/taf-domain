@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { FaFacebook, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { MessageCircle } from "lucide-react";
+import { FaFacebook, FaLinkedin } from "react-icons/fa";
 import Logo from "./logo";
 import { navigation } from "@/const/items/navigation.const";
 import { useTranslations } from "next-intl";
@@ -11,9 +12,21 @@ export default function Footer() {
   const t = useTranslations("Footer");
 
   const socialLinks = [
-    { Icon: FaFacebook, href: "https://facebook.com", labelKey: "facebook" },
-    { Icon: FaLinkedin, href: "https://linkedin.com", labelKey: "linkedin" },
-    { Icon: FaYoutube, href: "https://youtube.com", labelKey: "youtube" },
+    {
+      Icon: FaFacebook,
+      href: "https://www.facebook.com/profile.php?id=61594757558743",
+      labelKey: "facebook",
+    },
+    {
+      Icon: FaLinkedin,
+      href: "https://www.linkedin.com/company/tafviet",
+      labelKey: "linkedin",
+    },
+    {
+      Icon: MessageCircle,
+      href: "https://zalo.me/0936378955",
+      labelKey: "zalo",
+    },
   ];
 
   const year = new Date().getFullYear();

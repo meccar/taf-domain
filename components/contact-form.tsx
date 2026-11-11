@@ -98,9 +98,27 @@ export function ContactForm({
         setSubmitError(result.error);
         return;
       }
-    } else {
-      console.log({ ...values, source });
     }
+
+    if (values.consent) {
+      const win = window as typeof window & {
+        gtag?: (...args: unknown[]) => void;
+        fbq?: (...args: unknown[]) => void;
+      };
+
+      win.gtag?.("event", "generate_lead", {
+        event_category: "lead",
+        event_label: source ?? "contact-form",
+        value: 1,
+      });
+
+      win.fbq?.("track", "Lead", {
+        content_name: source ?? "contact-form",
+        currency: "VND",
+        value: 1,
+      });
+    }
+
     setSubmitted(true);
     setTimeout(() => onSuccess?.(), 1500);
   }

@@ -44,9 +44,18 @@ export default async function About() {
   const team = t.raw("team.members") as Array<{
     name: string;
     title: string;
+    image: string;
     summary: string;
     specialties: string[];
     credentials: string[];
+  }>;
+
+  const partners = t.raw("partners") as string[];
+  const caseStudies = t.raw("caseStudies") as Array<{
+    company: string;
+    industry: string;
+    result: string;
+    quote: string;
   }>;
 
   return (
@@ -156,61 +165,121 @@ export default async function About() {
               {t("teamTitle")}
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-            {team.map(({ name, title, summary, specialties, credentials }) => (
-              <Card
-                key={name}
-                className="border border-border/60 bg-background shadow-sm hover:shadow-md transition-shadow"
-              >
-                <CardHeader className="items-start pb-3">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-semibold text-sm">
-                      {name
-                        .split(" ")
-                        .map((word) => word[0])
-                        .join("")
-                        .slice(0, 2)
-                        .toUpperCase()}
-                    </div>
-                    <div>
-                      <CardTitle className="text-base font-medium text-left">
-                        {name}
-                      </CardTitle>
-                      <CardDescription className="text-xs text-left">
-                        {title}
-                      </CardDescription>
-                    </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            {team.map(
+              ({ name, title, image, summary, specialties, credentials }) => (
+                <Card
+                  key={name}
+                  className="flex h-full min-h-[760px] flex-col overflow-hidden border border-border/60 bg-background shadow-sm transition-shadow hover:shadow-md"
+                >
+                  <div className="h-[420px] overflow-hidden bg-muted sm:h-[470px] lg:h-[520px]">
+                    <img
+                      src={image}
+                      alt={name}
+                      className="h-full w-full object-cover object-center"
+                    />
                   </div>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-sm leading-relaxed text-muted-foreground text-left">
-                    {summary}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {specialties.map((item) => (
-                      <span
-                        key={item}
-                        className="rounded-full border border-border bg-muted/50 px-2.5 py-1 text-[10px] uppercase tracking-wide text-muted-foreground"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="space-y-1 border-t border-border pt-3">
-                    {credentials.map((item) => (
-                      <div
-                        key={item}
-                        className="flex items-start gap-2 text-xs text-muted-foreground"
-                      >
-                        <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary" />
-                        <span>{item}</span>
+                  <div className="flex flex-1 flex-col">
+                    <CardHeader className="items-start pb-3 pt-5">
+                      <div>
+                        <CardTitle className="text-base font-medium text-left">
+                          {name}
+                        </CardTitle>
+                        <CardDescription className="text-xs text-left">
+                          {title}
+                        </CardDescription>
                       </div>
-                    ))}
+                    </CardHeader>
+                    <CardContent className="flex flex-1 flex-col space-y-4 px-5 pb-5">
+                      <p className="min-h-[88px] text-sm leading-relaxed text-muted-foreground text-left">
+                        {summary}
+                      </p>
+                      <div className="flex min-h-[36px] flex-wrap gap-2">
+                        {specialties.map((item) => (
+                          <span
+                            key={item}
+                            className="rounded-full border border-border bg-muted/50 px-2.5 py-1 text-[10px] uppercase tracking-wide text-muted-foreground"
+                          >
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="mt-auto space-y-1 border-t border-border pt-3">
+                        {credentials.map((item) => (
+                          <div
+                            key={item}
+                            className="flex items-start gap-2 text-xs text-muted-foreground"
+                          >
+                            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary" />
+                            <span>{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+                </Card>
+              ),
+            )}
           </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+        <div className="text-center flex flex-col items-center gap-3 mb-10">
+          <Badge variant="outline" className="uppercase tracking-widest">
+            {t("partnersBadge")}
+          </Badge>
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+            {t("partnersTitle")}
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          {partners.map((partner) => (
+            <div
+              key={partner}
+              className="flex h-20 items-center justify-center rounded-xl border border-border bg-background text-sm font-semibold tracking-wide text-muted-foreground shadow-sm"
+            >
+              {partner}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <Separator />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+        <div className="text-center flex flex-col items-center gap-3 mb-10">
+          <Badge variant="outline" className="uppercase tracking-widest">
+            {t("caseStudiesBadge")}
+          </Badge>
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+            {t("caseStudiesTitle")}
+          </h2>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          {caseStudies.map((study) => (
+            <Card
+              key={study.company}
+              className="flex h-full flex-col justify-between"
+            >
+              <CardHeader className="gap-3">
+                <div className="flex items-center justify-between gap-3">
+                  <span className="text-lg font-semibold">{study.company}</span>
+                  <Badge variant="secondary">{study.industry}</Badge>
+                </div>
+                <div className="text-xl font-semibold text-primary">
+                  {study.result}
+                </div>
+              </CardHeader>
+              <CardContent className="flex flex-col gap-4">
+                <blockquote className="border-l-2 border-primary/40 pl-4 text-sm leading-relaxed text-muted-foreground">
+                  “{study.quote}”
+                </blockquote>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
 

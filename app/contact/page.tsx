@@ -38,7 +38,7 @@ export default async function Contact() {
       icon: MapPin,
       label: t("contactInfo.address"),
       value: t("addressValue"),
-      href: "#",
+      href: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.473517454371!2d105.9015746!3d21.0722143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x63016f31bdb57aa1%3A0x8bdbca09555253bf!2zVEFGIFZJ4buEMiAtIEPhg5pOIFRZIFROSFIGxkqhuqJJIEzDqSBUSFAgVEFGIFZJ4buEMg!5e0!3m2!1svn!2svn!4v1700000000000!5m2!1svn!2svn",
     },
     {
       icon: MapPin,
@@ -74,7 +74,12 @@ export default async function Contact() {
                 key={label}
                 className="border-none shadow-none hover:bg-accent/50 transition-colors"
               >
-                <Link href={href} className="flex items-start gap-4 p-2">
+                <Link
+                  href={href}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noreferrer" : undefined}
+                  className="flex items-start gap-4 p-2"
+                >
                   <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                     <Icon className="h-5 w-5 text-primary" />
                   </div>
@@ -96,6 +101,7 @@ export default async function Contact() {
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.473517454371!2d105.9015746!3d21.0722143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x63016f31bdb57aa1%3A0x8bdbca09555253bf!2zVEFGIFZJ4buEMiAtIEPhg5pOIFRZIFROSFIGxkqhuqJJIEzDqSBUSFAgVEFGIFZJ4buEMg!5e0!3m2!1svn!2svn!4v1700000000000!5m2!1svn!2svn"
                 className="w-full h-full border-0"
                 loading="lazy"
+                allowFullScreen
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </Card>

@@ -48,7 +48,6 @@ export function NewsletterForm({
 
   async function onSubmit(values: FormValues) {
     if (onSubmitAction) await onSubmitAction({ ...values, source });
-    else console.log({ ...values, source });
     setSubmitted(true);
     form.reset();
   }

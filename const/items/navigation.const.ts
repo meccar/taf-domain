@@ -22,6 +22,14 @@ export const navigation = [
         labelKey: "servicesAdvisory",
         href: "/services/advisory",
       },
+      {
+        labelKey: "servicesPersonal",
+        href: "/services/personal",
+      },
+      {
+        labelKey: "servicesLegal",
+        href: "/services/legal",
+      },
     ],
   },
   {
