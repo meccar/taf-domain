@@ -904,6 +904,78 @@
           "answer": "TAF Việt ensures data confidentiality and shares records only with the company’s consent."
         }
       ],
+      "audiencesTitle": "Who this service is for",
+      "audiences": [
+        {
+          "title": "Startups & new businesses",
+          "description": "Companies that need cleaner books and a reliable monthly operation from day one."
+        },
+        {
+          "title": "SMEs without a full-time accountant",
+          "description": "Teams that need dependable support for recurring accounting tasks and reporting."
+        },
+        {
+          "title": "Businesses needing accounting outsourcing",
+          "description": "Organizations that want accurate books without expanding internal admin work."
+        },
+        {
+          "title": "Growing businesses",
+          "description": "Companies preparing for more transactions, more reporting, and better financial visibility."
+        }
+      ],
+      "problemsTitle": "Common problems",
+      "problems": [
+        {
+          "title": "No dedicated accounting team",
+          "description": "The business has daily transactions but no consistent process for monthly books and review."
+        },
+        {
+          "title": "Incomplete records",
+          "description": "Invoices, vouchers and payment documents are not always organized or reconciled on time."
+        },
+        {
+          "title": "Unclear financial position",
+          "description": "Management cannot tell whether numbers are accurate or whether cash flow is genuinely healthy."
+        },
+        {
+          "title": "Heavy month-end workload",
+          "description": "The team is overwhelmed by the closing cycle, document checks and financial summaries."
+        }
+      ],
+      "solutionsTitle": "How TAF helps",
+      "solutions": [
+        {
+          "title": "Bookkeeping & monthly close",
+          "description": "Keep every transaction in order and maintain a clear, reviewable accounting cycle.",
+          "href": "/services/accounting"
+        },
+        {
+          "title": "Receivables & payables review",
+          "description": "Reconcile outstanding obligations and cash movement for a cleaner financial picture.",
+          "href": "/services/accounting"
+        },
+        {
+          "title": "Accounting review & health check",
+          "description": "Review historical records and identify discrepancies before they become operational issues.",
+          "href": "/services/business/accounting-review"
+        }
+      ],
+      "documentsTitle": "Required documents",
+      "documents": [
+        "Bank statements and cash-flow documents",
+        "Invoices, payment vouchers, and receipts",
+        "Supplier and customer contracts if relevant",
+        "Payroll records when payroll is included",
+        "Opening balance and historical accounting files if available"
+      ],
+      "deliverablesTitle": "Deliverables",
+      "deliverables": [
+        "Monthly accounting records and updated books",
+        "Reconciliation summary and review notes",
+        "Financial reports for internal management",
+        "Support for closing and handover cycles",
+        "Clear recommendations for the next accounting period"
+      ],
       "ctaTitle": "Ready for TAF Việt to handle your books?",
       "ctaDescription": "Leave your details and our team will contact you within 24 hours.",
       "contactFormTitle": "Request accounting service consultation",
@@ -1251,6 +1323,144 @@
       "eyebrow": "Personal & small business",
       "title": "Tax, bookkeeping, and compliance support for individuals and growing side businesses",
       "description": "TAF Việt helps freelancers, sole proprietors, and small business owners manage taxes, records, and day-to-day compliance with practical support.",
+      "audiencesTitle": "Who this service is for",
+      "audiences": [
+        {
+          "title": "Employees with one employer",
+          "description": "People who receive regular salary income and need annual tax finalization support."
+        },
+        {
+          "title": "Employees changing jobs",
+          "description": "Individuals who had more than one employer during the year and need income consolidation."
+        },
+        {
+          "title": "Multi-income earners",
+          "description": "People receiving both salary and freelance or business income who need a clear review."
+        },
+        {
+          "title": "Freelancers and independent contractors",
+          "description": "Service providers who need to organize revenue, invoices, and tax obligations."
+        },
+        {
+          "title": "Consultants and content creators",
+          "description": "People with irregular or project-based income who need document and filing support."
+        },
+        {
+          "title": "Foreign employees and cross-border earners",
+          "description": "Individuals needing a review of Vietnam-related tax responsibilities and supporting records."
+        }
+      ],
+      "problemsTitle": "Common personal tax situations",
+      "problems": [
+        {
+          "title": "Income from multiple employers",
+          "description": "A person changed jobs during the year and needs to consolidate all withholding and income information accurately."
+        },
+        {
+          "title": "Annual finalization uncertainty",
+          "description": "An individual is unsure whether they need to finalize taxes or whether the current withholding is already sufficient."
+        },
+        {
+          "title": "Suspected overpayment",
+          "description": "A taxpayer wants to review whether they may be entitled to a refund or reduction in tax due."
+        },
+        {
+          "title": "Freelance recordkeeping gaps",
+          "description": "An independent contractor wants help understanding which invoices and records are needed to support filing."
+        },
+        {
+          "title": "Tax notice or historical review",
+          "description": "The person receives a notice or wants a historical review of past filings and supporting documents."
+        }
+      ],
+      "solutionsTitle": "How TAF helps",
+      "solutions": [
+        {
+          "title": "Personal Income Tax Finalization",
+          "description": "Review income, deductions, withholding records and prepare annual finalization with a clear, documented process.",
+          "href": "/services/personal/income-tax-finalization"
+        },
+        {
+          "title": "Multiple Income Sources Tax Support",
+          "description": "Consolidate income from multiple employers and channels to evaluate filing obligations and supporting documents.",
+          "href": "/services/personal/multiple-income-sources"
+        },
+        {
+          "title": "Personal Tax Refund Assistance",
+          "description": "Review potential overpayment, assess refund eligibility and prepare the necessary supporting records.",
+          "href": "/services/personal/tax-refund"
+        },
+        {
+          "title": "Tax Registration & Profile Support",
+          "description": "Review and update personal tax registration, profile information and reporting setup where applicable.",
+          "href": "/services/personal/tax-registration"
+        },
+        {
+          "title": "Freelancer & Independent Contractor Tax",
+          "description": "Evaluate income classification, invoice records, withholding checks and the right filing approach for your workflow.",
+          "href": "/services/personal/freelancer-tax"
+        },
+        {
+          "title": "Expat & Foreign Individual Tax",
+          "description": "Review residency, Vietnam-related income and relevant tax obligations with a careful and practical assessment.",
+          "href": "/services/personal/expat-tax"
+        }
+      ],
+      "documentsTitle": "Required documents",
+      "documents": [
+        "Tax registration and personal identification documents",
+        "Employment contracts and monthly payslips",
+        "Income records from all sources",
+        "Proof of deductions and dependents",
+        "Invoices or supporting documents for freelance income",
+        "Bank and tax notices for any historical review"
+      ],
+      "deliverablesTitle": "What you receive",
+      "deliverables": [
+        "Income and deduction review summary",
+        "Prepared filing support and calculation checks",
+        "Checklist of missing or unclear documents",
+        "Clear explanation of obligations and next steps",
+        "Support letters or follow-up guidance when needed"
+      ],
+      "plans": [
+        {
+          "name": "Starter",
+          "price": "1,200,000đ",
+          "period": "/ month",
+          "description": "Suitable for employees or side earners who need regular tax and document review support.",
+          "features": [
+            "Annual tax review support",
+            "Income and deduction checklist",
+            "Email advisory support"
+          ]
+        },
+        {
+          "name": "Growth",
+          "price": "2,800,000đ",
+          "period": "/ month",
+          "description": "Suitable for people with multiple income streams or more complex personal tax situations.",
+          "features": [
+            "All Starter features",
+            "Multiple-income consolidation review",
+            "Priority support and follow-up",
+            "Quarterly check-in guidance"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "Custom",
+          "price": "Contact",
+          "period": "",
+          "description": "Suitable for foreign workers, historical review, or more complex tax issues.",
+          "features": [
+            "All Growth features",
+            "Historical tax or notice support",
+            "Tailored filing strategy",
+            "Dedicated review support"
+          ]
+        }
+      ],
       "valuePoints": [
         {
           "title": "Personal tax review",
@@ -1295,6 +1505,24 @@
           "description": "Receive reminders, follow-up guidance, and help when your revenue or business structure changes."
         }
       ],
+      "faqs": [
+        {
+          "question": "Do I need personal tax finalization if I only had one employer?",
+          "answer": "Many employees still need annual finalization review and may need to claim deductions or refunds depending on their situation."
+        },
+        {
+          "question": "What if I have both salary and freelance income?",
+          "answer": "The review should evaluate all income sources and the associated records before filing or adjusting tax obligations."
+        },
+        {
+          "question": "Does TAF Việt guarantee a refund?",
+          "answer": "No. Refund eligibility depends on the actual tax position, supporting documents, and the conditions under the relevant tax rules."
+        },
+        {
+          "question": "Can TAF Việt support historical or notice-related issues?",
+          "answer": "Yes. Historical tax review and notice support can be assessed case by case using the available records and the relevant compliance context."
+        }
+      ],
       "ctaTitle": "Need reliable support for personal or side-business tax matters?",
       "ctaDescription": "Share a few details and TAF Việt will suggest the most appropriate support path for your situation.",
       "contactFormTitle": "Request personal or small-business support",
@@ -1304,6 +1532,151 @@
       "eyebrow": "Household business & online sellers",
       "title": "Bookkeeping, revenue, and tax support for household businesses and online sellers",
       "description": "TAF Việt helps household businesses and online sellers manage revenue, documentation, and compliance with practical support tailored to real operating conditions.",
+      "audiencesTitle": "Who this service is for",
+      "audiences": [
+        {
+          "title": "Traditional household businesses",
+          "description": "Retail shops, food stalls, and service businesses that need cleaner records and clearer tax review."
+        },
+        {
+          "title": "Shopee and TikTok sellers",
+          "description": "Online sellers managing orders, marketplace payouts, refunds and sales records across channels."
+        },
+        {
+          "title": "Multichannel sellers",
+          "description": "Businesses operating in both physical and digital channels and needing consolidated records."
+        },
+        {
+          "title": "Restaurants and cafés",
+          "description": "Small food and beverage businesses requiring revenue review and operational documentation."
+        },
+        {
+          "title": "Growing household businesses",
+          "description": "Owners preparing to formalize or improve their accounting process as sales expand."
+        }
+      ],
+      "problemsTitle": "Common operational and tax problems",
+      "problems": [
+        {
+          "title": "Revenue is scattered by channel",
+          "description": "Sales happen through a store, marketplace, TikTok Shop and Facebook, creating a fragmented view of actual receipts."
+        },
+        {
+          "title": "Marketplace settlements do not match order values",
+          "description": "Fees, commissions, refunds, shipping charges and promotions can make the settlement amount differ from gross sales."
+        },
+        {
+          "title": "Expenses and documents are incomplete",
+          "description": "Supplier invoices, cash movements and operating costs are not always organized in a consistent process."
+        },
+        {
+          "title": "Inventory and cost tracking are difficult",
+          "description": "It is hard to reconcile stock movements, purchases, sales and remaining inventory without a solid recordkeeping structure."
+        },
+        {
+          "title": "Tax obligations are unclear",
+          "description": "The owner is unsure which obligations apply to their actual operating model, records and sales channels."
+        }
+      ],
+      "solutionsTitle": "How TAF helps",
+      "solutions": [
+        {
+          "title": "Household Business Accounting",
+          "description": "Organize accounting entries, revenue and expense records, and service reporting in a practical way for daily operations.",
+          "href": "/services/household-business/accounting"
+        },
+        {
+          "title": "Household Business Tax Compliance",
+          "description": "Review compliance obligations, support documentation and declaration preparation based on the actual business model.",
+          "href": "/services/household-business/tax-compliance"
+        },
+        {
+          "title": "Revenue & Expense Record Management",
+          "description": "Create a disciplined system for cash, sales, purchases and operating costs so records remain usable and reviewable.",
+          "href": "/services/household-business/revenue-expense-management"
+        },
+        {
+          "title": "Marketplace Sales Reconciliation",
+          "description": "Reconcile gross orders, fees, refunds, promotions, settlements and bank receipts to understand the real revenue position.",
+          "href": "/services/household-business/marketplace-reconciliation"
+        },
+        {
+          "title": "Multichannel Seller Accounting",
+          "description": "Consolidate records across different sales channels and support consistent management reporting.",
+          "href": "/services/household-business/multichannel-accounting"
+        },
+        {
+          "title": "Inventory & Cost Management",
+          "description": "Review stock movements, purchase records and operating costs to improve visibility and control.",
+          "href": "/services/household-business/inventory-management"
+        }
+      ],
+      "documentsTitle": "Required documents",
+      "documents": [
+        "Bank statements and cash movement records",
+        "Sales receipts, invoices and marketplace settlement reports",
+        "Supplier invoices and purchase records",
+        "Inventory records and stock movement logs",
+        "Expense supporting documents and payment vouchers",
+        "Business registration or tax-related documents if applicable"
+      ],
+      "deliverablesTitle": "What you receive",
+      "deliverables": [
+        "Vendor and revenue register by channel",
+        "Monthly or periodic bookkeeping summary",
+        "Marketplace reconciliation worksheet",
+        "Expense and inventory summary for review",
+        "Practical recommendations for filing and recordkeeping"
+      ],
+      "plans": [
+        {
+          "name": "Starter",
+          "price": "1,000,000đ",
+          "period": "/ month",
+          "description": "Suitable for small household businesses and simple online sales operations needing routine bookkeeping support.",
+          "features": [
+            "Basic bookkeeping and cash tracking",
+            "Monthly revenue summary",
+            "Email support"
+          ]
+        },
+        {
+          "name": "Growth",
+          "price": "2,500,000đ",
+          "period": "/ month",
+          "description": "Suitable for businesses with multiple revenue channels or growing operational complexity.",
+          "features": [
+            "All Starter features",
+            "Marketplace reconciliation support",
+            "Expense and inventory review",
+            "Priority consultation"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "Custom",
+          "price": "Contact",
+          "period": "",
+          "description": "Suitable for larger or more complex businesses requiring custom review and operating support.",
+          "features": [
+            "All Growth features",
+            "Tailored reporting structure",
+            "Dedicated support for recurring issues",
+            "Strategic business process review"
+          ]
+        }
+      ],
+      "marketplaceFlowTitle": "Marketplace reconciliation",
+      "marketplaceFlowDescription": "Reconciliation should reflect the actual cash, fees, refunds and settlements behind each order.",
+      "marketplaceFlow": [
+        "Marketplace / shop data",
+        "Orders & revenue",
+        "Refunds & cancellations",
+        "Platform fees & expenses",
+        "Settlement reconciliation",
+        "Bank & cash verification",
+        "Reconciliation report"
+      ],
       "valuePoints": [
         {
           "title": "Revenue tracking",
@@ -1346,6 +1719,24 @@
         {
           "title": "Ongoing support",
           "description": "Receive reminders, follow-up guidance, and recommendations as your business grows or changes."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Why does marketplace settlement not equal gross order value?",
+          "answer": "Settlement totals may be reduced by platform commissions, advertising fees, promotions, refunds, shipping costs, and other deductions."
+        },
+        {
+          "question": "Do I need separate records for each sales channel?",
+          "answer": "It is useful to keep the source of each revenue stream clear so the business can reconcile payments, refunds and channel-level performance."
+        },
+        {
+          "question": "Can TAF Việt help with e-invoices and supporting documents?",
+          "answer": "Yes. Record organization, invoice review and supporting-document checks can be supported based on the actual operating model."
+        },
+        {
+          "question": "What if my business is growing and the accounting process is still manual?",
+          "answer": "A review of the current process can help identify the best next step, from better organization to stronger reporting and compliance support."
         }
       ],
       "ctaTitle": "Need bookkeeping and tax support for your household business or online sales model?",
@@ -1407,9 +1798,153 @@
       "source": "service-legal"
     },
     "business": {
-      "eyebrow": "Legal & financial advisory",
-      "title": "Compliance review and strategic guidance for important business decisions",
-      "description": "TAF Việt helps founders and leadership teams review legal exposure, financial risks, and compliance gaps before key decisions are made.",
+      "eyebrow": "Business support",
+      "title": "Corporate compliance, payroll, and financial review for growing businesses",
+      "description": "TAF Việt helps founders and leadership teams review tax obligations, payroll workflows, financial reporting and governance gaps before operational and strategic decisions are made.",
+      "audiencesTitle": "Who we support",
+      "audiences": [
+        {
+          "title": "Growing SMEs",
+          "description": "Companies needing stronger governance, payroll support and year-end reporting as operations scale."
+        },
+        {
+          "title": "Businesses with internal accounting teams",
+          "description": "Organizations that need additional tax review, financial analysis and specialist support."
+        },
+        {
+          "title": "Companies facing year-end pressure",
+          "description": "Businesses preparing financial statements, tax finalization or internal control review."
+        },
+        {
+          "title": "Businesses planning growth or restructuring",
+          "description": "Companies seeking a clearer model for compliance, reporting and operational decisions."
+        }
+      ],
+      "problemsTitle": "Common business challenges",
+      "problems": [
+        {
+          "title": "Corporate tax obligations are hard to track",
+          "description": "The business needs help checking complicated obligations, declarations and documentary requirements on time."
+        },
+        {
+          "title": "Year-end reporting is becoming heavier",
+          "description": "Financial statements and year-end finalization require better reconciliation and management review."
+        },
+        {
+          "title": "Payroll and employee tax processing is time-consuming",
+          "description": "The company needs reliable payroll checks, PIT handling and insurance tracking without internal bottlenecks."
+        },
+        {
+          "title": "Historical records contain issues",
+          "description": "The company needs a structured review to identify errors, missing records and remediation gaps."
+        }
+      ],
+      "solutionsTitle": "Our business solutions",
+      "solutions": [
+        {
+          "title": "Corporate Tax Compliance",
+          "description": "Review tax obligations, filings and supporting documents to strengthen compliance and reduce avoidable risk.",
+          "href": "/services/business/corporate-tax-compliance"
+        },
+        {
+          "title": "Financial Statements & Year-end Finalization",
+          "description": "Prepare or review year-end financial statements and related finalization processes based on the company’s operating model.",
+          "href": "/services/business/financial-statements"
+        },
+        {
+          "title": "Payroll, PIT & Social Insurance",
+          "description": "Support payroll calculation, employee tax checks and social insurance tracking for a smoother monthly cycle.",
+          "href": "/services/business/payroll"
+        },
+        {
+          "title": "Accounting Review & Tax Health Check",
+          "description": "Assess historical records, identify issues and give a practical remediation plan for cleaner compliance.",
+          "href": "/services/business/accounting-review"
+        },
+        {
+          "title": "Management Accounting & Financial Advisory",
+          "description": "Turn operational data into useful management reporting, cost review and decision-oriented financial insight.",
+          "href": "/services/business/management-accounting"
+        },
+        {
+          "title": "Business Formation & Corporate Compliance",
+          "description": "Support company establishment, compliance setup and ongoing governance needs as the business grows.",
+          "href": "/services/business/business-formation"
+        }
+      ],
+      "documentsTitle": "Service scope and required records",
+      "documents": [
+        "Corporate registration and tax registration documents",
+        "Accounting books, trial balances and supporting vouchers",
+        "Payroll and employee tax information",
+        "Bank statements and payment records",
+        "Management reports and operational notes",
+        "Historical forms or notices if a review is required"
+      ],
+      "deliverablesTitle": "Common deliverables",
+      "deliverables": [
+        "Compliance review summary",
+        "Updated reporting checklist",
+        "Monthly or quarterly management support notes",
+        "Tax and payroll support package recommendations",
+        "Action plan for year-end and governance improvements"
+      ],
+      "plans": [
+        {
+          "name": "Essential",
+          "price": "2,500,000đ",
+          "period": "/ month",
+          "description": "Suitable for growing businesses that need ongoing support and simple monthly reviews.",
+          "features": [
+            "Monthly compliance review",
+            "Payroll and tax checklist support",
+            "Email support"
+          ]
+        },
+        {
+          "name": "Growth",
+          "price": "5,500,000đ",
+          "period": "/ month",
+          "description": "Suitable for businesses with regular reporting, payroll complexity, and multiple decision points.",
+          "features": [
+            "All Essential features",
+            "Quarterly financial review",
+            "Tax risk screening and recommendations",
+            "Priority consultation"
+          ],
+          "highlighted": true
+        },
+        {
+          "name": "Custom",
+          "price": "Contact",
+          "period": "",
+          "description": "Suitable for enterprises or projects requiring a tailored advisory and compliance structure.",
+          "features": [
+            "All Growth features",
+            "Dedicated review team",
+            "Strategic planning and remediation support",
+            "Board-level reporting options"
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Do we need a full accounting team to use this service?",
+          "answer": "No. TAF Việt can work as an extension of your internal team and support the review, reconciliation, and advisory work you need most."
+        },
+        {
+          "question": "Can the business start with one service and add more later?",
+          "answer": "Yes. Many growing businesses start with payroll or tax review and then expand to broader management accounting or compliance support."
+        },
+        {
+          "question": "Is this service only for large businesses?",
+          "answer": "No. We support startups, SMEs, and larger companies that need clearer financial controls, tax review, and decision support."
+        },
+        {
+          "question": "Will TAF Việt help us prepare for year-end reporting?",
+          "answer": "Yes. We can help organize records, review compliance gaps, and prepare the reporting package and action plan before the finalization cycle."
+        }
+      ],
       "valuePoints": [
         {
           "title": "Regulatory review",
