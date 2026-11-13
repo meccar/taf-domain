@@ -1,9 +1,24 @@
 // middleware.ts
 import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
+import { defaultLocale, isValidLocale } from "@/i18n/config";
 
 export async function middleware(request: NextRequest) {
   const { supabase, response } = createServerClientForMiddleware(request);
+
+  const cookieLocale = request.cookies.get("NEXT_LOCALE")?.value;
+  if (!cookieLocale || !isValidLocale(cookieLocale)) {
+    const preferred = request.headers
+      .get("accept-language")
+      ?.split(",")[0]
+      ?.split("-")[0];
+    const locale = isValidLocale(preferred) ? preferred : defaultLocale;
+    response.cookies.set("NEXT_LOCALE", locale, {
+      path: "/",
+      maxAge: 60 * 60 * 24 * 365,
+      sameSite: "lax",
+    });
+  }
 
   if (request.nextUrl.pathname.startsWith("/admin")) {
     const {
