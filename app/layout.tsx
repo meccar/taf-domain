@@ -111,7 +111,7 @@ export default async function RootLayout({
                     postalCode: "11321",
                   },
                   disambiguatingDescription:
-                    "Công ty cung cấp dịch vụ kế toán, thuế và tư vấn tài chính tại Việt Nam, không phải dữ liệu thời tiết hàng không hoặc đơn vị ngoài nước.",
+                    "Công ty cung cấp dịch vụ kế toán, thuế và tư vấn tài chính tại Việt Nam.",
                 },
                 {
                   "@type": "LocalBusiness",
@@ -122,7 +122,7 @@ export default async function RootLayout({
                   telephone: "+84 936 378 955",
                   email: "admin@taf.asia",
                   taxID: "0105367171",
-                  priceRange: "1.200.000 VNĐ - 3.500.000 VNĐ",
+                  priceRange: "Từ 3.500.000 VNĐ",
                   address: {
                     "@type": "PostalAddress",
                     streetAddress:
