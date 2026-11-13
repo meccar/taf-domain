@@ -54,15 +54,15 @@
     }
   },
   "Metadata": {
-    "siteName": "TAF Việt",
-    "companyName": "CÔNG TY TNHH ĐẠI LÝ THUẾ TAF VIỆT",
-    "defaultTitle": "TAF Việt | Accounting, tax and financial advisory services",
-    "titleTemplate": "%s | TAF Việt",
-    "defaultDescription": "TAF Việt provides accounting, tax filing, payroll and financial consulting services for businesses in Vietnam.",
+    "siteName": "TAF Viet",
+    "companyName": "TAF VIET CO., LTD",
+    "defaultTitle": "TAF Viet | Accounting, tax and financial advisory services",
+    "titleTemplate": "%s | TAF Viet",
+    "defaultDescription": "TAF Viet provides accounting, tax filing, payroll and financial consulting services for businesses in Vietnam.",
     "companyDescription": "Accounting, tax filing and financial consulting services in Vietnam.",
     "keywords": [
-      "TAF Việt",
-      "CÔNG TY TNHH ĐẠI LÝ THUẾ TAF VIỆT",
+      "TAF Viet",
+      "TAF VIET CO., LTD",
       "accounting services",
       "tax filing",
       "payroll services",
@@ -77,7 +77,7 @@
     ],
     "address": {
       "streetAddress": "937 Ngo Gia Tu St., Viet Hung, Hanoi, Vietnam",
-      "locality": "Hà Nội",
+      "locality": "Ha Noi",
       "postalCode": "11321"
     }
   },
@@ -101,23 +101,23 @@
     "freelancer": "Freelancer / KOL / KOC / Affiliate"
   },
   "BlogPage": {
-    "metadataTitle": "Blog & News | TAF Việt",
-    "metadataDescription": "Tax, accounting, and business operations updates from TAF Việt.",
+    "metadataTitle": "Blog & News | TAF Viet",
+    "metadataDescription": "Tax, accounting, and business operations updates from TAF Viet.",
     "badge": "Blog & News",
     "title": "Tax and accounting insights updated every week",
-    "description": "New regulations, practical guides, and expert perspectives from the TAF Việt team.",
+    "description": "New regulations, practical guides, and expert perspectives from the TAF Viet team.",
     "allCategories": "All",
     "newsletterTitle": "Newsletter",
     "newsletterDescription": "Receive the latest tax and accounting updates each month, free of charge.",
     "recentPosts": "Recent posts",
     "categories": "Categories",
     "emptyStateTitle": "No posts yet",
-    "emptyStateDescription": "There are no posts published yet. Please check back later for new updates from TAF Việt.",
+    "emptyStateDescription": "There are no posts published yet. Please check back later for new updates from TAF Viet.",
     "noPostsInCategory": "No posts are available in this category yet.",
     "allPosts": "All posts"
   },
   "BlogPostPage": {
-    "metadataNotFound": "Post not found | TAF Việt",
+    "metadataNotFound": "Post not found | TAF Viet",
     "allPosts": "All posts",
     "newsletterTitle": "Newsletter",
     "newsletterDescription": "Receive the latest tax and accounting updates each month, free of charge.",
@@ -169,13 +169,13 @@
       "privacy": "Privacy Policy",
       "terms": "Terms of Use",
       "and": "and",
-      "suffix": "of TAF Việt"
+      "suffix": "of TAF Viet"
     },
     "submit": "Request a consultation",
     "submitting": "Sending...",
     "success": {
       "title": "Successfully submitted!",
-      "description": "The TAF Việt team will contact you as soon as possible."
+      "description": "The TAF Viet team will contact you as soon as possible."
     }
   },
   "CtaBlock": {
@@ -290,11 +290,11 @@
     "privacyPolicy": {
       "eyebrow": "Privacy policy",
       "title": "Protect personal data with secure, transparent handling",
-      "description": "TAF Việt is committed to processing personal data lawfully, transparently, and securely in accordance with Vietnam’s personal data protection regulations, including Decree 13/2023/NĐ-CP.",
+      "description": "TAF Viet is committed to processing personal data lawfully, transparently, and securely in accordance with Vietnam’s personal data protection regulations, including Decree 13/2023/NĐ-CP.",
       "sections": [
         {
           "title": "1. Purpose of collecting information",
-          "body": "TAF Việt collects personal information from customers, website visitors, and service users to receive consultation requests, manage accounts, process records, communicate, and support accounting, tax, HR, and business advisory services."
+          "body": "TAF Viet collects personal information from customers, website visitors, and service users to receive consultation requests, manage accounts, process records, communicate, and support accounting, tax, HR, and business advisory services."
         },
         {
           "title": "2. Personal data processed",
@@ -302,43 +302,43 @@
         },
         {
           "title": "3. Legal basis and processing purpose",
-          "body": "We process personal data based on consent, contractual obligations, legal requirements, and the protection of legitimate interests of customers and TAF Việt, as well as for management, advisory, and support activities in accordance with Vietnamese law and Decree 13/2023/NĐ-CP on personal data protection."
+          "body": "We process personal data based on consent, contractual obligations, legal requirements, and the protection of legitimate interests of customers and TAF Viet, as well as for management, advisory, and support activities in accordance with Vietnamese law and Decree 13/2023/NĐ-CP on personal data protection."
         },
         {
           "title": "4. Security and storage",
-          "body": "Personal data is stored on secure systems with limited access, appropriate encryption, and technical and organizational safeguards. TAF Việt does not share personal data with third parties unless required by law or authorized by the data subject."
+          "body": "Personal data is stored on secure systems with limited access, appropriate encryption, and technical and organizational safeguards. TAF Viet does not share personal data with third parties unless required by law or authorized by the data subject."
         }
       ],
       "rightsTitle": "5. Customer rights",
-      "rightsBody": "Customers have the right to request access, correction, deletion, or restriction of personal data processing, and to object to processing when there is a legal basis. If you need assistance or want to file a complaint about personal data, please contact the contact information publicly provided by TAF Việt.",
+      "rightsBody": "Customers have the right to request access, correction, deletion, or restriction of personal data processing, and to object to processing when there is a legal basis. If you need assistance or want to file a complaint about personal data, please contact the contact information publicly provided by TAF Viet.",
       "contactTitle": "6. Contact and updates",
-      "contactBody": "TAF Việt may update this policy over time to reflect changes in law or internal procedures. Any material change will be announced on the company website. If you have any questions about data security, please contact TAF Việt through the publicly listed support channels.",
-      "cta": "Contact TAF Việt"
+      "contactBody": "TAF Viet may update this policy over time to reflect changes in law or internal procedures. Any material change will be announced on the company website. If you have any questions about data security, please contact TAF Viet through the publicly listed support channels.",
+      "cta": "Contact TAF Viet"
     },
     "termsOfUse": {
       "eyebrow": "Terms of use",
-      "title": "Rules for using the website and advisory services of TAF Việt",
-      "description": "The terms below govern access to and use of the TAF Việt website and its advisory services. We recommend reading them carefully to understand your rights, obligations, and responsibilities.",
+      "title": "Rules for using the website and advisory services of TAF Viet",
+      "description": "The terms below govern access to and use of the TAF Viet website and its advisory services. We recommend reading them carefully to understand your rights, obligations, and responsibilities.",
       "sections": [
         {
           "title": "1. Acceptance and conditions",
-          "body": "By accessing or using the TAF Việt website, you confirm that you have read, understood, and agreed to the terms of use below. If you do not agree, please stop using the website and do not submit personal data to TAF Việt."
+          "body": "By accessing or using the TAF Viet website, you confirm that you have read, understood, and agreed to the terms of use below. If you do not agree, please stop using the website and do not submit personal data to TAF Viet."
         },
         {
           "title": "2. Purpose of the website",
-          "body": "The website is used to provide information about accounting, tax, business advisory services, support materials, professional articles, and contact channels with the TAF Việt team. The content is for preliminary reference only and does not replace legal or specialized accounting advice for each specific case."
+          "body": "The website is used to provide information about accounting, tax, business advisory services, support materials, professional articles, and contact channels with the TAF Viet team. The content is for preliminary reference only and does not replace legal or specialized accounting advice for each specific case."
         },
         {
           "title": "3. User responsibilities",
-          "body": "Users agree not to use the website for unlawful purposes, harming the system, fraud, impersonation, or interfering with website operations. TAF Việt may block, restrict, or refuse access if behavior is deemed inappropriate."
+          "body": "Users agree not to use the website for unlawful purposes, harming the system, fraud, impersonation, or interfering with website operations. TAF Viet may block, restrict, or refuse access if behavior is deemed inappropriate."
         },
         {
           "title": "4. Copyright and website content",
-          "body": "All content on the website, including text, images, layout, forms, logos, and documents, is owned by TAF Việt or lawfully licensed for use. Reproduction, reuse, distribution, or modification is prohibited without written consent from TAF Việt."
+          "body": "All content on the website, including text, images, layout, forms, logos, and documents, is owned by TAF Viet or lawfully licensed for use. Reproduction, reuse, distribution, or modification is prohibited without written consent from TAF Viet."
         }
       ],
       "supportTitle": "5. Contact and support",
-      "supportBody": "TAF Việt may update or revise these terms at any time to reflect business operations or legal requirements. Any questions, requests, or complaints regarding website content, advisory services, or contact information should be sent through the support channels publicly available on the website.",
+      "supportBody": "TAF Viet may update or revise these terms at any time to reflect business operations or legal requirements. Any questions, requests, or complaints regarding website content, advisory services, or contact information should be sent through the support channels publicly available on the website.",
       "cta": "Contact support"
     }
   },
@@ -350,7 +350,7 @@
     "grossSalary": "Gross salary (VND / month)",
     "netDesired": "Desired net salary (VND / month)",
     "dependents": "Number of dependents",
-    "note": "Results are for reference only, calculated using the current personal income tax brackets and deductions. Insurance ceilings by region are not included. Contact TAF Việt for an accurate calculation based on your specific situation.",
+    "note": "Results are for reference only, calculated using the current personal income tax brackets and deductions. Insurance ceilings by region are not included. Contact TAF Viet for an accurate calculation based on your specific situation.",
     "rows": {
       "gross": "Gross salary",
       "insurance": "Insurance (10.5%)",
@@ -375,10 +375,10 @@
     "badge": "About us",
     "heroTitle": "Growing with businesses",
     "heroTitleLineBreak": "on the journey to sustainable growth",
-    "heroDescription": "TAF Việt is a trusted provider of accounting, tax, and financial advisory services that help businesses operate transparently and optimize costs.",
+    "heroDescription": "TAF Viet is a trusted provider of accounting, tax, and financial advisory services that help businesses operate transparently and optimize costs.",
     "missionBadge": "Our mission",
     "missionTitle": "Simplifying accounting and tax for businesses in Vietnam",
-    "missionDescription": "We believe every business, large or small, deserves a reliable financial partner. That is why TAF Việt exists — to solve complex accounting and tax challenges with clear, efficient solutions.",
+    "missionDescription": "We believe every business, large or small, deserves a reliable financial partner. That is why TAF Viet exists — to solve complex accounting and tax challenges with clear, efficient solutions.",
     "valuesBadge": "Core values",
     "valuesTitle": "What makes us different",
     "teamBadge": "Our team",
@@ -469,7 +469,7 @@
         "company": "VietStar Logistics",
         "industry": "Logistics",
         "result": "Reduced monthly admin workload by 40%",
-        "quote": "TAF Việt helped us clean up our books and file deadlines on time, which gave our management team much more confidence in the numbers."
+        "quote": "TAF Viet helped us clean up our books and file deadlines on time, which gave our management team much more confidence in the numbers."
       },
       {
         "company": "GreenLeaf Trading",
@@ -488,14 +488,14 @@
   "ContactPage": {
     "badge": "Contact",
     "heroTitle": "We are always ready to support you",
-    "heroDescription": "Leave your details or contact us directly — the TAF Việt team will respond as soon as possible.",
+    "heroDescription": "Leave your details or contact us directly — the TAF Viet team will respond as soon as possible.",
     "contactInfo": {
       "email": "Email",
       "phone": "Phone",
       "address": "Office address",
       "taxId": "Business registration number"
     },
-    "mapTitle": "TAF Việt office map",
+    "mapTitle": "TAF Viet office map",
     "addressValue": "937 Ngo Gia Tu St., Viet Hung, Hanoi, Vietnam",
     "taxIdValue": "0105367171"
   },
@@ -503,7 +503,7 @@
     "badge": "Trusted by leading businesses in Vietnam",
     "titleLineOne": "Comprehensive accounting and",
     "titleLineTwo": "tax solutions",
-    "description": "TAF Việt supports businesses in financial management, tax filing, and compliance with precision, timeliness, and peace of mind.",
+    "description": "TAF Viet supports businesses in financial management, tax filing, and compliance with precision, timeliness, and peace of mind.",
     "primaryButton": "Get a free consultation",
     "secondaryButton": "View services",
     "stats": {
@@ -584,7 +584,7 @@
     "freeConsultation": "Get free consultation",
     "viewPricing": "View pricing",
     "serviceScope": "Service scope",
-    "serviceScopeTitle": "What TAF Việt handles for you",
+    "serviceScopeTitle": "What TAF Viet handles for you",
     "process": "Process",
     "processTitle": "{count} steps in each cycle",
     "pricing": "Pricing",
@@ -596,8 +596,8 @@
     "contactButton": "Contact us"
   },
   "ResourcesPage": {
-    "metadataTitle": "Resources | TAF Việt",
-    "metadataDescription": "Tax calculators, forms, legal documents, and common questions from TAF Việt.",
+    "metadataTitle": "Resources | TAF Viet",
+    "metadataDescription": "Tax calculators, forms, legal documents, and common questions from TAF Viet.",
     "badge": "Resources",
     "heroTitle": "Tools and documents for businesses",
     "heroDescription": "Tax calculators, downloadable templates, and updated legal references — all in one place.",
@@ -633,8 +633,8 @@
     ],
     "faqs": [
       {
-        "question": "Does TAF Việt support newly established businesses?",
-        "answer": "Yes. TAF Việt supports businesses from company registration through monthly accounting and tax operations."
+        "question": "Does TAF Viet support newly established businesses?",
+        "answer": "Yes. TAF Viet supports businesses from company registration through monthly accounting and tax operations."
       },
       {
         "question": "Can I download templates for free?",
@@ -642,9 +642,22 @@
       },
       {
         "question": "Are legal documents updated regularly?",
-        "answer": "TAF Việt updates the document list whenever new regulations related to tax and accounting are introduced."
+        "answer": "TAF Viet updates the document list whenever new regulations related to tax and accounting are introduced."
       }
     ]
+  },
+  "CalculatorsPage": {
+    "metadataTitle": "Salary & Tax Calculator | TAF Viet",
+    "metadataDescription": "Quickly estimate Gross-Net salary and VAT, free from TAF Vietnam.",
+    "badge": "Support tools",
+    "heroTitle": "Salary & Tax Calculator",
+    "heroDescription": "Quickly estimate Gross-Net salary and VAT. Results are for reference only.",
+    "toolSelectorTitle": "Choose a tool",
+    "toolSelectorDescription": "Results update live as you change the figures.",
+    "tabs": {
+      "salary": "Gross - Net Salary",
+      "vat": "VAT"
+    }
   },
   "AdminContactSubmissions": {
     "searchPlaceholder": "Search by name, phone, or email",
@@ -799,7 +812,7 @@
     "accounting": {
       "eyebrow": "Accounting services",
       "title": "Comprehensive accounting, precise and transparent",
-      "description": "From monthly bookkeeping to annual financial reporting, TAF Việt helps businesses maintain clean books and comply with Vietnamese accounting standards.",
+      "description": "From monthly bookkeeping to annual financial reporting, TAF Viet helps businesses maintain clean books and comply with Vietnamese accounting standards.",
       "included": [
         {
           "title": "Monthly bookkeeping",
@@ -889,7 +902,7 @@
       "faqs": [
         {
           "question": "Can a business migrate from another accounting system?",
-          "answer": "Yes. TAF Việt can review legacy records and migrate them to a suitable system without disrupting operations."
+          "answer": "Yes. TAF Viet can review legacy records and migrate them to a suitable system without disrupting operations."
         },
         {
           "question": "What accounting standard is used?",
@@ -901,7 +914,7 @@
         },
         {
           "question": "Are business records kept secure?",
-          "answer": "TAF Việt ensures data confidentiality and shares records only with the company’s consent."
+          "answer": "TAF Viet ensures data confidentiality and shares records only with the company’s consent."
         }
       ],
       "audiencesTitle": "Who this service is for",
@@ -976,7 +989,7 @@
         "Support for closing and handover cycles",
         "Clear recommendations for the next accounting period"
       ],
-      "ctaTitle": "Ready for TAF Việt to handle your books?",
+      "ctaTitle": "Ready for TAF Viet to handle your books?",
       "ctaDescription": "Leave your details and our team will contact you within 24 hours.",
       "contactFormTitle": "Request accounting service consultation",
       "source": "service-accounting"
@@ -984,7 +997,7 @@
     "taxPreparation": {
       "eyebrow": "Tax services",
       "title": "File and finalize tax returns on time and correctly",
-      "description": "TAF Việt supports businesses throughout the VAT, PIT, and CIT filing process — reducing risk and saving time.",
+      "description": "TAF Viet supports businesses throughout the VAT, PIT, and CIT filing process — reducing risk and saving time.",
       "included": [
         {
           "title": "VAT filing",
@@ -1004,7 +1017,7 @@
         },
         {
           "title": "Representation before tax authorities",
-          "description": "TAF Việt can communicate and supplement documents on your behalf when needed."
+          "description": "TAF Viet can communicate and supplement documents on your behalf when needed."
         },
         {
           "title": "Deadline reminders and tracking",
@@ -1074,7 +1087,7 @@
       "faqs": [
         {
           "question": "What should businesses prepare before using the service?",
-          "answer": "Provide existing invoices, records, and books. TAF Việt will review them and advise on any missing documents."
+          "answer": "Provide existing invoices, records, and books. TAF Viet will review them and advise on any missing documents."
         },
         {
           "question": "How long does one filing cycle take?",
@@ -1082,14 +1095,14 @@
         },
         {
           "question": "What if the tax authority requests clarification?",
-          "answer": "TAF Việt can prepare explanatory documents and may represent your business before tax authorities in advanced packages."
+          "answer": "TAF Viet can prepare explanatory documents and may represent your business before tax authorities in advanced packages."
         },
         {
           "question": "Can we change service plans later?",
           "answer": "Yes. Businesses can move up or down between plans at the start of each billing cycle without extra switching fees."
         }
       ],
-      "ctaTitle": "Ready for TAF Việt to handle your tax obligations?",
+      "ctaTitle": "Ready for TAF Viet to handle your tax obligations?",
       "ctaDescription": "Leave your information and our team will contact you within 24 hours.",
       "contactFormTitle": "Request tax service consultation",
       "source": "service-tax-preparation"
@@ -1097,7 +1110,7 @@
     "payroll": {
       "eyebrow": "Payroll services",
       "title": "Accurate payroll and insurance, on time every month",
-      "description": "TAF Việt handles the entire payroll process, social insurance, and PIT calculations for employees — reducing admin work and preventing errors.",
+      "description": "TAF Viet handles the entire payroll process, social insurance, and PIT calculations for employees — reducing admin work and preventing errors.",
       "included": [
         {
           "title": "Monthly payroll calculation",
@@ -1186,12 +1199,12 @@
       ],
       "faqs": [
         {
-          "question": "Can TAF Việt handle multiple salary bands and allowances?",
+          "question": "Can TAF Viet handle multiple salary bands and allowances?",
           "answer": "Yes. Our payroll system supports flexible configurations according to position, allowance, and bonus policy."
         },
         {
           "question": "How is payroll calculated for employees joining or leaving mid-month?",
-          "answer": "TAF Việt calculates actual working days and updates insurance contributions appropriately."
+          "answer": "TAF Viet calculates actual working days and updates insurance contributions appropriately."
         },
         {
           "question": "Is employee payroll information kept confidential?",
@@ -1202,7 +1215,7 @@
           "answer": "Yes, in the Advanced package. Other packages can be extended based on request."
         }
       ],
-      "ctaTitle": "Ready for TAF Việt to handle your payroll?",
+      "ctaTitle": "Ready for TAF Viet to handle your payroll?",
       "ctaDescription": "Leave your details and our team will contact you within 24 hours.",
       "contactFormTitle": "Request payroll service consultation",
       "source": "service-payroll"
@@ -1210,7 +1223,7 @@
     "advisory": {
       "eyebrow": "Advisory services",
       "title": "Financial and tax advice for strategic decisions",
-      "description": "TAF Việt works alongside leadership on critical decisions — from tax planning to company restructuring and major transactions.",
+      "description": "TAF Viet works alongside leadership on critical decisions — from tax planning to company restructuring and major transactions.",
       "included": [
         {
           "title": "Strategic tax planning",
@@ -1307,22 +1320,22 @@
         },
         {
           "question": "Can we combine advisory with existing accounting and tax services?",
-          "answer": "Yes. TAF Việt can work from your current accounting and tax data to propose realistic solutions."
+          "answer": "Yes. TAF Viet can work from your current accounting and tax data to propose realistic solutions."
         },
         {
           "question": "Is business information kept confidential?",
-          "answer": "Yes. TAF Việt may sign a confidentiality agreement when necessary and use data only for agreed advisory purposes."
+          "answer": "Yes. TAF Viet may sign a confidentiality agreement when necessary and use data only for agreed advisory purposes."
         }
       ],
       "ctaTitle": "Ready to discuss your financial strategy?",
-      "ctaDescription": "Leave your information and a TAF Việt advisor will contact you within 24 hours.",
+      "ctaDescription": "Leave your information and a TAF Viet advisor will contact you within 24 hours.",
       "contactFormTitle": "Book a strategic advisory session",
       "source": "service-advisory"
     },
     "personal": {
       "eyebrow": "Personal & small business",
       "title": "Tax, bookkeeping, and compliance support for individuals and growing side businesses",
-      "description": "TAF Việt helps freelancers, sole proprietors, and small business owners manage taxes, records, and day-to-day compliance with practical support.",
+      "description": "TAF Viet helps freelancers, sole proprietors, and small business owners manage taxes, records, and day-to-day compliance with practical support.",
       "audiencesTitle": "Who this service is for",
       "audiences": [
         {
@@ -1515,23 +1528,23 @@
           "answer": "The review should evaluate all income sources and the associated records before filing or adjusting tax obligations."
         },
         {
-          "question": "Does TAF Việt guarantee a refund?",
+          "question": "Does TAF Viet guarantee a refund?",
           "answer": "No. Refund eligibility depends on the actual tax position, supporting documents, and the conditions under the relevant tax rules."
         },
         {
-          "question": "Can TAF Việt support historical or notice-related issues?",
+          "question": "Can TAF Viet support historical or notice-related issues?",
           "answer": "Yes. Historical tax review and notice support can be assessed case by case using the available records and the relevant compliance context."
         }
       ],
       "ctaTitle": "Need reliable support for personal or side-business tax matters?",
-      "ctaDescription": "Share a few details and TAF Việt will suggest the most appropriate support path for your situation.",
+      "ctaDescription": "Share a few details and TAF Viet will suggest the most appropriate support path for your situation.",
       "contactFormTitle": "Request personal or small-business support",
       "source": "service-personal"
     },
     "householdBusiness": {
       "eyebrow": "Household business & online sellers",
       "title": "Bookkeeping, revenue, and tax support for household businesses and online sellers",
-      "description": "TAF Việt helps household businesses and online sellers manage revenue, documentation, and compliance with practical support tailored to real operating conditions.",
+      "description": "TAF Viet helps household businesses and online sellers manage revenue, documentation, and compliance with practical support tailored to real operating conditions.",
       "audiencesTitle": "Who this service is for",
       "audiences": [
         {
@@ -1731,7 +1744,7 @@
           "answer": "It is useful to keep the source of each revenue stream clear so the business can reconcile payments, refunds and channel-level performance."
         },
         {
-          "question": "Can TAF Việt help with e-invoices and supporting documents?",
+          "question": "Can TAF Viet help with e-invoices and supporting documents?",
           "answer": "Yes. Record organization, invoice review and supporting-document checks can be supported based on the actual operating model."
         },
         {
@@ -1740,14 +1753,14 @@
         }
       ],
       "ctaTitle": "Need bookkeeping and tax support for your household business or online sales model?",
-      "ctaDescription": "Share a few details and TAF Việt will recommend the most suitable support path for your business.",
+      "ctaDescription": "Share a few details and TAF Viet will recommend the most suitable support path for your business.",
       "contactFormTitle": "Request household business & online seller consultation",
       "source": "service-household-business"
     },
     "legal": {
       "eyebrow": "Legal & financial advisory",
       "title": "Compliance review and strategic guidance for important business decisions",
-      "description": "TAF Việt helps founders and leadership teams review legal exposure, financial risks, and compliance gaps before key decisions are made.",
+      "description": "TAF Viet helps founders and leadership teams review legal exposure, financial risks, and compliance gaps before key decisions are made.",
       "valuePoints": [
         {
           "title": "Regulatory review",
@@ -1793,14 +1806,14 @@
         }
       ],
       "ctaTitle": "Need a second opinion on financial or compliance risk?",
-      "ctaDescription": "Tell us a bit about your situation, and TAF Việt will recommend the best next step for your business.",
+      "ctaDescription": "Tell us a bit about your situation, and TAF Viet will recommend the best next step for your business.",
       "contactFormTitle": "Request a legal and financial review",
       "source": "service-legal"
     },
     "business": {
       "eyebrow": "Business support",
       "title": "Corporate compliance, payroll, and financial review for growing businesses",
-      "description": "TAF Việt helps founders and leadership teams review tax obligations, payroll workflows, financial reporting and governance gaps before operational and strategic decisions are made.",
+      "description": "TAF Viet helps founders and leadership teams review tax obligations, payroll workflows, financial reporting and governance gaps before operational and strategic decisions are made.",
       "audiencesTitle": "Who we support",
       "audiences": [
         {
@@ -1930,7 +1943,7 @@
       "faqs": [
         {
           "question": "Do we need a full accounting team to use this service?",
-          "answer": "No. TAF Việt can work as an extension of your internal team and support the review, reconciliation, and advisory work you need most."
+          "answer": "No. TAF Viet can work as an extension of your internal team and support the review, reconciliation, and advisory work you need most."
         },
         {
           "question": "Can the business start with one service and add more later?",
@@ -1941,7 +1954,7 @@
           "answer": "No. We support startups, SMEs, and larger companies that need clearer financial controls, tax review, and decision support."
         },
         {
-          "question": "Will TAF Việt help us prepare for year-end reporting?",
+          "question": "Will TAF Viet help us prepare for year-end reporting?",
           "answer": "Yes. We can help organize records, review compliance gaps, and prepare the reporting package and action plan before the finalization cycle."
         }
       ],
@@ -1990,17 +2003,17 @@
         }
       ],
       "ctaTitle": "Need a second opinion on financial or compliance risk?",
-      "ctaDescription": "Tell us a bit about your situation, and TAF Việt will recommend the best next step for your business.",
+      "ctaDescription": "Tell us a bit about your situation, and TAF Viet will recommend the best next step for your business.",
       "contactFormTitle": "Request a legal and financial review",
       "source": "service-legal"
     }
   },
   "ServicesOverview": {
-    "metadataTitle": "Services | TAF Việt",
-    "metadataDescription": "Explore TAF Việt's accounting, tax, payroll, advisory and personal support services for businesses and individuals.",
-    "badge": "TAF Việt services",
+    "metadataTitle": "Services | TAF Viet",
+    "metadataDescription": "Explore TAF Viet's accounting, tax, payroll, advisory and personal support services for businesses and individuals.",
+    "badge": "TAF Viet services",
     "title": "Accounting, tax, and advisory solutions for businesses, individuals, and household businesses",
-    "description": "TAF Việt helps businesses, individuals, and household businesses with transparent processes, clear documentation, and practical support tailored to real operating conditions.",
+    "description": "TAF Viet helps businesses, individuals, and household businesses with transparent processes, clear documentation, and practical support tailored to real operating conditions.",
     "explore": "View details",
     "serviceGroups": {
       "business": {
@@ -2114,7 +2127,7 @@
       }
     ],
     "ctaTitle": "Need the right support for your business situation?",
-    "ctaDescription": "Share a few details and TAF Việt will recommend the service path that matches your model, size, and goals.",
+    "ctaDescription": "Share a few details and TAF Viet will recommend the service path that matches your model, size, and goals.",
     "contactFormTitle": "Request a services consultation",
     "source": "services-overview"
   }

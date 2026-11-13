@@ -19,14 +19,6 @@ export default getRequestConfig(async () => {
     if (isValidLocale(preferred)) locale = preferred;
   }
 
-  if (!cookieLocale || cookieLocale !== locale) {
-    cookieStore.set("NEXT_LOCALE", locale, {
-      path: "/",
-      maxAge: 60 * 60 * 24 * 365,
-      sameSite: "lax",
-    });
-  }
-
   return {
     locale,
     messages: (await import(`../messages/${locale}.json`)).default,

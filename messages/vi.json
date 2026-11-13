@@ -648,6 +648,19 @@
       }
     ]
   },
+  "CalculatorsPage": {
+    "metadataTitle": "Máy tính thuế & lương | TAF Việt",
+    "metadataDescription": "Công cụ tính lương Gross-Net và thuế GTGT nhanh, miễn phí từ TAF Việt.",
+    "badge": "Công cụ hỗ trợ",
+    "heroTitle": "Máy tính lương & thuế",
+    "heroDescription": "Ước tính nhanh lương Gross-Net và thuế GTGT. Kết quả chỉ mang tính tham khảo.",
+    "toolSelectorTitle": "Chọn công cụ",
+    "toolSelectorDescription": "Kết quả cập nhật trực tiếp khi bạn thay đổi số liệu.",
+    "tabs": {
+      "salary": "Lương Gross - Net",
+      "vat": "Thuế GTGT"
+    }
+  },
   "AdminContactSubmissions": {
     "searchPlaceholder": "Tìm theo tên, số điện thoại hoặc email",
     "filters": {
