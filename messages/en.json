@@ -558,6 +558,108 @@
       }
     ]
   },
+  "ProblemFinder": {
+    "eyebrow": "Where do you fit?",
+    "title": "Who are you? Pick one to see common problems",
+    "description": "Each type of client faces different tax, accounting, audit and legal issues. Choose yours to see 5 common situations.",
+    "problemsTitle": "5 common problems: {name}",
+    "askTaf": "Ask TAF about your case",
+    "seeServices": "See matching services",
+    "servicesFor": "TAF services for: {name}",
+    "viewDetail": "View service details",
+    "viewAll": "View all service groups",
+    "disclaimer": "This is general information only and does not replace advice for your specific situation. Regulations may change, so contact TAF to review your actual records.",
+    "problems": {
+      "accounting": [
+        {
+          "question": "Our books are months behind and only updated at period end. What should we do?",
+          "answer": "Review missing documents, reconcile bank statements against input and output invoices, then catch up in priority order so filed figures are not distorted."
+        },
+        {
+          "question": "If an input invoice has errors or missing conditions, can we still expense it and claim VAT?",
+          "answer": "Check the seller details, payment method and supporting records. An invoice that fails the conditions may be disallowed at finalization, so fix it as soon as it is found."
+        },
+        {
+          "question": "Our business is growing. How should we set up accounting processes and software?",
+          "answer": "Standardize document storage, spending approvals and a monthly closing calendar first, then choose tools that fit your size rather than switching software first."
+        },
+        {
+          "question": "We often file VAT returns or periodic reports late and get reminders or late-payment penalties.",
+          "answer": "Set a filing calendar with a named owner for each period. If you are already late, filing and adjusting early usually limits late-payment interest."
+        },
+        {
+          "question": "Our accounting and tax figures do not match. How do we reconcile before finalization?",
+          "answer": "Build a reconciliation by line item for revenue, expenses and taxes, find the cause of each gap and adjust before finalization to reduce inspection risk."
+        }
+      ],
+      "personal": [
+        {
+          "question": "I earn from several sources (salary, freelance, rental). How do I file?",
+          "answer": "Each income source is calculated and declared differently. Consolidate them all so your final settlement is correct and nothing is missed or paid twice."
+        },
+        {
+          "question": "As a freelancer paid by overseas platforms or clients, do I owe tax?",
+          "answer": "Income from work you perform in Vietnam generally needs its tax position reviewed. How to declare it depends on how you are paid and what your contract says."
+        },
+        {
+          "question": "When must I settle personal income tax myself, and when can my employer do it?",
+          "answer": "It depends on whether you have one or several payers and any income beyond salary. Check early so you do not miss the settlement deadline."
+        },
+        {
+          "question": "How do I register dependents for family deductions, and what if documents are missing?",
+          "answer": "Prepare proof of the relationship and register a tax code for each dependent. Missing records can be added, but do it before the settlement period."
+        },
+        {
+          "question": "The tax office sent a notice or asked me to explain my income. How should I respond?",
+          "answer": "Do not ignore it. Read it carefully, gather related records and reply in writing on time. TAF can review your file before you send it."
+        }
+      ],
+      "household-business": [
+        {
+          "question": "Our revenue jumped well above last year. Do tax calculation and bookkeeping duties change?",
+          "answer": "When revenue scale changes significantly, the tax method, filing duties and bookkeeping requirements may change too. Review early to avoid year-end surprises."
+        },
+        {
+          "question": "I sell on e-commerce platforms or social media and the platform withholds tax. What else must I declare?",
+          "answer": "Check what the platform withholds on, then compare it with your actual total revenue across all channels to find what remains to be declared."
+        },
+        {
+          "question": "When should we stay a household business and when should we become a company?",
+          "answer": "Compare revenue scale, invoicing needs, financing plans and accounting and tax duties across both models, since each has a different compliance cost."
+        },
+        {
+          "question": "Which books and records should we keep to prove revenue and expenses?",
+          "answer": "Keep a revenue log, purchase invoices, payment records and statements. Complete records let you respond confidently if the tax office checks."
+        },
+        {
+          "question": "We sell in a store, on Shopee and on TikTok Shop. How do we total revenue correctly?",
+          "answer": "Combine revenue from every channel into one tracker per period and reconcile it with each platform report and your bank account before filing."
+        }
+      ],
+      "business": [
+        {
+          "question": "Revenue this year doubled and far exceeds our plan. What changes for tax, invoicing and audit?",
+          "answer": "Review provisional corporate income tax, e-invoice duties and whether financial statement audit conditions apply. Early detection limits penalties and late-payment interest."
+        },
+        {
+          "question": "Is a financial statement audit mandatory for us, and when should we audit voluntarily?",
+          "answer": "It depends on your entity type and size. Even when optional, an audit may be needed for loans, fundraising or dealing with larger partners."
+        },
+        {
+          "question": "We face a tax inspection or a request for explanation. How do we prepare?",
+          "answer": "Define the inspection scope, assemble records by period and agree on one representative. Good early preparation shortens the process and reduces back-tax risk."
+        },
+        {
+          "question": "We have related-party transactions or unusually large expenses. Could expenses be disallowed?",
+          "answer": "Tax authorities often look closely at these. Keep contracts, supporting records and a basis for fair pricing to show the expenses are valid."
+        },
+        {
+          "question": "What are the tax and legal effects of a capital increase, share transfer or restructuring?",
+          "answer": "Each route carries its own tax duties, legal steps and risks. Assess them before signing so you choose the option that fits the owners' goals."
+        }
+      ]
+    }
+  },
   "ServicesBlock": {
     "eyebrow": "Practice Areas",
     "sectionTitle": "Core Advisory & Compliance Services",
@@ -602,7 +704,41 @@
     "faq": "Frequently asked questions",
     "faqTitle": "Clarify before you begin",
     "contactConsultation": "Contact for consultation",
-    "contactButton": "Contact us"
+    "contactButton": "Contact us",
+    "relatedTitle": "Not quite your group?",
+    "relatedDescription": "Browse TAF Việt's other service groups, or go back and choose the right one based on the problem you are facing.",
+    "backToFinder": "Choose by common problems",
+    "trust": [
+      {
+        "value": "10+",
+        "label": "Years of experience"
+      },
+      {
+        "value": "50+",
+        "label": "Business clients"
+      },
+      {
+        "value": "99%",
+        "label": "Filings submitted on time"
+      },
+      {
+        "value": "7/7",
+        "label": "Days of support per week"
+      }
+    ],
+    "trustLicense": "Licensed under State regulations and delivered by certified practising accountants. Business registration code 0105367171.",
+    "onboardingTitle": "How do we get started?",
+    "onboardingDescription": "From the moment you leave your details to the point where your books are in order, you go through 3 steps.",
+    "pricingNotesTitle": "Notes on the plans",
+    "channelsTitle": "Need a quick answer? Reach us directly",
+    "zaloLabel": "Message on Zalo",
+    "phoneLabel": "Call",
+    "emailLabel": "Send an email",
+    "channels": {
+      "zalo": "",
+      "phone": "",
+      "email": ""
+    }
   },
   "ResourcesPage": {
     "metadataTitle": "Resources | TAF Viet",
@@ -820,8 +956,8 @@
   "ServicePages": {
     "accounting": {
       "eyebrow": "Accounting services",
-      "title": "Comprehensive accounting, precise and transparent",
-      "description": "From monthly bookkeeping to annual financial reporting, TAF Viet helps businesses maintain clean books and comply with Vietnamese accounting standards.",
+      "title": "Full-service accounting: tidy books and clear numbers every month",
+      "description": "You do not need an in-house accountant. TAF Viet keeps your books, reconciles receivables and payables and prepares reports under Vietnamese accounting standards, so you know where you stand financially without a pile of documents at month end.",
       "included": [
         {
           "title": "Monthly bookkeeping",
@@ -967,19 +1103,33 @@
       "solutionsTitle": "How TAF helps",
       "solutions": [
         {
-          "title": "Bookkeeping & monthly close",
-          "description": "Keep every transaction in order and maintain a clear, reviewable accounting cycle.",
+          "title": "Monthly bookkeeping and closing",
+          "description": "Documents are posted in the right period and books are closed neatly every month, so you stop piling work into period end.",
           "href": "/services/accounting"
         },
         {
-          "title": "Receivables & payables review",
-          "description": "Reconcile outstanding obligations and cash movement for a cleaner financial picture.",
+          "title": "Receivables, payables and cash reconciliation",
+          "description": "Know who owes you, who you owe, and that bank balances match your books.",
           "href": "/services/accounting"
         },
         {
-          "title": "Accounting review & health check",
-          "description": "Review historical records and identify discrepancies before they become operational issues.",
+          "title": "Records review and financial health check",
+          "description": "Catch discrepancies and errors in older records early, before they affect reports and taxes.",
           "href": "/services/business/accounting-review"
+        }
+      ],
+      "onboarding": [
+        {
+          "title": "Consultation and assessment",
+          "description": "TAF Viet contacts you within 24 hours, looks at your software, documents and existing books, then recommends a suitable plan."
+        },
+        {
+          "title": "Handover and standardization",
+          "description": "We take over your data, reconcile opening balances and agree how you send documents and the monthly schedule."
+        },
+        {
+          "title": "Monthly operation",
+          "description": "The cycle of bookkeeping, reconciliation and reporting begins; you receive results with explanations and recommendations for the next period."
         }
       ],
       "documentsTitle": "Required documents",
@@ -1031,6 +1181,20 @@
         {
           "title": "Deadline reminders and tracking",
           "description": "Monitor filing deadlines and ensure compliance for monthly, quarterly, and annual obligations."
+        }
+      ],
+      "onboarding": [
+        {
+          "title": "Consultation and assessment",
+          "description": "TAF Viet contacts you within 24 hours, looks at your software, documents and existing books, then recommends a suitable plan."
+        },
+        {
+          "title": "Handover and standardization",
+          "description": "We take over your data, reconcile opening balances and agree how you send documents and the monthly schedule."
+        },
+        {
+          "title": "Monthly operation",
+          "description": "The cycle of bookkeeping, reconciliation and reporting begins; you receive results with explanations and recommendations for the next period."
         }
       ],
       "steps": [
@@ -1146,6 +1310,20 @@
           "description": "Track social insurance deadlines, PIT settlements, and minimum wage updates."
         }
       ],
+      "onboarding": [
+        {
+          "title": "Consultation and assessment",
+          "description": "TAF Viet contacts you within 24 hours, looks at your software, documents and existing books, then recommends a suitable plan."
+        },
+        {
+          "title": "Handover and standardization",
+          "description": "We take over your data, reconcile opening balances and agree how you send documents and the monthly schedule."
+        },
+        {
+          "title": "Monthly operation",
+          "description": "The cycle of bookkeeping, reconciliation and reporting begins; you receive results with explanations and recommendations for the next period."
+        }
+      ],
       "steps": [
         {
           "title": "Receive attendance records",
@@ -1259,6 +1437,20 @@
           "description": "Support each milestone: expansion, restructuring, or preparation for listing."
         }
       ],
+      "onboarding": [
+        {
+          "title": "Consultation and assessment",
+          "description": "TAF Viet contacts you within 24 hours, looks at your software, documents and existing books, then recommends a suitable plan."
+        },
+        {
+          "title": "Handover and standardization",
+          "description": "We take over your data, reconcile opening balances and agree how you send documents and the monthly schedule."
+        },
+        {
+          "title": "Monthly operation",
+          "description": "The cycle of bookkeeping, reconciliation and reporting begins; you receive results with explanations and recommendations for the next period."
+        }
+      ],
       "steps": [
         {
           "title": "Initial objective discussion",
@@ -1370,6 +1562,20 @@
         {
           "title": "Foreign employees and cross-border earners",
           "description": "Individuals needing a review of Vietnam-related tax responsibilities and supporting records."
+        }
+      ],
+      "onboarding": [
+        {
+          "title": "Consultation and assessment",
+          "description": "TAF Viet contacts you within 24 hours, looks at your software, documents and existing books, then recommends a suitable plan."
+        },
+        {
+          "title": "Handover and standardization",
+          "description": "We take over your data, reconcile opening balances and agree how you send documents and the monthly schedule."
+        },
+        {
+          "title": "Monthly operation",
+          "description": "The cycle of bookkeeping, reconciliation and reporting begins; you receive results with explanations and recommendations for the next period."
         }
       ],
       "problemsTitle": "Common personal tax situations",
@@ -1575,6 +1781,20 @@
         {
           "title": "Growing household businesses",
           "description": "Owners preparing to formalize or improve their accounting process as sales expand."
+        }
+      ],
+      "onboarding": [
+        {
+          "title": "Consultation and assessment",
+          "description": "TAF Viet contacts you within 24 hours, looks at your software, documents and existing books, then recommends a suitable plan."
+        },
+        {
+          "title": "Handover and standardization",
+          "description": "We take over your data, reconcile opening balances and agree how you send documents and the monthly schedule."
+        },
+        {
+          "title": "Monthly operation",
+          "description": "The cycle of bookkeeping, reconciliation and reporting begins; you receive results with explanations and recommendations for the next period."
         }
       ],
       "problemsTitle": "Common operational and tax problems",
@@ -1796,6 +2016,20 @@
           "description": "Work with leadership on practical options and the risks of each path forward."
         }
       ],
+      "onboarding": [
+        {
+          "title": "Consultation and assessment",
+          "description": "TAF Viet contacts you within 24 hours, looks at your software, documents and existing books, then recommends a suitable plan."
+        },
+        {
+          "title": "Handover and standardization",
+          "description": "We take over your data, reconcile opening balances and agree how you send documents and the monthly schedule."
+        },
+        {
+          "title": "Monthly operation",
+          "description": "The cycle of bookkeeping, reconciliation and reporting begins; you receive results with explanations and recommendations for the next period."
+        }
+      ],
       "steps": [
         {
           "title": "Problem framing",
@@ -1840,6 +2074,20 @@
         {
           "title": "Businesses planning growth or restructuring",
           "description": "Companies seeking a clearer model for compliance, reporting and operational decisions."
+        }
+      ],
+      "onboarding": [
+        {
+          "title": "Consultation and assessment",
+          "description": "TAF Viet contacts you within 24 hours, looks at your software, documents and existing books, then recommends a suitable plan."
+        },
+        {
+          "title": "Handover and standardization",
+          "description": "We take over your data, reconcile opening balances and agree how you send documents and the monthly schedule."
+        },
+        {
+          "title": "Monthly operation",
+          "description": "The cycle of bookkeeping, reconciliation and reporting begins; you receive results with explanations and recommendations for the next period."
         }
       ],
       "problemsTitle": "Common business challenges",

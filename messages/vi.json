@@ -19,15 +19,15 @@
     "home": "Trang chủ",
     "services": "Dịch vụ",
     "servicesTaxPreparation": "Kê khai thuế",
-    "servicesAccounting": "Dịch vụ kế toán & ghi sổ",
+    "servicesAccounting": "Dịch vụ kế toán và ghi sổ",
     "servicesPayroll": "Dịch vụ tiền lương",
-    "servicesAdvisory": "Tư vấn & Cố vấn",
+    "servicesAdvisory": "Tư vấn và Cố vấn",
     "servicesPersonal": "Dịch vụ cá nhân & freelancer",
-    "servicesHousehold": "Dịch vụ hộ kinh doanh & người bán online",
-    "servicesLegal": "Pháp lý & Tài chính",
+    "servicesHousehold": "Dịch vụ hộ kinh doanh và người bán online",
+    "servicesLegal": "Pháp lý và Tài chính",
     "servicesBusiness": "Dịch vụ doanh nghiệp",
     "resources": "Tài nguyên",
-    "resourcesGuides": "Hướng dẫn & Biểu mẫu",
+    "resourcesGuides": "Hướng dẫn và Biểu mẫu",
     "resourcesCalculators": "Máy tính thuế",
     "blog": "Bài viết",
     "about": "Về chúng tôi",
@@ -559,9 +559,111 @@
       }
     ]
   },
+  "ProblemFinder": {
+    "eyebrow": "Bạn đang ở đâu?",
+    "title": "Bạn là ai? Chọn để xem vấn đề thường gặp",
+    "description": "Mỗi nhóm khách hàng gặp những vướng mắc thuế, kế toán, kiểm toán và pháp lý khác nhau. Chọn nhóm của bạn để xem 5 tình huống phổ biến.",
+    "problemsTitle": "5 vấn đề thường gặp: {name}",
+    "askTaf": "Hỏi TAF về trường hợp của bạn",
+    "seeServices": "Xem dịch vụ phù hợp",
+    "servicesFor": "Dịch vụ TAF dành cho: {name}",
+    "viewDetail": "Xem chi tiết nhóm dịch vụ",
+    "viewAll": "Xem tất cả nhóm dịch vụ",
+    "disclaimer": "Nội dung chỉ mang tính tham khảo chung, không thay thế tư vấn cho từng trường hợp cụ thể. Quy định có thể thay đổi, hãy liên hệ TAF để được kiểm tra theo hồ sơ thực tế.",
+    "problems": {
+      "accounting": [
+        {
+          "question": "Sổ sách bị dồn nhiều tháng, cuối kỳ mới cập nhật. Nên xử lý thế nào?",
+          "answer": "Nên rà soát chứng từ còn thiếu, đối chiếu sao kê ngân hàng với hóa đơn đầu vào và đầu ra, rồi bổ sung theo thứ tự ưu tiên để số liệu kê khai không bị sai lệch."
+        },
+        {
+          "question": "Hóa đơn đầu vào có sai sót hoặc thiếu điều kiện thì có được tính chi phí và khấu trừ không?",
+          "answer": "Cần kiểm tra thông tin người bán, hình thức thanh toán và hồ sơ đi kèm. Hóa đơn thiếu điều kiện có thể bị loại khi quyết toán, nên cần xử lý ngay khi phát hiện."
+        },
+        {
+          "question": "Doanh nghiệp đang tăng trưởng, nên thiết lập quy trình và phần mềm kế toán ra sao?",
+          "answer": "Nên chuẩn hóa từ khâu lưu chứng từ, phân quyền duyệt chi đến lịch đóng sổ hằng tháng, rồi chọn công cụ phù hợp quy mô thay vì đổi phần mềm trước."
+        },
+        {
+          "question": "Hay nộp trễ tờ khai GTGT hoặc báo cáo định kỳ, bị nhắc nhở hoặc phạt chậm nộp.",
+          "answer": "Cần có lịch nộp theo từng kỳ và người chịu trách nhiệm rõ ràng. Nếu đã trễ, việc nộp và điều chỉnh sớm thường giúp giảm tiền chậm nộp phát sinh."
+        },
+        {
+          "question": "Số liệu kế toán và số liệu thuế bị lệch nhau, làm sao đối chiếu trước khi quyết toán?",
+          "answer": "Nên lập bảng đối chiếu theo từng khoản mục doanh thu, chi phí và thuế, tìm nguyên nhân chênh lệch rồi điều chỉnh trước kỳ quyết toán để hạn chế rủi ro khi bị kiểm tra."
+        }
+      ],
+      "personal": [
+        {
+          "question": "Có thu nhập từ nhiều nguồn (làm công, freelance, cho thuê) thì kê khai thế nào?",
+          "answer": "Mỗi nguồn thu nhập có cách tính và thời điểm kê khai khác nhau. Cần tổng hợp đầy đủ để quyết toán đúng, tránh khai thiếu hoặc nộp trùng."
+        },
+        {
+          "question": "Freelancer nhận thu nhập từ nền tảng hoặc khách hàng nước ngoài có phải nộp thuế không?",
+          "answer": "Thu nhập phát sinh từ hoạt động của cá nhân tại Việt Nam thường vẫn thuộc diện cần xem xét nghĩa vụ thuế. Cách kê khai phụ thuộc vào hình thức nhận tiền và hợp đồng."
+        },
+        {
+          "question": "Khi nào phải tự quyết toán thuế TNCN, khi nào được ủy quyền cho công ty?",
+          "answer": "Điều này phụ thuộc vào việc bạn có một hay nhiều nơi chi trả thu nhập và có thu nhập ngoài lương hay không. Nên kiểm tra sớm để không quá hạn quyết toán."
+        },
+        {
+          "question": "Đăng ký người phụ thuộc và giảm trừ gia cảnh như thế nào, thiếu hồ sơ thì sao?",
+          "answer": "Cần chuẩn bị giấy tờ chứng minh quan hệ và đăng ký mã số thuế cho người phụ thuộc. Hồ sơ thiếu có thể bổ sung, nhưng nên làm trước kỳ quyết toán."
+        },
+        {
+          "question": "Nhận được thông báo hoặc yêu cầu giải trình về thu nhập từ cơ quan thuế thì phản hồi ra sao?",
+          "answer": "Không nên bỏ qua. Hãy đọc kỹ nội dung, thu thập chứng từ liên quan và phản hồi đúng hạn bằng văn bản; TAF có thể hỗ trợ rà soát hồ sơ trước khi gửi."
+        }
+      ],
+      "household-business": [
+        {
+          "question": "Doanh thu năm nay tăng mạnh so với năm trước, cách tính thuế và nghĩa vụ sổ sách có thay đổi không?",
+          "answer": "Khi quy mô doanh thu thay đổi đáng kể, phương pháp tính thuế, nghĩa vụ kê khai và yêu cầu sổ sách có thể thay đổi theo. Nên rà soát sớm để không bị động cuối năm."
+        },
+        {
+          "question": "Bán hàng trên sàn thương mại điện tử hoặc mạng xã hội, sàn đã khấu trừ thuế thì mình còn phải kê khai gì?",
+          "answer": "Cần xem sàn khấu trừ đối với khoản nào và đối chiếu với tổng doanh thu thực tế của bạn trên mọi kênh để xác định phần còn phải kê khai."
+        },
+        {
+          "question": "Khi nào nên giữ hộ kinh doanh, khi nào nên chuyển lên doanh nghiệp?",
+          "answer": "Cần so sánh quy mô doanh thu, nhu cầu hóa đơn, vay vốn và nghĩa vụ kế toán thuế giữa hai mô hình, vì mỗi lựa chọn có chi phí tuân thủ khác nhau."
+        },
+        {
+          "question": "Cần lưu những sổ sách và chứng từ nào để chứng minh doanh thu và chi phí?",
+          "answer": "Nên lưu sổ theo dõi doanh thu, hóa đơn mua hàng, chứng từ thanh toán và sao kê. Có hồ sơ đầy đủ sẽ giúp bạn chủ động khi cơ quan thuế kiểm tra."
+        },
+        {
+          "question": "Bán nhiều kênh (cửa hàng, Shopee, TikTok Shop), tổng hợp doanh thu thế nào để khai đúng?",
+          "answer": "Nên gom doanh thu từ mọi kênh vào một bảng theo dõi theo kỳ, đối chiếu với báo cáo của từng sàn và tài khoản ngân hàng trước khi kê khai."
+        }
+      ],
+      "business": [
+        {
+          "question": "Doanh thu năm nay gấp đôi năm trước, vượt xa quy mô đã dự kiến. Cần điều chỉnh gì về thuế, hóa đơn và kiểm toán?",
+          "answer": "Cần rà soát lại thuế TNDN tạm nộp, nghĩa vụ hóa đơn điện tử và các điều kiện phải kiểm toán báo cáo tài chính. Phát hiện sớm giúp hạn chế phạt và lãi chậm nộp."
+        },
+        {
+          "question": "Doanh nghiệp có bắt buộc kiểm toán báo cáo tài chính không, khi nào nên chủ động kiểm toán?",
+          "answer": "Bắt buộc hay không phụ thuộc vào loại hình và quy mô doanh nghiệp. Ngay cả khi không bắt buộc, kiểm toán có thể cần thiết khi vay vốn, gọi vốn hoặc làm việc với đối tác lớn."
+        },
+        {
+          "question": "Bị thanh tra, kiểm tra thuế hoặc nhận yêu cầu giải trình thì chuẩn bị hồ sơ thế nào?",
+          "answer": "Nên xác định phạm vi kiểm tra, tập hợp chứng từ theo kỳ và thống nhất người đại diện làm việc. Chuẩn bị tốt từ đầu giúp rút ngắn thời gian và giảm rủi ro truy thu."
+        },
+        {
+          "question": "Có giao dịch với bên liên kết hoặc chi phí lớn bất thường, có bị loại chi phí không?",
+          "answer": "Các giao dịch này thường được cơ quan thuế quan tâm. Cần có hợp đồng, chứng từ và cơ sở xác định giá hợp lý để chứng minh chi phí hợp lệ."
+        },
+        {
+          "question": "Tăng vốn, chuyển nhượng phần vốn hoặc tái cơ cấu thì có hệ quả thuế và pháp lý gì?",
+          "answer": "Mỗi hình thức có nghĩa vụ thuế, thủ tục pháp lý và rủi ro riêng. Nên đánh giá trước khi ký kết để chọn phương án phù hợp mục tiêu của chủ sở hữu."
+        }
+      ]
+    }
+  },
   "ServicesBlock": {
     "eyebrow": "Lĩnh vực Trọng tâm",
-    "sectionTitle": "Giải pháp Thuế, Kiểm toán & Kế toán Doanh nghiệp",
+    "sectionTitle": "Giải pháp Thuế, Kiểm toán & Kế toán",
     "sectionDescription": "Hệ thống quản trị tuân thủ chặt chẽ từ hạch toán hàng tháng, kê khai thuế định kỳ đến kiểm toán báo cáo tài chính năm.",
     "serviceCta": "Đăng ký tư vấn dịch vụ",
     "dialogTitle": "Tư vấn Dịch vụ Chuyên biệt",
@@ -569,7 +671,7 @@
     "prefillPrefix": "Yêu cầu tư vấn dịch vụ:",
     "services": [
       {
-        "title": "Tư vấn Thuế & Giao dịch Liên kết",
+        "title": "Tư vấn Thuế và Giao dịch Liên kết",
         "description": "Rà soát và kê khai thuế TNDN, GTGT, thuế nhà thầu, bảo vệ doanh nghiệp khi thanh kiểm tra thuế và lập hồ sơ xác định giá giao dịch liên kết."
       },
       {
@@ -577,7 +679,7 @@
         "description": "Kiểm toán độc lập theo chuẩn mực VAS và IFRS, đánh giá hệ thống kiểm soát nội bộ và thẩm định tài chính phục vụ M&A."
       },
       {
-        "title": "Dịch vụ Kế toán & Kế toán trưởng",
+        "title": "Dịch vụ Kế toán và Kế toán trưởng",
         "description": "Ghi nhận sổ sách hàng tháng, lập báo cáo tài chính chuẩn VAS, quản trị lương và bổ nhiệm Kế toán trưởng đại diện pháp lý."
       }
     ]
@@ -603,7 +705,41 @@
     "faq": "Câu hỏi thường gặp",
     "faqTitle": "Giải đáp trước khi bắt đầu",
     "contactConsultation": "Liên hệ tư vấn",
-    "contactButton": "Liên hệ tư vấn"
+    "contactButton": "Liên hệ tư vấn",
+    "relatedTitle": "Chưa đúng nhóm của bạn?",
+    "relatedDescription": "Xem các nhóm dịch vụ khác của TAF Việt, hoặc quay lại để chọn đúng nhóm theo vấn đề bạn đang gặp.",
+    "backToFinder": "Chọn nhóm theo vấn đề thường gặp",
+    "trust": [
+      {
+        "value": "10+",
+        "label": "Năm kinh nghiệm"
+      },
+      {
+        "value": "50+",
+        "label": "Doanh nghiệp đồng hành"
+      },
+      {
+        "value": "99%",
+        "label": "Báo cáo nộp đúng hạn"
+      },
+      {
+        "value": "7/7",
+        "label": "Ngày hỗ trợ mỗi tuần"
+      }
+    ],
+    "trustLicense": "Dịch vụ có giấy phép hành nghề theo quy định Nhà nước, do kế toán viên có chứng chỉ hành nghề thực hiện. Mã số doanh nghiệp 0105367171.",
+    "onboardingTitle": "Bắt đầu cùng TAF Việt như thế nào?",
+    "onboardingDescription": "Từ lúc bạn để lại thông tin đến khi sổ sách vào nề nếp, bạn sẽ đi qua 3 bước sau.",
+    "pricingNotesTitle": "Lưu ý về gói dịch vụ",
+    "channelsTitle": "Cần trao đổi nhanh? Liên hệ trực tiếp",
+    "zaloLabel": "Nhắn Zalo",
+    "phoneLabel": "Gọi",
+    "emailLabel": "Gửi email",
+    "channels": {
+      "zalo": "",
+      "phone": "",
+      "email": ""
+    }
   },
   "ResourcesPage": {
     "metadataTitle": "Tài nguyên | TAF Việt",
@@ -816,8 +952,8 @@
   "ServicePages": {
     "accounting": {
       "eyebrow": "Dịch vụ kế toán",
-      "title": "Kế toán trọn gói, chính xác và minh bạch",
-      "description": "Từ ghi sổ hàng tháng đến báo cáo tài chính cuối năm, TAF Việt giúp doanh nghiệp vận hành sổ sách gọn gàng, đúng chuẩn mực kế toán Việt Nam.",
+      "title": "Kế toán trọn gói: sổ sách gọn gàng, số liệu rõ ràng mỗi tháng",
+      "description": "Bạn không cần thuê kế toán nội bộ. TAF Việt ghi sổ, đối chiếu công nợ và lập báo cáo theo chuẩn mực kế toán Việt Nam, để bạn nắm rõ tình hình tài chính mà không phải lo chồng chứng từ cuối tháng.",
       "included": [
         {
           "title": "Ghi sổ kế toán hàng tháng",
@@ -963,19 +1099,33 @@
       "solutionsTitle": "TAF Việt hỗ trợ như thế nào",
       "solutions": [
         {
-          "title": "Ghi sổ kế toán & khép sổ hàng tháng",
-          "description": "Giữ mọi giao dịch được sắp xếp rõ ràng, dễ kiểm tra và theo dõi theo chu kỳ kế toán.",
+          "title": "Ghi sổ và khép sổ hàng tháng",
+          "description": "Chứng từ được hạch toán đúng kỳ, sổ sách khép gọn mỗi tháng, bạn không còn phải dồn việc vào cuối kỳ.",
           "href": "/services/accounting"
         },
         {
-          "title": "Rà soát phải thu & phải trả",
-          "description": "Đối chiếu khoản phải thu, phải trả và dòng tiền để có bức tranh tài chính rõ ràng hơn.",
+          "title": "Đối chiếu công nợ và dòng tiền",
+          "description": "Biết rõ ai còn nợ bạn, bạn còn nợ ai, và số dư ngân hàng khớp với sổ sách.",
           "href": "/services/accounting"
         },
         {
-          "title": "Rà soát sổ sách & kiểm tra sức khỏe tài chính",
-          "description": "Xem xét hồ sơ lịch sử, phát hiện sai lệch trước khi vấn đề trở nên lớn hơn.",
+          "title": "Rà soát sổ sách và sức khỏe tài chính",
+          "description": "Phát hiện sớm chênh lệch và sai sót trong sổ sách cũ để xử lý trước khi ảnh hưởng đến báo cáo và thuế.",
           "href": "/services/business/accounting-review"
+        }
+      ],
+      "onboarding": [
+        {
+          "title": "Tư vấn và khảo sát hiện trạng",
+          "description": "TAF Việt liên hệ trong vòng 24 giờ, xem phần mềm, chứng từ và sổ sách hiện có của bạn, rồi đề xuất gói dịch vụ phù hợp."
+        },
+        {
+          "title": "Tiếp quản và chuẩn hóa",
+          "description": "Nhận bàn giao dữ liệu, đối chiếu số dư đầu kỳ và thống nhất cách gửi chứng từ cùng lịch làm việc hằng tháng."
+        },
+        {
+          "title": "Vận hành hằng tháng",
+          "description": "Bắt đầu chu kỳ ghi sổ, đối chiếu và báo cáo; bạn nhận kết quả kèm giải thích và khuyến nghị cho kỳ sau."
         }
       ],
       "documentsTitle": "Hồ sơ cần chuẩn bị",
@@ -1027,6 +1177,20 @@
         {
           "title": "Nhắc hạn & theo dõi nghĩa vụ",
           "description": "Theo dõi thời hạn kê khai, nộp thuế theo tháng/quý/năm, tránh phát sinh phạt chậm nộp."
+        }
+      ],
+      "onboarding": [
+        {
+          "title": "Tư vấn và khảo sát hiện trạng",
+          "description": "TAF Việt liên hệ trong vòng 24 giờ, xem phần mềm, chứng từ và sổ sách hiện có của bạn, rồi đề xuất gói dịch vụ phù hợp."
+        },
+        {
+          "title": "Tiếp quản và chuẩn hóa",
+          "description": "Nhận bàn giao dữ liệu, đối chiếu số dư đầu kỳ và thống nhất cách gửi chứng từ cùng lịch làm việc hằng tháng."
+        },
+        {
+          "title": "Vận hành hằng tháng",
+          "description": "Bắt đầu chu kỳ ghi sổ, đối chiếu và báo cáo; bạn nhận kết quả kèm giải thích và khuyến nghị cho kỳ sau."
         }
       ],
       "steps": [
@@ -1142,6 +1306,20 @@
           "description": "Theo dõi thời hạn nộp bảo hiểm, quyết toán TNCN và cập nhật khi có thay đổi mức lương tối thiểu."
         }
       ],
+      "onboarding": [
+        {
+          "title": "Tư vấn và khảo sát hiện trạng",
+          "description": "TAF Việt liên hệ trong vòng 24 giờ, xem phần mềm, chứng từ và sổ sách hiện có của bạn, rồi đề xuất gói dịch vụ phù hợp."
+        },
+        {
+          "title": "Tiếp quản và chuẩn hóa",
+          "description": "Nhận bàn giao dữ liệu, đối chiếu số dư đầu kỳ và thống nhất cách gửi chứng từ cùng lịch làm việc hằng tháng."
+        },
+        {
+          "title": "Vận hành hằng tháng",
+          "description": "Bắt đầu chu kỳ ghi sổ, đối chiếu và báo cáo; bạn nhận kết quả kèm giải thích và khuyến nghị cho kỳ sau."
+        }
+      ],
       "steps": [
         {
           "title": "Nhận bảng chấm công",
@@ -1253,6 +1431,20 @@
         {
           "title": "Tư vấn theo mục tiêu doanh nghiệp",
           "description": "Đồng hành theo từng cột mốc: mở rộng thị trường, tái cấu trúc, hoặc chuẩn bị niêm yết."
+        }
+      ],
+      "onboarding": [
+        {
+          "title": "Tư vấn và khảo sát hiện trạng",
+          "description": "TAF Việt liên hệ trong vòng 24 giờ, xem phần mềm, chứng từ và sổ sách hiện có của bạn, rồi đề xuất gói dịch vụ phù hợp."
+        },
+        {
+          "title": "Tiếp quản và chuẩn hóa",
+          "description": "Nhận bàn giao dữ liệu, đối chiếu số dư đầu kỳ và thống nhất cách gửi chứng từ cùng lịch làm việc hằng tháng."
+        },
+        {
+          "title": "Vận hành hằng tháng",
+          "description": "Bắt đầu chu kỳ ghi sổ, đối chiếu và báo cáo; bạn nhận kết quả kèm giải thích và khuyến nghị cho kỳ sau."
         }
       ],
       "steps": [
@@ -1424,6 +1616,20 @@
           "href": "/services/personal/expat-tax"
         }
       ],
+      "onboarding": [
+        {
+          "title": "Tư vấn và khảo sát hiện trạng",
+          "description": "TAF Việt liên hệ trong vòng 24 giờ, xem phần mềm, chứng từ và sổ sách hiện có của bạn, rồi đề xuất gói dịch vụ phù hợp."
+        },
+        {
+          "title": "Tiếp quản và chuẩn hóa",
+          "description": "Nhận bàn giao dữ liệu, đối chiếu số dư đầu kỳ và thống nhất cách gửi chứng từ cùng lịch làm việc hằng tháng."
+        },
+        {
+          "title": "Vận hành hằng tháng",
+          "description": "Bắt đầu chu kỳ ghi sổ, đối chiếu và báo cáo; bạn nhận kết quả kèm giải thích và khuyến nghị cho kỳ sau."
+        }
+      ],
       "documentsTitle": "Hồ sơ cần chuẩn bị",
       "documents": [
         "Giấy tờ đăng ký thuế và giấy tờ cá nhân",
@@ -1571,6 +1777,20 @@
         {
           "title": "Hộ kinh doanh đang trưởng thành",
           "description": "Chủ kinh doanh muốn nâng cấp quy trình kế toán và hồ sơ khi doanh số tăng."
+        }
+      ],
+      "onboarding": [
+        {
+          "title": "Tư vấn và khảo sát hiện trạng",
+          "description": "TAF Việt liên hệ trong vòng 24 giờ, xem phần mềm, chứng từ và sổ sách hiện có của bạn, rồi đề xuất gói dịch vụ phù hợp."
+        },
+        {
+          "title": "Tiếp quản và chuẩn hóa",
+          "description": "Nhận bàn giao dữ liệu, đối chiếu số dư đầu kỳ và thống nhất cách gửi chứng từ cùng lịch làm việc hằng tháng."
+        },
+        {
+          "title": "Vận hành hằng tháng",
+          "description": "Bắt đầu chu kỳ ghi sổ, đối chiếu và báo cáo; bạn nhận kết quả kèm giải thích và khuyến nghị cho kỳ sau."
         }
       ],
       "problemsTitle": "Vấn đề thường gặp",
@@ -1792,6 +2012,20 @@
           "description": "Đồng hành cùng lãnh đạo trong việc so sánh phương án, rủi ro và khả năng triển khai thực tế."
         }
       ],
+      "onboarding": [
+        {
+          "title": "Tư vấn và khảo sát hiện trạng",
+          "description": "TAF Việt liên hệ trong vòng 24 giờ, xem phần mềm, chứng từ và sổ sách hiện có của bạn, rồi đề xuất gói dịch vụ phù hợp."
+        },
+        {
+          "title": "Tiếp quản và chuẩn hóa",
+          "description": "Nhận bàn giao dữ liệu, đối chiếu số dư đầu kỳ và thống nhất cách gửi chứng từ cùng lịch làm việc hằng tháng."
+        },
+        {
+          "title": "Vận hành hằng tháng",
+          "description": "Bắt đầu chu kỳ ghi sổ, đối chiếu và báo cáo; bạn nhận kết quả kèm giải thích và khuyến nghị cho kỳ sau."
+        }
+      ],
       "steps": [
         {
           "title": "Xác định vấn đề",
@@ -1836,6 +2070,20 @@
         {
           "title": "Doanh nghiệp chuẩn bị mở rộng hoặc tái cấu trúc",
           "description": "Công ty cần lộ trình rõ hơn về tuân thủ, báo cáo và quyết định vận hành."
+        }
+      ],
+      "onboarding": [
+        {
+          "title": "Tư vấn và khảo sát hiện trạng",
+          "description": "TAF Việt liên hệ trong vòng 24 giờ, xem phần mềm, chứng từ và sổ sách hiện có của bạn, rồi đề xuất gói dịch vụ phù hợp."
+        },
+        {
+          "title": "Tiếp quản và chuẩn hóa",
+          "description": "Nhận bàn giao dữ liệu, đối chiếu số dư đầu kỳ và thống nhất cách gửi chứng từ cùng lịch làm việc hằng tháng."
+        },
+        {
+          "title": "Vận hành hằng tháng",
+          "description": "Bắt đầu chu kỳ ghi sổ, đối chiếu và báo cáo; bạn nhận kết quả kèm giải thích và khuyến nghị cho kỳ sau."
         }
       ],
       "problemsTitle": "Vấn đề thường gặp",
@@ -1945,24 +2193,6 @@
           ]
         }
       ],
-      "faqs": [
-        {
-          "question": "Doanh nghiệp có cần bộ phận kế toán đầy đủ trước khi dùng dịch vụ này không?",
-          "answer": "Không. TAF Việt có thể đóng vai trò hỗ trợ bên ngoài và đồng hành vào các điểm cần rà soát, đối chiếu và tư vấn."
-        },
-        {
-          "question": "Chúng tôi có thể bắt đầu với một phần dịch vụ rồi mở rộng sau không?",
-          "answer": "Có. Nhiều doanh nghiệp bắt đầu bằng hỗ trợ bảng lương hoặc rà soát thuế rồi mở rộng thêm dịch vụ quản trị và tuân thủ theo giai đoạn phát triển."
-        },
-        {
-          "question": "Dịch vụ này chỉ dành cho doanh nghiệp lớn thôi sao?",
-          "answer": "Không. TAF Việt hỗ trợ doanh nghiệp mới thành lập, SME và doanh nghiệp lớn cần hệ thống tài chính và kiểm soát đáng tin cậy hơn."
-        },
-        {
-          "question": "TAF Việt có hỗ trợ chuẩn bị báo cáo cuối năm không?",
-          "answer": "Có. Chúng tôi có thể tổ chức hồ sơ, rà soát điểm chênh lệch và chuẩn bị gói báo cáo kèm kế hoạch hành động trước kỳ quyết toán."
-        }
-      ],
       "valuePoints": [
         {
           "title": "Rà soát quy định",
@@ -1977,7 +2207,7 @@
           "description": "Đánh giá số liệu và tình hình vận hành để hiểu quyết định nào thực sự khả thi."
         },
         {
-          "title": "Sẵn sàng M&A / gọi vốn",
+          "title": "Sẵn sàng MvàA / gọi vốn",
           "description": "Chuẩn bị hồ sơ, cấu trúc và dữ liệu trước khi đối thoại với nhà đầu tư hoặc đối tác."
         },
         {
@@ -1995,7 +2225,7 @@
           "description": "Nắm rõ quyết định, điểm rủi ro hoặc mối lo ngại pháp lý cần được giải quyết."
         },
         {
-          "title": "Rà soát dữ liệu & rủi ro",
+          "title": "Rà soát dữ liệu và rủi ro",
           "description": "Phân tích hồ sơ thuế, báo cáo tài chính và hoạt động vận hành để xác định điểm cần tập trung."
         },
         {
@@ -2061,7 +2291,7 @@
         }
       },
       "personal": {
-        "title": "Dịch vụ cá nhân & Freelancer",
+        "title": "Dịch vụ cá nhân và Freelancer",
         "description": "Hỗ trợ quyết toán thuế, hồ sơ và tài liệu cho cá nhân, freelancer và người có nhiều nguồn thu nhập.",
         "items": {
           "pit-finalization": { "title": "Quyết toán thuế thu nhập cá nhân" },
@@ -2084,7 +2314,7 @@
         }
       },
       "household": {
-        "title": "Dịch vụ hộ kinh doanh & Người bán hàng online",
+        "title": "Dịch vụ hộ kinh doanh và Người bán hàng online",
         "description": "Hỗ trợ kế toán thực tế, đối soát doanh thu và tuân thủ thuế cho hộ kinh doanh và người bán online.",
         "items": {
           "household-accounting": { "title": "Dịch vụ kế toán hộ kinh doanh" },

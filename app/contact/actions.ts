@@ -5,13 +5,38 @@ import { z } from "zod";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { createClient } from "@/lib/supabase/server";
 import { ActionResult } from "@/types/action-result";
+import { stripHtml, sanitizeText } from "@/lib/security/sanitize";
+
+// Vietnamese letters, spaces and common name punctuation. No < > & etc.
+const NAME_RE = /^[\p{L}\p{M}\s.'’-]{2,100}$/u;
+// 0912345678, +84 912 345 678, 024.3xxx.xxxx ...
+const PHONE_RE = /^(?:\+?84|0)\d{8,10}$/;
 
 const contactSchema = z.object({
-  name: z.string().min(2),
-  phone: z.string().min(9),
-  email: z.string().email().optional().or(z.literal("")),
-  message: z.string().optional(),
-  source: z.string().optional(),
+  name: z
+    .string()
+    .transform((v) => stripHtml(sanitizeText(v, 100)))
+    .refine((v) => NAME_RE.test(v), "Invalid name"),
+  phone: z
+    .string()
+    .transform((v) => v.replace(/[\s.\-()]/g, ""))
+    .refine((v) => PHONE_RE.test(v), "Invalid phone number"),
+  email: z
+    .string()
+    .trim()
+    .toLowerCase()
+    .max(254)
+    .email()
+    .optional()
+    .or(z.literal("").transform(() => undefined)),
+  message: z
+    .string()
+    .transform((v) => stripHtml(sanitizeText(v, 500)))
+    .optional(),
+  source: z
+    .string()
+    .transform((v) => stripHtml(sanitizeText(v, 100)))
+    .optional(),
 });
 
 export async function sendContactEmail(

@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { ServiceLanePage } from "@/components/service-lane-page";
 import { getLocale, getTranslations } from "next-intl/server";
+import { ServiceDetailTemplate } from "@/components/services/service-detail-template";
 
 export async function generateMetadata() {
   const locale = await getLocale();
@@ -45,37 +46,5 @@ export async function generateMetadata() {
 }
 
 export default async function LegalPage() {
-  const t = await getTranslations("ServicePages.legal");
-  const valuePoints = t.raw("valuePoints") as Array<{
-    title: string;
-    description: string;
-  }>;
-  const steps = t.raw("steps") as Array<{
-    title: string;
-    description: string;
-  }>;
-
-  return (
-    <ServiceLanePage
-      eyebrow={t("eyebrow")}
-      title={t("title")}
-      description={t("description")}
-      valuePoints={valuePoints.map((item, index) => ({
-        ...item,
-        icon: [
-          Scale,
-          Building2,
-          FileCheck,
-          Landmark,
-          BriefcaseBusiness,
-          ShieldCheck,
-        ][index],
-      }))}
-      steps={steps}
-      ctaTitle={t("ctaTitle")}
-      ctaDescription={t("ctaDescription")}
-      contactFormTitle={t("contactFormTitle")}
-      source={t("source")}
-    />
-  );
+  <ServiceDetailTemplate namespace="legal" categoryId="legal" />;
 }

@@ -27,6 +27,25 @@ const nextConfig: NextConfig = {
       process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ??
       process.env.TAF_PUBLIC_SUPABASE_PUBLISHABLE_KEY,
   },
+
+  // 1. Hardened Image Optimization (Protects against SVG/AVIF DoS)
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "*.supabase.co",
+      },
+    ],
+    dangerouslyAllowSVG: false,
+  },
+
+  // 2. Server Action & CSRF Hardening
+  experimental: {
+    serverActions: {
+      allowedOrigins: ["taf.asia"],
+    },
+  },
+
   async headers() {
     return [
       {
