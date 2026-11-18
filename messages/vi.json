@@ -179,35 +179,36 @@
     }
   },
   "CtaBlock": {
-    "title": "Bắt đầu với buổi tư vấn miễn phí",
-    "description": "Để lại thông tin, chúng tôi sẽ liên hệ trong vòng 24 giờ.",
-    "cta": "Đặt lịch tư vấn",
+    "title": "Đặt lịch Rà soát Thuế & Sức khỏe Tài chính",
+    "description": "Đăng ký phiên trao đổi bảo mật 30 phút cùng Giám đốc điều hành để đánh giá rủi ro thuế hoặc kế hoạch kiểm toán sắp tới.",
+    "cta": "Đặt lịch Phiên Rà soát",
     "dialog": {
-      "title": "Đặt lịch tư vấn",
-      "description": "Chọn ngày và để lại thông tin, chúng tôi sẽ liên hệ trong vòng 24 giờ."
+      "title": "Chọn Ngày Tư vấn Mong muốn",
+      "description": "Vui lòng chọn ngày phù hợp và để lại thông tin liên hệ để văn phòng xác nhận khung giờ."
     },
     "fields": {
       "name": {
         "label": "Họ và tên",
-        "placeholder": "Nguyễn Văn Mười"
+        "placeholder": "Nhập họ và tên của bạn"
       },
       "phone": {
-        "label": "Số điện thoại",
-        "placeholder": "0912 345 678"
+        "label": "Số điện thoại liên hệ",
+        "placeholder": "090 123 4567"
       },
       "date": {
-        "label": "Ngày tư vấn"
+        "label": "Ngày tư vấn ưu tiên"
       }
     },
     "validation": {
-      "required": "Vui lòng điền đầy đủ thông tin bắt buộc."
+      "required": "Vui lòng nhập đầy đủ họ tên, số điện thoại và chọn ngày hẹn."
     },
-    "submitting": "Đang gửi...",
-    "confirm": "Xác nhận đặt lịch"
+    "submitting": "Đang xác nhận lịch hẹn...",
+    "confirm": "Xác nhận Ngày Tư vấn",
+    "successTitle": "Đã Xác Nhận Yêu Cầu Đặt Lịch",
+    "successDescription": "Chúng tôi đã ghi nhận ngày ưu tiên của quý khách và sẽ liên hệ sớm để gửi thư mời lịch họp chính thức."
   },
   "AuthForms": {
     "signupPrompt": "Chưa có tài khoản?",
-    "signup": "Đăng ký",
     "signupSuccess": {
       "title": "Đăng ký thành công",
       "description": "Vui lòng kiểm tra hộp thư email để xác nhận tài khoản của bạn.",
@@ -502,7 +503,7 @@
     "submitError": "Không thể gửi yêu cầu, vui lòng thử lại sau."
   },
   "Hero": {
-    "badge": "Được tin tưởng bởi các doanh nghiệp hàng đầu tại Việt Nam",
+    "badge": "Dịch vụ Thuế doanh nghiệp và Kiểm toán có giấy phép hành nghề theo quy định Nhà Nước",
     "titleLineOne": "Giải pháp kế toán &",
     "titleLineTwo": "thuế toàn diện",
     "description": "TAF Việt đồng hành cùng doanh nghiệp trong việc quản lý tài chính, khai báo thuế và tuân thủ pháp luật — chính xác, đúng hạn, an tâm.",
@@ -559,18 +560,25 @@
     ]
   },
   "ServicesBlock": {
+    "eyebrow": "Lĩnh vực Trọng tâm",
+    "sectionTitle": "Giải pháp Thuế, Kiểm toán & Kế toán Doanh nghiệp",
+    "sectionDescription": "Hệ thống quản trị tuân thủ chặt chẽ từ hạch toán hàng tháng, kê khai thuế định kỳ đến kiểm toán báo cáo tài chính năm.",
+    "serviceCta": "Đăng ký tư vấn dịch vụ",
+    "dialogTitle": "Tư vấn Dịch vụ Chuyên biệt",
+    "dialogDescription": "Xác nhận thông tin liên hệ của bạn. Phạm vi dịch vụ đã được điền sẵn bên dưới.",
+    "prefillPrefix": "Yêu cầu tư vấn dịch vụ:",
     "services": [
       {
-        "title": "Kế toán doanh nghiệp",
-        "description": "Sổ sách, báo cáo tài chính, quản lý dòng tiền hàng tháng."
+        "title": "Tư vấn Thuế & Giao dịch Liên kết",
+        "description": "Rà soát và kê khai thuế TNDN, GTGT, thuế nhà thầu, bảo vệ doanh nghiệp khi thanh kiểm tra thuế và lập hồ sơ xác định giá giao dịch liên kết."
       },
       {
-        "title": "Khai báo thuế",
-        "description": "VAT, thuế TNDN, thuế TNCN — đúng hạn, đúng luật."
+        "title": "Kiểm toán Báo cáo Tài chính",
+        "description": "Kiểm toán độc lập theo chuẩn mực VAS và IFRS, đánh giá hệ thống kiểm soát nội bộ và thẩm định tài chính phục vụ M&A."
       },
       {
-        "title": "Tư vấn tài chính",
-        "description": "Cơ cấu vốn, hoạch định ngân sách, tối ưu chi phí thuế."
+        "title": "Dịch vụ Kế toán & Kế toán trưởng",
+        "description": "Ghi nhận sổ sách hàng tháng, lập báo cáo tài chính chuẩn VAS, quản trị lương và bổ nhiệm Kế toán trưởng đại diện pháp lý."
       }
     ]
   },

@@ -70,9 +70,9 @@ export default async function ServicesPage() {
       <div className="bg-muted/30">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
           <div className="mx-auto max-w-3xl text-center">
-            <Badge variant="outline" className="mb-4 uppercase tracking-widest">
+            <p className="text-xs font-semibold uppercase tracking-[0.06em] text-royal-blue">
               {t("badge")}
-            </Badge>
+            </p>
             <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
               {t("title")}
             </h1>

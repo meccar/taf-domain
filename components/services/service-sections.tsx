@@ -39,9 +39,9 @@ export function SectionHeader({
       )}
     >
       {eyebrow && (
-        <Badge variant="outline" className="mb-4 uppercase tracking-widest">
+        <p className="text-xs font-semibold uppercase tracking-[0.06em] text-royal-blue">
           {eyebrow}
-        </Badge>
+        </p>
       )}
       <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
         {title}
@@ -78,9 +78,9 @@ export function ServiceHeroSection({
     <div className="bg-muted/30">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-3xl text-center">
-          <Badge variant="outline" className="mb-4 uppercase tracking-widest">
+          <p className="text-xs font-semibold uppercase tracking-[0.06em] text-royal-blue">
             {eyebrow}
-          </Badge>
+          </p>
           <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
             {title}
           </h1>
@@ -334,9 +334,9 @@ export function PricingSection({
       className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20"
     >
       <div className="mb-10 max-w-2xl text-center mx-auto">
-        <Badge variant="outline" className="mb-4 uppercase tracking-widest">
+        <p className="text-xs font-semibold uppercase tracking-[0.06em] text-royal-blue">
           {eyebrow}
-        </Badge>
+        </p>
         <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
           {title}
         </h2>

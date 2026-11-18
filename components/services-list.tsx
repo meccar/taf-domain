@@ -1,56 +1,67 @@
-import { Separator } from "@/components/ui/separator";
-import { Badge } from "@/components/ui/badge";
 import { useTranslations } from "next-intl";
-import { FileText, Calculator, ShieldCheck, BarChart3 } from "lucide-react";
+import {
+  ArrowRight,
+  BriefcaseBusiness,
+  Building2,
+  Landmark,
+  UserRound,
+} from "lucide-react";
 
-export function ServicesList() {
-  const t = useTranslations("ServicesList");
-  const services = [
-    {
-      icon: FileText,
-      title: t("services.0.title"),
-      desc: t("services.0.description"),
-      badge: t("services.0.badge"),
-    },
-    {
-      icon: Calculator,
-      title: t("services.1.title"),
-      desc: t("services.1.description"),
-      badge: null,
-    },
-    {
-      icon: ShieldCheck,
-      title: t("services.2.title"),
-      desc: t("services.2.description"),
-      badge: null,
-    },
-    {
-      icon: BarChart3,
-      title: t("services.3.title"),
-      desc: t("services.3.description"),
-      badge: null,
-    },
-  ];
+const icons = [BriefcaseBusiness, UserRound, Building2, Landmark];
+
+type ServiceCategory = {
+  name: string;
+  description: string;
+  href: string;
+  services: string[];
+};
+
+export function ServicesList({
+  onSelectService,
+}: {
+  onSelectService?: (serviceTitle: string) => void;
+}) {
+  const t = useTranslations("ServicesBlock");
+  const overview = useTranslations("ServicesOverview");
+  const categories = overview.raw("categories") as ServiceCategory[];
 
   return (
-    <div className="flex flex-col">
-      {services.map(({ icon: Icon, title, desc, badge }, i) => (
-        <div key={title}>
-          <div className="flex items-start gap-4 py-4">
-            <div className="mt-0.5 p-2 rounded-md bg-muted shrink-0">
-              <Icon size={16} className="text-foreground" />
+    <div className="mt-4 divide-y divide-border rounded-lg border border-border bg-card">
+      {categories.map((category, i) => {
+        const Icon = icons[i % icons.length];
+        const index = String(i + 1).padStart(2, "0");
+
+        return (
+          <div
+            key={category.name}
+            className="flex items-start gap-4 p-4 transition-colors hover:bg-muted/50"
+          >
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-muted text-foreground">
+              <Icon className="h-5 w-5" />
             </div>
-            <div className="flex-1">
-              <div className="flex items-center gap-2">
-                <p className="font-medium text-sm">{title}</p>
-                {badge && <Badge variant="secondary">{badge}</Badge>}
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center justify-between gap-2">
+                <p className="font-display text-sm font-semibold text-foreground">
+                  {index}. {category.name}
+                </p>
               </div>
-              <p className="text-sm text-muted-foreground mt-0.5">{desc}</p>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                {category.description}
+              </p>
+              {onSelectService && (
+                <button
+                  type="button"
+                  onClick={() => onSelectService(category.name)}
+                  className="mt-2.5 inline-flex items-center gap-1.5 text-xs font-medium text-royal-blue transition-colors hover:text-brand-navy cursor-pointer"
+                >
+                  <span>{t("serviceCta")}</span>
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </button>
+              )}
             </div>
           </div>
-          {i < services.length - 1 && <Separator />}
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }

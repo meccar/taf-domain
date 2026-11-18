@@ -54,9 +54,9 @@ export async function ServiceLanePage({
     <main className="w-full">
       <div className="bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 flex flex-col items-center text-center gap-5">
-          <Badge variant="outline" className="uppercase tracking-widest">
+          <p className="text-xs font-semibold uppercase tracking-[0.06em] text-royal-blue">
             {eyebrow}
-          </Badge>
+          </p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight max-w-3xl">
             {title}
           </h1>
@@ -103,7 +103,10 @@ export async function ServiceLanePage({
 
       <Separator />
 
-      <div id="process" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+      <div
+        id="process"
+        className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20"
+      >
         <div className="max-w-2xl mb-12">
           <Badge variant="outline" className="uppercase tracking-widest mb-4">
             {t("process")}

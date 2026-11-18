@@ -179,31 +179,33 @@
     }
   },
   "CtaBlock": {
-    "title": "Get started with a free consultation",
-    "description": "Leave your information and we'll contact you within 24 hours.",
-    "cta": "Book a consultation",
+    "title": "Schedule a Confidential Tax & Audit Briefing",
+    "description": "Reserve a 30-minute diagnostic session with our senior partners to review your fiscal calendar, tax exposure, or upcoming statutory audit.",
+    "cta": "Book Diagnostic Session",
     "dialog": {
-      "title": "Book a consultation",
-      "description": "Choose a date and leave your information. We'll contact you within 24 hours."
+      "title": "Select Your Preferred Consultation Date",
+      "description": "Choose a date and provide your contact details. Our partner office will confirm the exact time slot."
     },
     "fields": {
       "name": {
-        "label": "Full name",
-        "placeholder": "Nguyen Van Muoi"
+        "label": "Full Name",
+        "placeholder": "Enter your full name"
       },
       "phone": {
-        "label": "Phone number",
+        "label": "Direct Phone",
         "placeholder": "0912 345 678"
       },
       "date": {
-        "label": "Consultation date"
+        "label": "Preferred Date"
       }
     },
     "validation": {
-      "required": "Please complete all required fields."
+      "required": "Please enter your name, phone number, and select a date."
     },
-    "submitting": "Submitting...",
-    "confirm": "Confirm booking"
+    "submitting": "Confirming Booking...",
+    "confirm": "Confirm Consultation Date",
+    "successTitle": "Session Request Confirmed",
+    "successDescription": "We have reserved your preferred date and will reach out shortly to finalize the calendar invitation."
   },
   "AuthForms": {
     "signupPrompt": "Don’t have an account?",
@@ -500,31 +502,31 @@
     "taxIdValue": "0105367171"
   },
   "Hero": {
-    "badge": "Trusted by leading businesses in Vietnam",
-    "titleLineOne": "Comprehensive accounting and",
-    "titleLineTwo": "tax solutions",
-    "description": "TAF Viet supports businesses in financial management, tax filing, and compliance with precision, timeliness, and peace of mind.",
-    "primaryButton": "Get a free consultation",
-    "secondaryButton": "View services",
+    "badge": "Licensed Corporate Tax & Statutory Audit Practice",
+    "titleLineOne": "Institutional Tax Clarity",
+    "titleLineTwo": "for Growing Enterprises",
+    "description": "Independent statutory auditing, corporate tax structuring, and continuous accounting governance designed for FDI subsidiaries and domestic corporations in Vietnam.",
+    "primaryButton": "Schedule Consultation",
+    "secondaryButton": "Explore Services",
     "stats": {
       "experience": {
-        "label": "Years of experience",
-        "value": "10+"
+        "label": "Regulatory & Audit Practice",
+        "value": "10+ Yrs"
       },
       "clients": {
-        "label": "Business clients",
+        "label": "Corporate Entities Advised",
         "value": "50+"
       },
       "compliance": {
-        "label": "On-time filings",
+        "label": "On-Time Statutory Filing Rate",
         "value": "99%"
       }
     },
     "dialog": {
-      "contactTitle": "Get a free consultation",
-      "contactDescription": "We will contact you within 24 business hours.",
-      "servicesTitle": "Our services",
-      "servicesDescription": "Comprehensive solutions for all your business finance needs."
+      "contactTitle": "Request Advisory Consultation",
+      "contactDescription": "Speak directly with a senior tax partner or chief accountant regarding your corporate compliance requirements.",
+      "servicesTitle": "Advisory Practice Overview",
+      "servicesDescription": "Select a core practice area below to initiate a tailored engagement review."
     },
     "contactForm": {
       "title": "Get a free consultation",
@@ -557,18 +559,25 @@
     ]
   },
   "ServicesBlock": {
+    "eyebrow": "Practice Areas",
+    "sectionTitle": "Core Advisory & Compliance Services",
+    "sectionDescription": "Structured statutory governance covering daily bookkeeping, quarterly tax filings, and annual financial statement audits.",
+    "serviceCta": "Request service review",
+    "dialogTitle": "Service Consultation Request",
+    "dialogDescription": "Confirm your contact details below. Your selected service scope has been pre-filled.",
+    "prefillPrefix": "Inquiry regarding:",
     "services": [
       {
-        "title": "Business accounting",
-        "description": "Books, financial statements, and monthly cash flow management."
+        "title": "Corporate Tax & Transfer Pricing",
+        "description": "End-to-end CIT, VAT, FCT compliance, tax audit defense, and OECD-aligned transfer pricing documentation for domestic and FDI enterprises."
       },
       {
-        "title": "Tax filing",
-        "description": "VAT, corporate income tax, and personal income tax — on time and by the book."
+        "title": "Statutory Audit & Assurance",
+        "description": "Independent VAS and IFRS financial statement audits, internal control diagnostics, and M&A financial due diligence."
       },
       {
-        "title": "Financial advisory",
-        "description": "Capital structure, budgeting, and tax optimization strategies."
+        "title": "Enterprise Accounting & Chief Accountant",
+        "description": "Full-cycle monthly bookkeeping, statutory VAS reporting, payroll governance, and appointed Chief Accountant oversight."
       }
     ]
   },

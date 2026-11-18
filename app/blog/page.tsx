@@ -39,9 +39,9 @@ export default async function Blog({
       {/* Hero — fully static, renders instantly */}
       <div className="bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center flex flex-col items-center gap-4">
-          <Badge variant="outline" className="uppercase tracking-widest">
+          <p className="text-xs font-semibold uppercase tracking-[0.06em] text-royal-blue">
             {t("badge")}
-          </Badge>
+          </p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
             {t("title")}
           </h1>

@@ -70,9 +70,9 @@ export default async function ResourcesPage() {
     <main className="w-full">
       <div className="bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center flex flex-col items-center gap-4">
-          <Badge variant="outline" className="uppercase tracking-widest">
+          <p className="text-xs font-semibold uppercase tracking-[0.06em] text-royal-blue">
             {t("badge")}
-          </Badge>
+          </p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
             {t("heroTitle")}
           </h1>
@@ -109,9 +109,9 @@ export default async function ResourcesPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
         <div className="max-w-2xl mb-10">
-          <Badge variant="outline" className="uppercase tracking-widest mb-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.06em] text-royal-blue">
             {t("downloadsBadge")}
-          </Badge>
+          </p>
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
             {t("downloadsTitle")}
           </h2>
@@ -137,12 +137,9 @@ export default async function ResourcesPage() {
         <div className="grid lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2 flex flex-col gap-16">
             <div>
-              <Badge
-                variant="outline"
-                className="uppercase tracking-widest mb-4"
-              >
+              <p className="text-xs font-semibold uppercase tracking-[0.06em] text-royal-blue">
                 {t("legalBadge")}
-              </Badge>
+              </p>
               <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight mb-6">
                 {t("legalTitle")}
               </h2>
@@ -164,12 +161,9 @@ export default async function ResourcesPage() {
             </div>
 
             <div>
-              <Badge
-                variant="outline"
-                className="uppercase tracking-widest mb-4"
-              >
+              <p className="text-xs font-semibold uppercase tracking-[0.06em] text-royal-blue">
                 {t("faqBadge")}
-              </Badge>
+              </p>
               <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight mb-6">
                 {t("faqTitle")}
               </h2>
