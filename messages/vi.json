@@ -22,7 +22,7 @@
     "servicesAccounting": "Dịch vụ kế toán và ghi sổ",
     "servicesPayroll": "Dịch vụ tiền lương",
     "servicesAdvisory": "Tư vấn và Cố vấn",
-    "servicesPersonal": "Dịch vụ cá nhân & freelancer",
+    "servicesPersonal": "Dịch vụ cá nhân và freelancer",
     "servicesHousehold": "Dịch vụ hộ kinh doanh và người bán online",
     "servicesLegal": "Pháp lý và Tài chính",
     "servicesBusiness": "Dịch vụ doanh nghiệp",
@@ -2354,7 +2354,7 @@
         ]
       },
       {
-        "name": "Dịch vụ cá nhân & freelancer",
+        "name": "Dịch vụ cá nhân và freelancer",
         "description": "Hỗ trợ thuế cá nhân, xét duyệt hồ sơ và quy trình kế toán đơn giản cho freelancer, cá nhân và hộ kinh doanh.",
         "href": "/services/personal",
         "services": [

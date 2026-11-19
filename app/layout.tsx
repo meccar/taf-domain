@@ -45,7 +45,11 @@ export async function generateMetadata(): Promise<Metadata> {
       description: t("defaultDescription"),
     },
     icons: {
-      icon: [{ url: "/favicon.ico" }],
+      icon: [
+        { url: "/favicon.ico" },
+        { url: "/taf-favicon-48.png", sizes: "48x48", type: "image/png" },
+        { url: "/taf-favicon-96.png", sizes: "96x96", type: "image/png" },
+      ],
       shortcut: "/favicon.ico",
     },
   };
