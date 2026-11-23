@@ -107,6 +107,7 @@ export default async function RootLayout({
                     "Tính lương",
                     "Tư vấn tài chính",
                   ],
+                  logo: `${defaultUrl}/taf-logo-512.png`,
                   address: {
                     "@type": "PostalAddress",
                     streetAddress: "937 Ngô Gia Tự, Việt Hưng",
