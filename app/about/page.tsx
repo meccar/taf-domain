@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { CheckCircle2, Target, Users, Award } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/button";
@@ -50,7 +51,10 @@ export default async function About() {
     credentials: string[];
   }>;
 
-  const partners = t.raw("partners") as string[];
+  const partners = t.raw("partners") as Array<{
+    name: string;
+    logo: string;
+  }>;
   const caseStudies = t.raw("caseStudies") as Array<{
     company: string;
     industry: string;
@@ -99,12 +103,9 @@ export default async function About() {
       <div className="bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
           <div className="flex flex-col gap-4">
-            <Badge
-              variant="outline"
-              className="uppercase tracking-widest w-fit"
-            >
+            <p className="text-xs font-semibold uppercase tracking-[0.06em] text-royal-blue">
               {t("missionBadge")}
-            </Badge>
+            </p>
             <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
               {t("missionTitle")}
             </h2>
@@ -127,9 +128,9 @@ export default async function About() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
         <div className="text-center flex flex-col items-center gap-3 mb-12">
-          <Badge variant="outline" className="uppercase tracking-widest">
+          <p className="text-xs font-semibold uppercase tracking-[0.06em] text-royal-blue">
             {t("valuesBadge")}
-          </Badge>
+          </p>
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
             {t("valuesTitle")}
           </h2>
@@ -158,9 +159,9 @@ export default async function About() {
       <div className="bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
           <div className="text-center flex flex-col items-center gap-3 mb-12">
-            <Badge variant="outline" className="uppercase tracking-widest">
+            <p className="text-xs font-semibold uppercase tracking-[0.06em] text-royal-blue">
               {t("teamBadge")}
-            </Badge>
+            </p>
             <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
               {t("teamTitle")}
             </h2>
@@ -226,21 +227,33 @@ export default async function About() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
         <div className="text-center flex flex-col items-center gap-3 mb-10">
-          <Badge variant="outline" className="uppercase tracking-widest">
+          <p className="text-xs font-semibold uppercase tracking-[0.06em] text-royal-blue">
             {t("partnersBadge")}
-          </Badge>
+          </p>
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
             {t("partnersTitle")}
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-          {partners.map((partner) => (
+        <div className="group/partners grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          {partners.map(({ name, logo }) => (
             <div
-              key={partner}
-              className="flex h-20 items-center justify-center rounded-xl border border-border bg-background text-sm font-semibold tracking-wide text-muted-foreground shadow-sm"
+              key={name}
+              className="relative flex h-20 items-center justify-center rounded-xl border border-border bg-background p-4 shadow-sm
+                 transition-all duration-300 ease-out
+                 hover:scale-105 hover:shadow-md
+                 group-hover/partners:[&:not(:hover)]:grayscale
+                 group-hover/partners:[&:not(:hover)]:opacity-60"
             >
-              {partner}
+              <div className="relative h-full w-full">
+                <Image
+                  src={logo}
+                  alt={name}
+                  fill
+                  sizes="(min-width: 1024px) 150px, (min-width: 640px) 30vw, 45vw"
+                  className="object-contain"
+                />
+              </div>
             </div>
           ))}
         </div>
@@ -250,9 +263,9 @@ export default async function About() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
         <div className="text-center flex flex-col items-center gap-3 mb-10">
-          <Badge variant="outline" className="uppercase tracking-widest">
+          <p className="text-xs font-semibold uppercase tracking-[0.06em] text-royal-blue">
             {t("caseStudiesBadge")}
-          </Badge>
+          </p>
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
             {t("caseStudiesTitle")}
           </h2>

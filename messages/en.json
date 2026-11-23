@@ -435,7 +435,7 @@
         {
           "name": "Đoàn Mạnh Tiệp",
           "title": "Managing Director",
-          "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80",
+          "image": "/members/DoanManhTiep.webp",
           "summary": "Leads client strategy, quality assurance, and delivery across accounting, tax, and advisory engagements.",
           "specialties": ["Finance", "Oversight", "Operations"],
           "credentials": [
@@ -447,7 +447,7 @@
         {
           "name": "Vũ Thị Ngà",
           "title": "Accounting Manager",
-          "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80",
+          "image": "/members/VuThiNga.webp",
           "summary": "Oversees monthly close, reporting workflows, cash flow checks, and internal controls for client accounts.",
           "specialties": ["Accounting", "Reporting", "Cash flow"],
           "credentials": [
@@ -459,31 +459,64 @@
       ]
     },
     "partners": [
-      "VietStar",
-      "GreenLeaf",
-      "SunTrade",
-      "BacPhu",
-      "HelioCo",
-      "NorthPeak"
+      {
+        "name": "Hai Phong Petrolimex Gas Company Limited",
+        "logo": "/partners/petrolimex.webp"
+      },
+      {
+        "name": "Information Technology Institute, Vietnam National University, Hanoi",
+        "logo": "/partners/VNU.webp"
+      },
+      { "name": "Ti Ki Company Limited", "logo": "/partners/tiki.webp" },
+      {
+        "name": "Jebs Investment Vietnam Company Limited",
+        "logo": "/partners/jebs.webp"
+      },
+      {
+        "name": "TLC Logistics Joint Stock Company",
+        "logo": "/partners/tlc.webp"
+      },
+      {
+        "name": "Tien Thanh Joint Stock Company",
+        "logo": "/partners/tienthanh.webp"
+      }
     ],
     "caseStudies": [
       {
-        "company": "VietStar Logistics",
-        "industry": "Logistics",
-        "result": "Reduced monthly admin workload by 40%",
-        "quote": "TAF Viet helped us clean up our books and file deadlines on time, which gave our management team much more confidence in the numbers."
+        "company": "Hai Phong Petrolimex Gas Company Limited",
+        "industry": "Energy & Gas Distribution",
+        "result": "Improved accounting efficiency and financial reporting",
+        "quote": "TAF Viet helped us streamline our accounting processes, maintain accurate financial records, and stay on top of important filing deadlines."
       },
       {
-        "company": "GreenLeaf Trading",
-        "industry": "Wholesale",
-        "result": "Cut tax-risk issues in the first quarterly review",
-        "quote": "Their guidance was practical, fast and clear. We finally had a process we could trust for compliance and planning."
+        "company": "Information Technology Institute, Vietnam National University, Hanoi",
+        "industry": "Education & Research",
+        "result": "Strengthened financial administration and compliance",
+        "quote": "TAF Viet provided professional accounting support and practical guidance, helping us improve financial administration and maintain greater confidence in our reporting."
       },
       {
-        "company": "NorthPeak Media",
-        "industry": "Marketing",
-        "result": "Improved cash flow visibility across 3 business units",
-        "quote": "The team understood our growth stage and gave us the structures and reporting we needed to scale without chaos."
+        "company": "Ti Ki Company Limited",
+        "industry": "E-commerce & Retail",
+        "result": "Enhanced financial reporting and operational efficiency",
+        "quote": "TAF Viet delivered practical financial guidance and reliable support, helping us improve reporting processes and strengthen financial management."
+      },
+      {
+        "company": "Jebs Investment Vietnam Company Limited",
+        "industry": "Investment & Business Services",
+        "result": "Improved financial oversight and compliance management",
+        "quote": "TAF Viet helped us establish more structured financial processes and provided clear guidance on accounting and compliance matters."
+      },
+      {
+        "company": "TLC Logistics Joint Stock Company",
+        "industry": "Logistics & Supply Chain",
+        "result": "Streamlined accounting processes and financial operations",
+        "quote": "TAF Viet provided dependable accounting support and practical solutions that helped us improve financial processes and manage our operations more effectively."
+      },
+      {
+        "company": "Tien Thanh Joint Stock Company",
+        "industry": "Trading & Distribution",
+        "result": "Improved financial management and accounting efficiency",
+        "quote": "TAF Viet provided practical accounting support and financial guidance, helping us improve internal processes and strengthen financial management."
       }
     ]
   },
