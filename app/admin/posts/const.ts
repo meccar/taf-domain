@@ -3,6 +3,12 @@ export const LOCALES = [
   { code: "en", label: "English" },
 ] as const;
 
+export const DEFAULT_LOCALE = "vi";
+
+const OG_LOCALE: Record<string, string> = { vi: "vi_VN", en: "en_US" };
+
+export const LOCALE_PREFIXED = false;
+
 export type LocaleCode = (typeof LOCALES)[number]["code"];
 
 export interface TranslationDraft {

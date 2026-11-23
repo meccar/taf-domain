@@ -25,7 +25,7 @@ export function ServicesBlock({
   const selected = categories.find((c) => getCategoryId(c.href) === selectedId);
 
   return (
-    <MotionSection id="services" className="scroll-mt-24">
+    <MotionSection id="services">
       <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
         <div className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.06em] text-royal-blue">
@@ -36,10 +36,10 @@ export function ServicesBlock({
               ? finder("servicesFor", { name: selected.name })
               : t("sectionTitle")}
           </h2>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            {selected ? selected.description : t("sectionDescription")}
+          </p>
         </div>
-        <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-          {selected ? selected.description : t("sectionDescription")}
-        </p>
       </div>
 
       {selected ? (

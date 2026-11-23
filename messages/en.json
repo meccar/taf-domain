@@ -56,18 +56,17 @@
   "Metadata": {
     "siteName": "TAF Viet",
     "companyName": "TAF VIET CO., LTD",
-    "defaultTitle": "TAF Viet | Accounting, tax and financial advisory services",
+    "defaultTitle": "TAF Viet | Accounting, Tax Filing & Financial Advisory in Vietnam",
     "titleTemplate": "%s | TAF Viet",
-    "defaultDescription": "TAF Viet provides accounting, tax filing, payroll and financial consulting services for businesses in Vietnam.",
-    "companyDescription": "Accounting, tax filing and financial consulting services in Vietnam.",
+    "defaultDescription": "TAF Viet provides accounting, tax filing, payroll and financial advisory for businesses in Vietnam. Based in Hanoi, from 3,500,000 VND.",
+    "companyDescription": "Accounting, tax filing, payroll and financial consulting services in Vietnam.",
     "keywords": [
       "TAF Viet",
-      "TAF VIET CO., LTD",
-      "accounting services",
-      "tax filing",
-      "payroll services",
-      "financial advisory",
-      "Vietnam business services"
+      "accounting services Vietnam",
+      "tax filing Vietnam",
+      "payroll services Vietnam",
+      "financial advisory Vietnam",
+      "tax agent Hanoi"
     ],
     "knowsAbout": [
       "Business accounting",
@@ -75,9 +74,17 @@
       "Payroll",
       "Financial advisory"
     ],
+    "ogImageAlt": "TAF Viet - accounting, tax and financial advisory",
+    "priceRange": "From 3,500,000 VND",
+    "breadcrumbs": {
+      "home": "Home",
+      "services": "Services",
+      "contact": "Contact"
+    },
     "address": {
-      "streetAddress": "937 Ngo Gia Tu St., Viet Hung, Hanoi, Vietnam",
-      "locality": "Ha Noi",
+      "streetAddress": "937 Ngo Gia Tu St., Viet Hung",
+      "locality": "Hanoi",
+      "region": "Hanoi",
       "postalCode": "11321"
     }
   },
@@ -378,6 +385,9 @@
     "heroTitle": "Growing with businesses",
     "heroTitleLineBreak": "on the journey to sustainable growth",
     "heroDescription": "TAF Viet is a trusted provider of accounting, tax, and financial advisory services that help businesses operate transparently and optimize costs.",
+    "metaTitle": "About TAF Viet: Tax Agent & Accounting Team in Hanoi",
+    "metaDescription": "Meet the accountants and tax specialists behind TAF Viet: credentials, experience and our commitment to accuracy.",
+    "breadcrumb": "About",
     "missionBadge": "Our mission",
     "missionTitle": "Simplifying accounting and tax for businesses in Vietnam",
     "missionDescription": "We believe every business, large or small, deserves a reliable financial partner. That is why TAF Viet exists — to solve complex accounting and tax challenges with clear, efficient solutions.",
@@ -431,30 +441,54 @@
       }
     },
     "team": {
+      "credentialsLabel": "Credentials",
+      "experienceLabel": "Career background",
       "members": [
         {
           "name": "Đoàn Mạnh Tiệp",
           "title": "Managing Director",
           "image": "/members/DoanManhTiep.webp",
           "summary": "Leads client strategy, quality assurance, and delivery across accounting, tax, and advisory engagements.",
-          "specialties": ["Finance", "Oversight", "Operations"],
+          "quote": "Every number we sign off on has to stand up to a tax audit — that is the standard we hold ourselves to.",
+          "stats": [
+            { "value": "[10+]", "label": "Years in practice" },
+            { "value": "[50+]", "label": "Businesses advised" },
+            { "value": "[000+]", "label": "Tax filings handled" }
+          ],
+          "specialties": [
+            "Tax planning",
+            "Financial oversight",
+            "Audit readiness"
+          ],
           "credentials": [
-            "Certified accounting professional",
-            "Tax agency credential holder",
-            "10+ years of advisory experience"
-          ]
+            "[Practising Accountant Certificate No. xxxx – issued by VACPA, 20xx]",
+            "[Tax Agent Certificate No. xxxx – Ministry of Finance, 20xx]",
+            "[Degree, University, year]"
+          ],
+          "background": ["Managing Director at TAF Viet"]
         },
         {
           "name": "Vũ Thị Ngà",
           "title": "Accounting Manager",
           "image": "/members/VuThiNga.webp",
           "summary": "Oversees monthly close, reporting workflows, cash flow checks, and internal controls for client accounts.",
-          "specialties": ["Accounting", "Reporting", "Cash flow"],
+          "quote": "Clean books every month mean no surprises at year-end.",
+          "stats": [
+            { "value": "[10+]", "label": "Years in practice" },
+            { "value": "[30+]", "label": "Accounts managed" },
+            { "value": "[100%]", "label": "On-time monthly close" }
+          ],
+          "specialties": [
+            "Bookkeeping",
+            "Financial reporting",
+            "Cash flow control"
+          ],
           "credentials": [
-            "Certified accounting professional",
-            "Tax practice credential",
-            "10+ years of advisory experience"
-          ]
+            "[Practising Accountant Certificate No. xxxx, 20xx]",
+            "[Tax Agent Certificate No. xxxx, 20xx]",
+            "[Degree, University, year]"
+          ],
+          "background": ["Accounting Manager at TAF Viet"]
         }
       ]
     },
@@ -530,10 +564,15 @@
     "badge": "Contact",
     "heroTitle": "We are always ready to support you",
     "heroDescription": "Leave your details or contact us directly — the TAF Viet team will respond as soon as possible.",
+    "metaTitle": "Contact TAF Viet: Tax & Accounting Firm in Hanoi",
+    "metaDescription": "Contact TAF Viet for accounting, tax and payroll advice, with a reply within 24 hours. 937 Ngo Gia Tu St., Viet Hung, Hanoi. Mon–Fri 8:30–18:00.",
+    "breadcrumb": "Contact",
+    "hoursValue": "Mon – Fri: 8:30 AM – 6:00 PM",
     "contactInfo": {
       "email": "Email",
       "phone": "Phone",
       "address": "Office address",
+      "hours": "Opening hours",
       "taxId": "Business registration number"
     },
     "mapTitle": "TAF Viet office map",
@@ -542,6 +581,7 @@
   },
   "Hero": {
     "badge": "Licensed Corporate Tax & Statutory Audit Practice",
+    "bannerAlt": "TAF Viet accounting and tax advisory team",
     "titleLineOne": "Institutional Tax Clarity",
     "titleLineTwo": "for Growing Enterprises",
     "description": "Independent statutory auditing, corporate tax structuring, and continuous accounting governance designed for FDI subsidiaries and domestic corporations in Vietnam.",
@@ -997,6 +1037,9 @@
       "eyebrow": "Accounting services",
       "title": "Full-service accounting: tidy books and clear numbers every month",
       "description": "You do not need an in-house accountant. TAF Viet keeps your books, reconciles receivables and payables and prepares reports under Vietnamese accounting standards, so you know where you stand financially without a pile of documents at month end.",
+      "metaTitle": "Full-Service Accounting from 2,000,000đ/month",
+      "metaDescription": "Outsourced accounting in Vietnam: bookkeeping, receivables reconciliation and VAS-compliant financial reports. Plans from 2,000,000đ/month, reply within 24h.",
+      "serviceType": "Accounting services",
       "included": [
         {
           "title": "Monthly bookkeeping",
@@ -1192,10 +1235,13 @@
       "contactFormTitle": "Request accounting service consultation",
       "source": "service-accounting"
     },
-    "taxPreparation": {
+    "tax-preparation": {
       "eyebrow": "Tax services",
       "title": "File and finalize tax returns on time and correctly",
       "description": "TAF Viet supports businesses throughout the VAT, PIT, and CIT filing process — reducing risk and saving time.",
+      "metaTitle": "Tax Filing & Finalization Services for Businesses",
+      "metaDescription": "On-time VAT filing, CIT and PIT finalization with deadline tracking and tax-risk review. Representation before tax authorities available. From 1,500,000đ/month.",
+      "serviceType": "Tax filing and finalization",
       "included": [
         {
           "title": "VAT filing",
@@ -1323,6 +1369,9 @@
       "eyebrow": "Payroll services",
       "title": "Accurate payroll and insurance, on time every month",
       "description": "TAF Viet handles the entire payroll process, social insurance, and PIT calculations for employees — reducing admin work and preventing errors.",
+      "metaTitle": "Payroll, Social Insurance & PIT Services",
+      "metaDescription": "Accurate monthly payroll, social insurance and personal income tax, with payslips and payroll reports. Plans from 1,200,000đ/month for teams of any size.",
+      "serviceType": "Payroll services",
       "included": [
         {
           "title": "Monthly payroll calculation",
@@ -1450,6 +1499,9 @@
       "eyebrow": "Advisory services",
       "title": "Financial and tax advice for strategic decisions",
       "description": "TAF Viet works alongside leadership on critical decisions — from tax planning to company restructuring and major transactions.",
+      "metaTitle": "Strategic Financial & Tax Advisory",
+      "metaDescription": "Tax planning, business structuring and pre-M&A or fundraising review for leadership teams. 90-minute sessions from 1,800,000đ, no long-term commitment.",
+      "serviceType": "Financial and tax advisory",
       "included": [
         {
           "title": "Strategic tax planning",
@@ -1577,6 +1629,9 @@
       "title": "Tax, bookkeeping, and compliance support for individuals and growing side businesses",
       "description": "TAF Viet helps freelancers, sole proprietors, and small business owners manage taxes, records, and day-to-day compliance with practical support.",
       "audiencesTitle": "Who this service is for",
+      "metaTitle": "Personal Income Tax & Freelancer Tax Support",
+      "metaDescription": "Annual PIT finalization, refund review and multi-income support for employees, freelancers and expats in Vietnam. Plans from 1,200,000đ/month.",
+      "serviceType": "Personal income tax services",
       "audiences": [
         {
           "title": "Employees with one employer",
@@ -1795,11 +1850,14 @@
       "contactFormTitle": "Request personal or small-business support",
       "source": "service-personal"
     },
-    "householdBusiness": {
+    "household-business": {
       "eyebrow": "Household business & online sellers",
       "title": "Bookkeeping, revenue, and tax support for household businesses and online sellers",
       "description": "TAF Viet helps household businesses and online sellers manage revenue, documentation, and compliance with practical support tailored to real operating conditions.",
       "audiencesTitle": "Who this service is for",
+      "metaTitle": "Household Business & Online Seller Accounting",
+      "metaDescription": "Bookkeeping, Shopee and TikTok Shop reconciliation, inventory tracking and tax support for household businesses. From 1,000,000đ/month, reply within 24h.",
+      "serviceType": "Household business accounting",
       "audiences": [
         {
           "title": "Traditional household businesses",
@@ -2029,6 +2087,9 @@
       "eyebrow": "Legal & financial advisory",
       "title": "Compliance review and strategic guidance for important business decisions",
       "description": "TAF Viet helps founders and leadership teams review legal exposure, financial risks, and compliance gaps before key decisions are made.",
+      "metaTitle": "Compliance & Financial Risk Review",
+      "metaDescription": "Review tax compliance, assess financial risk and prepare records before M&A or fundraising. TAF Viet responds within 24 hours.",
+      "serviceType": "Compliance and risk review",
       "valuePoints": [
         {
           "title": "Regulatory review",
@@ -2097,6 +2158,9 @@
       "title": "Corporate compliance, payroll, and financial review for growing businesses",
       "description": "TAF Viet helps founders and leadership teams review tax obligations, payroll workflows, financial reporting and governance gaps before operational and strategic decisions are made.",
       "audiencesTitle": "Who we support",
+      "metaTitle": "Corporate Tax Compliance & Financial Review",
+      "metaDescription": "Help growing businesses stay tax-compliant, close the year cleanly, run payroll and review their books. Plans from 2,500,000đ/month.",
+      "serviceType": "Business compliance and finance support",
       "audiences": [
         {
           "title": "Growing SMEs",

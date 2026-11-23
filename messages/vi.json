@@ -67,7 +67,11 @@
       "kê khai thuế",
       "tính lương",
       "tư vấn tài chính",
-      "doanh nghiệp Việt Nam"
+      "doanh nghiệp Việt Nam",
+      "đại lý thuế Hà Nội",
+      "dịch vụ tính lương",
+      "tư vấn tài chính doanh nghiệp",
+      "báo cáo tài chính"
     ],
     "knowsAbout": [
       "Dịch vụ kế toán doanh nghiệp",
@@ -75,9 +79,17 @@
       "Tính lương",
       "Tư vấn tài chính"
     ],
+    "ogImageAlt": "TAF Việt | Dịch vụ kế toán, thuế và tư vấn tài chính",
+    "priceRange": "Từ 3,500,000 VND",
+    "breadcrumbs": {
+      "home": "Home",
+      "services": "Services",
+      "contact": "Contact"
+    },
     "address": {
       "streetAddress": "937 Ngô Gia Tự, Việt Hưng, Hà Nội, Việt Nam",
       "locality": "Hà Nội",
+      "region": "Hà Nội",
       "postalCode": "11321"
     }
   },
@@ -377,6 +389,9 @@
     "heroTitle": "Đồng hành cùng doanh nghiệp",
     "heroTitleLineBreak": "trên hành trình phát triển",
     "heroDescription": "TAF Việt là đơn vị cung cấp dịch vụ kế toán, thuế và tư vấn tài chính uy tín, giúp doanh nghiệp vận hành minh bạch và tối ưu chi phí.",
+    "metaTitle": "Giới thiệu TAF Việt: đại lý thuế & kế toán tại Hà Nội",
+    "metaDescription": "Gặp đội ngũ kế toán, chuyên viên thuế của TAF Việt: chứng chỉ, kinh nghiệm và cam kết chính xác. Đại lý thuế tại Hà Nội.",
+    "breadcrumb": "Giới thiệu",
     "missionBadge": "Sứ mệnh",
     "missionTitle": "Đơn giản hóa bài toán kế toán - thuế cho doanh nghiệp Việt",
     "missionDescription": "Chúng tôi tin rằng mỗi doanh nghiệp, dù lớn hay nhỏ, đều xứng đáng có một đối tác tài chính đáng tin cậy. Đó là lý do TAF Việt ra đời — để giải quyết các vấn đề kế toán, thuế phức tạp bằng giải pháp rõ ràng, hiệu quả.",
@@ -430,30 +445,72 @@
       }
     },
     "team": {
+      "credentialsLabel": "Chứng chỉ & Bằng cấp",
+      "experienceLabel": "Kinh nghiệm công tác",
       "members": [
         {
           "name": "Đoàn Mạnh Tiệp",
           "title": "Giám đốc điều hành",
           "image": "/members/DoanManhTiep.webp",
-          "summary": "Định hướng chiến lược dịch vụ, kiểm soát chất lượng và đảm bảo mọi dự án đều được triển khai rõ ràng, đúng tiến độ và đúng chuẩn.",
-          "specialties": ["Tài chính", "Kiểm soát", "Nghiệp vụ"],
+          "summary": "Định hướng chiến lược dịch vụ, kiểm soát chất lượng và đảm bảo mọi dự án trong lĩnh vực kế toán, thuế và tư vấn được triển khai chuyên nghiệp, chính xác và đúng tiến độ.",
+          "quote": "Mọi số liệu chúng tôi xác nhận đều phải đảm bảo tính chính xác và đủ cơ sở để giải trình khi cơ quan thuế tiến hành thanh tra, kiểm tra. Đó là tiêu chuẩn mà chúng tôi luôn đặt lên hàng đầu.",
+          "stats": [
+            {
+              "value": "[10+]",
+              "label": "Năm kinh nghiệm"
+            },
+            {
+              "value": "[50+]",
+              "label": "Doanh nghiệp tư vấn"
+            },
+            {
+              "value": "[500+]",
+              "label": "Hồ sơ thuế đã xử lý"
+            }
+          ],
+          "specialties": [
+            "Hoạch định thuế",
+            "Quản trị tài chính",
+            "Kiểm soát và chuẩn bị hồ sơ thanh tra thuế"
+          ],
           "credentials": [
-            "Chứng chỉ Kế toán viên hành nghề",
-            "Chứng chỉ Đại lý thuế",
-            "10+ năm kinh nghiệm tư vấn"
-          ]
+            "Chứng chỉ Kế toán viên hành nghề số xxxx – VACPA, năm 20xx",
+            "Chứng chỉ Đại lý thuế số xxxx – Bộ Tài chính, năm 20xx",
+            "[Bằng cấp, Trường đại học, năm tốt nghiệp]"
+          ],
+          "background": ["Giám đốc điều hành tại TAF Việt"]
         },
         {
           "name": "Vũ Thị Ngà",
           "title": "Trưởng phòng Kế toán",
           "image": "/members/VuThiNga.webp",
-          "summary": "Phụ trách quy trình ghi sổ, báo cáo tài chính, đối chiếu dòng tiền và kiểm soát hệ thống kế toán cho khách hàng.",
-          "specialties": ["Kế toán", "Báo cáo", "Dòng tiền"],
+          "summary": "Phụ trách quy trình ghi sổ kế toán, lập báo cáo tài chính định kỳ, đối chiếu dòng tiền và kiểm soát hệ thống kế toán cho khách hàng, đảm bảo số liệu luôn minh bạch và chính xác.",
+          "quote": "Sổ sách kế toán được kiểm soát chặt chẽ và cập nhật đầy đủ mỗi tháng sẽ giúp doanh nghiệp chủ động tài chính và tránh những bất ngờ khi quyết toán cuối năm.",
+          "stats": [
+            {
+              "value": "[10+]",
+              "label": "Năm kinh nghiệm"
+            },
+            {
+              "value": "[50+]",
+              "label": "Doanh nghiệp phụ trách"
+            },
+            {
+              "value": "[100%]",
+              "label": "Báo cáo đúng hạn"
+            }
+          ],
+          "specialties": [
+            "Kế toán tổng hợp",
+            "Báo cáo tài chính",
+            "Kiểm soát dòng tiền"
+          ],
           "credentials": [
-            "Chứng chỉ Kế toán viên hành nghề",
-            "Chứng chỉ Đại lý thuế",
-            "10+ năm kinh nghiệm tư vấn"
-          ]
+            "Chứng chỉ Kế toán viên hành nghề số xxxx, năm 20xx",
+            "Chứng chỉ Đại lý thuế số xxxx, năm 20xx",
+            "[Bằng cấp, Trường đại học, năm tốt nghiệp]"
+          ],
+          "background": ["Trưởng phòng Kế toán tại TAF Việt"]
         }
       ]
     },
@@ -526,10 +583,15 @@
     "badge": "Liên hệ",
     "heroTitle": "Chúng tôi luôn sẵn sàng hỗ trợ bạn",
     "heroDescription": "Để lại thông tin hoặc liên hệ trực tiếp — đội ngũ TAF Việt sẽ phản hồi trong thời gian sớm nhất.",
+    "metaTitle": "Liên hệ TAF Việt: đại lý thuế & kế toán Hà Nội",
+    "metaDescription": "Liên hệ TAF Việt để được tư vấn kế toán, thuế, tính lương trong 24 giờ. 937 Ngô Gia Tự, Việt Hưng, Hà Nội. Hotline +84 936 378 955, T2–T6 8:30–18:00.",
+    "breadcrumb": "Liên hệ",
+    "hoursValue": "Thứ 2 – Thứ 6: 08:30 – 18:00",
     "contactInfo": {
       "email": "Email",
       "phone": "Điện thoại",
       "address": "Địa chỉ văn phòng",
+      "hours": "Giờ làm việc",
       "taxId": "Mã số doanh nghiệp"
     },
     "mapTitle": "Bản đồ văn phòng TAF Việt",
@@ -540,6 +602,7 @@
   },
   "Hero": {
     "badge": "Dịch vụ Thuế doanh nghiệp và Kiểm toán có giấy phép hành nghề theo quy định Nhà Nước",
+    "bannerAlt": "Đội ngũ kế toán và tư vấn thuế TAF Việt",
     "titleLineOne": "Giải pháp kế toán &",
     "titleLineTwo": "thuế toàn diện",
     "description": "TAF Việt đồng hành cùng doanh nghiệp trong việc quản lý tài chính, khai báo thuế và tuân thủ pháp luật — chính xác, đúng hạn, an tâm.",
@@ -990,6 +1053,16 @@
       "eyebrow": "Dịch vụ kế toán",
       "title": "Kế toán trọn gói: sổ sách gọn gàng, số liệu rõ ràng mỗi tháng",
       "description": "Bạn không cần thuê kế toán nội bộ. TAF Việt ghi sổ, đối chiếu công nợ và lập báo cáo theo chuẩn mực kế toán Việt Nam, để bạn nắm rõ tình hình tài chính mà không phải lo chồng chứng từ cuối tháng.",
+      "metaTitle": "Dịch vụ kế toán trọn gói từ 2.000.000đ/tháng",
+      "metaDescription": "Dịch vụ kế toán trọn gói: ghi sổ, đối chiếu công nợ, lập báo cáo tài chính theo VAS. Không cần kế toán nội bộ. Gói từ 2.000.000đ/tháng, tư vấn trong 24 giờ.",
+      "serviceType": "Dịch vụ kế toán",
+      "keywords": [
+        "dịch vụ kế toán trọn gói",
+        "dịch vụ kế toán Hà Nội",
+        "kế toán thuê ngoài",
+        "dịch vụ báo cáo tài chính",
+        "công ty dịch vụ kế toán"
+      ],
       "included": [
         {
           "title": "Ghi sổ kế toán hàng tháng",
@@ -1185,10 +1258,20 @@
       "contactFormTitle": "Yêu cầu tư vấn dịch vụ kế toán",
       "source": "service-accounting"
     },
-    "taxPreparation": {
+    "tax-preparation": {
       "eyebrow": "Dịch vụ thuế",
       "title": "Khai & quyết toán thuế đúng hạn, đúng quy định",
       "description": "TAF Việt đồng hành cùng doanh nghiệp trong toàn bộ quy trình kê khai và quyết toán thuế GTGT, TNCN, TNDN — giảm rủi ro, tiết kiệm thời gian nội bộ.",
+      "metaTitle": "Dịch vụ kê khai & quyết toán thuế doanh nghiệp",
+      "metaDescription": "Kê khai thuế GTGT, quyết toán TNDN, TNCN đúng hạn, giảm rủi ro bị phạt. Nhắc hạn, đại diện làm việc với cơ quan thuế. Gói từ 1.500.000đ/tháng.",
+      "serviceType": "Dịch vụ kê khai và quyết toán thuế",
+      "keywords": [
+        "dịch vụ kê khai thuế",
+        "dịch vụ quyết toán thuế",
+        "kê khai thuế GTGT",
+        "quyết toán thuế TNDN",
+        "đại lý thuế Hà Nội"
+      ],
       "included": [
         {
           "title": "Kê khai thuế GTGT",
@@ -1316,6 +1399,16 @@
       "eyebrow": "Dịch vụ tính lương",
       "title": "Bảng lương & bảo hiểm chính xác, đúng hạn mỗi tháng",
       "description": "TAF Việt xử lý toàn bộ quy trình tính lương, bảo hiểm xã hội và thuế TNCN cho nhân viên — giúp doanh nghiệp giảm tải công việc hành chính và tránh sai sót.",
+      "metaTitle": "Dịch vụ tính lương, BHXH & thuế TNCN",
+      "metaDescription": "Tính lương, bảo hiểm xã hội và thuế TNCN chính xác, đúng hạn mỗi tháng. Có phiếu lương, báo cáo quỹ lương, ủy nhiệm chi. Gói từ 1.200.000đ/tháng.",
+      "serviceType": "Dịch vụ tính lương",
+      "keywords": [
+        "dịch vụ tính lương",
+        "dịch vụ bảo hiểm xã hội",
+        "thuế TNCN từ tiền lương",
+        "thuê ngoài bảng lương",
+        "dịch vụ làm lương Hà Nội"
+      ],
       "included": [
         {
           "title": "Tính lương hàng tháng",
@@ -1443,6 +1536,16 @@
       "eyebrow": "Dịch vụ tư vấn",
       "title": "Tư vấn tài chính & thuế cho quyết định chiến lược",
       "description": "TAF Việt đồng hành cùng ban lãnh đạo trong các quyết định quan trọng — từ hoạch định thuế, cơ cấu doanh nghiệp đến chuẩn bị cho các giao dịch lớn.",
+      "metaTitle": "Tư vấn tài chính & hoạch định thuế chiến lược",
+      "metaDescription": "Tư vấn hoạch định thuế, cơ cấu doanh nghiệp, rà soát trước M&A và gọi vốn. Buổi tư vấn 90 phút từ 1.800.000đ, không cần cam kết dài hạn.",
+      "serviceType": "Tư vấn tài chính và thuế",
+      "keywords": [
+        "tư vấn thuế doanh nghiệp",
+        "hoạch định thuế",
+        "tư vấn tài chính doanh nghiệp",
+        "tư vấn cơ cấu doanh nghiệp",
+        "rà soát M&A"
+      ],
       "included": [
         {
           "title": "Hoạch định thuế chiến lược",
@@ -1570,6 +1673,16 @@
       "title": "Hỗ trợ thuế, sổ sách và tuân thủ cho cá nhân và doanh nghiệp nhỏ",
       "description": "TAF Việt giúp freelancer, cá nhân kinh doanh và người có thu nhập ngoài lương quản lý hồ sơ, sổ sách và nghĩa vụ thuế theo mô hình hoạt động thực tế.",
       "audiencesTitle": "Đối tượng phù hợp",
+      "metaTitle": "Quyết toán thuế TNCN & hỗ trợ thuế cho freelancer",
+      "metaDescription": "Quyết toán thuế TNCN, hoàn thuế, tổng hợp thu nhập nhiều nguồn cho cá nhân, freelancer và người nước ngoài. Gói từ 1.200.000đ/tháng.",
+      "serviceType": "Dịch vụ thuế thu nhập cá nhân",
+      "keywords": [
+        "dịch vụ quyết toán thuế TNCN",
+        "hoàn thuế thu nhập cá nhân",
+        "thuế freelancer",
+        "thuế người nước ngoài tại Việt Nam",
+        "quyết toán thuế nhiều nguồn thu nhập"
+      ],
       "audiences": [
         {
           "title": "Nhân viên có một nơi làm việc",
@@ -1788,11 +1901,21 @@
       "contactFormTitle": "Yêu cầu hỗ trợ cá nhân & hộ kinh doanh",
       "source": "service-personal"
     },
-    "householdBusiness": {
+    "household-business": {
       "eyebrow": "Hộ kinh doanh & người bán online",
       "title": "Hỗ trợ sổ sách, doanh thu và thuế cho hộ kinh doanh và mô hình bán hàng online",
       "description": "TAF Việt giúp hộ kinh doanh, người bán online và mô hình kinh doanh gia đình quản lý doanh thu, chứng từ và nghĩa vụ thuế một cách rõ ràng và đúng quy định.",
       "audiencesTitle": "Đối tượng phù hợp",
+      "metaTitle": "Kế toán & thuế cho hộ kinh doanh, người bán online",
+      "metaDescription": "Ghi sổ, đối soát doanh thu Shopee, TikTok Shop, quản lý tồn kho và thuế cho hộ kinh doanh. Gói từ 1.000.000đ/tháng, tư vấn trong 24 giờ.",
+      "serviceType": "Dịch vụ kế toán hộ kinh doanh",
+      "keywords": [
+        "kế toán hộ kinh doanh",
+        "thuế hộ kinh doanh",
+        "kế toán người bán hàng online",
+        "đối soát doanh thu Shopee",
+        "kế toán TikTok Shop"
+      ],
       "audiences": [
         {
           "title": "Hộ kinh doanh truyền thống",
@@ -2022,6 +2145,16 @@
       "eyebrow": "Tư vấn pháp lý & tài chính",
       "title": "Rà soát tuân thủ và hỗ trợ quyết định quan trọng cho doanh nghiệp",
       "description": "TAF Việt đồng hành cùng chủ doanh nghiệp và ban lãnh đạo để rà soát rủi ro pháp lý, đánh giá tài chính và xác định hướng đi phù hợp trước các quyết định lớn.",
+      "metaTitle": "Rà soát tuân thủ thuế & rủi ro tài chính",
+      "metaDescription": "Rà soát tuân thủ thuế, đánh giá rủi ro tài chính và chuẩn bị hồ sơ trước M&A, gọi vốn. TAF Việt phản hồi trong vòng 24 giờ.",
+      "serviceType": "Rà soát tuân thủ và rủi ro tài chính",
+      "keywords": [
+        "rà soát tuân thủ thuế",
+        "đánh giá rủi ro thuế",
+        "kiểm tra sức khỏe tài chính",
+        "chuẩn bị gọi vốn",
+        "tư vấn tuân thủ doanh nghiệp"
+      ],
       "valuePoints": [
         {
           "title": "Rà soát quy định",
@@ -2090,6 +2223,16 @@
       "title": "Tuân thủ doanh nghiệp, tiền lương và rà soát tài chính cho doanh nghiệp đang phát triển",
       "description": "TAF Việt hỗ trợ ban lãnh đạo rà soát nghĩa vụ thuế, quy trình bảng lương, báo cáo tài chính và các điểm yếu trong cơ chế vận hành trước khi đưa ra quyết định chiến lược.",
       "audiencesTitle": "Đối tượng hỗ trợ",
+      "metaTitle": "Tuân thủ thuế & rà soát tài chính doanh nghiệp",
+      "metaDescription": "Hỗ trợ doanh nghiệp tuân thủ thuế, quyết toán cuối năm, bảng lương và rà soát sổ sách. Gói từ 2.500.000đ/tháng, mở rộng theo nhu cầu.",
+      "serviceType": "Hỗ trợ tuân thủ và tài chính doanh nghiệp",
+      "keywords": [
+        "tuân thủ thuế doanh nghiệp",
+        "quyết toán thuế cuối năm",
+        "rà soát sổ sách kế toán",
+        "kế toán quản trị",
+        "thành lập doanh nghiệp"
+      ],
       "audiences": [
         {
           "title": "Doanh nghiệp vừa và nhỏ đang tăng trưởng",

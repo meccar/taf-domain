@@ -9,7 +9,7 @@ export function WhyUsBlock() {
   const points = t.raw("points") as string[];
 
   return (
-    <MotionSection id="why-us" className="scroll-mt-24">
+    <MotionSection id="why-us">
       <div className="rounded-xl border border-border bg-card p-8 shadow-[0_1px_2px_0_rgba(0,0,0,0.04)] sm:p-10 lg:p-12">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="flex flex-col justify-center lg:col-span-5">

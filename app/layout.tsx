@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Suspense } from "react";
 import { Geist } from "next/font/google";
@@ -9,40 +9,63 @@ import NextThemeProvider from "@/components/theme-provider";
 import { Loading } from "@/components/ui/loading";
 import { IntlProvider } from "./intl-provider";
 import { getLocale, getTranslations } from "next-intl/server";
+import { ORG_ID, SITE_URL, WEBSITE_ID } from "@/lib/seo";
+import { LOCALES } from "./admin/posts/const";
+import { JsonLd } from "@/components/json-ld";
+import { SITE } from "@/lib/site";
 
-const defaultUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "https://taf.asia");
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const t = await getTranslations("Metadata");
+  const ogImage = {
+    url: "/og-default.png",
+    width: 1200,
+    height: 630,
+    alt: t("ogImageAlt"),
+  };
 
   return {
-    metadataBase: new URL(defaultUrl),
-    title: {
-      default: t("defaultTitle"),
-      template: t("titleTemplate"),
-    },
+    metadataBase: new URL(SITE_URL),
+    applicationName: t("siteName"),
+    title: { default: t("defaultTitle"), template: t("titleTemplate") },
     description: t("defaultDescription"),
     keywords: t.raw("keywords"),
-    alternates: {
-      canonical: "/",
-    },
+    authors: [{ name: t("companyName"), url: SITE_URL }],
+    creator: t("companyName"),
+    publisher: t("companyName"),
+    category: "business",
+    formatDetection: { telephone: true, email: true, address: true },
     openGraph: {
       title: t("defaultTitle"),
       description: t("defaultDescription"),
-      url: defaultUrl,
+      url: SITE_URL,
       siteName: t("siteName"),
       locale: locale === "en" ? "en_US" : "vi_VN",
+      alternateLocale: locale === "en" ? ["vi_VN"] : ["en_US"],
       type: "website",
+      images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
       title: t("defaultTitle"),
       description: t("defaultDescription"),
+      images: [ogImage.url],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
     },
     icons: {
       icon: [
@@ -51,6 +74,13 @@ export async function generateMetadata(): Promise<Metadata> {
         { url: "/taf-favicon-96.png", sizes: "96x96", type: "image/png" },
       ],
       shortcut: "/favicon.ico",
+      apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    },
+    verification: {
+      google: process.env.NEXT_PUBLIC_GSC_VERIFICATION,
+      other: process.env.NEXT_PUBLIC_BING_VERIFICATION
+        ? { "msvalidate.01": process.env.NEXT_PUBLIC_BING_VERIFICATION }
+        : undefined,
     },
   };
 }
@@ -70,6 +100,72 @@ export default async function RootLayout({
   const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
   const fbPixelId = process.env.NEXT_PUBLIC_FB_PIXEL_ID;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["Organization", "AccountingService"],
+        "@id": ORG_ID,
+        name: t("companyName"),
+        legalName: "CÔNG TY TNHH ĐẠI LÝ THUẾ TAF VIỆT", // legal name stays Vietnamese
+        alternateName: ["TAF Việt", "TAF Viet", "TAF Tax Agent"],
+        url: SITE_URL,
+        logo: {
+          "@type": "ImageObject",
+          url: `${SITE_URL}/taf-logo-512.png`,
+          width: 512,
+          height: 512,
+        },
+        image: `${SITE_URL}/og-default.png`,
+        description: t("companyDescription"),
+        email: SITE.email,
+        telephone: SITE.phone,
+        taxID: SITE.taxId,
+        vatID: SITE.taxId,
+        priceRange: t("priceRange"),
+        areaServed: { "@type": "Country", name: "Vietnam" },
+        knowsAbout: t.raw("knowsAbout"),
+        knowsLanguage: [...LOCALES],
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: t("address.streetAddress"),
+          addressLocality: t("address.locality"),
+          addressRegion: t("address.region"),
+          postalCode: t("address.postalCode"),
+          addressCountry: "VN",
+        },
+        geo: { "@type": "GeoCoordinates", ...SITE.geo },
+        hasMap: SITE.mapsUrl,
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: [...SITE.hours.days],
+            opens: SITE.hours.opens,
+            closes: SITE.hours.closes,
+          },
+        ],
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            contactType: "customer service",
+            telephone: SITE.phone,
+            email: SITE.email,
+            availableLanguage: ["Vietnamese", "English"],
+          },
+        ],
+        sameAs: [...SITE.sameAs],
+      },
+      {
+        "@type": "WebSite",
+        "@id": WEBSITE_ID,
+        url: SITE_URL,
+        name: t("siteName"),
+        inLanguage: [...LOCALES],
+        publisher: { "@id": ORG_ID },
+      },
+    ],
+  };
+
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={`${geistSans.className} antialiased`}>
@@ -82,74 +178,7 @@ export default async function RootLayout({
           <SpeedInsights />
         </NextThemeProvider>
 
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "Organization",
-                  name: "CÔNG TY TNHH ĐẠI LÝ THUẾ TAF VIỆT",
-                  legalName: "CÔNG TY TNHH ĐẠI LÝ THUẾ TAF VIỆT",
-                  alternateName: ["TAF Việt", "TAF Tax Agent"],
-                  url: defaultUrl,
-                  email: "admin@taf.asia",
-                  telephone: "+84 936 378 955",
-                  taxID: "0105367171",
-                  vatID: "0105367171",
-                  description:
-                    "TAF Việt cung cấp dịch vụ kế toán, kê khai thuế, tư vấn tài chính và hỗ trợ doanh nghiệp tại Việt Nam.",
-                  areaServed: "Việt Nam",
-                  knowsAbout: [
-                    "Kế toán doanh nghiệp",
-                    "Kê khai thuế",
-                    "Tính lương",
-                    "Tư vấn tài chính",
-                  ],
-                  logo: `${defaultUrl}/taf-logo-512.png`,
-                  address: {
-                    "@type": "PostalAddress",
-                    streetAddress: "937 Ngô Gia Tự, Việt Hưng",
-                    addressLocality: "Hà Nội",
-                    addressCountry: "VN",
-                    postalCode: "11321",
-                  },
-                  disambiguatingDescription:
-                    "Công ty cung cấp dịch vụ kế toán, thuế và tư vấn tài chính tại Việt Nam.",
-                },
-                {
-                  "@type": "LocalBusiness",
-                  name: "CÔNG TY TNHH ĐẠI LÝ THUẾ TAF VIỆT",
-                  legalName: "CÔNG TY TNHH ĐẠI LÝ THUẾ TAF VIỆT",
-                  image: `${defaultUrl}/favicon.ico`,
-                  url: defaultUrl,
-                  telephone: "+84 936 378 955",
-                  email: "admin@taf.asia",
-                  taxID: "0105367171",
-                  priceRange: "Từ 3.500.000 VNĐ",
-                  address: {
-                    "@type": "PostalAddress",
-                    streetAddress:
-                      "937 Ngô Gia Tự, Việt Hưng, Hà Nội, Việt Nam",
-                    addressLocality: "Hà Nội",
-                    addressCountry: "VN",
-                    postalCode: "11321",
-                  },
-                  areaServed: "Việt Nam",
-                  description:
-                    "Dịch vụ kế toán, thuế, tính lương và tư vấn tài chính cho doanh nghiệp và cá nhân tại Việt Nam.",
-                  openingHours: "Mo,Tu,We,Th,Fr 08:30-18:00",
-                  sameAs: [
-                    "https://www.facebook.com/profile.php?id=61594757558743",
-                    "https://www.linkedin.com/company/tafviet",
-                    "https://zalo.me/0936378955",
-                  ],
-                },
-              ],
-            }),
-          }}
-        />
+        <JsonLd data={jsonLd} />
 
         {gaMeasurementId && (
           <>

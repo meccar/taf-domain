@@ -12,9 +12,14 @@ import {
 } from "@/components/ui/dialog";
 import * as React from "react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { ContactForm } from "./contact-form";
 import { ServicesList } from "./services-list";
 import { sendContactEmail } from "@/app/contact/actions";
+import { MotionSection } from "./motion-section";
+
+const HERO_IMAGE =
+  "https://images.pexels.com/photos/6929004/pexels-photo-6929004.jpeg?auto=compress&cs=tinysrgb&w=2400";
 
 export function Hero({
   externalContactOpen,
@@ -50,78 +55,59 @@ export function Hero({
     setContactOpen(true);
   };
 
-  const stats = [
-    {
-      value: t("stats.experience.value"),
-      label: t("stats.experience.label"),
-    },
-    {
-      value: t("stats.clients.value"),
-      label: t("stats.clients.label"),
-    },
-    {
-      value: t("stats.compliance.value"),
-      label: t("stats.compliance.label"),
-    },
-  ];
-
   return (
     <>
-      <section className="pt-10 pb-6 sm:pt-14 sm:pb-8">
-        <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-          {/* Clean unboxed compliance eyebrow */}
-          <div className="mb-6 flex items-center gap-2 text-sm font-medium text-muted-foreground">
-            <ShieldCheck className="h-4 w-4 shrink-0 text-emerald-accent" />
-            <span>{t("badge")}</span>
-          </div>
+      <MotionSection className="max-w-full relative isolate flex min-h-[calc(100svh-3.5rem)] flex-col justify-center overflow-hidden">
+        <Image
+          src={HERO_IMAGE}
+          alt=""
+          fill
+          priority
+          unoptimized
+          sizes="100vw"
+          className="-z-20 object-cover object-center"
+        />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background/90 via-background/80 to-background/95" />
 
-          <h1 className="font-display text-[clamp(2.25rem,4.2vw,3.5rem)] font-bold leading-[1.12] tracking-[-0.03em] text-foreground [text-wrap:balance]">
-            {t("titleLineOne")}
-            <br />
-            {t("titleLineTwo")}
-          </h1>
-
-          <p className="mt-6 max-w-2xl text-base leading-[1.7] text-muted-foreground sm:text-lg">
-            {t("description")}
-          </p>
-
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-            <Button
-              size="lg"
-              onClick={() => {
-                setPrefilledMessage("");
-                setContactOpen(true);
-              }}
-            >
-              {t("primaryButton")}
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => setServicesOpen(true)}
-            >
-              {t("secondaryButton")}
-            </Button>
-          </div>
-        </div>
-
-        {/* 3-Column Executive KPI Metric Strip */}
-        <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-lg border border-border bg-card px-6 py-6 text-center shadow-[0_1px_2px_0_rgba(0,0,0,0.04)] sm:px-8 sm:text-left"
-            >
-              <p className="font-display text-3xl font-bold leading-tight tracking-[-0.03em] text-foreground tabular-nums sm:text-[2.5rem]">
-                {stat.value}
-              </p>
-              <p className="mt-1.5 text-sm text-muted-foreground">
-                {stat.label}
-              </p>
+        <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-8 sm:py-24 lg:px-12">
+          <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
+            <div className="mb-6 flex items-center gap-2 text-sm font-medium text-muted-foreground">
+              <ShieldCheck className="h-4 w-4 shrink-0 text-emerald-accent" />
+              <span>{t("badge")}</span>
             </div>
-          ))}
+
+            <h1 className="font-display text-[clamp(2.25rem,4.6vw,3.75rem)] font-bold leading-[1.1] tracking-[-0.03em] text-foreground [text-wrap:balance]">
+              {t("titleLineOne")}
+              <br />
+              {t("titleLineTwo")}
+            </h1>
+
+            <p className="mt-6 max-w-2xl text-base leading-[1.7] text-muted-foreground">
+              {t("description")}
+            </p>
+
+            <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+              <Button
+                size="lg"
+                onClick={() => {
+                  setPrefilledMessage("");
+                  setContactOpen(true);
+                }}
+              >
+                {t("primaryButton")}
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="bg-background/60 backdrop-blur-sm"
+                onClick={() => setServicesOpen(true)}
+              >
+                {t("secondaryButton")}
+              </Button>
+            </div>
+          </div>
         </div>
-      </section>
+      </MotionSection>
 
       {/* Contact Dialog */}
       <Dialog open={contactOpen} onOpenChange={handleContactOpenChange}>

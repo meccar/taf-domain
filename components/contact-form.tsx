@@ -131,7 +131,7 @@ export function ContactForm({
           className,
         )}
       >
-        <CheckCircle2 className="text-green-500" size={40} />
+        <CheckCircle2 className="text-green-500 shrink-0" size={40} />
         <p className="text-lg font-medium">{t("success.title")}</p>
         <p className="text-sm text-muted-foreground">
           {t("success.description")}

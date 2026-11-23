@@ -62,7 +62,7 @@ export function CtaBlock() {
   };
 
   return (
-    <MotionSection id="consultation" className="scroll-mt-24">
+    <MotionSection id="consultation">
       <div className="rounded-xl border border-border bg-muted/50 p-8 sm:p-10 lg:p-12">
         <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
           <div className="max-w-2xl">
@@ -74,7 +74,7 @@ export function CtaBlock() {
             </p>
             {confirmedDate && (
               <div className="mt-4 inline-flex items-center gap-2 rounded-md border border-emerald-200 bg-emerald-subtle px-3.5 py-2 text-xs font-medium text-emerald-accent">
-                <CheckCircle2 className="h-4 w-4 shrink-0" />
+                <CheckCircle2 className="h-4 w-4 text-green-500 shrink-0" />
                 <span>
                   {t("successTitle")} ({confirmedDate}) —{" "}
                   {t("successDescription")}
