@@ -481,38 +481,44 @@
       {
         "company": "Công ty TNHH Gas Petrolimex Hải Phòng",
         "industry": "Năng lượng & Phân phối khí",
-        "result": "Nâng cao hiệu quả kế toán và quản lý tài chính",
-        "quote": "TAF Việt đã giúp chúng tôi tối ưu hóa quy trình kế toán, đảm bảo tính chính xác của sổ sách và hoàn thành các nghĩa vụ báo cáo đúng thời hạn."
+        "result": "Kế toán và quản lý tài chính hiệu quả hơn",
+        "quote": "TAF Việt giúp chúng tôi tối ưu quy trình kế toán, đảm bảo sổ sách chính xác và nộp báo cáo đúng hạn.",
+        "logo": "/partners/petrolimex.webp"
       },
       {
         "company": "Viện Công nghệ Thông tin - Đại học Quốc gia Hà Nội",
         "industry": "Giáo dục & Nghiên cứu",
-        "result": "Tăng cường hiệu quả quản lý tài chính và tuân thủ kế toán",
-        "quote": "TAF Việt đã cung cấp dịch vụ hỗ trợ kế toán chuyên nghiệp cùng những tư vấn thiết thực, giúp chúng tôi nâng cao hiệu quả quản lý tài chính và đảm bảo tính minh bạch trong báo cáo."
+        "result": "Quản lý tài chính và tuân thủ chặt chẽ hơn",
+        "quote": "Dịch vụ kế toán chuyên nghiệp và tư vấn thiết thực của TAF Việt giúp chúng tôi quản lý hiệu quả và báo cáo minh bạch hơn.",
+        "logo": "/partners/VNU.webp"
       },
       {
         "company": "Công ty TNHH Ti Ki",
         "industry": "Thương mại điện tử & Bán lẻ",
-        "result": "Cải thiện chất lượng báo cáo tài chính và hiệu quả vận hành",
-        "quote": "TAF Việt đã mang đến những giải pháp tài chính thiết thực và sự hỗ trợ đáng tin cậy, giúp chúng tôi cải thiện quy trình báo cáo và nâng cao hiệu quả quản lý tài chính."
+        "result": "Báo cáo tài chính chất lượng, vận hành hiệu quả",
+        "quote": "TAF Việt mang đến giải pháp tài chính thiết thực và sự hỗ trợ đáng tin cậy, giúp chúng tôi cải thiện quy trình báo cáo.",
+        "logo": "/partners/tiki.webp"
       },
       {
         "company": "Công ty TNHH Đầu Tư Jebs Việt Nam",
         "industry": "Đầu tư & Dịch vụ doanh nghiệp",
-        "result": "Nâng cao hiệu quả kiểm soát tài chính và quản lý tuân thủ",
-        "quote": "TAF Việt đã hỗ trợ chúng tôi xây dựng quy trình tài chính bài bản hơn, đồng thời đưa ra những tư vấn rõ ràng về kế toán và các vấn đề tuân thủ."
+        "result": "Kiểm soát tài chính và tuân thủ tốt hơn",
+        "quote": "TAF Việt giúp chúng tôi xây dựng quy trình tài chính bài bản và tư vấn rõ ràng về kế toán, tuân thủ.",
+        "logo": "/partners/jebs.webp"
       },
       {
         "company": "Công ty Cổ phần Tiếp vận TLC",
         "industry": "Logistics & Chuỗi cung ứng",
-        "result": "Tối ưu hóa quy trình kế toán và hoạt động tài chính",
-        "quote": "TAF Việt đã cung cấp dịch vụ hỗ trợ kế toán đáng tin cậy cùng những giải pháp thiết thực, giúp chúng tôi cải thiện quy trình tài chính và quản lý hoạt động hiệu quả hơn."
+        "result": "Quy trình kế toán và tài chính tối ưu",
+        "quote": "Dịch vụ kế toán đáng tin cậy và giải pháp thiết thực của TAF Việt giúp chúng tôi vận hành tài chính hiệu quả hơn.",
+        "logo": "/partners/tlc.webp"
       },
       {
         "company": "Công ty Cổ phần Tiến Thành",
         "industry": "Thương mại & Phân phối",
-        "result": "Nâng cao hiệu quả quản lý tài chính và quy trình kế toán",
-        "quote": "TAF Việt đã cung cấp dịch vụ hỗ trợ kế toán và tư vấn tài chính thiết thực, giúp chúng tôi cải thiện quy trình nội bộ và nâng cao hiệu quả quản lý tài chính."
+        "result": "Quản lý tài chính và kế toán hiệu quả hơn",
+        "quote": "TAF Việt hỗ trợ kế toán và tư vấn tài chính thiết thực, giúp chúng tôi cải thiện quy trình nội bộ.",
+        "logo": "/partners/tienthanh.webp"
       }
     ]
   },

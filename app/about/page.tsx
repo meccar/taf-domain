@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { CheckCircle2, Target, Users, Award } from "lucide-react";
+import { CheckCircle2, Target, Users, Award, Building2 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/button";
 import {
@@ -55,11 +55,14 @@ export default async function About() {
     name: string;
     logo: string;
   }>;
+
   const caseStudies = t.raw("caseStudies") as Array<{
     company: string;
     industry: string;
     result: string;
     quote: string;
+    logo?: string;
+    metric?: string;
   }>;
 
   return (
@@ -271,25 +274,64 @@ export default async function About() {
           </h2>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="group/cases grid gap-6 md:grid-cols-3">
           {caseStudies.map((study) => (
             <Card
               key={study.company}
-              className="flex h-full flex-col justify-between"
+              className="
+                case-card flex h-full flex-col gap-0 overflow-hidden py-0
+                transition-all duration-300 ease-out
+                hover:-translate-y-1 hover:scale-[1.02] hover:border-primary/40 hover:shadow-lg
+                group-has-[.case-card:hover]/cases:[&:not(:hover)]:scale-[0.98]
+                group-has-[.case-card:hover]/cases:[&:not(:hover)]:opacity-50
+                group-has-[.case-card:hover]/cases:[&:not(:hover)]:blur-[1px]
+                motion-reduce:transform-none motion-reduce:transition-none
+              "
             >
-              <CardHeader className="gap-3">
-                <div className="flex items-center justify-between gap-3">
-                  <span className="text-lg font-semibold">{study.company}</span>
-                  <Badge variant="secondary">{study.industry}</Badge>
-                </div>
-                <div className="text-xl font-semibold text-primary">
+              <CardHeader className="gap-3 px-6 pt-6 pb-4">
+                <Badge variant="secondary" className="w-fit">
+                  {study.industry}
+                </Badge>
+
+                {study.metric && (
+                  <div className="text-4xl font-semibold tracking-tight text-primary">
+                    {study.metric}
+                  </div>
+                )}
+
+                <CardTitle className="text-lg font-semibold leading-snug">
                   {study.result}
-                </div>
+                </CardTitle>
               </CardHeader>
-              <CardContent className="flex flex-col gap-4">
-                <blockquote className="border-l-2 border-primary/40 pl-4 text-sm leading-relaxed text-muted-foreground">
+
+              <CardContent className="flex flex-1 flex-col gap-5 px-6 pb-6">
+                <blockquote className="line-clamp-4 text-sm leading-relaxed text-muted-foreground">
                   “{study.quote}”
                 </blockquote>
+
+                <div className="mt-auto flex items-center gap-3 border-t border-border pt-4">
+                  {study.logo ? (
+                    <div className="relative h-9 w-9 shrink-0">
+                      <Image
+                        src={study.logo}
+                        alt=""
+                        fill
+                        sizes="36px"
+                        className="object-contain"
+                      />
+                    </div>
+                  ) : (
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                      <Building2 className="h-4 w-4 text-primary" />
+                    </div>
+                  )}
+                  <span
+                    title={study.company}
+                    className="line-clamp-2 text-sm font-medium leading-snug"
+                  >
+                    {study.company}
+                  </span>
+                </div>
               </CardContent>
             </Card>
           ))}
