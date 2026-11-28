@@ -13,6 +13,7 @@ import { ORG_ID, SITE_URL, WEBSITE_ID } from "@/lib/seo";
 import { LOCALES } from "./admin/posts/const";
 import { JsonLd } from "@/components/json-ld";
 import { SITE } from "@/lib/site";
+import { Analytics } from "@vercel/analytics/next";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -172,7 +173,10 @@ export default async function RootLayout({
         <NextThemeProvider>
           <Suspense fallback={<Loading />}>
             <IntlProvider>
-              <ClientLayout>{children}</ClientLayout>
+              <ClientLayout>
+                {children}
+                <Analytics />
+              </ClientLayout>
             </IntlProvider>
           </Suspense>
           <SpeedInsights />
